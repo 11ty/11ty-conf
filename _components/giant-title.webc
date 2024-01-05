@@ -1,0 +1,50 @@
+<style webc:scope>
+h1 {
+	text-transform: uppercase;
+	font-size: var(--step-0);
+	line-height: .9;
+	margin: 1em auto;
+	max-width: 43.75rem; /* 700px /16 */
+	font-family: Saira Extra Condensed, system-ui, sans-serif;
+	font-weight: 600;
+}
+b {
+	text-align: center;
+	display: block;
+}
+b:nth-child(1) {
+	font-size: 25%;
+	white-space: nowrap;
+}
+b:nth-child(3) {
+	font-size: 109%;
+}
+b:nth-child(4) {
+	font-size: 137%;
+}
+b:nth-child(5) {
+	font-size: 50%;
+}
+b:nth-child(6) {
+	font-size: 215%;
+}
+b:nth-child(7) {
+	font-size: 163%;
+	white-space: nowrap;
+}
+b:nth-child(8) {
+	font-size: 158%;
+	white-space: nowrap;
+}
+
+</style>
+<h1>
+	<b>Join us for the</b>
+	<confetti-logo></confetti-logo>
+	<b>International</b>
+	<b>Symposium</b>
+	<b>on</b>
+	<b>Making</b>
+	<b>Web Sites</b>
+	<b>Real Good</b>
+</h1>

@@ -1,0 +1,32 @@
+---node
+const title = "Eleventy’s International Symposium on Making Web Sites Real Good";
+const layout = "layout.webc";
+---
+<floating-possum></floating-possum>
+
+<em>(We’re running a conference… this is an 11ty Conference)</em>
+
+<garbage-dumpster></garbage-dumpster>
+
+<h2>What is it?</h2>
+<p>A brand new exclusively-online single-day single-track conference dedicated to <strong>Web Development</strong> and the <a href="https://www.11ty.dev/"><img webc:is="indie-avatar" url="https://www.11ty.dev/"><strong>Eleventy</strong></a> static site generator.</p>
+
+<h2>When is it?</h2>
+<p>Mid-year 2024. We’ll publish a full schedule of relevant conference dates (registration, call for proposals, et cetera) soon!</p>
+
+<h2 id="subscription">Where do I sign up?</h2>
+<p>Conference sign up is coming soon!</p>
+<p>If you’d like to stay informed (for our call for proposals), subscribe to receive updates:</p>
+<buttondown-form></buttondown-form>
+
+<h2>Take my money!</h2>
+<p>The conference will be free!</p>
+<p>If you’re attending while representing a company, <a href="https://opencollective.com/11ty">donations are always appreciated</a>!</p>
+<p>If your company is interested in sponsoring, please <a href="mailto:sponsor@11ty.dev">get in touch</a> and we’ll share our sponsorship prospectus.</p>
+
+<h2>Sponsors</h2>
+<logo-list></logo-list>
+<p>Want your logo here? <a href="mailto:sponsor@11ty.dev">Get in touch</a> and we’ll send over our sponsorship prospectus.</p>
+
+<h2>Can I speak?</h2>
+<p>We will be holding a public call for proposals soon! Make sure you <a href="#subscription">subscribe to receive updates</a>.</p>

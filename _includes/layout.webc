@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="generator" :content="eleventy.generator">
+		<title @text="title"></title>
+		<link rel="stylesheet" href="../_components/global.css">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600&display=swap" rel="stylesheet" webc:keep>
+
+		<style @raw="getBundle('css')" webc:keep></style>
+
+		<!-- For model-viewer -->
+		<script type="importmap" webc:keep>
+		{
+			"imports": {
+				"three": "https://cdn.jsdelivr.net/npm/three@^0.160.0/build/three.module.min.js"
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<header>
+			<giant-title :text="title"></giant-title>
+		</header>
+		<main @html="content"></main>
+		<footer>
+			<p>©️<span @text="new Date().getFullYear()"></span>, Built with <span @text="eleventy.generator"></span></p>
+			<p><em>Newsletter signup <a href="https://buttondown.email/refer/11ty" target="_blank">powered by Buttondown</a></em></p>
+			<p><em>Original footer image by <a href="https://unsplash.com/photos/green-trash-bin-beside-brown-building-Hp0P67o2EK4">Jake Heidecker</a></em></p>
+			<p><em>Dumpster model by <a href="https://sketchfab.com/3d-models/low-poly-dumpsters-b9ec48bea3544743a72590a979c68a63">Anna Denisova</a></em></p>
+			<p><em>Confetti cannons from <a href="https://github.com/catdad/canvas-confetti">Kiril Vatev</a></em></p>
+		</footer>
+		<script type="module" @raw="getBundle('js')" webc:keep></script>
+	</body>
+</html>

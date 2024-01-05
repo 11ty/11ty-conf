@@ -1,0 +1,49 @@
+<style webc:scoped>
+:host {
+	display: block;
+	padding: 0;
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🎉</text></svg>") 16 0,auto; /*! via emojicursor.app */
+}
+:host img {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 20rem;
+	margin: 0 auto;
+}
+</style>
+<script type="module">
+import confetti from "https://esm.run/canvas-confetti@1";
+
+customElements.define("confetti-logo", class extends HTMLElement {
+	constructor() {
+		super();
+
+		this.addEventListener("click", this);
+		this.fire();
+	}
+
+	fire() {
+		let colors = ["#236a40", "#265f3a", "#1c6537"];
+		confetti({
+	    particleCount: 100,
+	    angle: 60,
+	    spread: 55,
+	    origin: { x: -.1 },
+	    // colors: colors
+	  });
+	  confetti({
+	    particleCount: 100,
+	    angle: 120,
+	    spread: 55,
+	    origin: { x: 1.1 },
+	    // colors: colors
+	  });
+	}
+
+	handleEvent(event) {
+		this.fire();
+	}
+});
+</script>
+<img src="/public/logo.svg" width="200" height="200" alt="11ty logo" loading="eager" draggable="false">

@@ -1,0 +1,83 @@
+<style webc:scoped>
+	:host {
+	pointer-events: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+:host img {
+	--possum-offset-x: 0;
+	pointer-events: initial;
+	position: absolute;
+	left: 0;
+	transform: translateY(50vh);
+	width: auto;
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>📌</text></svg>") 16 0,auto; /*! via emojicursor.app */
+	max-height: max(10em, 30vh);
+	animation-duration: 90s;
+	animation-name: balloonFloat;
+	animation-timing-function: cubic-bezier(0.42, 0, 1.0, 1.0);
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	filter: drop-shadow(0px 4px 4px rgba(0,0,0,.4));
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:host img {
+		animation-duration: 0s;
+	}
+}
+@keyframes balloonFloat {
+	from {
+		transform: translate(-2em, 50vh);
+	}
+	to {
+		transform: translate(100vw, 45vh);
+	}
+}
+@keyframes balloonPop {
+	from {
+		translate: var(--possum-offset-x) 0;
+		opacity: 1;
+	}
+	to {
+		translate: var(--possum-offset-x) 60vh;
+		opacity: .2;
+	}
+}
+</style>
+<script>
+customElements.define("floating-possum", class extends HTMLElement {
+	constructor() {
+		super();
+		this.addEventListener("mousedown", this.handleEvent);
+	}
+
+	get img() {
+		if(!this._img) {
+			this._img = this.querySelector("img");
+		}
+		return this._img;
+	}
+
+	handleEvent(event) {
+		if(!event.target.closest("img")) {
+			return;
+		}
+
+		let bound = this.img.getBoundingClientRect();
+		this.img.style.setProperty("--possum-offset-x", `${bound.left}px`);
+		this.img.style.animationName = "balloonPop";
+		this.img.style.animationDuration = "1s";
+
+		// Not necessary but cleanup is nice
+		this.addEventListener("animationend", () => {
+			this.remove();
+		})
+	}
+})
+</script>
+<img src="/public/david.svg" draggable="false" alt="The possum mascot floating on a red balloon. A light blue tether is attached to their waist. They are wearing oversized glasses." loading="eager" decoding="async">

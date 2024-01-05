@@ -1,0 +1,15 @@
+<style webc:scoped>
+:host {
+	display: inline-block;
+}
+:host img {
+	width: auto;
+	height: 1.25em;
+	vertical-align: middle;
+	border-radius: .25em;
+	/* border: 1px solid #ddd; */
+	box-shadow: 0 0 2px 0 #ddd;
+	margin-right: .25em;
+}
+</style>
+<img :src="`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`" width="60" height="60" :alt="`IndieWeb Avatar for ${url}`"  loading="lazy" decoding="async">

@@ -1,0 +1,33 @@
+<style webc:scoped>
+:host form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	max-width: 24em; /* 432px /18 */
+	margin-inline: auto;
+}
+:host label {
+	flex-basis: 100%;
+	text-align: left;
+}
+:host input {
+	flex-grow: 1;
+	font-size: 1.111111111111em; /* 20px /18 */
+	padding: .25em;
+}
+:host button {
+	font-weight: 600;
+}
+</style>
+<form
+	action="https://buttondown.email/api/emails/embed-subscribe/11ty"
+	method="post"
+	target="popupwindow"
+	onsubmit="window.open('https://buttondown.email/11ty', 'popupwindow')"
+	class="embeddable-buttondown-form"
+>
+	<label :for="`bd-email-${uid}`">Enter your email:</label>
+	<input type="email" name="email" required :id="`bd-email-${uid}`" placeholder="you@example.com" />
+
+	<button type="submit">Subscribe</button>
+</form>

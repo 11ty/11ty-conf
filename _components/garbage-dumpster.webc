@@ -1,0 +1,16 @@
+<style webc:scoped>
+:host {
+	position: relative;
+	z-index: -1;
+}
+model-viewer {
+	display: block;
+	margin: 2em auto;
+	width: 21.0625em; /* 337px /16 */
+	height: 18.75em; /* 300px /16 */
+}
+</style>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js" webc:keep></script>
+<model-viewer loading="lazy" touch-action="pan-y" disable-zoom disable-tap auto-rotate auto-rotate-delay="0" poster="" src="/public/dumpster.glb" shadow-intensity="1" alt="A garbage dumpster.">
+	<b slot="progress-bar"></b>
+</model-viewer>
