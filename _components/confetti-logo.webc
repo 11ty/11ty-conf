@@ -13,6 +13,7 @@
 }
 </style>
 <script type="module">
+// external request
 import confetti from "https://esm.run/canvas-confetti@1";
 
 customElements.define("confetti-logo", class extends HTMLElement {

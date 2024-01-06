@@ -2,7 +2,7 @@
 	:host {
 		display: block;
 		margin-inline: auto;
-		margin-block: 4em;
+		margin-block: 2em;
 		max-width: 24em; /* 432px /18 */
 	}
 </style>

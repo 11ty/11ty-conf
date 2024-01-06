@@ -10,6 +10,7 @@ model-viewer {
 	height: 17em;
 }
 </style>
+<!-- external request -->
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js" webc:keep></script>
 <model-viewer loading="lazy" touch-action="pan-y" disable-zoom disable-tap auto-rotate auto-rotate-delay="0" poster="" src="/public/dumpster.glb" shadow-intensity="1" alt="A garbage dumpster.">
 	<b slot="progress-bar"></b>
