@@ -18,6 +18,15 @@
 :host button {
 	font-weight: 600;
 }
+:host .button-wrapper {
+	flex-grow: 1;
+	margin-block: 1em;
+}
+@media (min-width: 40.625em) { /* 650px */
+	:host .button-wrapper {
+		margin-inline: -4em;
+	}
+}
 </style>
 <form
 	action="https://buttondown.email/api/emails/embed-subscribe/11ty"
@@ -29,5 +38,5 @@
 	<label :for="`bd-email-${uid}`">Enter your email:</label>
 	<input type="email" name="email" required :id="`bd-email-${uid}`" placeholder="you@example.com" />
 
-	<button type="submit">Subscribe</button>
+	<giant-button class="button-wrapper" @type="submit"></giant-button>
 </form>

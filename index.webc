@@ -17,7 +17,7 @@ const layout = "layout.webc";
 <h2 id="subscription">Where do I sign up?</h2>
 <p>Conference sign up is coming soon!</p>
 <p>If you’d like to stay informed (for our call for proposals), subscribe to receive updates:</p>
-<buttondown-form></buttondown-form>
+<newsletter-form></newsletter-form>
 
 <h2>Take my money!</h2>
 <p>The conference will be free!</p>
