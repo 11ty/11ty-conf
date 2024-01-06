@@ -10,5 +10,5 @@ export default function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"public/*": "/public/",
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "/public/logo.svg",
-	});
+	}).addPassthroughCopy("robots.txt");
 };
