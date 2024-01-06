@@ -2,7 +2,6 @@
 
 ## TODO
 
-* Safari issue with floating possum
 * Favicon
 * Image optimization
 * Open Graph image

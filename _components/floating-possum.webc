@@ -15,8 +15,8 @@
 	left: 0;
 	transform: translateY(50vh);
 	width: auto;
+	height: max(10em, 30vh);
 	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>📌</text></svg>") 16 0,auto; /*! via emojicursor.app */
-	max-height: max(10em, 30vh);
 	animation-duration: 90s;
 	animation-name: balloonFloat;
 	animation-timing-function: cubic-bezier(0.42, 0, 1.0, 1.0);
