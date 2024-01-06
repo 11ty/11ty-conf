@@ -2,6 +2,9 @@
 :root {
 	--step-0: clamp(3.5rem, -0.0263rem + 17.6316vw, 7.6875rem);
 }
+* {
+	box-sizing: border-box;
+}
 html {
 	font-family: system-ui, sans-serif;
 	color: #fff;
@@ -16,13 +19,17 @@ h2 {
 }
 body {
 	margin: 0 auto;
-	max-width: 43.125rem; /* 690px /16 */
+	padding: 0 .5em;
 	text-align: center;
 }
 main,
 footer {
-	font-size: 1.125em; /* 18px /16 */
+	margin-inline: auto;
 	margin-block-end: 6em;
+	max-width: 27rem; /* 432px /16 */
+}
+main {
+	font-size: 1.125em; /* 18px /16 */
 }
 a[href] {
 	color: inherit;
@@ -38,7 +45,6 @@ a[href^="mailto:"]:before {
 }
 p {
 	margin-inline: auto;
-	max-width: 24em;
 	text-align: left;
 }
 b, strong {

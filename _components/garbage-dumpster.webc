@@ -6,8 +6,8 @@
 model-viewer {
 	display: block;
 	margin: 2em auto;
-	width: 21.0625em; /* 337px /16 */
-	height: 18.75em; /* 300px /16 */
+	width: 13em;
+	height: 17em;
 }
 </style>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer-module.min.js" webc:keep></script>

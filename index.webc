@@ -4,7 +4,7 @@ const layout = "layout.webc";
 ---
 <floating-possum></floating-possum>
 
-<em>(We’re running a conference… this is an 11ty Conference)</em>
+<div><em>We’re running a conference…<br>this is an 11ty Conference.</em></div>
 
 <garbage-dumpster></garbage-dumpster>
 

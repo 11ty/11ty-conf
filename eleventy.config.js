@@ -5,6 +5,8 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(pluginWebc);
 
+	eleventyConfig.addWatchTarget("_components/**/*.css");
+
 	eleventyConfig.addPassthroughCopy({
 		"public/*": "/public/",
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "/public/logo.svg",
