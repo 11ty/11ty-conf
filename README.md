@@ -5,4 +5,3 @@
 * Favicon
 * Image optimization
 * Open Graph image
-* is-land and reduced motion on confetti

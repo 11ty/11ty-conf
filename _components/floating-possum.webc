@@ -7,7 +7,8 @@
 	width: 4.5em;
 	filter: drop-shadow(0px 4px 4px rgba(0,0,0,.4));
 }
-@media (min-width: 37.5em) { /* 600px */
+
+@media (min-width: 37.5em) and (prefers-reduced-motion: no-preference) { /* 600px */
 	:host {
 		pointer-events: none;
 		position: fixed;
@@ -59,6 +60,7 @@
 	}
 }
 </style>
+
 <script>
 customElements.define("floating-possum", class extends HTMLElement {
 	constructor() {
@@ -90,4 +92,5 @@ customElements.define("floating-possum", class extends HTMLElement {
 	}
 })
 </script>
+
 <img src="/public/david.svg" draggable="false" alt="The possum mascot floating on a red balloon. A light blue tether is attached to their waist. They are wearing oversized glasses." loading="eager" decoding="async">

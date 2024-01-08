@@ -2,7 +2,9 @@
 const title = "Eleventy’s International Symposium on Making Web Sites Real Good";
 const layout = "layout.webc";
 ---
-<floating-possum></floating-possum>
+<is-land on:media="(prefers-reduced-motion: no-preference)" webc:import="npm:@11ty/is-land">
+	<floating-possum></floating-possum>
+</is-land>
 
 <div><em>We’re running a conference…<br>this is an 11ty Conference.</em></div>
 

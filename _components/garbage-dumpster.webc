@@ -3,16 +3,20 @@
 	position: relative;
 	z-index: -1;
 }
-model-viewer {
+:host img,
+:host model-viewer {
 	display: block;
 	margin: 2em auto;
 	width: 13em;
 	height: 17em;
 }
 </style>
-<script type="module" webc:keep>
-import "/public/model-viewer.js";
-</script>
-<model-viewer loading="lazy" touch-action="pan-y" disable-zoom disable-tap auto-rotate auto-rotate-delay="0" poster="" src="/public/dumpster.glb" shadow-intensity="1" alt="A garbage dumpster.">
-	<b slot="progress-bar"></b>
-</model-viewer>
+<is-land on:visible on:media="(prefers-reduced-motion: no-preference)" on:save-data="false" webc:import="npm:@11ty/is-land">
+	<img src="/public/dumpster-poster.webp" alt="A garbage dumpster." width="468" height="612" loading="eager">
+	<template data-island="replace">
+		<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js" webc:keep></script>
+		<model-viewer loading="eager" touch-action="pan-y" disable-zoom disable-tap auto-rotate auto-rotate-delay="0" src="/public/dumpster.glb" shadow-intensity="1" alt="A garbage dumpster.">
+			<b slot="progress-bar"></b>
+		</model-viewer>
+	</template>
+</is-land>

@@ -13,38 +13,42 @@
 }
 </style>
 <script type="module">
-// external request
-import confetti from "/public/canvas-confetti.js";
-
 customElements.define("confetti-logo", class extends HTMLElement {
 	constructor() {
 		super();
 
+		// only load after is-land defines the element
+		this.confetti = import("/public/canvas-confetti.js").then(async mod => {
+			await this.fire(mod.default);
+			return mod.default;
+		});
+
 		this.addEventListener("click", this);
-		this.fire();
 	}
 
-	fire() {
+	async fire(confetti) {
+		confetti = await confetti;
+
 		let colors = ["#236a40", "#265f3a", "#1c6537"];
 		confetti({
-	    particleCount: 100,
-	    angle: 60,
-	    spread: 55,
-	    origin: { x: -.1 },
-	    // colors: colors
-	  });
-	  confetti({
-	    particleCount: 100,
-	    angle: 120,
-	    spread: 55,
-	    origin: { x: 1.1 },
-	    // colors: colors
-	  });
+			particleCount: 100,
+			angle: 60,
+			spread: 55,
+			origin: { x: -.1 },
+			// colors: colors
+		});
+		confetti({
+			particleCount: 100,
+			angle: 120,
+			spread: 55,
+			origin: { x: 1.1 },
+			// colors: colors
+		});
 	}
 
 	handleEvent(event) {
-		this.fire();
+		this.fire(this.confetti);
 	}
 });
 </script>
-<img src="/public/logo.svg" width="200" height="200" alt="11ty logo" loading="eager" draggable="false">
+<slot></slot>
