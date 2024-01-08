@@ -9,20 +9,30 @@
 	overflow: hidden;
 }
 :host img {
-	--possum-offset-x: 0;
-	pointer-events: initial;
 	position: absolute;
-	left: 0;
-	transform: translateY(50vh);
-	width: auto;
-	height: max(10em, 30vh);
-	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>📌</text></svg>") 16 0,auto; /*! via emojicursor.app */
-	animation-duration: 90s;
-	animation-name: balloonFloat;
-	animation-timing-function: cubic-bezier(0.42, 0, 1.0, 1.0);
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
+	pointer-events: none;
+	top: .5em;
+	right: .5em;
+	width: 4.5em;
 	filter: drop-shadow(0px 4px 4px rgba(0,0,0,.4));
+}
+@media (min-width: 37.5em) { /* 600px */
+	:host img {
+		--possum-offset-x: 0;
+		pointer-events: initial;
+		top: 0;
+		left: 0;
+		right: auto;
+		cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>📌</text></svg>") 16 0,auto; /*! via emojicursor.app */
+		width: auto;
+		height: max(10em, 30vh);
+		transform: translateY(30vh);
+		animation-duration: 10s;
+		animation-name: balloonFloat;
+		animation-timing-function: cubic-bezier(0.42, 0, 1.0, 1.0);
+		animation-iteration-count: 1;
+		animation-fill-mode: forwards;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -32,10 +42,10 @@
 }
 @keyframes balloonFloat {
 	from {
-		transform: translate(-2em, 50vh);
+		transform: translate(-2em, 30vh);
 	}
 	to {
-		transform: translate(100vw, 45vh);
+		transform: translate(100vw, 28vh);
 	}
 }
 @keyframes balloonPop {
