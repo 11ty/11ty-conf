@@ -14,7 +14,7 @@
 </style>
 <script type="module">
 // external request
-import confetti from "https://esm.run/canvas-confetti@1";
+import confetti from "/public/canvas-confetti.js";
 
 customElements.define("confetti-logo", class extends HTMLElement {
 	constructor() {

@@ -13,15 +13,6 @@
 		<link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600&display=swap" rel="stylesheet" webc:keep>
 
 		<style @raw="getBundle('css')" webc:keep></style>
-
-		<!-- For model-viewer -->
-		<script type="importmap" webc:keep>
-		{
-			"imports": {
-				"three": "https://cdn.jsdelivr.net/npm/three@^0.160.0/build/three.module.min.js"
-			}
-		}
-		</script>
 	</head>
 	<body>
 		<header>
