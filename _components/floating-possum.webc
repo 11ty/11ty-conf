@@ -27,7 +27,7 @@
 		width: auto;
 		height: max(10em, 30vh);
 		transform: translateY(30vh);
-		animation-duration: 10s;
+		animation-duration: 90s;
 		animation-name: balloonFloat;
 		animation-timing-function: cubic-bezier(0.42, 0, 1.0, 1.0);
 		animation-iteration-count: 1;
