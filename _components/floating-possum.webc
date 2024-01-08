@@ -1,13 +1,4 @@
 <style webc:scoped>
-	:host {
-	pointer-events: none;
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	overflow: hidden;
-}
 :host img {
 	position: absolute;
 	pointer-events: none;
@@ -17,6 +8,15 @@
 	filter: drop-shadow(0px 4px 4px rgba(0,0,0,.4));
 }
 @media (min-width: 37.5em) { /* 600px */
+	:host {
+		pointer-events: none;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+	}
 	:host img {
 		--possum-offset-x: 0;
 		pointer-events: initial;
