@@ -1,3 +1,11 @@
+<style webc:scoped>
+:host svg {
+	display: block;
+	padding: 2em;
+	border-radius: 1em;
+	background-color: #034AD8;
+}
+</style>
 <a href="https://cloudcannon.com/eleventy-cms/?utm_campaign=11ty-partner&utm_source=official-sponsor">
 	<visually-hidden>CloudCannon</visually-hidden>
 	<svg viewBox="0 0 363 65" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

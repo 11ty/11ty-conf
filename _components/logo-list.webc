@@ -1,9 +1,15 @@
 <style webc:scoped>
-	:host {
+:host {
+	display: block;
+	margin-inline: auto;
+	margin-block: 2em;
+	max-width: 24em; /* 432px /18 */
+}
+@media (min-width: 37.5em) { /* 600px */
+	:host > * {
 		display: block;
-		margin-inline: auto;
-		margin-block: 2em;
-		max-width: 24em; /* 432px /18 */
+		margin-inline: -1em;
 	}
+}
 </style>
 <logo-cloudcannon></logo-cloudcannon>
