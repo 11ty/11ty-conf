@@ -20,7 +20,7 @@
 		</header>
 		<main @html="content"></main>
 		<footer>
-			<p>©️<span @text="new Date().getFullYear()"></span>, Built with <span @text="eleventy.generator"></span></p>
+			<p>©<span @text="new Date().getFullYear()"></span>, Built with <span @text="eleventy.generator"></span></p>
 			<p><em>Newsletter signup <a href="https://buttondown.email/refer/11ty" target="_blank">powered by Buttondown</a></em></p>
 			<p><em>Original footer image by <a href="https://unsplash.com/photos/green-trash-bin-beside-brown-building-Hp0P67o2EK4">Jake Heidecker</a></em></p>
 			<p><em>Dumpster model by <a href="https://sketchfab.com/3d-models/low-poly-dumpsters-b9ec48bea3544743a72590a979c68a63">Anna Denisova</a></em></p>
