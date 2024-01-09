@@ -53,6 +53,7 @@ b:nth-child(5) {
 if( "fonts" in document ) {
 	customElements.define("giant-title", class extends HTMLElement {
 		connectedCallback() {
+			// This assumes the page only has one @font-face and I’m okay with it for now
 			document.fonts.ready.then(() => {
 				if(document.fonts.size) {
 					this.classList.add("fonts-loaded");
