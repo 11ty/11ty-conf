@@ -44,6 +44,7 @@ a[href^="mailto:"]:before {
 p {
 	margin-inline: auto;
 	text-align: left;
+	line-height: 1.5;
 }
 b, strong {
 	font-weight: 600;
