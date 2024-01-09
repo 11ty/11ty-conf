@@ -26,6 +26,7 @@
 			<p><em>Dumpster model by <a href="https://sketchfab.com/3d-models/low-poly-dumpsters-b9ec48bea3544743a72590a979c68a63">Anna Denisova</a></em></p>
 			<p><em>Confetti cannons from <a href="https://github.com/catdad/canvas-confetti">Kiril Vatev</a></em></p>
 		</footer>
+		<footer-background></footer-background>
 		<script type="module" @raw="getBundle('js')" webc:keep></script>
 	</body>
 </html>

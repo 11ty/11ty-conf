@@ -8,11 +8,7 @@
 html {
 	font-family: system-ui, sans-serif;
 	color: #fff;
-	padding-bottom: 110vw;
-	background: #222 url(/public/mascots.webp);
-	background-size: 100%;
-	background-position: 50% 100%;
-	background-repeat: no-repeat;
+	background-color: #222;
 }
 h2 {
 	margin-block-start: 3em;
@@ -54,4 +50,8 @@ b, strong {
 input,
 button {
 	font: inherit;
+}
+
+img {
+	display: block;
 }

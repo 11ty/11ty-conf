@@ -1,0 +1,13 @@
+<style webc:scoped>
+:host {
+	display: block;
+	margin: -.5em;
+	margin-top: -30vw;
+}
+:host img {
+	width: 100%;
+	height: auto;
+}
+</style>
+<img webc:is="eleventy-image" src="assets/mascots-2x.webp" :width="[600, 'auto']" sizes="100vw" alt="An alley way with a green dumpster. A brick building sits in the background with a small possum floating on a red balloon in the window.">
+
