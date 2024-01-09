@@ -29,7 +29,6 @@ const description = "We’re running a conference—this is an 11ty Conference!"
 		<link rel="me" href="https://fosstodon.org/@eleventy">
 
 		<!-- Type -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 		<!-- CSS -->
