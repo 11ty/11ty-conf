@@ -3,6 +3,8 @@
 	display: block;
 	margin: -.5em;
 	margin-top: -30vw;
+	position: relative;
+	z-index: -1;
 }
 :host img {
 	width: 100%;

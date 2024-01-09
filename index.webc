@@ -1,5 +1,4 @@
 ---node
-const title = "Eleventy’s International Symposium on Making Web Sites Real Good";
 const layout = "layout.webc";
 ---
 <is-land on:media="(prefers-reduced-motion: no-preference)" webc:import="npm:@11ty/is-land">

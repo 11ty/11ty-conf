@@ -1,17 +1,43 @@
+---
+title: Eleventy’s International Symposium on Making Web Sites Real Good
+description: We’re running a conference—this is an 11ty Conference!
+---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="We’re running a conference—this is an 11ty Conference!">
-		<meta name="generator" :content="eleventy.generator">
 		<title @text="title"></title>
-		<link rel="stylesheet" href="../_components/global.css">
 
+		<meta name="description" :content="description">
+		<meta name="generator" :content="eleventy.generator">
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://conf.11ty.dev/">
+		<meta property="og:site_name" content="11ty Conference">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:title" :content="title">
+		<meta property="og:description" :content="description"
+		<meta property="og:image" content="https://v1.screenshot.11ty.dev/https%3A%2F%2Fconf.11ty.dev%2F/opengraph/">
+		<meta property="og:image:width" content="1280">
+		<meta property="og:image:height" content="640">
+		<meta property="og:image:alt" content="A screenshot of the 11ty Conference web site">
+
+		<!-- Identity -->
+		<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon.png">
+		<link rel="me" href="https://fosstodon.org/@eleventy">
+
+		<!-- Type -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600&display=swap" rel="stylesheet" webc:keep>
 
+		<!-- Eager JS -->
+		<script type="module" @raw="getBundle('js', 'eager')" webc:keep></script>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="../_components/global.css">
 		<style @raw="getBundle('css')" webc:keep></style>
 	</head>
 	<body>
@@ -20,9 +46,9 @@
 		</header>
 		<main @html="content"></main>
 		<footer>
-			<p>©<span @text="new Date().getFullYear()"></span>, Built with <span @text="eleventy.generator"></span></p>
+			<p>©<span @text="new Date().getFullYear()"></span>, Built with <a href="https://www.11ty.dev/" @text="eleventy.generator"></a> using <a href="https://www.11ty.dev/docs/languages/webc/">WebC</a>.</p>
 			<p><em>Newsletter signup <a href="https://buttondown.email/refer/11ty" target="_blank">powered by Buttondown</a></em></p>
-			<p><em>Original footer image by <a href="https://unsplash.com/photos/green-trash-bin-beside-brown-building-Hp0P67o2EK4">Jake Heidecker</a></em></p>
+			<p><em>Footer image from <a href="https://unsplash.com/photos/green-trash-bin-beside-brown-building-Hp0P67o2EK4">Jake Heidecker</a></em></p>
 			<p><em>Dumpster model by <a href="https://sketchfab.com/3d-models/low-poly-dumpsters-b9ec48bea3544743a72590a979c68a63">Anna Denisova</a></em></p>
 			<p><em>Confetti cannons from <a href="https://github.com/catdad/canvas-confetti">Kiril Vatev</a></em></p>
 		</footer>
