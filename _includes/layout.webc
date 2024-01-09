@@ -33,9 +33,6 @@ description: We’re running a conference—this is an 11ty Conference!
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600&display=swap" rel="stylesheet" webc:keep>
 
-		<!-- Eager JS -->
-		<script type="module" @raw="getBundle('js', 'eager')" webc:keep></script>
-
 		<!-- CSS -->
 		<link rel="stylesheet" href="../_components/global.css">
 		<style @raw="getBundle('css')" webc:keep></style>
