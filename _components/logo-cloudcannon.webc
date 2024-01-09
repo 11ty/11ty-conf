@@ -1,6 +1,5 @@
 <style webc:scoped>
 :host svg {
-	display: block;
 	padding: 2em;
 	border-radius: 1em;
 	background-color: #034AD8;

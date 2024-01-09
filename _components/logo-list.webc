@@ -5,6 +5,10 @@
 	margin-block: 2em;
 	max-width: 24em; /* 432px /18 */
 }
+:host svg,
+:host img {
+	width: 100%;
+}
 @media (min-width: 37.5em) { /* 600px */
 	:host > * {
 		display: block;
