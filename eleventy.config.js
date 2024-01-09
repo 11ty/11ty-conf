@@ -1,9 +1,27 @@
+import fetch from "@11ty/eleventy-fetch";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import { eleventyImagePlugin } from "@11ty/eleventy-img";
 
-
 export default function(eleventyConfig) {
 	eleventyConfig.ignores.add("README.md");
+
+	eleventyConfig.addJavaScriptFunction("fetchGoogleFontsCss", async (cssUrl) => {
+		try {
+			let css = await fetch(cssUrl, {
+				duration: "1d",
+				type: "text",
+				fetchOptions: {
+					headers: {
+						"user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+					}
+				}
+			});
+			return css;
+		} catch(e) {
+			console.log( `Failed getting Google Fonts CSS (${cssUrl})`, e );
+			return "";
+		}
+	});
 
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: [

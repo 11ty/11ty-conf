@@ -1,6 +1,6 @@
----
-title: Eleventy’s International Symposium on Making Web Sites Real Good
-description: We’re running a conference—this is an 11ty Conference!
+---node
+const title = "Eleventy’s International Symposium on Making Web Sites Real Good"
+const description = "We’re running a conference—this is an 11ty Conference!"
 ---
 <!doctype html>
 <html lang="en">
@@ -31,10 +31,10 @@ description: We’re running a conference—this is an 11ty Conference!
 		<!-- Type -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600&display=swap" rel="stylesheet" webc:keep>
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="../_components/global.css">
+
 		<style @raw="getBundle('css')" webc:keep></style>
 	</head>
 	<body>
