@@ -12,14 +12,14 @@ const layout = "layout.webc";
 </block-separator>
 
 <h2 id="what">What is it?</h2>
-<p>A brand new exclusively-online single-day single-track conference dedicated to <strong>Web Development</strong> and the <a href="https://www.11ty.dev/"><img webc:is="indie-avatar" url="https://www.11ty.dev/"><strong>Eleventy</strong></a> static site generator.</p>
+<p>A brand new exclusively (and extremely) online (virtual) single-day single-track conference dedicated to <strong>Web Development</strong> and the <a href="https://www.11ty.dev/"><img webc:is="indie-avatar" url="https://www.11ty.dev/"><strong>Eleventy</strong></a> static site generator.</p>
 
 <h2 id="when">When is it?</h2>
 <p>Mid-year 2024. We’ll publish a full schedule of relevant conference dates (registration, call for proposals, et cetera) soon!</p>
 
 <h2 id="subscription">Where do I sign up?</h2>
 <p>Conference sign up is coming soon!</p>
-<p>If you’d like to stay informed (for registration updates or the call for proposals), subscribe to receive updates:</p>
+<p>If you’d like to stay informed (for registration updates or the call for proposals), subscribe to the <a href="https://buttondown.email/11ty/">11ty Newsletter</a> to receive updates:</p>
 <newsletter-form></newsletter-form>
 
 <h2 id="price">Take my money!</h2>
@@ -32,7 +32,8 @@ const layout = "layout.webc";
 <p>Want your logo here? <a href="mailto:sponsor@11ty.dev">Get in touch</a> and we’ll send over our sponsorship prospectus.</p>
 
 <h2 id="speaking">Can I speak?</h2>
-<p>We will be holding a public call for proposals soon! Make sure you <a href="#subscription">subscribe to receive updates</a>.</p>
+<p>We will be holding a public call for proposals soon! We’ll be looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work, Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, CSS, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
+<p>Make sure you <a href="#subscription">subscribe to receive updates</a>.</p>
 
 <block-separator style="--block-separator-offset: 70%">
 	<!-- <garbage-dumpster></garbage-dumpster> -->
