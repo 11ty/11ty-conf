@@ -7,7 +7,7 @@ h1 {
 	text-transform: uppercase;
 	line-height: .9;
 	font-size: var(--step-0);
-	margin: 1em auto;
+	margin: var(--rhythm) auto;
 	max-width: 43.75rem; /* 700px /16 */
 	font-family: Saira Extra Condensed, system-ui, sans-serif;
 	font-weight: 600;

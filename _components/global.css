@@ -3,6 +3,7 @@
 	--step--2: clamp(2.4306rem, 0.3343rem + 10.4816vw, 4.92rem);
 	--step--1: clamp(2.9169rem, 0.1942rem + 13.6132vw, 6.15rem);
 	--step-0: clamp(3.5rem, -0.0263rem + 17.6316vw, 7.6875rem);
+	--rhythm: 6rem; /* 96px /16 */
 }
 * {
 	box-sizing: border-box;
@@ -13,7 +14,7 @@ html {
 	background-color: #222;
 }
 h2 {
-	margin-block-start: 3em;
+	margin-block-start: var(--rhythm);
 }
 body {
 	margin: 0 auto;
@@ -23,7 +24,7 @@ body {
 main,
 footer {
 	margin-inline: auto;
-	margin-block-end: 6em;
+	margin-block-end: var(--rhythm);
 	max-width: 27rem; /* 432px /16 */
 }
 main {
@@ -57,4 +58,6 @@ button {
 
 img {
 	display: block;
+	max-width: 100%;
+	height: auto;
 }

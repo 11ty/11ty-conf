@@ -92,5 +92,4 @@ customElements.define("floating-possum", class extends HTMLElement {
 	}
 })
 </script>
-
-<img src="/public/david.svg" draggable="false" alt="The possum mascot floating on a red balloon. A light blue tether is attached to their waist. They are wearing oversized glasses." loading="eager" decoding="async">
+<possum-balloon></possum-balloon>

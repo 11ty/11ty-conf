@@ -40,7 +40,7 @@ export default function(eleventyConfig) {
 	// Image plugin
 	eleventyConfig.addPlugin(eleventyImagePlugin, {
 		// Set global default options
-		formats: ["avif", "webp"],
+		formats: ["avif", "webp", "png"],
 		urlPath: "/public/built/",
 
 		defaultAttributes: {

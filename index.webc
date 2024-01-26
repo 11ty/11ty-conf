@@ -7,7 +7,9 @@ const layout = "layout.webc";
 
 <div><em>We’re running a conference…<br>this is an 11ty Conference.</em></div>
 
-<garbage-dumpster></garbage-dumpster>
+<block-separator style="--block-separator-offset: 70%">
+	<possum-balloon></possum-balloon>
+</block-separator>
 
 <h2 id="what">What is it?</h2>
 <p>A brand new exclusively-online single-day single-track conference dedicated to <strong>Web Development</strong> and the <a href="https://www.11ty.dev/"><img webc:is="indie-avatar" url="https://www.11ty.dev/"><strong>Eleventy</strong></a> static site generator.</p>
@@ -31,3 +33,8 @@ const layout = "layout.webc";
 
 <h2 id="speaking">Can I speak?</h2>
 <p>We will be holding a public call for proposals soon! Make sure you <a href="#subscription">subscribe to receive updates</a>.</p>
+
+<block-separator style="--block-separator-offset: 70%">
+	<!-- <garbage-dumpster></garbage-dumpster> -->
+	<possum-balloon></possum-balloon>
+</block-separator>
