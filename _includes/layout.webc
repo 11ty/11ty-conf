@@ -1,6 +1,6 @@
 ---node
 const title = "Eleventy’s International Symposium on Making Web Sites Real Good"
-const description = "We’re running a conference—this is an 11ty Conference!"
+const description = "We’re running a conference — this is an 11ty Conference!"
 ---
 <!doctype html>
 <html lang="en">
