@@ -19,7 +19,7 @@ const layout = "layout.webc";
 
 <h2 id="subscription">Where do I sign up?</h2>
 <p>Conference sign up is coming soon!</p>
-<p>If you’d like to stay informed (for registration updates or the call for proposals), subscribe to the <a href="https://buttondown.email/11ty/">11ty Newsletter</a> to receive updates:</p>
+<p>If you’d like to stay informed (for registration updates or the call for proposals), subscribe to the <a href="https://buttondown.email/11ty?tag=conf2024">11ty Newsletter</a> to receive updates:</p>
 <newsletter-form></newsletter-form>
 
 <h2 id="price">Take my money!</h2>
