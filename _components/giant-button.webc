@@ -3,7 +3,7 @@
 	display: block;
 }
 
-.btn-primary {
+button {
 	display: block;
 	width: 100%;
 	cursor: pointer;
@@ -11,7 +11,7 @@
 	font-size: clamp(2em, 10vw, 3.33333333em);
 	font-family: Saira Extra Condensed, system-ui, sans-serif;
 	text-align: center;
-	font-weight: 600;
+	font-weight: inherit;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: inherit;
@@ -21,47 +21,35 @@
 	padding: .5em 1em .4em .75em;
 	box-shadow: 0 8px 6px -6px #000;
 }
-.btn-primary:hover {
-	border-color: transparent;
+button:hover {
+	border-color: rgba(255,255,255,.3);
 	background-color: #222;
 	color: #fff;
-}
-.btn-primary:hover {
-	border-color: rgba(255,255,255,.3);
-}
-
-/* Hover */
-.btn-primary:hover {
 	transition: all .3s;
 	transform: scale(1.05);
 }
 @media (prefers-reduced-motion: reduce) {
-	.btn-primary:hover {
+	button:hover {
 		transition: none;
 		transform: none;
 	}
 }
 
-.rainbow-active:hover,
-.rainbow-active:focus {
+button:hover,
+button:focus {
 	background-image: linear-gradient(238deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff0080);
 	background-size: 1200% 1200%;
 	background-position: 2% 80%;
 	color: #fff;
+	text-decoration: none;
 	text-shadow: 0 0 2px rgba(0,0,0,.9);
 	animation: rainbow 4s ease-out alternate infinite;
 }
-a.rainbow-active:hover,
-a.rainbow-active:focus {
-	color: #fff;
-	text-decoration: none;
-}
 @media (prefers-reduced-motion: reduce) {
-	.rainbow-active:hover,
-	.rainbow-active:focus {
+	button:hover,
+	button:focus {
 		animation: none;
 	}
 }
 </style>
-
-<button :type="type || 'submit'" class="btn-primary rainbow-active">📮 Subscribe</button>
+<button :type="type || 'submit'">📮 Subscribe</button>
