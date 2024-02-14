@@ -114,9 +114,7 @@ async function getGravatarJson(email) {
 	};
 }
 
-function renderLayout(title, head, body) {
-	let description = `One uniquely-generated ticket for the 11ty Conference.`;
-
+function renderLayout({ title, description }, head, body) {
 	return `<!doctype html>
 <html lang="en">
 	<head>
@@ -184,12 +182,17 @@ async function renderTicket(emailOrId, context) {
 	</div>
 </main>`;
 
-	return renderLayout(`${displayName}’s 11ty Conference 2024 Ticket.`, head, body);
+	return renderLayout({
+		title: `${displayName}’s 11ty Conference 2024 Ticket.`,
+		description: `One uniquely-generated ticket for the 11ty Conference.`
+	},head, body);
 }
 
 async function renderPage(ticketId) {
 	let fullTicketUrl = `${PRODUCTION_URL}tickets/${ticketId}`;
 	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(fullTicketUrl)}/opengraph/`;
+	let title = "You’re registered for 11ty Conference 2024!";
+	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
 	let head = `
 	<!-- Open Graph -->
@@ -269,7 +272,10 @@ async function renderPage(ticketId) {
 	<p>The above is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>. Do you want one of your own? <a href="/#subscription"><strong>Register today</strong></a>!</p>
 </footer>`
 
-	return renderLayout(`You’re registered for the 11ty Conference!`, head, body);
+	return renderLayout({
+		title,
+		description,
+	}, head, body);
 }
 
 export {
