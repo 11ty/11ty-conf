@@ -67,7 +67,10 @@ async function createNewButtondownSubscriber(email, apiKey) {
 		headers: {
 			"Authorization": `Token ${apiKey}`
 		},
-		body: JSON.stringify({ email }),
+		body: JSON.stringify({
+			email,
+			tags: ["conf2024"],
+		}),
 		method: "POST",
 	});
 	return buttondownResponse;

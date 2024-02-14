@@ -12,7 +12,7 @@ export async function onRequestPost(context) {
 	try {
 		let formdata = await context.request.formData();
 		let email = formdata.get("email");
-		let buttondownData = await getButtondownSubscriberJson(email, context.env.BUTTONDOWN_API_KEY);
+		let buttondownData = await getButtondownSubscriberJson(email, context.env.BUTTONDOWN_API_KEY, true);
 		let ticketId =  buttondownData.id.replace(/[\-]/g, "");
 
 		return new Response("", {
