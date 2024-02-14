@@ -1,3 +1,5 @@
+node_compat = true
+
 compatibility_flags = [ "nodejs_compat" ]
 
 # [env.staging]
