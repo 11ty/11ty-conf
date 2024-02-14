@@ -62,16 +62,30 @@ query eleventyBackers {
 	return {};
 }
 
-async function getButtondownSubscriberJson(emailOrId, apiKey) {
-	let buttondownResponse = await fetch(`https://api.buttondown.email/v1/subscribers/${emailOrId}`, {
+async function createNewButtondownSubscriber(email, apiKey) {
+	let buttondownResponse = await fetch(API_URL, {
+		headers: {
+			"Authorization": `Token ${apiKey}`
+		},
+		body: JSON.stringify({ email }),
+		method: "POST",
+	});
+	return buttondownResponse;
+}
+
+async function getButtondownSubscriberJson(emailOrId, apiKey, insertOnMissing = false) {
+	let API_URL = `https://api.buttondown.email/v1/subscribers/${emailOrId}`;
+
+	let buttondownResponse = await fetch(API_URL, {
 		headers: {
 			"Authorization": `Token ${apiKey}`
 		}
 	});
 
-	if(buttondownResponse.status === 404) {
+	if(buttondownResponse.status === 404 && insertOnMissing) {
 		// TODO insert into buttondown API
 		// throw new Error("Could not find user.");
+		buttondownResponse = await createNewButtondownSubscriber(emailOrId);
 		return {};
 	}
 
@@ -134,7 +148,7 @@ function renderLayout({ title, description }, head, body) {
 }
 
 async function renderTicket(emailOrId, context) {
-	let buttondownData = await getButtondownSubscriberJson(emailOrId, context.env.BUTTONDOWN_API_KEY);
+	let buttondownData = await getButtondownSubscriberJson(emailOrId, context.env.BUTTONDOWN_API_KEY, false);
 
 	let email = buttondownData.email;
 
@@ -183,15 +197,15 @@ async function renderTicket(emailOrId, context) {
 </main>`;
 
 	return renderLayout({
-		title: `${displayName}’s 11ty Conference 2024 Ticket.`,
+		title: `${displayName}’s 11ty Conference (2024) Ticket.`,
 		description: `One uniquely-generated ticket for the 11ty Conference.`
 	},head, body);
 }
 
-async function renderPage(ticketId) {
+async function renderPage(ticketId, justRegistered = false) {
 	let shareUrl = `${PRODUCTION_URL}tickets/${ticketId}`;
 	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(`${PRODUCTION_URL}ticket-image/${ticketId}`)}/opengraph/`;
-	let title = "You’re registered for 11ty Conference 2024!";
+	let title = "11ty Conference (2024)";
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
 	let head = `
@@ -247,14 +261,19 @@ async function renderPage(ticketId) {
 	}
 	browser-window img {
 		display: block;
+		margin: 0 auto;
 		max-width: 100%;
 		height: auto;
 		vertical-align: middle;
+	}
+	footer p {
+		font-size: 1.5em;
 	}
 	</style>
 	<script type="module" src="/public/browser-window.js"></script>
 `;
 
+	// TODO justRegistered
 	let body = `
 <header>
 	<h1>
