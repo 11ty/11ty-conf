@@ -63,7 +63,7 @@ query eleventyBackers {
 }
 
 async function createNewButtondownSubscriber(email, apiKey) {
-	let API_URL = `https://api.buttondown.email/v1/subscribers/${emailOrId}`;
+	let API_URL = `https://api.buttondown.email/v1/subscribers/${email}`;
 
 	let buttondownResponse = await fetch(API_URL, {
 		headers: {
