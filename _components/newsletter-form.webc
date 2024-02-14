@@ -35,11 +35,10 @@
 }
 </style>
 <form
-	action="https://buttondown.email/api/emails/embed-subscribe/11ty"
+	action="/api/register"
 	method="post"
 	target="popupwindow"
-	onsubmit="window.open('https://buttondown.email/11ty', 'popupwindow')"
-	class="embeddable-buttondown-form"
+	onsubmit="window.open('/api/register', 'popupwindow')"
 >
 	<label :for="`bd-email-${uid}`">Enter your email:</label>
 	<input type="email" name="email" required :id="`bd-email-${uid}`" placeholder="you@example.com">

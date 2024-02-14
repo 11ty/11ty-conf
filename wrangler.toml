@@ -1,0 +1,7 @@
+compatibility_flags = [ "nodejs_compat" ]
+
+# [env.staging]
+# vars = { ENVIRONMENT = "staging" }
+
+# [env.production]
+# vars = { ENVIRONMENT = "production" }

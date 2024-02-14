@@ -4,19 +4,25 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve"
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "serverless": "npx wrangler pages dev _site",
+    "localhost": "npm run build && npm run serverless"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@11ty/is-land": "^4.0.0",
-    "@11ty/logo": "^2.0.6"
+    "@11ty/logo": "^2.0.6",
+    "@zachleat/browser-window": "^1.0.14"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.0.0-alpha.4",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-plugin-webc": "^0.11.2"
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "dotenv": "^16.4.1",
+    "wrangler": "^3.28.0"
   }
 }
