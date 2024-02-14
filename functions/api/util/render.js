@@ -189,20 +189,20 @@ async function renderTicket(emailOrId, context) {
 }
 
 async function renderPage(ticketId) {
-	let fullTicketUrl = `${PRODUCTION_URL}tickets/${ticketId}`;
-	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(fullTicketUrl)}/opengraph/`;
+	let shareUrl = `${PRODUCTION_URL}tickets/${ticketId}`;
+	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(`${PRODUCTION_URL}ticket-image/${ticketId}`)}/opengraph/`;
 	let title = "You’re registered for 11ty Conference 2024!";
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
 	let head = `
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="${fullTicketUrl}">
+	<meta property="og:url" content="${shareUrl}">
 	<meta property="og:site_name" content="11ty Conference, May 2024">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:title" content="${title}">
 	<meta property="og:description" content="${description}">
-	<meta property="og:image" content="https://v1.screenshot.11ty.dev/${encodeURIComponent(fullTicketUrl)}/opengraph/">
+	<meta property="og:image" content="${screenshotUrl}">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta property="og:image:alt" content="${title}">
@@ -264,7 +264,7 @@ async function renderPage(ticketId) {
 	</h1>
 </header>
 <main>
-	<browser-window flush mode="dark" style="--bw-background: #000;" url="${fullTicketUrl}">
+	<browser-window flush mode="dark" style="--bw-background: #000;" url="${shareUrl}">
 		<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
 	</browser-window>
 </main>
