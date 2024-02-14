@@ -63,6 +63,8 @@ query eleventyBackers {
 }
 
 async function createNewButtondownSubscriber(email, apiKey) {
+	let API_URL = `https://api.buttondown.email/v1/subscribers/${emailOrId}`;
+
 	let buttondownResponse = await fetch(API_URL, {
 		headers: {
 			"Authorization": `Token ${apiKey}`
@@ -88,7 +90,7 @@ async function getButtondownSubscriberJson(emailOrId, apiKey, insertOnMissing = 
 	if(buttondownResponse.status === 404 && insertOnMissing) {
 		// TODO insert into buttondown API
 		// throw new Error("Could not find user.");
-		buttondownResponse = await createNewButtondownSubscriber(emailOrId);
+		buttondownResponse = await createNewButtondownSubscriber(emailOrId, apiKey);
 		return {};
 	}
 
