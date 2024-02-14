@@ -1,4 +1,4 @@
-import { getButtondownSubscriberJson, renderPage } from "./util/render.js";
+import { getButtondownSubscriberJson } from "./util/render.js";
 
 export async function onRequestGet(context) {
 	try {

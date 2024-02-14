@@ -1,4 +1,4 @@
-import { renderTicket } from "../api/util/render.js";
+import { renderPage } from "../api/util/render.js";
 
 export async function onRequestGet(context) {
 	try {
