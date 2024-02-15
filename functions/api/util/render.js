@@ -118,7 +118,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	if(justRegistered) {
 		heading = `<b>🎉 You’re registered for the 🎉</b>
 <b><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference!</b>`;
-		beforeContent = `<p>This is your virtual ticket the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>
+		beforeContent = `<p>This is your virtual ticket to the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>
 <p>You will <em>not</em> need to save this ticket to attend the conference (we’ll send you all the relevant information to your email address) but <strong>sharing your ticket</strong> on social media will help us spread the word about the conference!</p>`;
 		afterContent = `<p>Here’s the ticket URL (it’s the same as the page you’re currently on):</p>
 <p><code class="ticket-share">${shareUrl}</code></p>`
