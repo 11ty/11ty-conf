@@ -7,9 +7,6 @@ import {
 	getGravatarJson,
 } from "./util.js";
 
-// TODO url
-const PRODUCTION_URL = "https://register.11ty-conf.pages.dev/";
-
 function renderLayout({ title, description }, head, body) {
 	return `<!doctype html>
 <html lang="en">
@@ -86,9 +83,10 @@ async function renderTicket(ticketId, context) {
 	},head, body);
 }
 
-async function renderPage(ticketId, justRegistered = false) {
-	let shareUrl = `${PRODUCTION_URL}tickets/${ticketId}`;
-	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(`${PRODUCTION_URL}ticket-image/${ticketId}`)}/opengraph/`;
+async function renderPage(ticketId, justRegistered = false, productionHost = "") {
+	let shareUrl = (new URL(`/tickets/${ticketId}`, productionHost)).toString();
+	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
+	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/`;
 	let title = "11ty Conference (2024)";
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 

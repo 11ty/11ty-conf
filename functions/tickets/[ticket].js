@@ -1,9 +1,5 @@
 import { renderPage } from "../api/util/render.js";
 
-// TODO url
-// const PRODUCTION_URL = "http://localhost:8788/";
-const PRODUCTION_URL = "https://register.11ty-conf.pages.dev/";
-
 export async function onRequestGet(context) {
 	try {
 		let split = context.request.url.split("/");
@@ -14,9 +10,9 @@ export async function onRequestGet(context) {
 		}
 
 		// Show the success page. Otherwise, show the ticket.
-		let justRegistered = context.request.headers.get("referer") === PRODUCTION_URL;
+		let justRegistered = context.request.headers.get("referer") === context.env.CUSTOM_HOST;
 
-		let html = await renderPage(uniqueId, justRegistered);
+		let html = await renderPage(uniqueId, justRegistered, context.env.CUSTOM_HOST);
 
 		return new Response(html, {
 			headers: {
