@@ -1,4 +1,4 @@
-import { getButtondownSubscriberJson } from "./util/util.js";
+import { createNewButtondownSubscriber } from "./util/util.js";
 
 export async function onRequestGet(context) {
 	try {
@@ -12,7 +12,7 @@ export async function onRequestPost(context) {
 	try {
 		let formdata = await context.request.formData();
 		let email = formdata.get("email");
-		let buttondownData = await getButtondownSubscriberJson(email, context.env.BUTTONDOWN_API_KEY, true);
+		let buttondownData = await createNewButtondownSubscriber(email, context.env.BUTTONDOWN_API_KEY);
 		let ticketId =  buttondownData.id.replace(/[\-]/g, "");
 
 		// Redirect to the ticket page

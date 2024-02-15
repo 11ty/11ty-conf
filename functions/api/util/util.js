@@ -78,11 +78,24 @@ async function createNewButtondownSubscriber(email, apiKey) {
 		method: "post",
 	});
 
-	return buttondownResponse;
+	let json = await buttondownResponse.json();
+
+	// We’re already good
+	if(json.code === "email_already_exists") {
+		// There might be a case for future events where the email already exists but not for the current tag.
+		return {
+			id: json.metadata.subscriber_id,
+			// email,
+		}
+	}
+
+	return {
+		id: json.id,
+	};
 }
 
-async function getButtondownSubscriberJson(emailOrId, apiKey, insertOnMissing = false) {
-	let API_URL = `https://api.buttondown.email/v1/subscribers/${emailOrId}`;
+async function getButtondownSubscriberJson(ticketId, apiKey) {
+	let API_URL = `https://api.buttondown.email/v1/subscribers/${ticketId}`; // could be email too
 
 	let buttondownResponse = await fetch(API_URL, {
 		headers: {
@@ -90,8 +103,8 @@ async function getButtondownSubscriberJson(emailOrId, apiKey, insertOnMissing = 
 		}
 	});
 
-	if(buttondownResponse.status === 404 && insertOnMissing) {
-		buttondownResponse = await createNewButtondownSubscriber(emailOrId, apiKey);
+	if(buttondownResponse.status === 404) {
+		throw new Error("Could not find user.");
 	}
 
 	let json = await buttondownResponse.json();
