@@ -10,6 +10,10 @@ main {
 	max-width: 40rem;
 	padding: 1rem;
 }
+webcare-webshare {
+	display: block;
+}
+
 .ticket-title {
 	font-family: Saira Extra Condensed, system-ui, sans-serif;
 	font-size: var(--step--1);
@@ -43,6 +47,7 @@ main {
 	vertical-align: middle;
 }
 @media (min-width: 50em) { /* 800px */
+	webcare-webshare,
 	.ticket-preview {
 		margin-inline: -10vw;
 	}

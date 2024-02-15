@@ -108,8 +108,10 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 
 	<link rel="stylesheet" href="/public/global.css">
 	<link rel="stylesheet" href="/public/show-ticket.css">
+	<link rel="stylesheet" href="/public/giant-button.css">
 	<script type="module" src="/public/browser-window.js"></script>
 	<script type="module" src="/public/throbber.js"></script>
+	<script type="module" src="/public/webcare-webshare.js"></script>
 `;
 
 	let heading;
@@ -121,7 +123,10 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 		beforeContent = `<p>This is your virtual ticket to the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>
 <p>You will <em>not</em> need to save this ticket to attend the conference (we’ll send you all the relevant information to your email address) but <strong>sharing your ticket</strong> on social media will help us spread the word about the conference!</p>`;
 		afterContent = `<p>Here’s the ticket URL (it’s the same as the page you’re currently on):</p>
-<p><code class="ticket-share">${shareUrl}</code></p>`
+<p><code class="ticket-share">${shareUrl}</code></p>
+<webcare-webshare label-after-copy="Copied to clipboard." share-text="I am going to the 11ty Conference! Do you want to go to there as well? https://conf.11ty.dev/" share-url="https://conf.11ty.dev/">
+	<button disabled class="giant-button">Share your ticket!</button>
+</webcare-webshare>`
 	} else {
 		heading = `<b><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference</b>`;
 		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>`;
