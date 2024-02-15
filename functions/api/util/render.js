@@ -127,7 +127,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>`;
 
 		// TODO put the registration form here!
-		afterContent = `<p>Join us—<a href="/#registration"><strong>Register today</strong></a>!</p>`;
+		afterContent = `<p>Join us—<a href="/#register"><strong>Register today</strong></a>!</p>`;
 	}
 
 

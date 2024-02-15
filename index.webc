@@ -18,7 +18,7 @@ const layout = "layout.webc";
 <p>May 2024. We’ll publish a full schedule of relevant conference dates (registration, call for proposals, et cetera) soon!</p>
 
 <div id="subscription"></div>
-<h2 id="registration">How do I sign up?</h2>
+<h2 id="register">How do I sign up?</h2>
 <p>Registration is now open! Join us!</p>
 <newsletter-form></newsletter-form>
 
