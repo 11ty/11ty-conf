@@ -45,5 +45,5 @@
 
 	<input type="hidden" name="tag" value="conf2024">
 
-	<giant-button class="button-wrapper" @type="submit"></giant-button>
+	<giant-button class="button-wrapper" @type="submit">📮 Register</giant-button>
 </form>
