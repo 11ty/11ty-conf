@@ -109,6 +109,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	<link rel="stylesheet" href="/public/global.css">
 	<link rel="stylesheet" href="/public/show-ticket.css">
 	<script type="module" src="/public/browser-window.js"></script>
+	<script type="module" src="/public/throbber.js"></script>
 `;
 
 	let heading;
@@ -140,7 +141,9 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	</section>
 	<section class="ticket-preview">
 		<browser-window flush mode="dark" style="--bw-background: #000;" icon url="${shareUrl}">
-			<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
+			<throb-ber>
+				<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
+			</throb-ber>
 		</browser-window>
 	</section>
 	<section class="ticket-description">

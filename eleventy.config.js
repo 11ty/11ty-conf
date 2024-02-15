@@ -38,6 +38,7 @@ export default function(eleventyConfig) {
 		"public/*": "/public/",
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "/public/logo.svg",
 		"node_modules/@zachleat/browser-window/browser-window.js": "/public/browser-window.js",
+		"node_modules/@zachleat/throbber/throbber.js": "/public/throbber.js",
 		"_components/global.css": "/public/global.css",
 	}).addPassthroughCopy("robots.txt");
 
