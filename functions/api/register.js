@@ -18,7 +18,7 @@ export async function onRequestPost(context) {
 		return new Response("", {
 			status: 302,
 			headers: {
-				Location: "/tickets/" + ticketId
+				Location: `/tickets/${ticketId}`,
 			}
 		});
 

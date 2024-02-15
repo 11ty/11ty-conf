@@ -1,5 +1,6 @@
 import crypto from "node:crypto";
 
+// TODO
 const PRODUCTION_URL = "https://register.11ty-conf.pages.dev/";
 
 function isValidUrl(url) {
@@ -62,19 +63,24 @@ query eleventyBackers {
 	return {};
 }
 
+
 async function createNewButtondownSubscriber(email, apiKey) {
-	let API_URL = `https://api.buttondown.email/v1/subscribers/${email}`;
+	let API_URL = `https://api.buttondown.email/v1/subscribers`;
+
+	let body = JSON.stringify({
+		email,
+		tags: ["conf2024"],
+		referrer_url: "https://conf.11ty.dev/"
+	});
 
 	let buttondownResponse = await fetch(API_URL, {
 		headers: {
-			"Authorization": `Token ${apiKey}`
+			"Authorization": `Token ${apiKey}`,
 		},
-		body: JSON.stringify({
-			email,
-			tags: ["conf2024"],
-		}),
-		method: "POST",
+		body,
+		method: "post",
 	});
+
 	return buttondownResponse;
 }
 
@@ -91,7 +97,6 @@ async function getButtondownSubscriberJson(emailOrId, apiKey, insertOnMissing = 
 		// TODO insert into buttondown API
 		// throw new Error("Could not find user.");
 		buttondownResponse = await createNewButtondownSubscriber(emailOrId, apiKey);
-		return {};
 	}
 
 	let json = await buttondownResponse.json();
@@ -231,70 +236,111 @@ async function renderPage(ticketId, justRegistered = false) {
 
 	<link rel="stylesheet" href="/public/global.css">
 	<style>
+	body {
+		margin: var(--rhythm) 0;
+	}
 	header {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin: 4em 0;
 	}
 	main {
-		max-width: 100%;
-		padding: 1em;
+		max-width: 40rem;
+		padding: 1rem;
 	}
-	h1 {
-		font-family: Saira Extra Condensed, system-ui;
+	.ticket-title {
+		font-family: Saira Extra Condensed, system-ui, sans-serif;
 		font-size: var(--step--1);
 		line-height: 1.2;
 		margin: 0;
 	}
-	h1 img {
+	.ticket-title img {
+		display: inline;
+		width: auto;
+		height: 1em;
+		margin-bottom: -.15em;
+	}
+	.ticket-title b {
 		display: block;
-		margin: 0 auto -.25em;
 	}
-	h1 b {
-		display: block;
-	}
-	h1 b:first-child {
-		font-size: 60%;
-	}
-	h1 b:nth-child(2) {
+	.ticket-title b:first-child:not(:last-child) {
 		font-size: 50%;
 	}
-	h1 b:last-child {
+	.ticket-title b:last-child {
 		margin-top: .25em;
 		text-transform: uppercase;
 	}
-	browser-window img {
+	.ticket-preview {
+		margin: 0 -1rem;
+	}
+	.ticket-preview browser-window img {
 		display: block;
 		margin: 0 auto;
 		max-width: 100%;
 		height: auto;
 		vertical-align: middle;
 	}
-	footer p {
+	@media (min-width: 50em) { /* 800px */
+		.ticket-preview {
+			margin-inline: -10vw;
+		}
+	}
+	.ticket-description {
+		max-width: 40em;
+		margin: 0 auto;
+	}
+	.ticket-description p {
 		font-size: 1.5em;
+	}
+	.ticket-share {
+		display: block;
+		word-break: break-all;
+		background-color: #000;
+		padding: 1rem;
+		border-radius: .25em;
+		margin: 0 -1rem;
 	}
 	</style>
 	<script type="module" src="/public/browser-window.js"></script>
 `;
 
+	let heading;
+	let beforeContent;
+	let afterContent;
+	if(justRegistered) {
+		heading = `<b>🎉 You’re registered for the 🎉</b>
+<b><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference!</b>`;
+		beforeContent = `<p>This is your virtual ticket the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>
+<p>You will <em>not</em> need to save this ticket to attend the conference (we’ll send you all the relevant information to your email address) but <strong>sharing your ticket</strong> on social media will help us spread the word about the conference!</p>`;
+		afterContent = `<p>Here’s the ticket URL (it’s the same as the page you’re currently on):</p>
+<p><code class="ticket-share">${shareUrl}</code></p>`
+	} else {
+		heading = `<b><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference</b>`;
+		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>`;
+
+		// TODO put the registration form here!
+		afterContent = `<p>Join us—<a href="/#registration"><strong>Register today</strong></a>!</p>`;
+	}
+
+
 	// TODO justRegistered
 	let body = `
 <header>
-	<h1>
-		<b>🎉 You’re registered 🎉</b>
-		<b>for the</b>
-		<b><img src="/public/logo.svg" width="200" height="200" alt="11ty" loading="eager"> Conference!</b>
-	</h1>
+	<h1 class="ticket-title">${heading}</h1>
 </header>
 <main>
-	<browser-window flush mode="dark" style="--bw-background: #000;" url="${shareUrl}">
-		<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
-	</browser-window>
-</main>
-<footer>
-	<p>The above is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>. Do you want one of your own? <a href="/#subscription"><strong>Register today</strong></a>!</p>
-</footer>`
+	<section class="ticket-description">
+		${beforeContent}
+	</section>
+	<section class="ticket-preview">
+		<browser-window flush mode="dark" style="--bw-background: #000;" icon url="${shareUrl}">
+			<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
+		</browser-window>
+	</section>
+	<section class="ticket-description">
+		${afterContent}
+	</section>
+</main>`
 
 	return renderLayout({
 		title,

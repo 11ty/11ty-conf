@@ -52,4 +52,4 @@ button:focus {
 	}
 }
 </style>
-<button :type="type || 'submit'">📮 Subscribe</button>
+<button :type="type || 'submit'">📮 Register</button>
