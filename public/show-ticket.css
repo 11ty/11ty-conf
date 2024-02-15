@@ -47,6 +47,7 @@ webcare-webshare {
 	vertical-align: middle;
 }
 @media (min-width: 50em) { /* 800px */
+	.ticket-description > a[href].giant-button,
 	webcare-webshare,
 	.ticket-preview {
 		margin-inline: -10vw;
@@ -66,4 +67,8 @@ webcare-webshare {
 	padding: 1rem;
 	border-radius: .25em;
 	margin: 0 -1rem;
+}
+.ticket-description > a[href].giant-button {
+	margin-top: 1.5em;
+	width: auto;
 }
