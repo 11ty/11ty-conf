@@ -1,5 +1,6 @@
 import { renderPage } from "../api/util/render.js";
 
+// TODO url
 // const PRODUCTION_URL = "http://localhost:8788/";
 const PRODUCTION_URL = "https://register.11ty-conf.pages.dev/";
 
@@ -12,6 +13,7 @@ export async function onRequestGet(context) {
 			throw new Error("Unknown user.");
 		}
 
+		// Show the success page. Otherwise, show the ticket.
 		let justRegistered = context.request.headers.get("referer") === PRODUCTION_URL;
 
 		let html = await renderPage(uniqueId, justRegistered);

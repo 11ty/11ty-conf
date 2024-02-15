@@ -1,4 +1,4 @@
-import { getButtondownSubscriberJson } from "./util/render.js";
+import { getButtondownSubscriberJson } from "./util/util.js";
 
 export async function onRequestGet(context) {
 	try {
@@ -15,18 +15,13 @@ export async function onRequestPost(context) {
 		let buttondownData = await getButtondownSubscriberJson(email, context.env.BUTTONDOWN_API_KEY, true);
 		let ticketId =  buttondownData.id.replace(/[\-]/g, "");
 
+		// Redirect to the ticket page
 		return new Response("", {
 			status: 302,
 			headers: {
 				Location: `/tickets/${ticketId}`,
 			}
 		});
-
-		// return new Response(await renderPage(ticketId), {
-		// 	headers: {
-		// 		"Content-Type": "text/html;charset=utf-8",
-		// 	},
-		// })
 	} catch (err) {
 		return new Response(err, { status: 400 });
 	}

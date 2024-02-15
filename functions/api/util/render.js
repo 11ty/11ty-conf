@@ -1,142 +1,14 @@
-import crypto from "node:crypto";
+import {
+	isValidUrl,
+	displayUrl,
+	pad,
+	getButtondownSubscriberJson,
+	getOpenCollectSupporterJson,
+	getGravatarJson,
+} from "./util.js";
 
-// TODO
+// TODO url
 const PRODUCTION_URL = "https://register.11ty-conf.pages.dev/";
-
-function isValidUrl(url) {
-	try {
-		new URL(url);
-		return true;
-	} catch(e) {
-		return false;
-	}
-}
-
-function displayUrl(url) {
-	let u = new URL(url);
-	return u.host + (u.pathname !== "/" ? u.pathname : "");
-}
-
-function pad(num, count) {
-	return ("0".repeat(count) + num).slice(-1 * count);
-}
-
-async function getOpenCollectSupporterJson(email, apiKey) {
-	let query = `
-query eleventyBackers {
-	collective(slug: "11ty") {
-		members(email: "${email}", limit: 1) {
-			nodes {
-				account {
-					name,
-					imageUrl,
-					... on Individual {
-						email
-					}
-				}
-			}
-		}
-	}
-}
-`;
-
-	let response = await fetch("https://api.opencollective.com/graphql/v2", {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-			"Api-Key": apiKey
-		},
-		body: JSON.stringify({ query })
-	});
-
-	let json = await response.json();
-
-	for(let supporter of json.data.collective.members.nodes) {
-		if(supporter.account.email === email) {
-			return {
-				name: supporter.account.name,
-				avatar_url: supporter.account.imageUrl,
-			};
-		}
-	}
-
-	return {};
-}
-
-
-async function createNewButtondownSubscriber(email, apiKey) {
-	let API_URL = `https://api.buttondown.email/v1/subscribers`;
-
-	let body = JSON.stringify({
-		email,
-		tags: ["conf2024"],
-		referrer_url: "https://conf.11ty.dev/"
-	});
-
-	let buttondownResponse = await fetch(API_URL, {
-		headers: {
-			"Authorization": `Token ${apiKey}`,
-		},
-		body,
-		method: "post",
-	});
-
-	return buttondownResponse;
-}
-
-async function getButtondownSubscriberJson(emailOrId, apiKey, insertOnMissing = false) {
-	let API_URL = `https://api.buttondown.email/v1/subscribers/${emailOrId}`;
-
-	let buttondownResponse = await fetch(API_URL, {
-		headers: {
-			"Authorization": `Token ${apiKey}`
-		}
-	});
-
-	if(buttondownResponse.status === 404 && insertOnMissing) {
-		// TODO insert into buttondown API
-		// throw new Error("Could not find user.");
-		buttondownResponse = await createNewButtondownSubscriber(emailOrId, apiKey);
-	}
-
-	let json = await buttondownResponse.json();
-	if(!(json.tags || []).includes("conf2024")) {
-		// Is a subscriber but not for the conference.
-		// TODO insert?
-		throw new Error("Invalid subscriber tag.");
-	}
-
-	return {
-		id: json.id,
-		email: json.email,
-		number: json.secondary_id,
-		avatar_url: json.avatar_url,
-	}
-}
-
-async function getGravatarJson(email) {
-	let hash = crypto.createHash("sha256").update(email).digest("hex");
-
-	let gravatarResponse = await fetch(`https://en.gravatar.com/${hash}.json`, {
-		headers: {
-			// required by the gravatar API
-			"user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
-		}
-	});
-
-	let json = await gravatarResponse.json();
-	if(!json.entry || json.entry.length === 0) {
-		return {};
-	}
-	let userData = json.entry[0];
-
-	return {
-		displayName: userData.displayName || userData.preferredUsername,
-		avatar_url: `https://gravatar.com/avatar/${userData.hash}?s=400`,
-		accounts: userData.accounts || [],
-		urls: userData.urls || [],
-	};
-}
 
 function renderLayout({ title, description }, head, body) {
 	return `<!doctype html>
@@ -157,13 +29,15 @@ function renderLayout({ title, description }, head, body) {
 </html>`
 }
 
-async function renderTicket(emailOrId, context) {
-	let buttondownData = await getButtondownSubscriberJson(emailOrId, context.env.BUTTONDOWN_API_KEY, false);
+async function renderTicket(ticketId, context) {
+	let buttondownData = await getButtondownSubscriberJson(ticketId, context.env.BUTTONDOWN_API_KEY, false);
 
 	let email = buttondownData.email;
 
-	let gravatarData = await getGravatarJson(email);
-	let opencollectiveData = await getOpenCollectSupporterJson(email, context.env.OPENCOLLECT_API_KEY);
+	let [gravatarData, opencollectiveData] = await Promise.all([
+		getGravatarJson(email),
+		getOpenCollectSupporterJson(email, context.env.OPENCOLLECT_API_KEY),
+	]);
 
 	let displayName = opencollectiveData.name || gravatarData.displayName;
 	let userWebsiteUrl = gravatarData.urls?.[0]?.value;
@@ -235,72 +109,7 @@ async function renderPage(ticketId, justRegistered = false) {
 	<link rel="icon" type="image/png" sizes="96x96" href="/public/favicon.png">
 
 	<link rel="stylesheet" href="/public/global.css">
-	<style>
-	body {
-		margin: var(--rhythm) 0;
-	}
-	header {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	main {
-		max-width: 40rem;
-		padding: 1rem;
-	}
-	.ticket-title {
-		font-family: Saira Extra Condensed, system-ui, sans-serif;
-		font-size: var(--step--1);
-		line-height: 1.2;
-		margin: 0;
-	}
-	.ticket-title img {
-		display: inline;
-		width: auto;
-		height: 1em;
-		margin-bottom: -.15em;
-	}
-	.ticket-title b {
-		display: block;
-	}
-	.ticket-title b:first-child:not(:last-child) {
-		font-size: 50%;
-	}
-	.ticket-title b:last-child {
-		margin-top: .25em;
-		text-transform: uppercase;
-	}
-	.ticket-preview {
-		margin: 0 -1rem;
-	}
-	.ticket-preview browser-window img {
-		display: block;
-		margin: 0 auto;
-		max-width: 100%;
-		height: auto;
-		vertical-align: middle;
-	}
-	@media (min-width: 50em) { /* 800px */
-		.ticket-preview {
-			margin-inline: -10vw;
-		}
-	}
-	.ticket-description {
-		max-width: 40em;
-		margin: 0 auto;
-	}
-	.ticket-description p {
-		font-size: 1.5em;
-	}
-	.ticket-share {
-		display: block;
-		word-break: break-all;
-		background-color: #000;
-		padding: 1rem;
-		border-radius: .25em;
-		margin: 0 -1rem;
-	}
-	</style>
+	<link rel="stylesheet" href="/public/show-ticket.css">
 	<script type="module" src="/public/browser-window.js"></script>
 `;
 
@@ -323,7 +132,6 @@ async function renderPage(ticketId, justRegistered = false) {
 	}
 
 
-	// TODO justRegistered
 	let body = `
 <header>
 	<h1 class="ticket-title">${heading}</h1>
@@ -349,7 +157,6 @@ async function renderPage(ticketId, justRegistered = false) {
 }
 
 export {
-	getButtondownSubscriberJson,
 	renderTicket,
 	renderPage,
 }
