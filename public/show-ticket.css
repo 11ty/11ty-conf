@@ -1,0 +1,94 @@
+body {
+	margin: var(--rhythm) 0;
+}
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+main {
+	max-width: 40rem;
+	text-align: left;
+	padding: 1rem;
+}
+hyper-card,
+webcare-webshare {
+	display: block;
+}
+hyper-card {
+	--hypercard-scale: 1.03;
+	padding: .5em;
+}
+
+.ticket-title {
+	font-family: Saira Extra Condensed, system-ui, sans-serif;
+	font-size: var(--step--1);
+	line-height: 1.2;
+	margin: 0;
+	text-align: center;
+}
+.ticket-title img {
+	display: inline;
+	width: auto;
+	height: 1em;
+	margin-bottom: -.15em;
+}
+.ticket-title b {
+	display: block;
+}
+.ticket-title b:first-child:not(:last-child) {
+	font-size: 50%;
+}
+.ticket-title b:last-child {
+	margin-top: .25em;
+	text-transform: uppercase;
+}
+.ticket-title a[href] {
+	text-decoration: none;;
+}
+.ticket-preview {
+	margin: 0 -1rem;
+}
+.ticket-preview img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+@media (min-width: 50em) { /* 800px */
+	.ticket-description > a[href].giant-button,
+	webcare-webshare,
+	.ticket-preview {
+		margin-inline: -10vw;
+	}
+}
+.ticket-description {
+	max-width: 40em;
+	margin: 0 auto;
+}
+.ticket-description p {
+	font-size: 1.5em;
+}
+.ticket-share {
+	display: block;
+	word-break: break-all;
+	background-color: #000;
+	padding: 1rem;
+	border-radius: .25em;
+	margin: 0 -1rem;
+}
+.ticket-description > a[href].giant-button {
+	margin-top: 1.5em;
+	width: auto;
+}
+.ticket-share-more {
+	list-style: "";
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	font-size: 1.5em;
+	padding: 0;
+	margin: 2em 0;
+	line-height: 1;
+}

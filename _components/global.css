@@ -33,14 +33,19 @@ main {
 a[href] {
 	color: inherit;
 }
-a[href^="mailto:"] {
+a[href^="mailto:"],
+[data-icon] {
 	white-space: nowrap;
 }
-a[href^="mailto:"]:before {
+a[href^="mailto:"]:before,
+[data-icon]:before {
 	display: inline-block;
 	content: "✉️";
 	margin-inline-end: .3em;
 	text-decoration: none;
+}
+[data-icon]:before {
+	content: attr(data-icon);
 }
 p {
 	margin-inline: auto;

@@ -31,10 +31,17 @@ export default function(eleventyConfig) {
 	});
 
 	eleventyConfig.addWatchTarget("_components/**/*.css");
+	eleventyConfig.addWatchTarget("public/*.css");
 
 	eleventyConfig.addPassthroughCopy({
+		"_routes.json": "_routes.json",
 		"public/*": "/public/",
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "/public/logo.svg",
+		"node_modules/@zachleat/browser-window/browser-window.js": "/public/browser-window.js",
+		"node_modules/@zachleat/throbber/throbber.js": "/public/throbber.js",
+		"node_modules/@zachleat/webcare-webshare/webcare-webshare.js": "/public/webcare-webshare.js",
+		"node_modules/@zachleat/hypercard/hypercard.js": "/public/hypercard.js",
+		"_components/global.css": "/public/global.css",
 	}).addPassthroughCopy("robots.txt");
 
 	// Image plugin

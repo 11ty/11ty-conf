@@ -1,0 +1,197 @@
+:root {
+	--page-background: black;
+	--page-foreground: #fff;
+	--ticket-rhythm: 2rem;
+	--ticket-background: #444;
+	--ticket-foreground: #fff;
+	--ticket-accent: #fff;
+	--ticket-corner-size: 5vw;
+	--ticket-border-size: 2em;
+}
+
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	margin: 0;
+	padding: 0;
+	color: var(--page-foreground);
+	background-color: var(--page-background);
+	font-family: system-ui, sans-serif;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+	height: auto;
+}
+
+main {
+	display: flex;
+	padding: var(--ticket-rhythm);
+	overflow: hidden;
+	aspect-ratio: 1200/630;
+}
+.ticket {
+	position: relative;
+	display: flex;
+	width: 100%;
+	background-color: var(--ticket-background);
+}
+/* Ticket borders */
+.ticket:before,
+.ticket:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+.ticket:before {
+	top: calc(2em + var(--ticket-corner-size));
+	bottom: calc(2em + var(--ticket-corner-size));
+	left: calc(-.5 * var(--ticket-border-size));
+	right: calc(-.5 * var(--ticket-border-size));
+	border: var(--ticket-border-size) dotted var(--page-background);
+	border-top: none;
+	border-bottom: none;
+}
+.ticket:after {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image:
+		radial-gradient(circle at top left,  var(--page-background) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
+		radial-gradient(circle at top right, var(--page-background) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
+		radial-gradient(circle at bottom left, var(--page-background) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
+		radial-gradient(circle at bottom right, var(--page-background) var(--ticket-corner-size), transparent var(--ticket-corner-size));
+}
+
+.ticket-icon {
+	width: 1em;
+	height: 1em;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-right: .3em;
+}
+.ticket-name {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.75em; /* 28px /16 */
+	line-height: 1.3;
+}
+.ticket-content {
+	width: 100%;
+	color: var(--ticket-foreground);
+	display: flex;
+	align-items: center;
+	font-size: 2em;
+	overflow: hidden;
+}
+.ticket-metadata {
+	flex-grow: 1;
+	margin: 0;
+	padding: calc(2 * var(--ticket-rhythm)) var(--ticket-rhythm) 0;
+	font-family: Saira Extra Condensed, system-ui, sans-serif;
+	transform: rotate(-90deg) translateY(1px);
+	list-style: "";
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+.ticket-hed {
+	font-size: 3em;
+	line-height: .9;
+	text-transform: uppercase;
+}
+.ticket-hed b {
+	display: block;
+	font-size: 0.7em;
+}
+.ticket-tags {
+	margin: 0 calc(var(--ticket-rhythm) * -1);
+}
+.ticket-tag {
+	font-size: 1em;
+	letter-spacing: .05em;
+	padding: 0 .25em;
+}
+.ticket-tag-cta {
+	background-color: #479559;
+	color: #fff;
+}
+.ticket-tag-url {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+	background-color: #fff;
+	color: #000;
+	border-top: 10px dashed var(--page-background);
+}
+.ticket-tag-supporter {
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	background-color: #0c2d66;
+	color: #fff;
+}
+.ticket-mascot {
+	position: absolute;
+	width: auto;
+	right: 2%;
+	top: 25%;
+	max-height: 47%;
+	filter: drop-shadow(0px 4px 4px rgba(0,0,0,.4));
+}
+
+.ticket-screenshot {
+	display: flex;
+	align-items: center;
+	font-size: .75em;
+	width: 50%;
+	height: 100%;
+	background-position: left;
+	background-size: cover;
+	flex-grow: 1;
+}
+.ticket-screenshot:not(.ticket-screenshot-valid) {
+	background-image: url(/public/fallback-ticket-url.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 1em center;
+}
+.ticket-screenshot-valid:before {
+	pointer-events: none;
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	opacity: .4;
+}
+.ticket-screenshot-valid {
+	border: 20px solid var(--ticket-accent);
+	border-left: none;
+	border-right: none;
+}
+
+footer {
+	text-align: center;
+	max-width: 37em;
+	padding: 0 1em;
+	margin: 3em auto;
+	line-height: 1.4;
+	font-size: 1.25em; /* 20px /16 */
+}
+footer a[href] {
+	color: inherit;
+}

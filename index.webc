@@ -15,11 +15,11 @@ const layout = "layout.webc";
 <p>A brand new exclusively (and extremely) online (virtual) single-day single-track conference dedicated to <strong>Web Development</strong> and the <a href="https://www.11ty.dev/"><img webc:is="indie-avatar" url="https://www.11ty.dev/"><strong>Eleventy</strong></a> static site generator.</p>
 
 <h2 id="when">When is it?</h2>
-<p>May 2024. We’ll publish a full schedule of relevant conference dates (registration, call for proposals, et cetera) soon!</p>
+<p><strong>May 9 2024.</strong></p>
 
-<h2 id="subscription">Where do I sign up?</h2>
-<p>Conference sign up is coming soon!</p>
-<p>If you’d like to stay informed (for registration updates or the call for proposals), subscribe to the <a href="https://buttondown.email/11ty?tag=conf2024">11ty Newsletter</a> to receive updates:</p>
+<div id="subscription"></div>
+<h2 id="register">How do I sign up?</h2>
+<p>Registration is now open! Join us!</p>
 <newsletter-form></newsletter-form>
 
 <h2 id="price">Take my money!</h2>
