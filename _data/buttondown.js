@@ -5,7 +5,7 @@ export default async function() {
 	let API_URL = `https://api.buttondown.email/v1/subscribers`;
 
 	let json = await fetch(API_URL, {
-		duration: "6h",
+		duration: "23h",
     type: "json",
 		fetchOptions: {
 			headers: {
