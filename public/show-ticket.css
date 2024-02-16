@@ -68,7 +68,12 @@ hyper-card {
 	margin: 0 auto;
 }
 .ticket-description p {
-	font-size: 1.5em;
+	font-size: 1em;
+}
+@media (min-width: 37.5em) { /* 600px */
+	.ticket-description p {
+		font-size: 1.5em;
+	}
 }
 .ticket-share {
 	display: block;
@@ -87,8 +92,13 @@ hyper-card {
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: 1em;
-	font-size: 1.5em;
+	font-size: 1em;
 	padding: 0;
 	margin: 2em 0;
 	line-height: 1;
+}
+@media (min-width: 37.5em) { /* 600px */
+	.ticket-share-more {
+		font-size: 1.5em;
+	}
 }

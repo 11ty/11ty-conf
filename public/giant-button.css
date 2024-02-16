@@ -3,7 +3,7 @@
 	width: 100%;
 	cursor: pointer;
 	border: .3em solid;
-	font-size: clamp(2em, 10vw, 3.33333333em);
+	font-size: clamp(2em, 10vw, 3em);
 	font-family: Saira Extra Condensed, system-ui, sans-serif;
 	text-align: center;
 	font-weight: inherit;
