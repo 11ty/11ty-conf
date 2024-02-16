@@ -37,9 +37,8 @@ async function renderTicket(ticketId, context) {
 	]);
 
 	let displayName = opencollectiveData.name || gravatarData.displayName;
-	// let userWebsiteUrl = null;
-	let userWebsiteUrl = gravatarData.urls?.[0]?.value;
-	let avatarUrl = buttondownData.avatar_url || gravatarData.avatar_url || opencollectiveData.avatar_url;
+	let userWebsiteUrl = opencollectiveData.website || gravatarData.urls?.[0]?.value;
+	let avatarUrl = buttondownData.avatar_url || opencollectiveData.avatar_url || gravatarData.avatar_url;
 	let ticketNumber = buttondownData.number;
 
 	let head = `<link rel="stylesheet" href="/public/register-ticket.css">
@@ -63,7 +62,7 @@ async function renderTicket(ticketId, context) {
 					<img src="${avatarUrl}" alt="User avatar" width="64" height="64" class="ticket-icon">${displayName}
 					</li>` : ""}
 					<li class="ticket-tags">
-					${opencollectiveData?.name ? `<div class="ticket-tag ticket-tag-supporter">OpenCollective Backer</div>` : ""}
+					${opencollectiveData?.name ? `<div class="ticket-tag ticket-tag-supporter">OpenCollective ${opencollectiveData?.tagName || "Backer"}</div>` : ""}
 					${userWebsiteUrl && isValidUrl(userWebsiteUrl) ? `<div class="ticket-tag ticket-tag-url"><img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(userWebsiteUrl)}/" alt="Web site icon" width="64" height="64" class="ticket-icon"><code>${displayUrl(userWebsiteUrl)}</code></div>` : ""}
 				</li>
 			</ul>
@@ -90,7 +89,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	let shareText = `Got my ticket to the 11ty Conference! ${shareUrl} #11ty #11tyConf`;
 
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
-	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/_ticketv1/`;
+	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/_ticketv2/`;
 	let title = "11ty Conference (May 9, 2024)";
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
