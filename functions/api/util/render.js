@@ -85,7 +85,7 @@ async function renderTicket(ticketId, context) {
 
 async function renderPage(ticketId, justRegistered = false, productionHost = "") {
 	let shareUrl = (new URL(`/tickets/${ticketId}`, productionHost)).toString();
-	let shareText = `I got my ticket to the 11ty Conference! ${shareUrl} Do you want to go to there as well? #11tyConf`;
+	let shareText = `Got my ticket to the 11ty Conference! ${shareUrl} #11ty #11tyConf`;
 
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
 	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/`;
