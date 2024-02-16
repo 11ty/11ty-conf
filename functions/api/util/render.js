@@ -40,7 +40,7 @@ async function renderTicket(ticketId, context) {
 
 	let displayName = opencollectiveData.name || gravatarData.displayName;
 	let userWebsiteUrl = opencollectiveData.website || gravatarData.urls?.[0]?.value;
-	let avatarUrl = buttondownData.avatar_url || gravatarData.avatar_url || opencollectiveData.avatar_url;
+	let avatarUrl = buttondownData.avatar_url || opencollectiveData.avatar_url || gravatarData.avatar_url;
 	let ticketNumber = buttondownData.number;
 
 	let head = `<link rel="stylesheet" href="/public/register-ticket.css">`;
@@ -56,7 +56,7 @@ async function renderTicket(ticketId, context) {
 					<div class="ticket-tag ticket-tag-cta">Join at <img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent('https://conf.11ty.dev/')}/" alt="Web site icon" width="64" height="64" class="ticket-icon"><code>${displayUrl('https://conf.11ty.dev/')}</code></div>
 					</li>
 					${displayName ? `<li class="ticket-name">
-					<img src="${avatarUrl}" alt="User avatar" width="64" height="64" class="ticket-icon">${displayName}
+					<img src="${avatarUrl}" alt="User avatar" width="64" height="64" class="ticket-icon" onerror="this.remove()">${displayName}
 					</li>` : ""}
 					<li class="ticket-tags">
 					${opencollectiveData?.name ? `<div class="ticket-tag ticket-tag-supporter">OpenCollective ${opencollectiveData?.tagName || "Backer"}</div>` : ""}
