@@ -89,7 +89,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	let shareText = `Got my ticket to the 11ty Conference! ${shareUrl} #11ty #11tyConf`;
 
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
-	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/_ticketv2/`;
+	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/_ticketv1/`;
 	let title = "11ty Conference (May 9, 2024)";
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
