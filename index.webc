@@ -15,7 +15,7 @@ const layout = "layout.webc";
 <p>A brand new exclusively (and extremely) online (virtual) single-day single-track conference dedicated to <strong>Web Development</strong> and the <a href="https://www.11ty.dev/"><img webc:is="indie-avatar" url="https://www.11ty.dev/"><strong>Eleventy</strong></a> static site generator.</p>
 
 <h2 id="when">When is it?</h2>
-<p><strong>May 9 2024.</strong></p>
+<p class="hed-h1 align-c"><strong>May 9, 2024</strong></p>
 
 <div id="subscription"></div>
 <h2 id="register">How do I sign up?</h2>
