@@ -37,6 +37,7 @@ const description = "We’re running a conference — this is an 11ty Confer
 		<style @raw="getBundle('css')" webc:keep></style>
 	</head>
 	<body>
+		<announcement-banner @url="#register">🎉 Registration is open!</announcement-banner>
 		<header>
 			<giant-title :text="title"></giant-title>
 		</header>

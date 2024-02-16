@@ -1,0 +1,33 @@
+<style webc:scoped>
+:host {
+	display: flex;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: #111;
+	font-weight: 500;
+	padding: .25em 1em;
+	text-align: center;
+	line-height: 1;
+}
+@media (min-width: 48em) { /* 768px */
+	:host {
+		font-size: 1em;
+		font-size: clamp(1em, 2vw, 1.25em);
+	}
+}
+:host > a {
+	display: block;
+	padding: .35em 0;
+	text-decoration: none;
+}
+:host a:hover {
+	text-decoration: underline;
+}
+:host,
+:host a,
+:host a:visited {
+	color: #eee;
+}
+</style>
+<a :href="url"><slot></slot></a>
