@@ -78,7 +78,7 @@ async function renderTicket(ticketId, context) {
 </main>`;
 
 	return renderLayout({
-		title: `${displayName}’s 11ty Conference (2024) Ticket.`,
+		title: `${displayName}’s 11ty Conference (May 9, 2024) Ticket.`,
 		description: `One uniquely-generated ticket for the 11ty Conference.`
 	},head, body);
 }
@@ -89,14 +89,14 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
 	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/`;
-	let title = "11ty Conference (2024)";
+	let title = "11ty Conference (May 9, 2024)";
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
 	let head = `
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="${shareUrl}">
-	<meta property="og:site_name" content="11ty Conference, May 2024">
+	<meta property="og:site_name" content="11ty Conference on May 9, 2024">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:title" content="${title}">
 	<meta property="og:description" content="${description}">
