@@ -114,6 +114,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	<script type="module" src="/public/browser-window.js"></script>
 	<script type="module" src="/public/throbber.js"></script>
 	<script type="module" src="/public/webcare-webshare.js"></script>
+	<script type="module" src="/public/hypercard.js"></script>
 `;
 
 	let heading;
@@ -175,9 +176,11 @@ if("localStorage" in window) {
 	</section>
 	<section class="ticket-preview">
 		<browser-window flush mode="dark" style="--bw-background: #000;" icon url="${shareUrl}">
-			<throb-ber>
-				<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
-			</throb-ber>
+			<hyper-card>
+				<throb-ber>
+					<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
+				</throb-ber>
+			</hyper-card>
 		</browser-window>
 	</section>
 	<section class="ticket-description">

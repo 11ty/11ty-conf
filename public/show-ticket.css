@@ -11,8 +11,13 @@ main {
 	text-align: left;
 	padding: 1rem;
 }
+hyper-card,
 webcare-webshare {
 	display: block;
+}
+hyper-card {
+	--hypercard-scale: 1.03;
+	padding: .5em;
 }
 
 .ticket-title {
@@ -44,7 +49,7 @@ webcare-webshare {
 .ticket-preview {
 	margin: 0 -1rem;
 }
-.ticket-preview browser-window img {
+.ticket-preview img {
 	display: block;
 	margin: 0 auto;
 	max-width: 100%;
