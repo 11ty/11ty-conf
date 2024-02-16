@@ -19,7 +19,7 @@ const layout = "layout.webc";
 
 <div id="subscription"></div>
 <h2 id="register">How do I sign up?</h2>
-<p>Registration is now open! Join us!</p>
+<p>Registration is now open—join the <b @text="buttondown.count"></b> other developers attending the 11ty Conference!</p>
 <newsletter-form></newsletter-form>
 
 <h2 id="price">Take my money!</h2>
