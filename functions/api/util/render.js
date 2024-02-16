@@ -137,13 +137,31 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	<li><a href="https://fosstodon.org/@eleventy">Mastodon</a></li>
 	<li><a href="https://www.threads.net/@eleventy_11ty">Threads</a></li>
 	<li><a href="https://bsky.app/profile/11ty.dev">Bluesky</a></li>
-</ul>`
+</ul>
+<script type="module">
+if("localStorage" in window) {
+	localStorage.setItem("11ty-conf-ticket-id", "${ticketId}");
+}
+</script>`
 	} else {
 		heading = `<b><a href="/"><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference</a></b>`;
 		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>`;
 
 		// TODO put the registration form here!
-		afterContent = `<a href="/#register" class="giant-button"><strong>Join us—register!</strong></a>`;
+		afterContent = `<a href="/#register" class="giant-button" id="cta"><strong>Join us—register!</strong></a>
+<script type="module">
+if("localStorage" in window) {
+	let ticketId = localStorage.getItem("11ty-conf-ticket-id");
+	let cta = document.getElementById("cta");
+	let currentTicketId = location.pathname.split("/").pop();
+	if(ticketId && currentTicketId === ticketId) {
+		cta.remove(); // remove the button—they are already registered and viewing their ticket
+	} else if(ticketId && cta) {
+		cta.setAttribute("href", \`/tickets/\$\{ticketId\}\`);
+		cta.innerText = "View your ticket.";
+	}
+}
+</script>`;
 	}
 
 
