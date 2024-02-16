@@ -161,11 +161,11 @@ main {
 	background-size: cover;
 	flex-grow: 1;
 }
-.ticket-screenshot:not(.ticket-screenshot-valid) {
-	background-image: url(/public/fallback-ticket-url.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: 1em center;
+.ticket-screenshot:not(.ticket-screenshot-valid) .ticket-screenshot-fallback-img {
+	object-fit: contain;
+	object-position: 1em center;
+	width: 100%;
+	height: 100%;
 }
 .ticket-screenshot-valid:before {
 	pointer-events: none;

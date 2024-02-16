@@ -37,6 +37,7 @@ async function renderTicket(ticketId, context) {
 	]);
 
 	let displayName = opencollectiveData.name || gravatarData.displayName;
+	// let userWebsiteUrl = null;
 	let userWebsiteUrl = gravatarData.urls?.[0]?.value;
 	let avatarUrl = buttondownData.avatar_url || gravatarData.avatar_url || opencollectiveData.avatar_url;
 	let ticketNumber = buttondownData.number;
@@ -67,6 +68,7 @@ async function renderTicket(ticketId, context) {
 				</li>
 			</ul>
 			<div class="ticket-screenshot${userWebsiteUrl && isValidUrl(userWebsiteUrl) ? " ticket-screenshot-valid" : ""}">
+				${!isValidUrl(userWebsiteUrl) ? `<img src="/public/fallback-ticket-url.png" width="727" height="1000" alt="International Symposium on Making Web Sites Real Good" class="ticket-screenshot-fallback-img">` : ""}
 				<picture>
 					<source type="image/avif" srcset="/public/built/FIy3o0n-oI-250.avif 250w">
 					<source type="image/webp" srcset="/public/built/FIy3o0n-oI-250.webp 250w">
