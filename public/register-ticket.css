@@ -161,11 +161,15 @@ main {
 	background-size: cover;
 	flex-grow: 1;
 }
-.ticket-screenshot:not(.ticket-screenshot-valid) .ticket-screenshot-fallback-img {
+.ticket-screenshot .ticket-screenshot-img {
 	object-fit: contain;
 	object-position: 1em center;
 	width: 100%;
 	height: 100%;
+}
+.ticket-screenshot-valid .ticket-screenshot-img {
+	object-fit: cover;
+	object-position: 0 center;
 }
 .ticket-screenshot-valid:before {
 	pointer-events: none;

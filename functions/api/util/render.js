@@ -7,6 +7,8 @@ import {
 	getGravatarJson,
 } from "./util.js";
 
+const CACHE_BUSTER = "_ticketv3/";
+
 function renderLayout({ title, description }, head, body) {
 	return `<!doctype html>
 <html lang="en">
@@ -38,15 +40,10 @@ async function renderTicket(ticketId, context) {
 
 	let displayName = opencollectiveData.name || gravatarData.displayName;
 	let userWebsiteUrl = opencollectiveData.website || gravatarData.urls?.[0]?.value;
-	let avatarUrl = buttondownData.avatar_url || opencollectiveData.avatar_url || gravatarData.avatar_url;
+	let avatarUrl = buttondownData.avatar_url || gravatarData.avatar_url || opencollectiveData.avatar_url;
 	let ticketNumber = buttondownData.number;
 
-	let head = `<link rel="stylesheet" href="/public/register-ticket.css">
-<style>
-.ticket-screenshot-valid {
-	background-image: url(https://v1.screenshot.11ty.dev/${encodeURIComponent(userWebsiteUrl)}/opengraph/_cachebust/);
-}
-</style>`;
+	let head = `<link rel="stylesheet" href="/public/register-ticket.css">`;
 
 	let body = `<main>
 	<div class="ticket">
@@ -67,7 +64,10 @@ async function renderTicket(ticketId, context) {
 				</li>
 			</ul>
 			<div class="ticket-screenshot${userWebsiteUrl && isValidUrl(userWebsiteUrl) ? " ticket-screenshot-valid" : ""}">
-				${!isValidUrl(userWebsiteUrl) ? `<img src="/public/fallback-ticket-url.png" width="727" height="1000" alt="International Symposium on Making Web Sites Real Good" class="ticket-screenshot-fallback-img">` : ""}
+				${userWebsiteUrl && isValidUrl(userWebsiteUrl) ?
+					`<img src="https://v1.screenshot.11ty.dev/${encodeURIComponent(userWebsiteUrl)}/opengraph/${CACHE_BUSTER}" alt="Screenshot of ${userWebsiteUrl}" class="ticket-screenshot-img">`
+					: `<img src="/public/fallback-ticket-url.png" width="727" height="1000" alt="International Symposium on Making Web Sites Real Good" class="ticket-screenshot-img">`
+				}
 				<picture>
 					<source type="image/avif" srcset="/public/built/FIy3o0n-oI-250.avif 250w">
 					<source type="image/webp" srcset="/public/built/FIy3o0n-oI-250.webp 250w">
@@ -89,7 +89,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	let shareText = `Got my ticket to the 11ty Conference! ${shareUrl} #11ty #11tyConf`;
 
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
-	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/_ticketv1/`;
+	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/${CACHE_BUSTER}`;
 	let title = "11ty Conference (May 9, 2024)";
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
