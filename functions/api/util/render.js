@@ -7,7 +7,7 @@ import {
 	getGravatarJson,
 } from "./util.js";
 
-const CACHE_BUSTER = "_ticketv3/";
+const CACHE_BUSTER = "_ticketv4/";
 
 function renderLayout({ title, description }, head, body) {
 	return `<!doctype html>
