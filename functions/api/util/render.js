@@ -98,7 +98,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="${shareUrl}">
-	<meta property="og:site_name" content="11ty Conference on May 9, 2024">
+	<meta property="og:site_name" content="11ty">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:title" content="${title}">
 	<meta property="og:description" content="${description}">
@@ -113,6 +113,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	<link rel="stylesheet" href="/public/global.css">
 	<link rel="stylesheet" href="/public/show-ticket.css">
 	<link rel="stylesheet" href="/public/giant-button.css">
+
 	<script type="module" src="/public/browser-window.js"></script>
 	<script type="module" src="/public/throbber.js"></script>
 	<script type="module" src="/public/webcare-webshare.js"></script>
