@@ -85,6 +85,8 @@ async function renderTicket(ticketId, context) {
 
 async function renderPage(ticketId, justRegistered = false, productionHost = "") {
 	let shareUrl = (new URL(`/tickets/${ticketId}`, productionHost)).toString();
+	let shareText = `I got my ticket to the 11ty Conference! ${shareUrl} Do you want to go to there as well? #11tyConf`;
+
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
 	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/`;
 	let title = "11ty Conference (2024)";
@@ -124,11 +126,20 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 <p>You will <em>not</em> need to save this ticket to attend the conference (we’ll send you all the relevant information to your email address) but <strong>sharing your ticket</strong> on social media will help us spread the word about the conference!</p>`;
 		afterContent = `<p>Here’s the ticket URL (it’s the same as the page you’re currently on):</p>
 <p><code class="ticket-share">${shareUrl}</code></p>
-<webcare-webshare label-after-copy="Copied to clipboard." share-text="I am going to the 11ty Conference! Do you want to go to there as well? https://conf.11ty.dev/" share-url="https://conf.11ty.dev/">
+<webcare-webshare label-copy="📋 Share your ticket!" label-after-copy="✅ Copied to clipboard." share-text="${shareText}" share-url="${shareUrl}">
 	<button disabled class="giant-button">Share your ticket!</button>
-</webcare-webshare>`
+</webcare-webshare>
+<ul class="ticket-share-more">
+	<li>Or try one of these links:</li>
+	<li><a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}">LinkedIn</a></li>
+	<li><a href="mailto:?subject=${encodeURIComponent("11ty Conference (2024)")}&body=${encodeURIComponent(shareText)}">Email</a></li>
+	<li><a href="http://twitter.com/share?text=${encodeURIComponent(shareText)}" data-icon="😬">Twitter</a></li>
+	<li><a href="https://fosstodon.org/@eleventy">Mastodon</a></li>
+	<li><a href="https://www.threads.net/@eleventy_11ty">Threads</a></li>
+	<li><a href="https://bsky.app/profile/11ty.dev">Bluesky</a></li>
+</ul>`
 	} else {
-		heading = `<b><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference</b>`;
+		heading = `<b><a href="/"><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference</a></b>`;
 		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>`;
 
 		// TODO put the registration form here!
