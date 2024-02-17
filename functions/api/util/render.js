@@ -44,10 +44,11 @@ async function renderTicket(ticketId, context) {
 	let avatarUrl = buttondownData.avatar_url || opencollectiveData.avatar_url || gravatarData.avatar_url;
 	let ticketNumber = buttondownData.number;
 
-	let head = `<link rel="stylesheet" href="/public/register-ticket.css">`;
+	let head = `<link rel="stylesheet" href="/public/register-ticket.css">
+<link rel="stylesheet" href="/public/ticket-border.css">`;
 
 	let body = `<main>
-	<div class="ticket">
+	<div class="ticket ticket-border">
 		<div class="ticket-content">
 			<ul class="ticket-metadata">
 				<li class="ticket-hed">
