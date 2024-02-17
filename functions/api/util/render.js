@@ -148,11 +148,11 @@ if("localStorage" in window) {
 </script>`
 	} else {
 		heading = `<b><a href="/"><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference</a></b>`;
-		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>`;
+		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>
+<a href="/#register" class="giant-button" id="cta"><strong>Join us—register!</strong></a>`;
 
 		// TODO put the registration form here!
-		afterContent = `<a href="/#register" class="giant-button" id="cta"><strong>Join us—register!</strong></a>
-<script type="module">
+		afterContent = `<script type="module">
 if("localStorage" in window) {
 	let ticketId = localStorage.getItem("11ty-conf-ticket-id");
 	let cta = document.getElementById("cta");
@@ -177,7 +177,7 @@ if("localStorage" in window) {
 		${beforeContent}
 	</section>
 	<section class="ticket-preview">
-		<browser-window flush mode="dark" style="--bw-background: #000;" icon url="${shareUrl}">
+		<browser-window flush mode="dark" style="--bw-background: #000;">
 			<hyper-card>
 				<throb-ber>
 					<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
