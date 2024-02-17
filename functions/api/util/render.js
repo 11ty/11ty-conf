@@ -92,6 +92,12 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	let shareTextWithoutUrl = `Got my ticket to the 11ty Conference! #11ty #11tyConf`;
 
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
+
+	// Development override
+	if(ticketImageUrl.startsWith("http://localhost")) {
+		ticketImageUrl = "https://conf.11ty.dev/";
+	}
+
 	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/${CACHE_BUSTER}`;
 	let title = `11ty Conference (${CONF_DATE})`;
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
@@ -125,6 +131,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	let heading;
 	let beforeContent;
 	let afterContent;
+
 	if(justRegistered) {
 		heading = `<b>🎉 You’re registered for the 🎉</b>
 <b><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference!</b>`;

@@ -2,7 +2,8 @@ import { renderPage } from "../api/util/render.js";
 
 export async function onRequestGet(context) {
 	try {
-		let split = context.request.url.split("/");
+		let u = new URL(context.request.url);
+		let split = u.pathname.split("/");
 		let uniqueId = split.pop();
 
 		if(!uniqueId) {
@@ -10,9 +11,13 @@ export async function onRequestGet(context) {
 		}
 
 		// Show the success page. Otherwise, show the ticket.
-		let justRegistered = context.request.headers.get("referer") === context.env.CUSTOM_HOST;
+		let justRegisteredRedirect = context.request.headers.get("referer") === context.env.CUSTOM_HOST;
+		// let justRegisteredRedirect = (context.request.headers.get("referer") || "").startsWith(context.env.CUSTOM_HOST);
 
-		let html = await renderPage(uniqueId, justRegistered, context.env.CUSTOM_HOST);
+		// from a View your ticket ?registered link
+		// let justregisteredUrlParam = (new URL(context.request.url)).searchParams.get("registered") === "";
+
+		let html = await renderPage(uniqueId, justRegisteredRedirect, context.env.CUSTOM_HOST);
 
 		return new Response(html, {
 			headers: {
