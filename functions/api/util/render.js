@@ -8,6 +8,7 @@ import {
 } from "./util.js";
 
 const CACHE_BUSTER = "_ticketv4/";
+const CONF_DATE = "May 9, 2024";
 
 function renderLayout({ title, description }, head, body) {
 	return `<!doctype html>
@@ -79,18 +80,19 @@ async function renderTicket(ticketId, context) {
 </main>`;
 
 	return renderLayout({
-		title: `${displayName}’s 11ty Conference (May 9, 2024) Ticket.`,
+		title: `${displayName}’s 11ty Conference (${CONF_DATE}) Ticket.`,
 		description: `One uniquely-generated ticket for the 11ty Conference.`
 	},head, body);
 }
 
 async function renderPage(ticketId, justRegistered = false, productionHost = "") {
 	let shareUrl = (new URL(`/tickets/${ticketId}`, productionHost)).toString();
-	let shareText = `Got my ticket to the 11ty Conference! ${shareUrl} #11ty #11tyConf`;
+	let emailShareText = `Got my ticket to the 11ty Conference! ${shareUrl}`;
+	let shareTextWithoutUrl = `Got my ticket to the 11ty Conference! #11ty #11tyConf`;
 
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
 	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/${CACHE_BUSTER}`;
-	let title = "11ty Conference (May 9, 2024)";
+	let title = `11ty Conference (${CONF_DATE})`;
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
 	let head = `
@@ -129,14 +131,14 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 <p>You will <em>not</em> need to save this ticket to attend the conference (we’ll send you all the relevant information to your email address) but <strong>sharing your ticket</strong> on social media will help us spread the word about the conference!</p>`;
 		afterContent = `<p>Here’s the ticket URL (it’s the same as the page you’re currently on):</p>
 <p><code class="ticket-share">${shareUrl}</code></p>
-<webcare-webshare label-copy="📋 Share your ticket!" label-after-copy="✅ Copied to clipboard." share-text="${shareText}" share-url="${shareUrl}">
+<webcare-webshare label-copy="📋 Share your ticket!" label-after-copy="✅ Copied to clipboard." share-text="${shareTextWithoutUrl}" share-url="${shareUrl}">
 	<button disabled class="giant-button">Share your ticket!</button>
 </webcare-webshare>
 <ul class="ticket-share-more">
 	<li>Or try one of these links:</li>
 	<li><a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}">LinkedIn</a></li>
-	<li><a href="mailto:?subject=${encodeURIComponent("11ty Conference (2024)")}&body=${encodeURIComponent(shareText)}">Email</a></li>
-	<li><a href="http://twitter.com/share?text=${encodeURIComponent(shareText)}" data-icon="😬">Twitter</a></li>
+	<li><a href="mailto:?subject=${encodeURIComponent(`11ty Conference (${CONF_DATE})`)}&body=${encodeURIComponent(emailShareText)}">Email</a></li>
+	<li><a href="http://twitter.com/share?text=${encodeURIComponent(shareTextWithoutUrl)}&url=${encodeURIComponent(shareUrl)}" data-icon="😬">Twitter</a></li>
 	<li><a href="https://fosstodon.org/@eleventy">Mastodon</a></li>
 	<li><a href="https://www.threads.net/@eleventy_11ty">Threads</a></li>
 	<li><a href="https://bsky.app/profile/11ty.dev">Bluesky</a></li>
