@@ -52,6 +52,7 @@ webcare-webshare {
 	max-width: 100%;
 	height: auto;
 	vertical-align: middle;
+	transition: all .6s;
 }
 .ticket-preview hyper-card {
 	--hypercard-scale: 1.03;
