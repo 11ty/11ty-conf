@@ -17,8 +17,13 @@ b {
 	display: block;
 }
 b:nth-child(1) {
-	font-size: 25%;
+	font-size: 40%;
 	white-space: nowrap;
+}
+@media (min-width: 37.5em) { /* 600px */
+	b:nth-child(1) {
+		font-size: 25%;
+	}
 }
 b:nth-child(3) {
 	font-size: 109%;

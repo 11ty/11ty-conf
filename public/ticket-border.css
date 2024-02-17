@@ -1,0 +1,35 @@
+.ticket-border {
+	--ticket-border-color: #000;
+	--ticket-corner-size: 5vw;
+	--ticket-border-size: 2em;
+	position: relative;
+}
+.ticket-border:before,
+.ticket-border:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: var(--ticket-border-zindex, 1);
+	pointer-events: none;
+}
+.ticket-border:before {
+	top: calc(2em + var(--ticket-corner-size));
+	bottom: calc(2em + var(--ticket-corner-size));
+	left: calc(-.5 * var(--ticket-border-size));
+	right: calc(-.5 * var(--ticket-border-size));
+	border: var(--ticket-border-size) dotted var(--ticket-border-color);
+	border-top: none;
+	border-bottom: none;
+}
+.ticket-border:after {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image:
+		radial-gradient(circle at top left,  var(--ticket-border-color) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
+		radial-gradient(circle at top right, var(--ticket-border-color) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
+		radial-gradient(circle at bottom left, var(--ticket-border-color) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
+		radial-gradient(circle at bottom right, var(--ticket-border-color) var(--ticket-corner-size), transparent var(--ticket-corner-size));
+}

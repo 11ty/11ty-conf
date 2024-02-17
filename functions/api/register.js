@@ -13,7 +13,12 @@ export async function onRequestPost(context) {
 		let formdata = await context.request.formData();
 		let email = formdata.get("email");
 		let buttondownData = await createNewButtondownSubscriber(email, context.env.BUTTONDOWN_API_KEY);
-		let ticketId =  buttondownData.id.replace(/[\-]/g, "");
+
+		if(!buttondownData.id) {
+			throw new Error("Could not create new subscriber in Buttondown.");
+		}
+
+		let ticketId =  (buttondownData.id || "").replace(/[\-]/g, "");
 
 		// Redirect to the ticket page
 		return new Response("", {

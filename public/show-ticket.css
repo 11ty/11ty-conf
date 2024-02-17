@@ -12,12 +12,9 @@ main {
 	padding: 1rem;
 }
 hyper-card,
+throb-ber,
 webcare-webshare {
 	display: block;
-}
-hyper-card {
-	--hypercard-scale: 1.03;
-	padding: .5em;
 }
 
 .ticket-title {
@@ -55,9 +52,27 @@ hyper-card {
 	max-width: 100%;
 	height: auto;
 	vertical-align: middle;
+	transition: all .6s;
+}
+.ticket-preview hyper-card {
+	--hypercard-scale: 1.03;
+	padding: .5em;
+}
+/* Rotate the ticket */
+@media (max-width: 37.4375em) { /* 599px */
+	.ticket-preview {
+		max-width: 22em;
+		margin-inline: auto;
+	}
+	.ticket-preview img {
+		transform: rotate(90deg) translateX(-50%) scale(1.9);
+		transform-origin: 0% 100%;
+	}
+	.ticket-preview hyper-card {
+		aspect-ratio: 630/1200;
+	}
 }
 @media (min-width: 50em) { /* 800px */
-	.ticket-description > a[href].giant-button,
 	webcare-webshare,
 	.ticket-preview {
 		margin-inline: -10vw;
@@ -68,7 +83,12 @@ hyper-card {
 	margin: 0 auto;
 }
 .ticket-description p {
-	font-size: 1.5em;
+	font-size: 1em;
+}
+@media (min-width: 37.5em) { /* 600px */
+	.ticket-description p {
+		font-size: 1.5em;
+	}
 }
 .ticket-share {
 	display: block;
@@ -79,7 +99,7 @@ hyper-card {
 	margin: 0 -1rem;
 }
 .ticket-description > a[href].giant-button {
-	margin-top: 1.5em;
+	margin-block: .5em;
 	width: auto;
 }
 .ticket-share-more {
@@ -87,8 +107,13 @@ hyper-card {
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: 1em;
-	font-size: 1.5em;
+	font-size: 1em;
 	padding: 0;
 	margin: 2em 0;
 	line-height: 1;
+}
+@media (min-width: 37.5em) { /* 600px */
+	.ticket-share-more {
+		font-size: 1.5em;
+	}
 }

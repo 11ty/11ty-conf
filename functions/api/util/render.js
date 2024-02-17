@@ -7,6 +7,9 @@ import {
 	getGravatarJson,
 } from "./util.js";
 
+const CACHE_BUSTER = "_ticketv4/";
+const CONF_DATE = "May 9, 2024";
+
 function renderLayout({ title, description }, head, body) {
 	return `<!doctype html>
 <html lang="en">
@@ -37,19 +40,15 @@ async function renderTicket(ticketId, context) {
 	]);
 
 	let displayName = opencollectiveData.name || gravatarData.displayName;
-	let userWebsiteUrl = gravatarData.urls?.[0]?.value;
-	let avatarUrl = buttondownData.avatar_url || gravatarData.avatar_url || opencollectiveData.avatar_url;
+	let userWebsiteUrl = opencollectiveData.website || gravatarData.urls?.[0]?.value;
+	let avatarUrl = buttondownData.avatar_url || opencollectiveData.avatar_url || gravatarData.avatar_url;
 	let ticketNumber = buttondownData.number;
 
 	let head = `<link rel="stylesheet" href="/public/register-ticket.css">
-<style>
-.ticket-screenshot-valid {
-	background-image: url(https://v1.screenshot.11ty.dev/${encodeURIComponent(userWebsiteUrl)}/opengraph/_cachebust/);
-}
-</style>`;
+<link rel="stylesheet" href="/public/ticket-border.css">`;
 
 	let body = `<main>
-	<div class="ticket">
+	<div class="ticket ticket-border">
 		<div class="ticket-content">
 			<ul class="ticket-metadata">
 				<li class="ticket-hed">
@@ -59,14 +58,18 @@ async function renderTicket(ticketId, context) {
 					<div class="ticket-tag ticket-tag-cta">Join at <img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent('https://conf.11ty.dev/')}/" alt="Web site icon" width="64" height="64" class="ticket-icon"><code>${displayUrl('https://conf.11ty.dev/')}</code></div>
 					</li>
 					${displayName ? `<li class="ticket-name">
-					<img src="${avatarUrl}" alt="User avatar" width="64" height="64" class="ticket-icon">${displayName}
+					<img src="${avatarUrl}" alt="User avatar" width="64" height="64" class="ticket-icon" onerror="this.remove()">${displayName}
 					</li>` : ""}
 					<li class="ticket-tags">
-					${opencollectiveData?.name ? `<div class="ticket-tag ticket-tag-supporter">OpenCollective Backer</div>` : ""}
+					${opencollectiveData?.name ? `<div class="ticket-tag ticket-tag-supporter">OpenCollective ${opencollectiveData?.tagName || "Backer"}</div>` : ""}
 					${userWebsiteUrl && isValidUrl(userWebsiteUrl) ? `<div class="ticket-tag ticket-tag-url"><img src="https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(userWebsiteUrl)}/" alt="Web site icon" width="64" height="64" class="ticket-icon"><code>${displayUrl(userWebsiteUrl)}</code></div>` : ""}
 				</li>
 			</ul>
 			<div class="ticket-screenshot${userWebsiteUrl && isValidUrl(userWebsiteUrl) ? " ticket-screenshot-valid" : ""}">
+				${userWebsiteUrl && isValidUrl(userWebsiteUrl) ?
+					`<img src="https://v1.screenshot.11ty.dev/${encodeURIComponent(userWebsiteUrl)}/opengraph/${CACHE_BUSTER}" alt="Screenshot of ${userWebsiteUrl}" class="ticket-screenshot-img">`
+					: `<img src="/public/fallback-ticket-url.png" width="727" height="1000" alt="International Symposium on Making Web Sites Real Good" class="ticket-screenshot-img">`
+				}
 				<picture>
 					<source type="image/avif" srcset="/public/built/FIy3o0n-oI-250.avif 250w">
 					<source type="image/webp" srcset="/public/built/FIy3o0n-oI-250.webp 250w">
@@ -78,25 +81,26 @@ async function renderTicket(ticketId, context) {
 </main>`;
 
 	return renderLayout({
-		title: `${displayName}’s 11ty Conference (2024) Ticket.`,
+		title: `${displayName}’s 11ty Conference (${CONF_DATE}) Ticket.`,
 		description: `One uniquely-generated ticket for the 11ty Conference.`
 	},head, body);
 }
 
 async function renderPage(ticketId, justRegistered = false, productionHost = "") {
 	let shareUrl = (new URL(`/tickets/${ticketId}`, productionHost)).toString();
-	let shareText = `I got my ticket to the 11ty Conference! ${shareUrl} Do you want to go to there as well? #11tyConf`;
+	let emailShareText = `Got my ticket to the 11ty Conference! ${shareUrl}`;
+	let shareTextWithoutUrl = `Got my ticket to the 11ty Conference! #11ty #11tyConf`;
 
 	let ticketImageUrl = (new URL(`/ticket-image/${ticketId}`, productionHost)).toString();
-	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/`;
-	let title = "11ty Conference (2024)";
+	let screenshotUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(ticketImageUrl)}/opengraph/${CACHE_BUSTER}`;
+	let title = `11ty Conference (${CONF_DATE})`;
 	let description = `One uniquely-generated ticket for the 11ty Conference.`;
 
 	let head = `
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="${shareUrl}">
-	<meta property="og:site_name" content="11ty Conference, May 2024">
+	<meta property="og:site_name" content="11ty">
 	<meta property="og:locale" content="en_US">
 	<meta property="og:title" content="${title}">
 	<meta property="og:description" content="${description}">
@@ -111,6 +115,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 	<link rel="stylesheet" href="/public/global.css">
 	<link rel="stylesheet" href="/public/show-ticket.css">
 	<link rel="stylesheet" href="/public/giant-button.css">
+
 	<script type="module" src="/public/browser-window.js"></script>
 	<script type="module" src="/public/throbber.js"></script>
 	<script type="module" src="/public/webcare-webshare.js"></script>
@@ -127,14 +132,14 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 <p>You will <em>not</em> need to save this ticket to attend the conference (we’ll send you all the relevant information to your email address) but <strong>sharing your ticket</strong> on social media will help us spread the word about the conference!</p>`;
 		afterContent = `<p>Here’s the ticket URL (it’s the same as the page you’re currently on):</p>
 <p><code class="ticket-share">${shareUrl}</code></p>
-<webcare-webshare label-copy="📋 Share your ticket!" label-after-copy="✅ Copied to clipboard." share-text="${shareText}" share-url="${shareUrl}">
+<webcare-webshare label-copy="📋 Share your ticket!" label-after-copy="✅ Copied to clipboard." share-text="${shareTextWithoutUrl}" share-url="${shareUrl}">
 	<button disabled class="giant-button">Share your ticket!</button>
 </webcare-webshare>
 <ul class="ticket-share-more">
 	<li>Or try one of these links:</li>
 	<li><a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}">LinkedIn</a></li>
-	<li><a href="mailto:?subject=${encodeURIComponent("11ty Conference (2024)")}&body=${encodeURIComponent(shareText)}">Email</a></li>
-	<li><a href="http://twitter.com/share?text=${encodeURIComponent(shareText)}" data-icon="😬">Twitter</a></li>
+	<li><a href="mailto:?subject=${encodeURIComponent(`11ty Conference (${CONF_DATE})`)}&body=${encodeURIComponent(emailShareText)}">Email</a></li>
+	<li><a href="http://twitter.com/share?text=${encodeURIComponent(shareTextWithoutUrl)}&url=${encodeURIComponent(shareUrl)}" data-icon="😬">Twitter</a></li>
 	<li><a href="https://fosstodon.org/@eleventy">Mastodon</a></li>
 	<li><a href="https://www.threads.net/@eleventy_11ty">Threads</a></li>
 	<li><a href="https://bsky.app/profile/11ty.dev">Bluesky</a></li>
@@ -146,11 +151,11 @@ if("localStorage" in window) {
 </script>`
 	} else {
 		heading = `<b><a href="/"><img src="/public/logo-cropped.svg" width="200" height="168" alt="11ty" loading="eager"> Conference</a></b>`;
-		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>`;
+		beforeContent = `<p>This is a virtual ticket for the <a href="/">11ty International Symposium on Making Web Sites Real Good</a>.</p>
+<a href="/#register" class="giant-button" id="cta"><strong>Join us—register!</strong></a>`;
 
 		// TODO put the registration form here!
-		afterContent = `<a href="/#register" class="giant-button" id="cta"><strong>Join us—register!</strong></a>
-<script type="module">
+		afterContent = `<script type="module">
 if("localStorage" in window) {
 	let ticketId = localStorage.getItem("11ty-conf-ticket-id");
 	let cta = document.getElementById("cta");
@@ -175,7 +180,7 @@ if("localStorage" in window) {
 		${beforeContent}
 	</section>
 	<section class="ticket-preview">
-		<browser-window flush mode="dark" style="--bw-background: #000;" icon url="${shareUrl}">
+		<browser-window flush mode="dark" style="--bw-background: #000;">
 			<hyper-card>
 				<throb-ber>
 					<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">

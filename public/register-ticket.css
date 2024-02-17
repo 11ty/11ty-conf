@@ -1,12 +1,10 @@
 :root {
-	--page-background: black;
+	--page-background: #000;
 	--page-foreground: #fff;
 	--ticket-rhythm: 2rem;
 	--ticket-background: #444;
 	--ticket-foreground: #fff;
 	--ticket-accent: #fff;
-	--ticket-corner-size: 5vw;
-	--ticket-border-size: 2em;
 }
 
 * {
@@ -34,40 +32,10 @@ main {
 	aspect-ratio: 1200/630;
 }
 .ticket {
-	position: relative;
+	--ticket-border-color: var(--page-background);
 	display: flex;
 	width: 100%;
 	background-color: var(--ticket-background);
-}
-/* Ticket borders */
-.ticket:before,
-.ticket:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	z-index: 1;
-	pointer-events: none;
-}
-.ticket:before {
-	top: calc(2em + var(--ticket-corner-size));
-	bottom: calc(2em + var(--ticket-corner-size));
-	left: calc(-.5 * var(--ticket-border-size));
-	right: calc(-.5 * var(--ticket-border-size));
-	border: var(--ticket-border-size) dotted var(--page-background);
-	border-top: none;
-	border-bottom: none;
-}
-.ticket:after {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-image:
-		radial-gradient(circle at top left,  var(--page-background) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
-		radial-gradient(circle at top right, var(--page-background) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
-		radial-gradient(circle at bottom left, var(--page-background) var(--ticket-corner-size), transparent var(--ticket-corner-size)),
-		radial-gradient(circle at bottom right, var(--page-background) var(--ticket-corner-size), transparent var(--ticket-corner-size));
 }
 
 .ticket-icon {
@@ -161,11 +129,16 @@ main {
 	background-size: cover;
 	flex-grow: 1;
 }
-.ticket-screenshot:not(.ticket-screenshot-valid) {
-	background-image: url(/public/fallback-ticket-url.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: 1em center;
+
+.ticket-screenshot .ticket-screenshot-img {
+	object-fit: contain;
+	object-position: 1em center;
+	width: 100%;
+	height: 100%;
+}
+.ticket-screenshot-valid .ticket-screenshot-img {
+	object-fit: cover;
+	object-position: 0 center;
 }
 .ticket-screenshot-valid:before {
 	pointer-events: none;

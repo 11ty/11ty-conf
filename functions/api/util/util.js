@@ -19,6 +19,15 @@ function pad(num, count) {
 }
 
 async function getOpenCollectSupporterJson(email, apiKey) {
+	if(email === "zach@zachleat.com") { // lol
+		return {
+			name: "Zach Leatherman",
+			tagName: "Admin",
+			avatar_url: "https://www.zachleat.com/img/avatar-2017.png",
+			website: "https://www.zachleat.com/",
+		}
+	}
+
 	let query = `
 query eleventyBackers {
 	collective(slug: "11ty") {
@@ -28,7 +37,8 @@ query eleventyBackers {
 					name,
 					imageUrl,
 					... on Individual {
-						email
+						email,
+						website
 					}
 				}
 			}
@@ -51,8 +61,10 @@ query eleventyBackers {
 	for(let supporter of json.data.collective.members.nodes) {
 		if(supporter.account.email === email) {
 			return {
+				tagName: "Backer",
 				name: supporter.account.name,
 				avatar_url: supporter.account.imageUrl,
+				website: supporter.account.website,
 			};
 		}
 	}
