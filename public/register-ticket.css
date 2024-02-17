@@ -37,6 +37,7 @@ main {
 	width: 100%;
 	background-color: var(--ticket-background);
 }
+
 .ticket-icon {
 	width: 1em;
 	height: 1em;
@@ -128,6 +129,7 @@ main {
 	background-size: cover;
 	flex-grow: 1;
 }
+
 .ticket-screenshot .ticket-screenshot-img {
 	object-fit: contain;
 	object-position: 1em center;

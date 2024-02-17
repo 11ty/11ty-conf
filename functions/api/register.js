@@ -13,6 +13,7 @@ export async function onRequestPost(context) {
 		let formdata = await context.request.formData();
 		let email = formdata.get("email");
 		let buttondownData = await createNewButtondownSubscriber(email, context.env.BUTTONDOWN_API_KEY);
+
 		if(!buttondownData.id) {
 			throw new Error("Could not create new subscriber in Buttondown.");
 		}
