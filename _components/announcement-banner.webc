@@ -9,6 +9,8 @@
 	padding: .25em 1em;
 	text-align: center;
 	line-height: 1;
+	/* flush to body padding */
+	margin-inline: calc(-1 * var(--page-margin));
 }
 @media (min-width: 48em) { /* 768px */
 	:host {

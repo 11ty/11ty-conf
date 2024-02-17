@@ -4,6 +4,7 @@
 	--step--1: clamp(2.9169rem, 0.1942rem + 13.6132vw, 6.15rem);
 	--step-0: clamp(3.5rem, -0.0263rem + 17.6316vw, 7.6875rem);
 	--rhythm: 2rem; /* 32px /16 */
+	--page-margin: .5rem;
 }
 @media (min-width: 37.5em) { /* 600px */
 	:root {
@@ -23,7 +24,7 @@ h2 {
 }
 body {
 	margin: 0 auto;
-	padding: 0 .5em;
+	padding: 0 var(--page-margin);
 	text-align: center;
 }
 main,
