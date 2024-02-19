@@ -56,7 +56,6 @@ webcare-webshare {
 }
 .ticket-preview hyper-card {
 	--hypercard-scale: 1.03;
-	padding: .5em;
 }
 /* Rotate the ticket */
 @media (max-width: 37.4375em) { /* 599px */
