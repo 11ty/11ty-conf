@@ -18,7 +18,7 @@
     "@zachleat/browser-window": "^1.0.14",
     "@zachleat/hypercard": "^1.0.2",
     "@zachleat/throbber": "^1.0.3",
-    "@zachleat/webcare-webshare": "^1.0.1"
+    "@zachleat/webcare-webshare": "^1.0.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.0.0-alpha.4",
