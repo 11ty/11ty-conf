@@ -120,11 +120,11 @@ async function getButtondownSubscriberJson(ticketId, apiKey) {
 	}
 
 	let json = await buttondownResponse.json();
-	if(!(json.tags || []).includes("conf2024")) {
-		// Is a subscriber but not for the conference.
-		// TODO insert?
-		throw new Error("Invalid subscriber tag.");
-	}
+	// if(!(json.tags || []).includes("conf2024")) {
+	// 	// Is a subscriber but not for the conference.
+	// 	// TODO insert?
+	// 	throw new Error("Invalid subscriber tag.");
+	// }
 
 	return {
 		id: json.id,

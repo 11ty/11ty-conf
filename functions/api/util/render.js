@@ -7,7 +7,7 @@ import {
 	getGravatarJson,
 } from "./util.js";
 
-const CACHE_BUSTER = "_ticketv5/";
+const CACHE_BUSTER = "_ticketv6/";
 const CONF_DATE = "May 9, 2024";
 
 function renderLayout({ title, description }, head, body) {
