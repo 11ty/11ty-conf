@@ -83,7 +83,7 @@ async function renderTicket(ticketId, context) {
 	return renderLayout({
 		title: `${displayName}’s 11ty Conference (${CONF_DATE}) Ticket.`,
 		description: `One uniquely-generated ticket for the 11ty Conference.`
-	},head, body);
+	}, head, body);
 }
 
 async function renderPage(ticketId, justRegistered = false, productionHost = "") {

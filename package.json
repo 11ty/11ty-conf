@@ -6,8 +6,7 @@
   "scripts": {
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve",
-    "serverless": "npx wrangler pages dev _site",
-    "localhost": "npm run build && npm run serverless"
+    "serverless": "npm run build && npx wrangler pages dev _site"
   },
   "keywords": [],
   "author": "",
