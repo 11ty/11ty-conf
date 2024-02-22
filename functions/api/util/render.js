@@ -189,7 +189,7 @@ if("localStorage" in window) {
 	<section class="ticket-preview">
 		<browser-window flush mode="dark" style="--bw-background: #000;">
 			<hyper-card>
-				<throb-ber>
+				<throb-ber style="--throbber-height: 100%">
 					<img src="${screenshotUrl}" alt="One uniquely generated virtual ticket for 11ty Conference." width="1200" height="630" loading="eager" decoding="async">
 				</throb-ber>
 			</hyper-card>
