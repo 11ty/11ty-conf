@@ -1,0 +1,57 @@
+<style webc:scoped>
+:host {
+	display: block;
+	overflow: hidden;
+}
+.hed {
+	text-transform: uppercase;
+	font-size: var(--giant-title-scale, 100%);
+	line-height: .9;
+	margin: 0 auto var(--rhythm);
+	max-width: 43.75rem; /* 700px /16 */
+}
+.hed > * {
+	font-size: var(--step-0);
+}
+b {
+	text-align: center;
+	display: block;
+}
+b.first {
+	font-size: 109%;
+}
+b.second {
+	font-size: 137%;
+}
+b.third {
+	font-size: 50%;
+}
+b.fourth {
+	font-size: 215%;
+}
+b.fifth {
+	font-size: 163%;
+	white-space: nowrap;
+}
+b.sixth {
+	font-size: 158%;
+	white-space: nowrap;
+}
+</style>
+<h1 class="hed" :style="titleScale ? `--giant-title-scale: ${titleScale*100}%` : ''">
+	<is-land on:visible on:media="(prefers-reduced-motion: no-preference)" on:save-data="false" webc:import="npm:@11ty/is-land">
+		<confetti-logo>
+			<a href="/">
+				<img src="/public/logo.svg" width="200" height="200" alt="11ty logo" loading="eager" draggable="false">
+			</a>
+		</confetti-logo>
+	</is-land>
+	<span>
+		<b class="first">International</b>
+		<b class="second">Symposium</b>
+		<b class="third">on</b>
+		<b class="fourth">Making</b>
+		<b class="fifth">Web Sites</b>
+		<b class="sixth">Real Good</b>
+	</span>
+</h1>

@@ -1,0 +1,17 @@
+<style webc:scoped>
+:host {
+	display: block;
+	margin: 1em auto -.5em;
+	font-size: 2em;
+	font-family: Saira Extra Condensed, system-ui, sans-serif;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 1;
+}
+p {
+	text-align: center;
+	margin: 0;
+	font-style: italic;
+}
+</style>
+<p><slot></slot></p>

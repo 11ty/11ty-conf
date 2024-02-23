@@ -14,10 +14,11 @@ export default async function() {
 		}
 	});
 
+	// TODO these are paginated or limited to 100 upstream
 	// let count = 0;
 	// for(let subscriber of json.results) {
 	// 	// Conference attendees only
-	// 	if(subscriber.tags.includes("conf2024") && subscriber.subscriber_type === "regular") {
+	// 	if(subscriber.tags.includes("conf2024")) {
 	// 		count++;
 	// 	}
 	// }
