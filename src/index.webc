@@ -35,5 +35,6 @@ const layout = "layout.webc";
 <p>If your company is interested in sponsoring, please <a href="mailto:sponsor@11ty.dev">get in touch</a> and we’ll share our sponsorship prospectus.</p>
 
 <h2 id="speaking">Can I speak?</h2>
-<p>We will be holding a public call for proposals soon! We’ll be looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work, Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, CSS, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
-<p>Make sure you <a href="#register">register to receive updates</a>.</p>
+<p>The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform" data-icon="🚨🚨🚨">public call for proposals</a> is now open</strong>! Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) April 22!</p>
+<p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
+
