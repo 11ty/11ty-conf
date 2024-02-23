@@ -91,3 +91,6 @@ li {
 	line-height: 1.5;
 	margin-block: .5em;
 }
+abbr {
+	text-decoration: none;
+}

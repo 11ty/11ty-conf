@@ -6,16 +6,12 @@
 p {
 	text-align: center;
 	margin: 0;
-}
-.conference-date {
 	display: block;
 	font-family: Saira Extra Condensed, system-ui, sans-serif;
-	font-size: 4em;
+	font-size: 3em;
+}
+time {
 	text-transform: uppercase;
 }
-.time {
-	margin-block-start: -.5em;
-}
 </style>
-<p><strong><time class="conference-date" datetime="2024-05-09">May 9, 2024</time></strong></p>
-<p class="time">at <a href="https://www.worldtimebuddy.com/?qm=1&lid=100,6,5,8,2193733,2643743,1273294,1796236,3435910,1835848&h=8&date=2024-5-9&sln=8-16&hf=1" rel="noreferrer">3pm UTC</a></p>
+<p><time datetime="2024-05-09">May 9, 2024</time> at <a href="https://www.worldtimebuddy.com/?qm=1&lid=100,6,5,8,2193733,2643743,1273294,1796236,3435910,1835848&h=8&date=2024-5-9&sln=8-16&hf=1" rel="noreferrer">3pm</a> <abbr title="Coordinated Universal Time">UTC</abbr></p>
