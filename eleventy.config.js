@@ -32,7 +32,6 @@ export default function(eleventyConfig) {
 	eleventyConfig.addWatchTarget("src/public/*.css");
 
 	eleventyConfig.addPassthroughCopy({
-		"_redirects": "_redirects",
 		"_routes.json": "_routes.json",
 		"src/public/*": "/public/",
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "/public/logo.svg",
