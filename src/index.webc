@@ -22,15 +22,18 @@ const layout = "layout.webc";
 <p>Registration is now open—join the <b @text="buttondown.count"></b> other developers attending the 11ty Conference!</p>
 <newsletter-form></newsletter-form>
 
-<h2 id="price">Take my money!</h2>
-<p>Thanks to our wonderful <a href="#sponsors">sponsors</a>, <strong>the conference is free</strong>!</p>
-<p>If you’re attending while representing a company, <a href="https://opencollective.com/11ty">donations are always appreciated</a>!</p>
-<p>If your company is interested in sponsoring, please <a href="mailto:sponsor@11ty.dev">get in touch</a> and we’ll share our sponsorship prospectus.</p>
+<h2 id="code-of-conduct">Code of Conduct</h2>
+<p>All participants (attendees, speakers, sponsors, staff, organizers, volunteers) will be required to abide by the <a href="/2024/code-of-conduct/">code of conduct</a>. Please read it throroughly to ensure a welcoming event for all.</p>
 
 <h2 id="sponsors">Sponsors</h2>
 <logo-list></logo-list>
 <p>Want your logo here? <a href="mailto:sponsor@11ty.dev">Get in touch</a> and we’ll send over our sponsorship prospectus.</p>
 
+<h2 id="price">Take my money!</h2>
+<p>Thanks to our wonderful <a href="#sponsors">sponsors</a>, <strong>the conference is free</strong>!</p>
+<p>If you’re attending while representing a company, <a href="https://opencollective.com/11ty">donations are always appreciated</a>!</p>
+<p>If your company is interested in sponsoring, please <a href="mailto:sponsor@11ty.dev">get in touch</a> and we’ll share our sponsorship prospectus.</p>
+
 <h2 id="speaking">Can I speak?</h2>
 <p>We will be holding a public call for proposals soon! We’ll be looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work, Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, CSS, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
-<p>Make sure you <a href="#subscription">subscribe to receive updates</a>.</p>
+<p>Make sure you <a href="#register">register to receive updates</a>.</p>

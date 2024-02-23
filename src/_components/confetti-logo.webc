@@ -58,6 +58,7 @@ class ConfettiLogo extends HTMLElement {
 
 	handleEvent(event) {
 		this.fire(this.confetti);
+		event.preventDefault();
 	}
 }
 

@@ -43,7 +43,7 @@ const description = "We’re running a conference — this is an 11ty Confer
 			<sub-title webc:if="page.url == '/'">Join us for the</sub-title>
 			<giant-title :@title-scale="page.url == '/' ? 1 : .40"></giant-title>
 		</header>
-		<main>
+		<main id="content">
 			<div @html="content" webc:nokeep></div>
 			<block-separator style="--block-separator-offset: 70%">
 				<possum-balloon></possum-balloon>
