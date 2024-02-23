@@ -1,6 +1,6 @@
 <img
   webc:is="eleventy-image"
-	src="public/david.svg"
+	src="src/public/david.svg"
 	width="250"
 	draggable="false"
 	alt="The possum mascot floating on a red balloon via a light blue tether attached at the waist. They are wearing oversized glasses.">

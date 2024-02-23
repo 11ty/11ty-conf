@@ -3,8 +3,6 @@ import pluginWebc from "@11ty/eleventy-plugin-webc";
 import { eleventyImagePlugin } from "@11ty/eleventy-img";
 
 export default function(eleventyConfig) {
-	eleventyConfig.ignores.add("README.md");
-
 	eleventyConfig.addJavaScriptFunction("fetchGoogleFontsCss", async (cssUrl) => {
 		try {
 			let css = await fetch(cssUrl, {
@@ -25,24 +23,24 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: [
-			"_components/**/*.webc",
+			"src/_components/**/*.webc",
 			"npm:@11ty/eleventy-img/*.webc",
 		]
 	});
 
-	eleventyConfig.addWatchTarget("_components/**/*.css");
-	eleventyConfig.addWatchTarget("public/*.css");
+	eleventyConfig.addWatchTarget("src/_components/**/*.css");
+	eleventyConfig.addWatchTarget("src/public/*.css");
 
 	eleventyConfig.addPassthroughCopy({
 		"_redirects": "_redirects",
 		"_routes.json": "_routes.json",
-		"public/*": "/public/",
+		"src/public/*": "/public/",
 		"node_modules/@11ty/logo/assets/logo-bg.svg": "/public/logo.svg",
 		"node_modules/@zachleat/browser-window/browser-window.js": "/public/browser-window.js",
 		"node_modules/@zachleat/throbber/throbber.js": "/public/throbber.js",
 		"node_modules/@zachleat/webcare-webshare/webcare-webshare.js": "/public/webcare-webshare.js",
 		"node_modules/@zachleat/hypercard/hypercard.js": "/public/hypercard.js",
-		"_components/global.css": "/public/global.css",
+		"src/_components/global.css": "/public/global.css",
 	}).addPassthroughCopy("robots.txt");
 
 	// Image plugin
@@ -56,4 +54,10 @@ export default function(eleventyConfig) {
 			decoding: "async"
 		}
 	});
+
+	return {
+		dir: {
+			input: "src",
+		}
+	}
 };

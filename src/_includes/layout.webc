@@ -34,14 +34,21 @@ const description = "We’re running a conference — this is an 11ty Confer
 		<!-- CSS -->
 		<link rel="stylesheet" href="../_components/global.css">
 
-		<style @raw="getBundle('css')" webc:keep></style>
+		<style webc:keep @html="fetchGoogleFontsCss('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600&display=swap')"></style>
+		<style webc:keep @raw="getBundle('css')"></style>
 	</head>
 	<body>
-		<announcement-banner @url="#register">🎉 Registration is open!</announcement-banner>
+		<announcement-banner @url="/#register">🎉 Registration is open—join us!</announcement-banner>
 		<header>
-			<giant-title :text="title"></giant-title>
+			<sub-title webc:if="page.url == '/'">Join us for the</sub-title>
+			<giant-title :@title-scale="page.url == '/' ? 1 : .40"></giant-title>
 		</header>
-		<main @html="content"></main>
+		<main>
+			<div @html="content" webc:nokeep></div>
+			<block-separator style="--block-separator-offset: 70%">
+				<possum-balloon></possum-balloon>
+			</block-separator>
+		</main>
 		<footer>
 			<p>©<span @text="new Date().getFullYear()"></span> Built with <a href="https://www.11ty.dev/" @text="eleventy.generator"></a> using <a href="https://www.11ty.dev/docs/languages/webc/">WebC</a></p>
 			<p><em>Newsletter powered by <a href="https://buttondown.email/">Buttondown</a></em></p>

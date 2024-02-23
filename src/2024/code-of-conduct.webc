@@ -1,0 +1,62 @@
+---node
+const layout = "layout.webc";
+const title = "Code of Conduct for the 11ty Conference"
+const description = "Here’s what is expected of participants, organizers, speakers, and volunteers for the 11ty Conference."
+---
+<block-separator style="--rhythm: 0; --block-separator-offset: 70%">
+	<possum-balloon></possum-balloon>
+</block-separator>
+
+<h2>Code of Conduct</h2>
+<p>All attendees, speakers, sponsors, and volunteers at our meetup are required to agree with and abide by the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensure a safe environment for everybody.</p>
+
+<h3>Need help?</h3>
+<p>Contact <a href="mailto:zach@11ty.dev">Zach</a>, <a href="mailto:david@cloudcannon.com">David</a>, <a href="mailto:olivia@cloudcannon.com">Olivia</a>, or <a href="mailto:conf-organizers@11ty.dev">all of the organizers</a> at the same time.
+
+<h3>The Short version</h3>
+
+<p>The conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, age, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of meetup participants in any form.</p>
+<p>Sexual language and imagery is not appropriate for any venue related to the conference. This includes but is not limited to talks, sponsor materials, social media posts (especially those mentioning the official conference account or hash tags), and other online media.</p>
+<p>Participants violating these rules may be sanctioned or expelled from the event without a refund at the discretion of the organisers.</p>
+
+<h3>The Longer Version</h3>
+
+<p>Harassment includes:</p>
+<ul>
+	<li>Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, neuro(a)typicality, physical appearance, body size, race, or religion.</li>
+	<li>Unwelcome comments regarding a person’s lifestyle choices and practices, including those related to food, health, parenting, drugs, and employment.</li>
+	<li>Deliberate misgendering or use of ‘dead’ or rejected names</li>
+	<li>Gratuitous or off-topic sexual images or behaviour in spaces where they’re not appropriate</li>
+	<li>Gratuitous or off-topic sexual images or behaviour in spaces where they’re not appropriate</li>
+	<li>Physical contact and simulated physical contact (eg, textual descriptions like “*hug*” or “*backrub*”) without consent or after a request to stop.</li>
+	<li>Threats of violence</li>
+	<li>Incitement of violence towards any individual, including encouraging a person to engage in self-harm</li>
+	<li>Deliberate intimidation</li>
+	<li>Stalking or following</li>
+	<li>Harassing photography or recording, including logging online activity for harassment purposes</li>
+	<li>Sustained disruption of discussion</li>
+	<li>Unwelcome sexual attention</li>
+	<li>Pattern of inappropriate social contact, such as requesting/assuming inappropriate levels of intimacy with others</li>
+	<li>Continued one-on-one communication after requests to cease</li>
+	<li>Deliberate “outing” of any aspect of a person’s identity without their consent</li>
+</ul>
+
+<p>We will prioritize marginalized people’s safety over privileged people’s comfort. Organisers will not act on complaints regarding:</p>
+
+<ul>
+	<li>‘Reverse’ -isms, including ‘reverse racism,’ ‘reverse sexism,’ and ‘cisphobia’</li>
+	<li>Reasonable communication of boundaries, such as “leave me alone,” “go away,” or “I’m not discussing this with you.”</li>
+	<li>Communicating in a ‘tone’ you don’t find congenial</li>
+	<li>Criticizing racist, sexist, cissexist, or otherwise oppressive behavior or assumptions</li>
+</ul>
+
+<p>Participants asked to stop any harassing behavior are expected to comply immediately.</p>
+<p>If a participant engages in harassing behavior, the conference organisers may take any action they deem appropriate, including warning the offender or expulsion from this and future events.</p>
+<p>If you are being harassed, notice that someone else is being harassed, or have any other concerns, please <a href="mailto:conf-organizers@11ty.dev">contact our conference staff</a> (Zach, David, or Olivia) immediately.</p>
+
+<block-separator style="--block-separator-offset: 70%">
+	<possum-balloon></possum-balloon>
+</block-separator>
+
+<p><em>Inspired by:</em> JSConf, <a href="https://github.com/leftlogic/confcodeofconduct.com"><code>confcodeofconduct.com</code></a>, <a href="http://geekfeminism.wikia.com/wiki/conference_anti-harassment/Policy">The Ada Initiative</a>, and <a href="https://hugoconf.io/code-of-conduct">HugoConf</a></p>
+<p><em>This work is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a></em></p>
