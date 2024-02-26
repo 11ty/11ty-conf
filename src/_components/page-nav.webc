@@ -1,22 +1,26 @@
 <style webc:scoped>
 :host {
 	display: block;
-	position: sticky;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 2;
 	margin-inline: calc(-1 * var(--page-margin));
 	background-color: #000;
 	color: #fff;
 	padding: 0 var(--page-margin);
 	box-shadow: 0px 4px 12px 0px rgba(0,0,0,.8)
 }
+@media (min-height: 43.75em) { /* 700px */
+	:host {
+		position: sticky;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+	}
+}
 :host ol {
 	list-style: "";
 	display: flex;
 	flex-wrap: wrap;
-	gap: .5em 1.25em;
+	gap: .25em 1.25em;
 	padding: 0;
 	margin: 0;
 	justify-content: center;
@@ -24,10 +28,11 @@
 }
 :host li {
 	margin: 0;
+	line-height: 1;
 }
 :host :link {
 	display: block;
-	padding: .5em 0;
+	padding: .75em 0;
 	color: inherit;
 	font-weight: 600;
 }
