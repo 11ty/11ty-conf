@@ -38,7 +38,8 @@ const description = "We’re running a conference — this is an 11ty Confer
 		<style webc:keep @raw="getBundle('css')"></style>
 	</head>
 	<body>
-		<announcement-banner @url="/#register">🎉 Registration is open—join us!</announcement-banner>
+		<page-nav></page-nav>
+		<!-- <announcement-banner @url="/#register">🎉 Registration is open—join us!</announcement-banner> -->
 		<header>
 			<sub-title webc:if="page.url == '/'">Join us for the</sub-title>
 			<giant-title :@title-scale="page.url == '/' ? 1 : .40"></giant-title>

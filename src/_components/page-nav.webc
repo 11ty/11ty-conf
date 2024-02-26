@@ -1,0 +1,47 @@
+<style webc:scoped>
+:host {
+	display: block;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	margin-inline: calc(-1 * var(--page-margin));
+	background-color: #000;
+	color: #fff;
+	padding: 0 var(--page-margin);
+	box-shadow: 0px 4px 12px 0px rgba(0,0,0,.8)
+}
+:host ol {
+	list-style: "";
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5em 1.25em;
+	padding: 0;
+	margin: 0;
+	justify-content: center;
+	border-bottom: 1px;
+}
+:host li {
+	margin: 0;
+}
+:host :link {
+	display: block;
+	padding: .5em 0;
+	color: inherit;
+	font-weight: 600;
+}
+:host :link:not(:hover, :focus) {
+	text-decoration: none;
+}
+</style>
+<nav>
+  <ol>
+    <li><a href="/#when">What/When</a></li>
+    <li><a href="/#register" data-icon="🎉">Register</a></li>
+    <li><a href="/#sponsors">Sponsors</a></li>
+    <li><a href="/#speaking" data-icon="🎈">Speaking</a></li>
+    <li><a href="/#team">Team</a></li>
+    <li><a href="/2024/code-of-conduct/#content">Code of Conduct</a></li>
+  </ol>
+</nav>

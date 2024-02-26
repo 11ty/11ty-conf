@@ -11,15 +11,17 @@ const layout = "layout.webc";
 	<possum-balloon></possum-balloon>
 </block-separator>
 
-<h2 id="what">What is it?</h2>
+<div id="what"></div>
+<h2 id="when">What/When</h2>
 <p>A brand new exclusively (and extremely) online (virtual) single-day single-track conference dedicated to <strong>Web Development</strong> and the <a href="https://www.11ty.dev/"><img webc:is="indie-avatar" url="https://www.11ty.dev/"><strong>Eleventy</strong></a> static site generator.</p>
 
-<h2 id="when">When is it?</h2>
 <conference-start></conference-start>
 
 <div id="subscription"></div>
 <h2 id="register">How do I sign up?</h2>
 <p>Registration is now open—join the <b @text="buttondown.count"></b> other developers attending the 11ty Conference!</p>
+<div id="price"></div>
+<p>Thanks to our wonderful <a href="#sponsors">sponsors</a>, <strong>the conference is free</strong>! If you’re attending while representing a company, <a href="https://opencollective.com/11ty">donations are always appreciated</a>.</p>
 <newsletter-form></newsletter-form>
 
 <h2 id="code-of-conduct">Code of Conduct</h2>
@@ -27,16 +29,11 @@ const layout = "layout.webc";
 
 <h2 id="sponsors">Sponsors</h2>
 <logo-list></logo-list>
-<p>Want your logo here? <a href="mailto:sponsor@11ty.dev">Get in touch</a> and we’ll send over our sponsorship prospectus.</p>
-
-<h2 id="price">Take my money!</h2>
-<p>Thanks to our wonderful <a href="#sponsors">sponsors</a>, <strong>the conference is free</strong>!</p>
-<p>If you’re attending while representing a company, <a href="https://opencollective.com/11ty">donations are always appreciated</a>!</p>
-<p>If your company is interested in sponsoring, please <a href="mailto:sponsor@11ty.dev">get in touch</a> and we’ll share our sponsorship prospectus.</p>
+<p><strong>Want your logo here?</strong> <a href="mailto:sponsor@11ty.dev">Get in touch</a> and we’ll send over our sponsorship prospectus.</p>
 
 <h2 id="speaking">Can I speak?</h2>
 <p>The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform" data-icon="🚨🚨🚨">public call for proposals</a> is now open</strong>! Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) March 22!</p>
 <p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
 
-<h2 id="team">Who’s running this?</h2>
+<h2 id="team">The Team</h2>
 <organizer-team></organizer-team>
