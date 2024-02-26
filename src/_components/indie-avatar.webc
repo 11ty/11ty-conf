@@ -3,8 +3,9 @@
 	display: inline-block;
 }
 :host img {
-	width: auto;
+	width: 1em;
 	height: 1em;
+	object-fit: cover;
 	vertical-align: middle;
 	border-radius: .25em;
 	/* border: 1px solid #ddd; */

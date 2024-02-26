@@ -14,6 +14,7 @@ a {
 </style>
 <ul>
 	<li><a href="https://www.linkedin.com/in/david-large-4875b81b2/"><img webc:is="indie-avatar" @path="assets/avatars/david.jpg" alt="David (in black and white)">David Large</a></li>
+	<li><a href="https://mikeneumegen.com/"><img webc:is="indie-avatar" @path="assets/avatars/mike.jpg" alt="Mike’s face">Mike Neumegen</a></li>
 	<li><a href="https://www.linkedin.com/in/olivia-nicholson-42a050127/"><img webc:is="indie-avatar" @path="assets/avatars/liv.jpg" alt="Liv (in black and white)">Olivia Nicholson</a></li>
 	<li><a href="https://zachleat.com/"><img webc:is="indie-avatar" url="https://www.zachleat.com/">Zach Leatherman</a></li>
 	<!-- <li><a href="mailto:conf-organizers@11ty.dev"><em>…<u>and you?</u></em></a></li> -->
