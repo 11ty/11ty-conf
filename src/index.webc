@@ -18,14 +18,14 @@ const layout = "layout.webc";
 <conference-start></conference-start>
 
 <div id="subscription"></div>
+<div id="code-of-conduct"></div>
+<div id="price"></div>
 <h2 id="register">How do I sign up?</h2>
 <p>Registration is now open—join the <b @text="buttondown.count"></b> other developers attending the 11ty Conference!</p>
-<div id="price"></div>
-<p>Thanks to our wonderful <a href="#sponsors">sponsors</a>, <strong>the conference is free</strong>! If you’re attending while representing a company, <a href="https://opencollective.com/11ty">donations are always appreciated</a>.</p>
+<p>Thanks to our wonderful <a href="#sponsors">sponsors</a>, <strong>the conference is free</strong>! If you’re attending and representing a company, <a href="https://opencollective.com/11ty">donations are always appreciated</a>.</p>
+<p>All participants (attendees, speakers, sponsors, staff, organizers, volunteers) will be required to <strong>abide by the <a href="/2024/code-of-conduct/">code of conduct</a></strong>. Please read it throroughly to ensure a welcoming event for all.</p>
 <newsletter-form></newsletter-form>
 
-<h2 id="code-of-conduct">Code of Conduct</h2>
-<p>All participants (attendees, speakers, sponsors, staff, organizers, volunteers) will be required to abide by the <a href="/2024/code-of-conduct/">code of conduct</a>. Please read it throroughly to ensure a welcoming event for all.</p>
 
 <h2 id="sponsors">Sponsors</h2>
 <logo-list></logo-list>

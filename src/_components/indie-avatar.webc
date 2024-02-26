@@ -1,14 +1,13 @@
 <style webc:scoped>
 :host {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
 }
 :host img {
 	width: 1em;
 	height: 1em;
 	object-fit: cover;
-	vertical-align: middle;
 	border-radius: .25em;
-	/* border: 1px solid #ddd; */
 	box-shadow: 0 0 2px 0 #ddd;
 	margin-right: .25em;
 }
