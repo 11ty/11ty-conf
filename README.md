@@ -20,5 +20,4 @@ npm run serverless
 * [Saira Extra Condensed typeface from Omnibus-Type](https://www.omnibus-type.com/fonts/saira-extra-condensed/) (via [Google Fonts](https://fonts.google.com/specimen/Saira+Extra+Condensed))
 * [Possum mascot](https://www.11ty.dev/blog/mascot-david/) from [David Neal](https://reverentgeek.com/about/)
 * Footer image from [Jake Heidecker](https://unsplash.com/photos/green-trash-bin-beside-brown-building-Hp0P67o2EK4)
-* [`<model-viewer>` Web Component](https://modelviewer.dev/) (Google)
 * Confetti cannons from [Kiril Vatev](https://github.com/catdad/canvas-confetti)
