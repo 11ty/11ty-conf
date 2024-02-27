@@ -54,7 +54,6 @@ const description = "We’re running a conference — this is an 11ty Confer
 			<p>©<span @text="new Date().getFullYear()"></span> Built with <a href="https://www.11ty.dev/" @text="eleventy.generator"></a> using <a href="https://www.11ty.dev/docs/languages/webc/">WebC</a></p>
 			<p><em>Newsletter powered by <a href="https://buttondown.email/">Buttondown</a></em></p>
 			<p><em>Footer image from <a href="https://unsplash.com/photos/green-trash-bin-beside-brown-building-Hp0P67o2EK4">Jake Heidecker</a></em></p>
-			<!-- <p><em>Dumpster model by <a href="https://sketchfab.com/3d-models/low-poly-dumpsters-b9ec48bea3544743a72590a979c68a63">Anna Denisova</a></em></p> -->
 			<p><em>Confetti cannons from <a href="https://github.com/catdad/canvas-confetti">Kiril Vatev</a></em></p>
 		</footer>
 		<footer-background></footer-background>
