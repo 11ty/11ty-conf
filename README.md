@@ -7,6 +7,12 @@ npm install
 npm start
 ```
 
+With serverless routes (for registration/ticketing):
+
+```
+npm run serverless
+```
+
 ## Using
 
 * [Eleventy v3.0](https://www.11ty.dev/) with [WebC](https://www.11ty.dev/docs/languages/webc/)
