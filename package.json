@@ -17,7 +17,8 @@
     "@zachleat/browser-window": "^1.0.14",
     "@zachleat/hypercard": "^1.0.2",
     "@zachleat/throbber": "^1.0.3",
-    "@zachleat/webcare-webshare": "^1.0.2"
+    "@zachleat/webcare-webshare": "^1.0.2",
+    "canvas-confetti": "^1.9.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.0.0-alpha.4",
@@ -25,6 +26,7 @@
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-plugin-webc": "^0.11.2",
     "dotenv": "^16.4.4",
+    "terser": "^5.28.1",
     "wrangler": "^3.28.0"
   }
 }

@@ -1,14 +1,20 @@
-import EleventyFetch from "@11ty/eleventy-fetch";
+import { minify } from "terser";
+import fs from "node:fs";
 
 const data = {
 	permalink: "/public/canvas-confetti.js"
 }
 
 async function render() {
-  return EleventyFetch("https://esm.run/canvas-confetti@1", {
-    duration: "1d",
-    type: "text"
-  });
+  let code = fs.readFileSync("./node_modules/canvas-confetti/dist/confetti.module.mjs", "utf8");
+
+  try {
+    let result = await minify(code, { sourceMap: true });
+    return result.code;
+  } catch(e) {
+    console.error( e );
+    return code;
+  }
 }
 
 export { data, render };
