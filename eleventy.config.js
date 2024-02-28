@@ -40,7 +40,9 @@ export default function(eleventyConfig) {
 		"node_modules/@zachleat/webcare-webshare/webcare-webshare.js": "/public/webcare-webshare.js",
 		"node_modules/@zachleat/hypercard/hypercard.js": "/public/hypercard.js",
 		"src/_components/global.css": "/public/global.css",
-	}).addPassthroughCopy("robots.txt");
+	});
+	eleventyConfig.addPassthroughCopy("robots.txt");
+	eleventyConfig.addPassthroughCopy("_redirects");
 
 	// Image plugin
 	eleventyConfig.addPlugin(eleventyImagePlugin, {
