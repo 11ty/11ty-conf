@@ -7,7 +7,7 @@ npm install
 npm start
 ```
 
-With serverless routes (for registration/ticketing):
+With serverless routes (for registration/ticketing). Requires `CUSTOM_HOST`, `BUTTONDOWN_API_KEY`, and `OPENCOLLECT_API_KEY` environment variables.
 
 ```
 npm run serverless

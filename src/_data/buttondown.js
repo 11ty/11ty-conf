@@ -2,6 +2,14 @@ import fetch from "@11ty/eleventy-fetch";
 import "dotenv/config";
 
 export default async function() {
+	if(!process.env.BUTTONDOWN_API_KEY) {
+		console.warn("Missing BUTTONDOWN_API_KEY in src/_data/buttondown.js, returning unknown current attendee count.");
+
+		return {
+			count: "(Unknown)"
+		};
+	}
+
 	let API_URL = `https://api.buttondown.email/v1/subscribers`;
 
 	let json = await fetch(API_URL, {
