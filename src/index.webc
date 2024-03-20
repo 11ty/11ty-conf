@@ -26,14 +26,17 @@ const layout = "layout.webc";
 <p>All participants (attendees, speakers, sponsors, staff, organizers, volunteers) will be required to <strong>abide by the <a href="/2024/code-of-conduct/">code of conduct</a></strong>. Please read it thoroughly to ensure a welcoming event for all.</p>
 <newsletter-form></newsletter-form>
 
-
 <h2 id="sponsors">Sponsors</h2>
 <logo-list></logo-list>
 <p><strong>Want your logo here?</strong> <a href="mailto:sponsor@11ty.dev">Get in touch</a> and we’ll send over our sponsorship prospectus.</p>
 
 <h2 id="speaking">Can I speak?</h2>
-<p>The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform" data-icon="🚨🚨🚨">public call for proposals</a> is now open</strong>! Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) March 22!</p>
+<p>The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform" data-icon="🚨🚨🚨">public call for proposals</a> is now open</strong>!</p>
 <p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
+<p>Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) <strong data-icon="🗓️">March 22</strong>!</p>
+<form method="get" action="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">
+	<giant-button label="📢 Apply to Speak"></giant-button>
+</form>
 
 <h2 id="team">The Team</h2>
 <organizer-team></organizer-team>

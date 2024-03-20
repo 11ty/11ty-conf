@@ -37,12 +37,21 @@ b.sixth {
 	font-size: 158%;
 	white-space: nowrap;
 }
+.header-card {
+	display: block;
+	margin-block: 1.5rem 1rem;
+}
 </style>
 <h1 class="hed" :style="titleScale ? `--giant-title-scale: ${titleScale*100}%` : ''">
 	<is-land on:visible on:media="(prefers-reduced-motion: no-preference)" on:save-data="false" webc:import="npm:@11ty/is-land">
+		<template data-island>
+			<script webc:keep type="module" src="/public/hypercard.js"></script>
+		</template>
 		<confetti-logo>
 			<a href="/">
-				<img src="/public/logo.svg" width="200" height="200" alt="11ty logo" loading="eager" draggable="false">
+				<hyper-card class="header-card">
+					<img src="/public/logo.svg" width="200" height="200" alt="11ty logo" loading="eager" draggable="false">
+				</hyper-card>
 			</a>
 		</confetti-logo>
 	</is-land>

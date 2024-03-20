@@ -16,23 +16,6 @@
 	padding: .25em;
 	border-radius: .25em;
 }
-
-:host .button-wrapper {
-	flex-grow: 1;
-	flex-basis: 100%;
-	margin-block: 1em;
-	font-weight: 600;
-}
-@media (min-width: 33.75em) { /* 540px */
-	:host .button-wrapper {
-		margin-inline: -8vw;
-	}
-}
-@media (min-width: 40em) { /* 640px */
-	:host .button-wrapper {
-		margin-inline: -12.5vw;
-	}
-}
 </style>
 <form
 	action="/api/register"
@@ -45,5 +28,5 @@
 
 	<input type="hidden" name="tag" value="conf2024">
 
-	<giant-button class="button-wrapper" @type="submit">📮 Register</giant-button>
+	<giant-button @label="📮 Register"></giant-button>
 </form>
