@@ -38,5 +38,13 @@ const layout = "layout.webc";
 	<giant-button label="📢 Apply to Speak"></giant-button>
 </form>
 
+<h2 id="merch">T-shirt & Stickers</h2>
+<p>For increased sustainability and to reduce waste, our online event is free and the swag is an add-on available for purchase.</p>
+<p>For a very limited time (closing April 5, 2024), we have opened an <a href="https://merch.11ty.dev/"><strong>11ty Merch store</strong></a> for folks that are interested in buying a bundle (<a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">shirt and stickers</a>) to support the conference and the open source project. The goal is to get these in your hands before the conference on May 9th!</p>
+<p>Special promotions and discounts are available for Open Collective supporters (discount code <code>OPENCOLLECTIVE</code> with valid email address).</p>
+<form method="get" action="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">
+	<giant-button label="🛍️ Get Merch"></giant-button>
+</form>
+
 <h2 id="team">The Team</h2>
 <organizer-team></organizer-team>
