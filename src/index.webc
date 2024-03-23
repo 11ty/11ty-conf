@@ -31,12 +31,10 @@ const layout = "layout.webc";
 <p><strong>Want your logo here?</strong> <a href="mailto:sponsor@11ty.dev">Get in touch</a> and we’ll send over our sponsorship prospectus.</p>
 
 <h2 id="speaking">Can I speak?</h2>
-<p>The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform" data-icon="🚨🚨🚨">public call for proposals</a> is now open</strong>!</p>
-<p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
-<p>Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) <strong data-icon="🗓️">March 22</strong>!</p>
-<form method="get" action="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">
-	<giant-button label="📢 Apply to Speak"></giant-button>
-</form>
+<p><em data-icon="🗓️">March 22 update</em>: The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">public call for proposals</a> is now closed</strong> and we are in the process of reviewing your entries now. Thanks everyone!</p>
+<!--- <p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
+<p>Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) <strong data-icon="🗓️">March 22</strong>!</p> --->
+
 
 <h2 id="merch">T-shirt & Stickers</h2>
 <p>For increased sustainability and to reduce waste, our online event is free and the swag is an add-on available for purchase.</p>
