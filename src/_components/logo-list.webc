@@ -8,10 +8,19 @@
 :host a[href] {
 	display: block;
 	margin-bottom: 1em;
+	aspect-ratio: 16/9;
 }
 :host svg,
 :host img {
 	width: 100%;
+}
+@supports (object-fit: cover) {
+	:host svg,
+	:host img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
 }
 @media (min-width: 37.5em) { /* 600px */
 	:host > * {
