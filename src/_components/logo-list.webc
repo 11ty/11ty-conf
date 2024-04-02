@@ -5,6 +5,10 @@
 	margin-block: 2em;
 	max-width: 24em; /* 432px /18 */
 }
+:host a[href] {
+	display: block;
+	margin-bottom: 1em;
+}
 :host svg,
 :host img {
 	width: 100%;
@@ -17,3 +21,4 @@
 }
 </style>
 <logo-cloudcannon></logo-cloudcannon>
+<logo-artist-activist></logo-artist-activist>
