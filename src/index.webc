@@ -44,5 +44,16 @@ const layout = "layout.webc";
 	<giant-button label="🛍️ Get Merch"></giant-button>
 </form>
 
+<h2 id="accessibility">Accessibility</h2>
+<p>For this online event, we’re doing our best to achieve an accessible event for all, extending to each and every part of the event:</p>
+<ul>
+	<li>The event is <em>free</em> so that folks of all economic backgrounds can join and learn.</li>
+	<li>The event has a robust and inclusive <a href="/2024/code-of-conduct/#code-of-conduct">code of conduct</a> that must be adhered to by all conference participants.</li>
+	<li>The event web site and registration process must be accessible.</li>
+	<li>The event is held online with worldwide remote access via live streaming.</li>
+	<li>The event provides live captioning services (via <a href="https://whitecoatcaptioning.com/captioning-for-conferences/">White Coat Captioning</a>).</li>
+</ul>
+<p>If you notice something that doesn’t satisfy these goals, <a href="mailto:conf-organizers@11ty.dev">please contact the organizer team</a>.</p>
+
 <h2 id="team">The Team</h2>
 <organizer-team></organizer-team>

@@ -1,12 +1,10 @@
 <style webc:scoped>
-:host {
-	font-size: 1.5em;
-}
 ul {
 	list-style: "";
 	padding: 0;
 }
-a {
+ul a {
+	font-size: 1.5em;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
@@ -17,5 +15,5 @@ a {
 	<li><a href="https://mikeneumegen.com/"><img webc:is="indie-avatar" @path="assets/avatars/mike.jpg" alt="Mike’s face">Mike Neumegen</a></li>
 	<li><a href="https://www.linkedin.com/in/olivia-nicholson-42a050127/"><img webc:is="indie-avatar" @path="assets/avatars/liv.jpg" alt="Liv (in black and white)">Olivia Nicholson</a></li>
 	<li><a href="https://zachleat.com/"><img webc:is="indie-avatar" url="https://www.zachleat.com/">Zach Leatherman</a></li>
-	<!-- <li><a href="mailto:conf-organizers@11ty.dev"><em>…<u>and you?</u></em></a></li> -->
 </ul>
+<p>You can <a href="mailto:conf-organizers@11ty.dev">email the entire team</a>.</p>
