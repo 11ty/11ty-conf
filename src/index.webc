@@ -30,20 +30,6 @@ const layout = "layout.webc";
 <logo-list></logo-list>
 <p><strong>Want your logo here?</strong> <a href="mailto:sponsor@11ty.dev">Get in touch</a> and we’ll send over our sponsorship prospectus.</p>
 
-<h2 id="speaking">Can I speak?</h2>
-<p><em data-icon="🗓️">March 22 update</em>: The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">public call for proposals</a> is now closed</strong> and we are in the process of reviewing your entries now. Thanks everyone!</p>
-<!--- <p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
-<p>Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) <strong data-icon="🗓️">March 22</strong>!</p> --->
-
-
-<h2 id="merch">T-shirt & Stickers</h2>
-<p>For increased sustainability and to reduce waste, our online event is free and the swag is an add-on available for purchase.</p>
-<p>For a very limited time (closing April 5, 2024), we have opened an <a href="https://merch.11ty.dev/"><strong>11ty Merch store</strong></a> for folks that are interested in buying a bundle (<a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">shirt and stickers</a>) to support the conference and the open source project. The goal is to get these in your hands before the conference on May 9th!</p>
-<p>Special promotions and discounts are available for Open Collective supporters (discount code <code>OPENCOLLECTIVE</code> with valid email address).</p>
-<form method="get" action="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">
-	<giant-button label="🛍️ Get Merch"></giant-button>
-</form>
-
 <h2 id="accessibility">Accessibility</h2>
 <p>For this online event, we’re doing our best to achieve an accessible event for all, extending to each and every part of the event:</p>
 <ul>
@@ -54,6 +40,20 @@ const layout = "layout.webc";
 	<li>The event provides live captioning services (via <a href="https://whitecoatcaptioning.com/captioning-for-conferences/">White Coat Captioning</a>).</li>
 </ul>
 <p>If you notice something that doesn’t satisfy these goals, <a href="mailto:conf-organizers@11ty.dev">please contact the organizer team</a>.</p>
+
+<h2 id="speaking">Can I speak?</h2>
+<p><em data-icon="🗓️">March 22 Update</em>: The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">public call for proposals</a> is now closed</strong> and we are in the process of reviewing your entries now. Thanks everyone!</p>
+<!--- <p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
+<p>Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) <strong data-icon="🗓️">March 22</strong>!</p> --->
+
+<h2 id="merch">Shirts & Stickers</h2>
+<p>For increased sustainability and to reduce waste, our online event is free and the swag is an add-on available for purchase.</p>
+<p><em data-icon="🗓️">April 8 Update</em>: the <a href="https://merch.11ty.dev/">store</a> is now closed. The order has been sent to the printers and we’ll ship these out when they’re finished!</strong>
+<p><del>For a very limited time (closing April 5, 2024), we have opened an <a href="https://merch.11ty.dev/"><strong>11ty Merch store</strong></a> for folks that are interested in buying a bundle (<a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">shirt and stickers</a>) to support the conference and the open source project.</del> The goal is to get these in your hands before the conference on May 9th!</p>
+<!--- <p>Special promotions and discounts are available for Open Collective supporters.</p>
+<form method="get" action="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">
+	<giant-button label="🛍️ Get Merch"></giant-button>
+</form> --->
 
 <h2 id="team">The Team</h2>
 <organizer-team></organizer-team>
