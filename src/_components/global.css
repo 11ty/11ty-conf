@@ -112,6 +112,12 @@ dl {
 	gap: .5em;
 	grid-template-columns: auto 1fr;
 }
+dl:first-child {
+	margin-top: 0;
+}
+dl:last-child {
+	margin-bottom: 0;
+}
 dd {
 	margin: 0;
 }
@@ -120,10 +126,14 @@ dd {
 	list-style: "";
 	padding: 0;
 }
+.photo-list details {
+	padding: .5rem;
+	margin-left: -.5rem;
+	margin-right: -.5rem;
+}
 .photo-list details[open],
-.photo-list summary:hover {
+.photo-list details:hover {
 	background-color: #333;
-	box-shadow: 0px 0px 0px 8px #333;
 }
 .photo-list summary::-webkit-details-marker {
 	display: none;
@@ -137,9 +147,6 @@ dd {
 	align-items: center;
 	text-decoration: none;
 	flex-wrap: wrap;
-}
-.photo-list.large li {
-	margin-block: 1em;
 }
 .photo-list.large li > a,
 .photo-list.large summary {
