@@ -11,6 +11,7 @@
 @media (min-width: 37.5em) and (prefers-reduced-motion: no-preference) { /* 600px */
 	:host {
 		pointer-events: none;
+		z-index: 1;
 		position: fixed;
 		left: 0;
 		right: 0;
@@ -24,6 +25,7 @@
 		top: 0;
 		left: 0;
 		right: auto;
+		opacity: 1;
 		cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>📌</text></svg>") 16 0,auto; /*! via emojicursor.app */
 		width: auto;
 		height: max(10em, 30vh);

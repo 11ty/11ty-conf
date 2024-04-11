@@ -4,13 +4,12 @@
 	align-items: center;
 }
 :host img {
-	width: 1em;
-	height: 1em;
+	width: 1.5em;
+	height: 1.5em;
 	object-fit: cover;
-	border-radius: .25em;
+	border-radius: 3px;
 	box-shadow: 0 0 2px 0 #ddd;
-	margin-right: .25em;
 }
 </style>
 <img webc:if="typeof url == 'string'" :src="`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`" width="60" height="60" :alt="`IndieWeb Avatar for ${url}`"  loading="lazy" decoding="async">
-<img webc:elseif="path" webc:is="eleventy-image" :src="path" :width="[120]" formats="jpeg" sizes="60w" :alt="alt">
+<img webc:elseif="path" webc:is="eleventy-image" :src="path" :width="[160]" formats="jpeg" sizes="60w" :alt="alt">

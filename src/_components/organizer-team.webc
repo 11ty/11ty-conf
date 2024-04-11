@@ -1,16 +1,4 @@
-<style webc:scoped>
-ul {
-	list-style: "";
-	padding: 0;
-}
-ul a {
-	font-size: 1.5em;
-	display: flex;
-	align-items: center;
-	text-decoration: none;
-}
-</style>
-<ul>
+<ul class="photo-list">
 	<li><a href="https://www.linkedin.com/in/david-large-4875b81b2/"><img webc:is="indie-avatar" @path="assets/avatars/david.jpg" alt="David (in black and white)">David Large</a></li>
 	<li><a href="https://mikeneumegen.com/"><img webc:is="indie-avatar" @path="assets/avatars/mike.jpg" alt="Mike’s face">Mike Neumegen</a></li>
 	<li><a href="https://www.linkedin.com/in/olivia-nicholson-42a050127/"><img webc:is="indie-avatar" @path="assets/avatars/liv.jpg" alt="Liv (in black and white)">Olivia Nicholson</a></li>

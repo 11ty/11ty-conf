@@ -100,3 +100,47 @@ abbr {
 del {
 	text-decoration-color: red;
 }
+
+blockquote {
+	font-style: italic;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+dl {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: auto 1fr;
+}
+dd {
+	margin: 0;
+}
+
+.photo-list {
+	list-style: "";
+	padding: 0;
+}
+.photo-list details[open],
+.photo-list summary:hover {
+	background-color: #333;
+	box-shadow: 0px 0px 0px 6px #333;
+}
+.photo-list summary::-webkit-details-marker {
+	display: none;
+}
+.photo-list li > a,
+.photo-list summary {
+	font-size: 2em;
+	gap: .25em;
+	font-family: Saira Extra Condensed, system-ui, sans-serif;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	flex-wrap: wrap;
+}
+.photo-list.large li > a,
+.photo-list.large summary {
+	font-size: 3em;
+	font-weight: 600;
+	gap: .5em;
+}
