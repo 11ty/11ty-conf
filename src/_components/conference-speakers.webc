@@ -13,11 +13,11 @@
 		<!-- <a href="https://henry.codes"><img webc:is="indie-avatar" @path="assets/speakers/xdesro-sm.jpg" alt="Close-up photo of Henry’s face, with chin-length light colored hair and a neutral facial expression. A cloudy blue sky sits in the background.">Henry Desroches</a> -->
 		<details open>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/xdesro-sm.jpg" alt="Close-up photo of Henry’s face, with chin-length light colored hair and a neutral facial expression. A cloudy blue sky sits in the background.">Henry Desroches</summary>
-			<blockquote>Henry Desroches is a creative technologist and web designer based in Denver, Colorado. He’s been designing and coding the front-of-the-front-end of the web for nigh on a decade, specializing in CSS necromancy, web animation alchemy, and the dark magic of design systems. He’s worked for some incredible clients including YouTube and The New York Times, can kickflip (citation needed), loves keeping the web strange, and has beaten Elden Ring without leveling up.</blockquote>
 			<dl>
 				<dt>A web site made real good:</dt>
 				<dd><a href="https://henry.codes"><code>henry.codes</code></a></dd>
 			</dl>
+			<blockquote>Henry Desroches is a creative technologist and web designer based in Denver, Colorado. He’s been designing and coding the front-of-the-front-end of the web for nigh on a decade, specializing in CSS necromancy, web animation alchemy, and the dark magic of design systems. He’s worked for some incredible clients including YouTube and The New York Times, can kickflip (citation needed), loves keeping the web strange, and has beaten Elden Ring without leveling up.</blockquote>
 		</details>
 	</li>
 	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…more soon!</em></a></li>

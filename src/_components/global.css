@@ -19,6 +19,13 @@ html {
 	color: #fff;
 	background-color: #222;
 }
+:first-child {
+	margin-top: 0;
+}
+:last-child {
+	margin-bottom: 0;
+}
+
 h1,
 h2,
 h3 {
@@ -111,12 +118,6 @@ dl {
 	display: grid;
 	gap: .5em;
 	grid-template-columns: auto 1fr;
-}
-dl:first-child {
-	margin-top: 0;
-}
-dl:last-child {
-	margin-bottom: 0;
 }
 dd {
 	margin: 0;

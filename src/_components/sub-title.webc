@@ -8,6 +8,9 @@
 	position: relative;
 	z-index: 1;
 }
+:host-context(header) {
+	margin-top: 1em;
+}
 p {
 	text-align: center;
 	margin: 0;
