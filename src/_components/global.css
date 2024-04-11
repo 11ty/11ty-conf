@@ -138,6 +138,9 @@ dd {
 	text-decoration: none;
 	flex-wrap: wrap;
 }
+.photo-list.large li {
+	margin-block: 1em;
+}
 .photo-list.large li > a,
 .photo-list.large summary {
 	font-size: 3em;
