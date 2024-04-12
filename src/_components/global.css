@@ -139,6 +139,9 @@ dd {
 .photo-list summary::-webkit-details-marker {
 	display: none;
 }
+.photo-list summary + * {
+	margin-block-start: 1em;
+}
 .photo-list li > a,
 .photo-list summary {
 	font-size: 2em;
