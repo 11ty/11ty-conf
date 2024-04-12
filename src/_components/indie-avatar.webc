@@ -4,11 +4,17 @@
 	align-items: center;
 }
 :host img {
-	width: 1.5em;
-	height: 1.5em;
+	width: 1em;
+	height: 1em;
 	object-fit: cover;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 0 #ddd;
+	margin-right: .25em;
+}
+:host-context(.photo-list) img {
+	width: 1.5em;
+	height: 1.5em;
+	margin-right: 0;
 }
 </style>
 <img webc:if="typeof url == 'string'" :src="`https://v1.indieweb-avatar.11ty.dev/${encodeURIComponent(url)}/`" width="60" height="60" :alt="`IndieWeb Avatar for ${url}`"  loading="lazy" decoding="async">
