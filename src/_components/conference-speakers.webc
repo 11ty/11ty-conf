@@ -10,7 +10,7 @@
 </style>
 <ul class="photo-list large">
 	<li>
-		<details open>
+		<details>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/xdesro-sm.jpg" @alt="Close-up photo of Henry’s face, with chin-length light colored hair and a neutral facial expression. A cloudy blue sky sits in the background.">Henry Desroches</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
