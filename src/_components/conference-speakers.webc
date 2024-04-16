@@ -10,14 +10,23 @@
 </style>
 <ul class="photo-list large">
 	<li>
-		<!-- <a href="https://henry.codes"><img webc:is="indie-avatar" @path="assets/speakers/xdesro-sm.jpg" alt="Close-up photo of Henry’s face, with chin-length light colored hair and a neutral facial expression. A cloudy blue sky sits in the background.">Henry Desroches</a> -->
 		<details open>
-			<summary><img webc:is="indie-avatar" @path="assets/speakers/xdesro-sm.jpg" alt="Close-up photo of Henry’s face, with chin-length light colored hair and a neutral facial expression. A cloudy blue sky sits in the background.">Henry Desroches</summary>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/xdesro-sm.jpg" @alt="Close-up photo of Henry’s face, with chin-length light colored hair and a neutral facial expression. A cloudy blue sky sits in the background.">Henry Desroches</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
 				<dd><a href="https://henry.codes"><code>henry.codes</code></a></dd>
 			</dl>
 			<blockquote>Henry Desroches is a creative technologist and web designer based in Denver, Colorado. He’s been designing and coding the front-of-the-front-end of the web for nigh on a decade, specializing in CSS necromancy, web animation alchemy, and the dark magic of design systems. He’s worked for some incredible clients including YouTube and The New York Times, can kickflip (citation needed), loves keeping the web strange, and has beaten Elden Ring without leveling up.</blockquote>
+		</details>
+	</li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/mayank.png" @alt="A photo of Mayank, with ear-length hair covering one eye. They are wearing a pair of dark rimmed glasses and have medium length dark facial hair. They are looking down and wearing a black t-shirt.">Mayank</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://www.mayank.co/"><code>mayank.co</code></a></dd>
+			</dl>
+			<blockquote>Mayank is a design engineer who cares deeply about accessibility and inclusivity. They enjoy working with new, revolutionary web tech, such as HTML and CSS. In their free time, they run their mouth on their personal blog.</blockquote>
 		</details>
 	</li>
 	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…more soon!</em></a></li>
