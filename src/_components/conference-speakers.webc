@@ -20,13 +20,28 @@
 		</details>
 	</li>
 	<li>
-		<details open>
+		<details>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/mayank.png" @alt="A photo of Mayank, with ear-length hair covering one eye. They are wearing a pair of dark rimmed glasses and have medium length dark facial hair. They are looking down and wearing a black t-shirt.">Mayank</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
 				<dd><a href="https://www.mayank.co/"><code>mayank.co</code></a></dd>
 			</dl>
 			<blockquote>Mayank is a design engineer who cares deeply about accessibility and inclusivity. They enjoy working with new, revolutionary web tech, such as HTML and CSS. In their free time, they run their mouth on their personal blog.</blockquote>
+		</details>
+	</li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/chris-ferdinandi.jpg" @alt="">Chris Ferdinandi</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://gomakethings.com/"><code>GoMakeThings.com</code></a></dd>
+			</dl>
+			<blockquote>
+				<p>Chris Ferdinandi helps people build a simpler, faster, more resilient web.</p>
+				<p>He creates courses and workshops and work with amazing clients. His developer tips newsletter is read by thousands of developers each weekday.</p>
+				<p>He’s advised and written code for organizations like NASA, Apple, Harvard Business School, Chobani, and Adidas. Chris Coyier, the founder of CSS-Tricks and CodePen, has described his writing as “infinitely quote-worthy.”</p>
+				<p>Chris loves pirates, puppies, and Pixar movies, and lives near horse farms in rural Massachusetts.</p>
+			</blockquote>
 		</details>
 	</li>
 	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…more soon!</em></a></li>
