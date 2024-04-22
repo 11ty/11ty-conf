@@ -30,8 +30,8 @@
 		</details>
 	</li>
 	<li>
-		<details open>
-			<summary><img webc:is="indie-avatar" @path="assets/speakers/chris-ferdinandi.jpg" @alt="">Chris Ferdinandi</summary>
+		<details>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/chris-ferdinandi.jpg" @alt="Chris is wearing a red shirt and a black and white plaid long shirt, sitting at a table and typing on a Macbook. The Apple logo is illuminated on the back of the laptop.">Chris Ferdinandi</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
 				<dd><a href="https://gomakethings.com/"><code>GoMakeThings.com</code></a></dd>
@@ -41,6 +41,20 @@
 				<p>He creates courses and workshops and work with amazing clients. His developer tips newsletter is read by thousands of developers each weekday.</p>
 				<p>He’s advised and written code for organizations like NASA, Apple, Harvard Business School, Chobani, and Adidas. Chris Coyier, the founder of CSS-Tricks and CodePen, has described his writing as “infinitely quote-worthy.”</p>
 				<p>Chris loves pirates, puppies, and Pixar movies, and lives near horse farms in rural Massachusetts.</p>
+			</blockquote>
+		</details>
+	</li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/adrianna.jpg" @alt="Adrianna has shoulder length dark hair and is looking into the camera with a subtle smile.">Adrianna Tan</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://popagandhi.com/"><code>popagandhi.com</code></a></dd>
+			</dl>
+			<blockquote>
+				<p>Adrianna Tan is a technology professional with more than 15 years’ experience in software development, particularly in the area of entrepreneurship and product management. For the last 5 years, she has played a leading role in San Francisco's web services, particularly in Covid-19 information, vaccination, recovery and relief.</p>
+				<p>As a civic technologist at one of the U.S.'s largest municipal government digital teams since 2019, she has had a front row seat to how government software is selected, procured, implemented, built, and used by people who rely on it. She believes that digital government doesn't have to suck.</p>
+				<p>In a past life, she was a startup founder at an Indonesian micropayments company, early stage employee at several leading U.S. startups, an executive for U.S. and Singapore companies, ice cream company co-founder, and photographer and writer of several travel guidebooks and cookbooks.</p>
 			</blockquote>
 		</details>
 	</li>
