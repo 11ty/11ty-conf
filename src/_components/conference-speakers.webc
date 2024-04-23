@@ -45,7 +45,7 @@
 		</details>
 	</li>
 	<li>
-		<details open>
+		<details>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/adrianna.jpg" @alt="Adrianna has shoulder length dark hair and is looking into the camera with a subtle smile.">Adrianna Tan</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
@@ -55,6 +55,18 @@
 				<p>Adrianna Tan is a technology professional with more than 15 years’ experience in software development, particularly in the area of entrepreneurship and product management. For the last 5 years, she has played a leading role in San Francisco's web services, particularly in Covid-19 information, vaccination, recovery and relief.</p>
 				<p>As a civic technologist at one of the U.S.'s largest municipal government digital teams since 2019, she has had a front row seat to how government software is selected, procured, implemented, built, and used by people who rely on it. She believes that digital government doesn't have to suck.</p>
 				<p>In a past life, she was a startup founder at an Indonesian micropayments company, early stage employee at several leading U.S. startups, an executive for U.S. and Singapore companies, ice cream company co-founder, and photographer and writer of several travel guidebooks and cookbooks.</p>
+			</blockquote>
+		</details>
+	</li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/sara.png" @alt="A drawn avatar of Sara, with short brown hair and red glasses. Their eyes are closed and are smiling. They are wearing green overalls and a purple shirt.">Sara Joy</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://sarajoy.dev/"><code>sarajoy.dev</code></a></dd>
+			</dl>
+			<blockquote>
+				<p>Sara has been extremely online since 1998, making their own personal websites since 1999. They fell off the wagon some time around 2010, until getting back on it in 2021 to switch their career from electronic engineering to web development. They love the web platform and want it to be accessible to everyone.</p>
 			</blockquote>
 		</details>
 	</li>
