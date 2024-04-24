@@ -59,7 +59,7 @@
 		</details>
 	</li>
 	<li>
-		<details open>
+		<details>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/sara.png" @alt="A drawn avatar of Sara, with short brown hair and red glasses. Their eyes are closed and are smiling. They are wearing green overalls and a purple shirt.">Sara Joy</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
@@ -67,6 +67,18 @@
 			</dl>
 			<blockquote>
 				<p>Sara has been extremely online since 1998, making their own personal websites since 1999. They fell off the wagon some time around 2010, until getting back on it in 2021 to switch their career from electronic engineering to web development. They love the web platform and want it to be accessible to everyone.</p>
+			</blockquote>
+		</details>
+	</li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/paul.jpeg" @alt="">Paul Everitt</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://www.jetbrains.com/guide/"><code>jetbrains.com/guide/</code></a></dd>
+			</dl>
+			<blockquote>
+				<p>Paul is a Python and Web Developer Advocate at JetBrains. Before that, Paul was a co-founder of Zope Corporation, taking the first open source application server through $14M of funding. Paul has bootstrapped both the Python Software Foundation and the Plone Foundation. Prior to that, Paul was an officer in the US Navy, starting www.navy.mil in 1993.</p>
 			</blockquote>
 		</details>
 	</li>
