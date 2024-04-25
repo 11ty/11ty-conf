@@ -71,14 +71,26 @@
 		</details>
 	</li>
 	<li>
-		<details open>
-			<summary><img webc:is="indie-avatar" @path="assets/speakers/paul.jpeg" @alt="">Paul Everitt</summary>
+		<details>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/paul.jpeg" @alt="A smiling photo of Paul from the shoulders up. He is wearing a light colored polo shirt.">Paul Everitt</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
 				<dd><a href="https://www.jetbrains.com/guide/"><code>jetbrains.com/guide/</code></a></dd>
 			</dl>
 			<blockquote>
 				<p>Paul is a Python and Web Developer Advocate at JetBrains. Before that, Paul was a co-founder of Zope Corporation, taking the first open source application server through $14M of funding. Paul has bootstrapped both the Python Software Foundation and the Plone Foundation. Prior to that, Paul was an officer in the US Navy, starting www.navy.mil in 1993.</p>
+			</blockquote>
+		</details>
+	</li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/sia.jpg" @alt="A photo of Sia speaking on a stage. Her hands are gesturing as she holds a presentation remote and she is smiling.">Sia Karamalegos</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://sia.codes/"><code>sia.codes</code></a></dd>
+			</dl>
+			<blockquote>
+				<p>Sia Karamalegos is a web developer and performance engineer, currently working on web performance at Shopify. She's also an international conference speaker, writer, Google Developer Expert in Web Technologies, and member of the W3C web performance working group. She co-organizes the Eleventy Meetup which won the 2021 Jammies Award for Outstanding Community Meetup.</p>
 			</blockquote>
 		</details>
 	</li>
