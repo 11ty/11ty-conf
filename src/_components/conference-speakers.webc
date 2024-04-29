@@ -83,7 +83,7 @@
 		</details>
 	</li>
 	<li>
-		<details open>
+		<details>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/sia.jpg" @alt="A photo of Sia speaking on a stage. Her hands are gesturing as she holds a presentation remote and she is smiling.">Sia Karamalegos</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
@@ -94,6 +94,19 @@
 			</blockquote>
 		</details>
 	</li>
-	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…more soon!</em></a></li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/ivan.jpg" @alt="Ivan is smiling with dark sunglasses and short dark hair. He is wearing a light colored collared shirt.">ivan zhao</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://ivanzhao.me/"><code>ivanzhao.me</code></a></dd>
+			</dl>
+			<blockquote>
+				<p>Ivan Zhao (he/him) is a poet, type designer, and site maker interested in nonlinear narratives, forms, and mechanics that reckon with digital, diasporic, and queer identity. His work interrogates individual and viewer agency. His research interests revolve around tools, computational systems, and play. When he's not making weird things on the internet, he's making weird bread in the kitchen.</p>
+			</blockquote>
+		</details>
+	</li>
+	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…soon.</em></a></li>
+	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…soon.</em></a></li>
 </ul>
 <p>We are revealing one speaker at a time, selected via our public <a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">call for proposals</a>.</p>
