@@ -95,7 +95,7 @@
 		</details>
 	</li>
 	<li>
-		<details open>
+		<details>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/ivan.jpg" @alt="Ivan is smiling with dark sunglasses and short dark hair. He is wearing a light colored collared shirt.">ivan zhao</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
@@ -103,6 +103,18 @@
 			</dl>
 			<blockquote>
 				<p>Ivan Zhao (he/him) is a poet, type designer, and site maker interested in nonlinear narratives, forms, and mechanics that reckon with digital, diasporic, and queer identity. His work interrogates individual and viewer agency. His research interests revolve around tools, computational systems, and play. When he's not making weird things on the internet, he's making weird bread in the kitchen.</p>
+			</blockquote>
+		</details>
+	</li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/miriam.jpg" @alt="Miriam stands in front of a microphone doing some public speaking with a slide deck projected in the background.">Miriam Suzanne</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://www.oddbird.net/"><code>oddbird.net</code></a></dd>
+			</dl>
+			<blockquote>
+				<p>Miriam is an artist, developer, and open web advocate. She’s a co-founder of <a href="https://oddbird.net" target="_blank" rel="noopener">OddBird</a>, providing a range of web design and development services; and Invited Expert on the W3C CSS Working Group, developing new web standards like Cascade Layers, Container Queries, and Scope; and member of the <a href="https://sass-lang.com/" target="_blank" rel="noopener">Sass</a> core team. Miriam also provides in-depth CSS workshops and trainings, along with the team at OddBird. Offline, she might be repairing clocks, knitting socks, or creating hybrid performances with <a href="http://teacupgorilla.com" target="_blank" rel="noopener">Teacup Gorilla</a> & <a href="http://grapefruitlab.com" target="_blank" rel="noopener">Grapefruit Lab</a>.</p>
 			</blockquote>
 		</details>
 	</li>
