@@ -107,7 +107,7 @@
 		</details>
 	</li>
 	<li>
-		<details open>
+		<details>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/miriam.jpg" @alt="Miriam stands in front of a microphone doing some public speaking with a slide deck projected in the background.">Miriam Suzanne</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
@@ -118,7 +118,18 @@
 			</blockquote>
 		</details>
 	</li>
-	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…soon.</em></a></li>
+	<li>
+		<details open>
+			<summary><img webc:is="indie-avatar" @path="assets/speakers/dan.jpg" @alt="Dan looks into the distance. He has thick rimmed glasses and a very long beard.">Dan Sinker</summary>
+			<dl>
+				<dt>A web site made real good:</dt>
+				<dd><a href="https://questionmarkohio.com/"><code>questionmarkohio.com</code></a></dd>
+			</dl>
+			<blockquote>
+				<p>Dan Sinker is a journalist, multimedia artist, and designer from Chicago. He founded the influential magazine Punk Planet in 1994 at just 19 years old and chronicled underground music, art, and politics there for 13 years. In 2010 he wrote @MayorEmanuel, the foul-mouthed, surreal Twitter account that The Economist called "the first truly great piece of digital literary work." In 2016 he co-founded the current-events podcast Says Who with YA author Maureen Johnson which has been releasing weekly for eight years. In addition, he is a regular contributor to Esquire magazine and has written for The Atlantic and the New York Times. Most recently he has embarked on a year-long collaboration with the novelist Joe Meno to create Question Mark, Ohio, a multiplatform novel told across the Internet.</p>
+			</blockquote>
+		</details>
+	</li>
 	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…soon.</em></a></li>
 </ul>
 <p>We are revealing one speaker at a time, selected via our public <a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">call for proposals</a>.</p>
