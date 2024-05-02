@@ -59,6 +59,8 @@ const layout = "layout.webc";
 	<li><a :href="addSessionToCalendarUrl('yahoo', sessions.years['2024'])">Yahoo</a></li>
 </ul>
 
+<p><a href="#register">Join us</a> on <strong><localized-time show-date date="2024-05-09T15:00:00Z"><time datetime="2024-05-09">May 9, 2024</time> at <a href="https://www.worldtimebuddy.com/?qm=1&lid=100,6,5,8,2193733,2643743,1273294,1796236,3435910,1835848&h=8&date=2024-5-9&sln=8-16&hf=1" rel="noreferrer">3pm</a> <abbr title="Coordinated Universal Time">UTC</abbr></localized-time></strong>!</p>
+
 <table>
 	<thead>
 		<tr>
