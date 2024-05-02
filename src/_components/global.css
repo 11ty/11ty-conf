@@ -194,8 +194,10 @@ table td {
 	text-decoration: none;
 	flex-wrap: wrap;
 }
-.photo-list.large .photo-list-hed {
-	font-size: 3em;
-	font-weight: 600;
-	gap: .5em;
+@media (min-width: 31.25em) { /* 500px */
+	.photo-list.large .photo-list-hed {
+		font-size: 3em;
+		font-weight: 600;
+		gap: .5em;
+	}
 }
