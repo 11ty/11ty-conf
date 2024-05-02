@@ -17,6 +17,20 @@ export default function(eleventyConfig) {
 		}
 	});
 
+	eleventyConfig.addJavaScriptFunction("displayDateTime", (raw) => {
+		try {
+			raw = raw.trim();
+			if(!raw.endsWith("Z")) {
+				return raw;
+			}
+
+			let [date, time] = raw.split("T");
+			return time.slice(0, 5) + " UTC";
+		} catch(e) {
+			return raw;
+		}
+	});
+
 	eleventyConfig.addJavaScriptFunction("addSessionToCalendarUrl", (type, session) => {
 		if(type !== "google" && type !== "ics" && type !== "outlook" && type !== "office365" && type !== "yahoo") {
 			throw new Error("Invalid type for `addToCalendarUrl`: " + type );

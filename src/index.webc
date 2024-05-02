@@ -68,7 +68,7 @@ const layout = "layout.webc";
 	</thead>
 	<tbody>
 		<tr webc:for="session of sessions['2024']">
-			<td class="nowrap"><code><localized-time @text="session.datetime.start"></localized-time></code></td>
+			<td class="nowrap"><code><localized-time :date="session.datetime.start" @text="displayDateTime(session.datetime.start)"></localized-time></code></td>
 			<td>
 				<a :href="`/2024/${slugify(session.slugTitle || session.title)}/`" webc:if="!session.skipPage">
 					<span @text="session.title"></span>
