@@ -27,8 +27,8 @@ export default function(eleventyConfig) {
 		let { start, end } = session.datetime;
 
 		return calendarLink[type]({
-			title: session.author ? `11ty Conference: ${title}—${session.author.name}` : title,
-			description: `https://conf.11ty.dev/2024/${slugify(session.title)}/
+			title: session.authors ? `11ty Conference: ${title}—${session.authors.map(author => author.name).join(", ")}` : title,
+			description: `https://conf.11ty.dev/2024/${slugify(session.slugTitle || session.title)}/
 ${description}`,
 			start,
 			end,

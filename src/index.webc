@@ -37,7 +37,7 @@ const layout = "layout.webc";
 <ul class="photo-list large">
 	<!--- TODO shuffle? -->
 	<li webc:for="session of shuffle(sessions['2024'])" webc:if="session.authors && !session.hideAuthorsFromHomePage">
-		<a :href="`/2024/${slugify(session.title)}/`">
+		<a :href="`/2024/${slugify(session.slugTitle || session.title)}/`">
 			<conference-speaker @attributes="session.authors[0]"></conference-speaker>
 		</a>
 	</li>
@@ -70,7 +70,7 @@ const layout = "layout.webc";
 		<tr webc:for="session of sessions['2024']">
 			<td class="nowrap"><code><localized-time @text="session.datetime.start"></localized-time></code></td>
 			<td>
-				<a :href="`/2024/${slugify(session.title)}/`" webc:if="!session.skipPage">
+				<a :href="`/2024/${slugify(session.slugTitle || session.title)}/`" webc:if="!session.skipPage">
 					<span @text="session.title"></span>
 				</a>
 				<span webc:else @text="session.title"></span>

@@ -158,6 +158,7 @@ export default [
 	},
 	{
 		title: "Managing content management (with no vendor lock-in): Git CMS and static API generation, together at last!",
+		slugTitle: "Managing content management",
 		description: `<p>If Jamstack has taught us anything, it’s that websites work best when they’re generated from folders full of flat files. Even massively interconnected websites!</p>
 		<p>We talk through a classically Jamstacky approach to content management for large organizations: mounting shared layout and component repositories, creating a central content lake to aggregate content like news articles, and automating site builds and deployments when your content or dependencies change.</p>`,
 		datetime: {

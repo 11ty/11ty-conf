@@ -19,7 +19,7 @@ const eleventyComputed = {
 		return data.session.description;
 	},
 	permalink: function(data) {
-		return `/2024/${this.slugify(data.session.title)}/`;
+		return `/2024/${this.slugify(data.session.slugTitle || data.session.title)}/`;
 	}
 };
 // </script>
