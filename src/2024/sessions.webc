@@ -62,6 +62,6 @@ const eleventyComputed = {
 	<li><a :href="addSessionToCalendarUrl('yahoo', sessions.years['2024'])">Yahoo</a></li>
 </ul>
 
-<div class="photo-list large" webc:if="session.author">
-	<conference-speaker @attributes="session.author" :show-bio="true" :show-website="true"></conference-speaker>
+<div class="photo-list large" webc:if="session.authors && session.authors.length > 0">
+	<conference-speaker webc:if="session.authors" webc:for="author of session.authors" @attributes="author" :show-bio="true" :show-website="true"></conference-speaker>
 </div>
