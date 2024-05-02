@@ -46,11 +46,12 @@
     <li><a href="/">Home</a></li>
     <li><a href="/#when">What/When</a></li>
     <li><a href="/#register" data-icon="🎉">Register</a></li>
-    <li><a href="/#sponsors">Sponsors</a></li>
+    <!-- <li><a href="/#sponsors">Sponsors</a></li> -->
+    <li><a href="/#schedule">Schedule</a></li>
     <!-- <li><a href="/#speaking" data-icon="📢">Speak</a></li> -->
     <!-- <li><a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition/" data-icon="🛍️">Merch</a></li> -->
     <li><a href="/#accessibility">Accessibility</a></li>
     <!-- <li><a href="/#team">Team</a></li> -->
-    <li><a href="/2024/code-of-conduct/#code-of-conduct">Code of Conduct</a></li>
+    <li><a href="/2024/code-of-conduct/">Conduct</a></li>
   </ol>
 </nav>

@@ -17,6 +17,8 @@ const layout = "layout.webc";
 
 <conference-start></conference-start>
 
+<p>View the <a href="#schedule">full schedule below</a>!</p>
+
 <div id="subscription"></div>
 <div id="code-of-conduct"></div>
 <div id="price"></div>
@@ -32,10 +34,56 @@ const layout = "layout.webc";
 
 <div id="speaking"></div>
 <h2 id="speakers">Speakers</h2>
-<conference-speakers></conference-speakers>
+<ul class="photo-list large">
+	<!--- TODO shuffle? -->
+	<li webc:for="session of sessions['2024']" webc:if="session.author && !session.author.hideFromHomePage">
+		<a :href="`/2024/${slugify(session.title)}/`">
+			<conference-speaker @attributes="session.author"></conference-speaker>
+		</a>
+	</li>
+</ul>
+<p>These speakers were selected via a public <a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">call for proposals</a>.</p>
 <!--- <p><em data-icon="🗓️">March 22 Update</em>: The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">public call for proposals</a> is now closed</strong> and we are in the process of reviewing your entries now. Thanks everyone!</p> --->
 <!--- <p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
 <p>Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) <strong data-icon="🗓️">March 22</strong>!</p> --->
+
+
+<h2 id="schedule">Schedule</h2>
+
+<ul class="inline rhythm">
+	<li>Add the entire conference to your calendar:</li>
+	<li><a :href="addSessionToCalendarUrl('ics', sessions.years['2024'])"><code>ics</code> File</a></li>
+	<li><a :href="addSessionToCalendarUrl('google', sessions.years['2024'])">Google</a></li>
+	<li><a :href="addSessionToCalendarUrl('outlook', sessions.years['2024'])">Outlook</a></li>
+	<li><a :href="addSessionToCalendarUrl('office365', sessions.years['2024'])">Office 365</a></li>
+	<li><a :href="addSessionToCalendarUrl('yahoo', sessions.years['2024'])">Yahoo</a></li>
+</ul>
+
+<table>
+	<thead>
+		<tr>
+			<th>Time</th>
+			<th>Talk</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="nowrap"><code>
+				<localized-time date="2024-05-09T15:00:00Z"></localized-time>
+			</code></td>
+			<td>Kickoff</td>
+		</tr>
+		<tr webc:for="session of sessions['2024']">
+			<td class="nowrap"><code><localized-time @text="session.datetime.start"></localized-time></code></td>
+			<td>
+				<a :href="`/2024/${slugify(session.title)}/`" webc:if="!session.skipPage">
+					<span @text="session.title"></span>
+				</a>
+				<span webc:else @text="session.title"></span>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 <h2 id="accessibility">Accessibility</h2>
 <p>For this online event, we’re doing our best to achieve an accessible event for all, extending to each and every part of the event:</p>
@@ -55,7 +103,9 @@ const layout = "layout.webc";
 <p><del>For a very limited time (closing April 5, 2024), we have opened an <a href="https://merch.11ty.dev/"><strong>11ty Merch store</strong></a> for folks that are interested in buying a bundle (<a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">shirt and stickers</a>) to support the conference and the open source project.</del> The goal is to get these in your hands before the conference on May 9th!</p>
 <!--- <p>Special promotions and discounts are available for Open Collective supporters.</p>
 <form method="get" action="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">
-	<giant-button label="🛍️ Get Merch"></giant-button>
+	<giant-button>
+		<button type="submit">🛍️ Get Merch</button>
+	</giant-button>
 </form> --->
 
 <h2 id="team">The Team</h2>

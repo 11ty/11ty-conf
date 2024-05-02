@@ -1,8 +1,41 @@
 import fetch from "@11ty/eleventy-fetch";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import { eleventyImagePlugin } from "@11ty/eleventy-img";
+import * as calendarLink from "calendar-link";
 
 export default function(eleventyConfig) {
+	eleventyConfig.setServerOptions({
+		domDiff: false
+	});
+
+	eleventyConfig.addJavaScriptFunction("displayUrl", (rawUrl) => {
+		try {
+			let u = new URL(rawUrl);
+			return u.hostname + (u.pathname !== "/" ? u.pathname : "");
+		} catch(e) {
+			return rawUrl;
+		}
+	});
+
+	eleventyConfig.addJavaScriptFunction("addSessionToCalendarUrl", (type, session) => {
+		if(type !== "google" && type !== "ics" && type !== "outlook" && type !== "office365" && type !== "yahoo") {
+			throw new Error("Invalid type for `addToCalendarUrl`: " + type );
+		}
+		const slugify = eleventyConfig.getFilter("slugify");
+
+		let { title, description } = session;
+		let { start, end } = session.datetime;
+
+		return calendarLink[type]({
+			title: session.author ? `11ty Conference: ${title}—${session.author.name}` : title,
+			description: `https://conf.11ty.dev/2024/${slugify(session.title)}/
+${description}`,
+			start,
+			end,
+			location: "https://www.youtube.com/watch?v=iLxJ6PtuF9M"
+		})
+	});
+
 	eleventyConfig.addJavaScriptFunction("fetchGoogleFontsCss", async (cssUrl) => {
 		try {
 			let css = await fetch(cssUrl, {

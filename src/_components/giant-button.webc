@@ -1,25 +1,5 @@
 <style webc:scoped>
-:host {
-	display: flex;
-}
-:host .wider {
-	flex-grow: 1;
-	flex-basis: 100%;
-	margin-block: 1em;
-	font-weight: 600;
-}
-@media (min-width: 33.75em) { /* 540px */
-	:host .wider {
-		margin-inline: -8vw;
-	}
-}
-@media (min-width: 40em) { /* 640px */
-	:host .wider {
-		margin-inline: -12.5vw;
-	}
-}
-
-button {
+:is(button, a[href]) {
 	display: block;
 	width: 100%;
 	cursor: pointer;
@@ -37,7 +17,7 @@ button {
 	padding: .5em 1em .4em .75em;
 	box-shadow: 0 8px 6px -6px #000;
 }
-button:hover {
+:is(button, a[href]):hover {
 	border-color: rgba(255,255,255,.3);
 	background-color: #222;
 	color: #fff;
@@ -45,14 +25,14 @@ button:hover {
 	transform: scale(1.05);
 }
 @media (prefers-reduced-motion: reduce) {
-	button:hover {
+	:is(button, a[href]):hover {
 		transition: none;
 		transform: none;
 	}
 }
 
-button:hover,
-button:focus {
+:is(button, a[href]):hover,
+:is(button, a[href]):focus {
 	background-image: linear-gradient(238deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff0080);
 	background-size: 1200% 1200%;
 	background-position: 2% 80%;
@@ -62,10 +42,33 @@ button:focus {
 	animation: rainbow 4s ease-out alternate infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-	button:hover,
-	button:focus {
+	:is(button, a[href]):hover,
+	:is(button, a[href]):focus {
 		animation: none;
 	}
 }
+
+/* Wider */
+:host {
+	display: flex;
+}
+:host.wider {
+	flex-grow: 1;
+	flex-basis: 100%;
+	margin-block: 2em;
+	font-weight: 600;
+}
+@media (min-width: 33.75em) { /* 540px */
+	:host.wider {
+		margin-inline: -8vw;
+	}
+}
+@media (min-width: 40em) { /* 640px */
+	:host.wider {
+		margin-inline: -12.5vw;
+	}
+}
 </style>
-<button class="wider" :type="type || 'submit'" @text="label || 'Submit'"></button>
+<div webc:root class="wider">
+	<slot></slot>
+</div>

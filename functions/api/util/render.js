@@ -142,7 +142,7 @@ async function renderPage(ticketId, justRegistered = false, productionHost = "")
 <webcare-webshare label-copy="📋 Share your ticket!" label-after-copy="✅ Copied to clipboard." share-text="${shareTextWithoutUrl}" share-url="${shareUrl}">
 	<button disabled class="giant-button">Share your ticket!</button>
 </webcare-webshare>
-<ul class="ticket-share-more">
+<ul class="inline">
 	<li>Or try one of these links:</li>
 	<li><a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}">LinkedIn</a></li>
 	<li><a href="mailto:?subject=${encodeURIComponent(`11ty Conference (${CONF_DATE})`)}&body=${encodeURIComponent(emailShareText)}">Email</a></li>

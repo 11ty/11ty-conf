@@ -103,9 +103,6 @@ webcare-webshare {
 }
 .ticket-share-more {
 	list-style: "";
-	display: inline-flex;
-	flex-wrap: wrap;
-	gap: 1em;
 	font-size: 1em;
 	padding: 0;
 	margin: 2em 0;

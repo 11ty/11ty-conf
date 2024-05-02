@@ -1,0 +1,56 @@
+<script type="module">
+class LocalizedTime extends HTMLElement {
+	static tagName = "localized-time";
+
+	static register(tagName, registry) {
+		if(!registry && ("customElements" in globalThis)) {
+			registry = globalThis.customElements;
+		}
+
+		registry?.define(tagName || this.tagName, this);
+	}
+
+	connectedCallback() {
+		if(!Intl || !("DateTimeFormat" in Intl)) {
+			return;
+		}
+
+		if(!this.hasAttribute("date")) {
+			this.setAttribute("date", this.textContent.trim());
+		}
+
+		let content = this.getAttribute("date");
+		let d = new Date(content);
+		let html = [];
+
+		if(this.hasAttribute("show-day-of-week")) {
+			html.push(Intl.DateTimeFormat("en-US", {
+				weekday: "long",
+			}).format(d));
+		}
+
+		if(this.hasAttribute("show-date")) {
+			html.push(Intl.DateTimeFormat("en-US", {
+				dateStyle: "medium",
+			}).format(d));
+		}
+
+		if(html.length > 0) {
+			html.push("at");
+		}
+
+		html.push(Intl.DateTimeFormat("en-US", {
+			hour: "2-digit",
+			minute: "2-digit",
+			timeZoneName: "short",
+		}).format(d));
+
+		this.textContent = html.join(" ");
+	}
+}
+
+LocalizedTime.register();
+
+// export { LocalizedTime };
+</script>
+<slot></slot>

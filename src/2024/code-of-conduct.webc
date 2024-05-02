@@ -2,12 +2,10 @@
 const layout = "layout.webc";
 const title = "Code of Conduct for the 11ty Conference"
 const description = "Here’s what is expected of participants, organizers, speakers, and volunteers for the 11ty Conference."
----
-<block-separator style="--rhythm: 0; --block-separator-offset: 70%">
-	<possum-balloon></possum-balloon>
-</block-separator>
 
-<h2 id="code-of-conduct">Code of Conduct</h2>
+const condensedTitle = true;
+---
+<h2 id="code-of-conduct">Conference Code of Conduct</h2>
 <p>All attendees, speakers, sponsors, and volunteers at our conference are required to agree with and abide by the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensure a safe environment for all.</p>
 
 <h3>Need help?</h3>

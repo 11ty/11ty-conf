@@ -1,0 +1,67 @@
+---node
+// <script>
+const layout = "layout.webc";
+const condensedTitle = true;
+
+const pagination = {
+	data: "sessions.2024",
+	size: 1,
+	alias: "session",
+	before: function(paginationData) {
+		return paginationData.filter(entry => !entry.skipPage);
+	}
+};
+const eleventyComputed = {
+	title: (data) => {
+		return data.session.title;
+	},
+	description: (data) => {
+		return data.session.description;
+	},
+	permalink: function(data) {
+		return `/2024/${this.slugify(data.session.title)}/`;
+	}
+};
+// </script>
+---
+<h1 @text="session.title"></h1>
+
+<div @html="session.description"></div>
+
+<block-separator></block-separator>
+
+<p><em>This is a talk session at the 11ty International Symposium on Making Web Sites Real Good. <a href="/#register">Are you registered?</a></em></p>
+
+<dl>
+	<dt>When is this talk?</dt>
+	<dd><strong><localized-time show-date @text="session.datetime.start"></localized-time></strong></dd>
+	<dt webc:if="session.datetime.duration">How long is this talk?</dt>
+	<dd webc:if="session.datetime.duration"><strong @text="session.datetime.duration"></strong></dd>
+</dl>
+
+
+<giant-button>
+	<a :href="addSessionToCalendarUrl('google', session)">🗓️ Add Talk to Calendar</a>
+</giant-button>
+
+<ul class="inline">
+	<li>Add just this talk session to your calendar:</li>
+	<li><a :href="addSessionToCalendarUrl('ics', session)"><code>ics</code> File</a></li>
+	<li><a :href="addSessionToCalendarUrl('google', session)">Google</a></li>
+	<li><a :href="addSessionToCalendarUrl('outlook', session)">Outlook</a></li>
+	<li><a :href="addSessionToCalendarUrl('office365', session)">Office 365</a></li>
+	<li><a :href="addSessionToCalendarUrl('yahoo', session)">Yahoo</a></li>
+</ul>
+
+<ul class="inline rhythm">
+	<li>Or add the entire conference:</li>
+	<li><a :href="addSessionToCalendarUrl('ics', sessions.years['2024'])"><code>ics</code> File</a></li>
+	<li><a :href="addSessionToCalendarUrl('google', sessions.years['2024'])">Google</a></li>
+	<li><a :href="addSessionToCalendarUrl('outlook', sessions.years['2024'])">Outlook</a></li>
+	<li><a :href="addSessionToCalendarUrl('office365', sessions.years['2024'])">Office 365</a></li>
+	<li><a :href="addSessionToCalendarUrl('yahoo', sessions.years['2024'])">Yahoo</a></li>
+</ul>
+
+<div class="photo-list large" webc:if="session.author">
+	<conference-speaker @attributes="session.author" :show-bio="true" :show-website="true"></conference-speaker>
+</div>

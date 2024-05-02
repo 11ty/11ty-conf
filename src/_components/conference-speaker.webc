@@ -1,0 +1,10 @@
+<div class="photo-list-hed">
+	<img webc:is="indie-avatar" webc:if="avatar" :@path="avatar" :@alt="avatarAlt">
+	<img webc:is="indie-avatar" webc:elseif="avatarUrl || website" :@url="avatarUrl || website" :@alt="avatarAlt">
+	<span webc:nokeep @text="name"></span>
+</div>
+<dl webc:if="website && showWebsite">
+	<dt>A web site made real good:</dt>
+	<dd><a :href="website"><code @text="displayUrl(website)"></code></a></dd>
+</dl>
+<blockquote webc:if="bio && showBio" @html="bio"></blockquote>

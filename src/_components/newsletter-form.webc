@@ -28,5 +28,7 @@
 
 	<input type="hidden" name="tag" value="conf2024">
 
-	<giant-button @label="📮 Register"></giant-button>
+	<giant-button>
+		<button type="submit">📮 Register</button>
+	</giant-button>
 </form>

@@ -1,6 +1,7 @@
 ---node
-const title = "Eleventy’s International Symposium on Making Web Sites Real Good"
+const title = "11ty’s International Symposium on Making Web Sites Real Good"
 const description = "We’re running a conference — this is an 11ty Conference!"
+const showTitle = true;
 ---
 <!doctype html>
 <html lang="en">
@@ -40,9 +41,9 @@ const description = "We’re running a conference — this is an 11ty Confer
 	<body>
 		<page-nav></page-nav>
 		<!-- <announcement-banner @url="/#register">🎉 Registration is open—join us!</announcement-banner> -->
-		<header>
+		<header webc:if="showTitle">
 			<sub-title webc:if="page.url == '/'">Join us for the</sub-title>
-			<giant-title :@title-scale="page.url == '/' ? 1 : .40"></giant-title>
+			<giant-title :@condensed-title="condensedTitle" :@title-scale="titleScale"></giant-title>
 		</header>
 		<main id="content">
 			<div @html="content" webc:nokeep></div>

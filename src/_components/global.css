@@ -11,6 +11,10 @@
 		--rhythm: 6rem; /* 96px /16 */
 	}
 }
+.rhythm.rhythm {
+	margin-block-end: var(--rhythm);
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -34,12 +38,25 @@ h3 {
 	line-height: 1.2;
 	margin-block-start: var(--rhythm);
 }
+h1 {
+	margin-block-start: 0;
+	font-size: 4em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+@media (min-width: 40em) { /* 640px */
+	h1 {
+		font-size: 7em;
+		margin-inline: -16vw;
+	}
+}
 h2 {
 	font-size: 2.5em;
 }
 h3 {
 	font-size: 1.75em;
 }
+
 body {
 	margin: 0 auto;
 	padding: 0 var(--page-margin);
@@ -114,36 +131,61 @@ blockquote {
 	margin-right: 0;
 }
 
+.inline {
+	list-style: "";
+	display: flex;
+	flex-wrap: wrap;
+	gap: .25em 1em;
+	padding: 0;
+}
+.inline > li {
+	margin: 0;
+}
+
 dl {
 	display: grid;
 	gap: .5em;
 	grid-template-columns: auto 1fr;
+	text-align: left;
 }
 dd {
 	margin: 0;
+}
+
+table {
+	border-spacing: 0;
+}
+table th,
+table td {
+	text-align: left;
+	line-height: 1.5;
+	padding: .75em .5em;
+	border-bottom: 1px solid #666;
+}
+.nowrap {
+	white-space: nowrap;
 }
 
 .photo-list {
 	list-style: "";
 	padding: 0;
 }
-.photo-list details {
+.photo-list a[href] {
+	display: block;
 	padding: .5rem;
 	margin-left: -.5rem;
 	margin-right: -.5rem;
 }
-.photo-list details[open],
-.photo-list details:hover {
+.photo-list a[href]:is(:hover, :focus) {
 	background-color: #333;
 }
-.photo-list summary::-webkit-details-marker {
-	display: none;
-}
-.photo-list summary + * {
+.photo-list .photo-list-hed + * {
 	margin-block-start: 1em;
 }
-.photo-list li > a,
-.photo-list summary {
+.photo-list.large a[href] {
+	text-decoration: none;
+}
+.photo-list .photo-list-hed {
 	font-size: 2em;
 	gap: .25em;
 	font-family: Saira Extra Condensed, system-ui, sans-serif;
@@ -152,8 +194,7 @@ dd {
 	text-decoration: none;
 	flex-wrap: wrap;
 }
-.photo-list.large li > a,
-.photo-list.large summary {
+.photo-list.large .photo-list-hed {
 	font-size: 3em;
 	font-weight: 600;
 	gap: .5em;
