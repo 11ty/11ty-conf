@@ -54,6 +54,24 @@ ${description}`,
 		}
 	});
 
+	// Thanks to https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+	function randomizeArray(arr) {
+		let a = arr.slice(0);
+		for (let i = a.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[a[i], a[j]] = [a[j], a[i]];
+		}
+		return a;
+	}
+
+	eleventyConfig.addJavaScriptFunction("shuffle", (arr) => {
+		if (Array.isArray(arr)) {
+			return randomizeArray(arr);
+		}
+
+		throw new Error("Array expected in `shuffle` filter");
+	});
+
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: [
 			"src/_components/**/*.webc",

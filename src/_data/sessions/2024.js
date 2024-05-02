@@ -17,7 +17,6 @@ export default [
 			duration: "22 minutes",
 		},
 		author: {
-			hideFromHomePage: true,
 			name: "Zach Leatherman",
 			avatarAlt: "Zach’s green avatar smiles at you",
 			website: "https://www.zachleat.com/",
