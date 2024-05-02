@@ -1,5 +1,14 @@
 export default [
 	{
+		title: "Kickoff!",
+		skipPage: true,
+		datetime: {
+			start: "2024-05-09T15:00:00Z",
+			end: "2024-05-09T15:15:00Z",
+			duration: "15 minutes",
+		},
+	},
+	{
 		title: "The Future of 11ty",
 		description: "<p>A talk about the current state of the 11ty project, new tricks and releases, and where we’re going next.</p>",
 		datetime: {

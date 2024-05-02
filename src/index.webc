@@ -67,12 +67,6 @@ const layout = "layout.webc";
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td class="nowrap"><code>
-				<localized-time date="2024-05-09T15:00:00Z"></localized-time>
-			</code></td>
-			<td>Kickoff</td>
-		</tr>
 		<tr webc:for="session of sessions['2024']">
 			<td class="nowrap"><code><localized-time @text="session.datetime.start"></localized-time></code></td>
 			<td>
