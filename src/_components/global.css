@@ -170,13 +170,13 @@ table td {
 	list-style: "";
 	padding: 0;
 }
-.photo-list a[href] {
+.photo-list li > a[href] {
 	display: block;
 	padding: .5rem;
 	margin-left: -.5rem;
 	margin-right: -.5rem;
 }
-.photo-list a[href]:is(:hover, :focus) {
+.photo-list li > a[href]:is(:hover, :focus) {
 	background-color: #333;
 }
 .photo-list .photo-list-hed + * {
