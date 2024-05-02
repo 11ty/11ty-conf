@@ -50,6 +50,7 @@ const layout = "layout.webc";
 
 <h2 id="merch">Shirts & Stickers</h2>
 <p>For increased sustainability and to reduce waste, our online event is free and the swag is an add-on available for purchase.</p>
+<p><em data-icon="🗓️">April 29 Update</em>: All orders have been shipped!</strong>
 <p><em data-icon="🗓️">April 8 Update</em>: the <a href="https://merch.11ty.dev/">store</a> is now closed. The order has been sent to the printers and we’ll ship these out when they’re finished!</strong>
 <p><del>For a very limited time (closing April 5, 2024), we have opened an <a href="https://merch.11ty.dev/"><strong>11ty Merch store</strong></a> for folks that are interested in buying a bundle (<a href="https://merch.11ty.dev/products/11ty-merch-bundle-2024-limited-edition">shirt and stickers</a>) to support the conference and the open source project.</del> The goal is to get these in your hands before the conference on May 9th!</p>
 <!--- <p>Special promotions and discounts are available for Open Collective supporters.</p>
