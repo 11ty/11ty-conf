@@ -1,7 +1,7 @@
 <ul class="photo-list">
-	<li><a href="https://www.linkedin.com/in/david-large-4875b81b2/"><img webc:is="indie-avatar" @path="assets/avatars/david.jpg" alt="David (in black and white)">David Large</a></li>
-	<li><a href="https://mikeneumegen.com/"><img webc:is="indie-avatar" @path="assets/avatars/mike.jpg" alt="Mike’s face">Mike Neumegen</a></li>
-	<li><a href="https://www.linkedin.com/in/olivia-nicholson-42a050127/"><img webc:is="indie-avatar" @path="assets/avatars/liv.jpg" alt="Liv (in black and white)">Olivia Nicholson</a></li>
-	<li><a href="https://zachleat.com/"><img webc:is="indie-avatar" url="https://www.zachleat.com/">Zach Leatherman</a></li>
+	<li><a href="https://www.linkedin.com/in/david-large-4875b81b2/"><div class="photo-list-hed"><img webc:is="indie-avatar" @path="assets/avatars/david.jpg" alt="David (in black and white)">David Large</div></a></li>
+	<li><a href="https://mikeneumegen.com/"><div class="photo-list-hed"><img webc:is="indie-avatar" @path="assets/avatars/mike.jpg" alt="Mike’s face">Mike Neumegen</div></a></li>
+	<li><a href="https://www.linkedin.com/in/olivia-nicholson-42a050127/"><div class="photo-list-hed"><img webc:is="indie-avatar" @path="assets/avatars/liv.jpg" alt="Liv (in black and white)">Olivia Nicholson</div></a></li>
+	<li><a href="https://zachleat.com/"><div class="photo-list-hed"><img webc:is="indie-avatar" url="https://www.zachleat.com/">Zach Leatherman</div></a></li>
 </ul>
 <p>You can <a href="mailto:conf-organizers@11ty.dev">email the entire team</a>.</p>
