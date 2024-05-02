@@ -119,7 +119,7 @@
 		</details>
 	</li>
 	<li>
-		<details open>
+		<details>
 			<summary><img webc:is="indie-avatar" @path="assets/speakers/dan.jpg" @alt="Dan looks into the distance. He has thick rimmed glasses and a very long beard.">Dan Sinker</summary>
 			<dl>
 				<dt>A web site made real good:</dt>
@@ -130,6 +130,6 @@
 			</blockquote>
 		</details>
 	</li>
-	<li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…soon.</em></a></li>
+	<!-- <li class="tba"><a><img webc:is="indie-avatar" @path="assets/speakers/default.png" alt="A non-descript head default avatar"><em>…soon.</em></a></li> -->
 </ul>
-<p>We are revealing one speaker at a time, selected via our public <a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">call for proposals</a>.</p>
+<p>These speakers were selected via a public <a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">call for proposals</a>.</p>
