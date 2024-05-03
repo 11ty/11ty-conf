@@ -229,7 +229,7 @@ export default [
 		}]
 	},
 	{
-		title: "Light mode versus Dark mode.",
+		title: "Light mode versus Dark mode",
 		description: `<p>It doesn’t have to be this way. Some people have very real physical reasons to need one mode over another. The rest of us are also allowed to have our favourites, or might prefer light mode in some situations and dark in others.</p>
 		<p>What if Sara said it was super easy to code up both dark and light modes at the same time? Despite Sara’s evangelising efforts, not enough people know of the CSS property color-scheme and how powerful it is.</p>`,
 		datetime: {
