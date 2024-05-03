@@ -4,6 +4,9 @@
 	border-radius: .5em;
 	background-color: #034AD8;
 }
+:host-context(logo-list[inline]) svg {
+	padding: 1em;
+}
 </style>
 <a href="https://cloudcannon.com/eleventy-cms/?utm_campaign=11tyConf&utm_source=11tyconf">
 	<visually-hidden>CloudCannon</visually-hidden>

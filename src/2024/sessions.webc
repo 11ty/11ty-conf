@@ -32,6 +32,8 @@ const eleventyComputed = {
 
 <p><em>This is a talk session at the 11ty International Symposium on Making Web Sites Real Good. <a href="/#register">Are you registered?</a></em></p>
 
+<logo-list inline></logo-list>
+
 <dl>
 	<dt>When is this talk?</dt>
 	<dd><strong><localized-time show-date @text="session.datetime.start"></localized-time></strong></dd>
@@ -65,8 +67,3 @@ const eleventyComputed = {
 <div class="photo-list large" webc:if="session.authors && session.authors.length > 0">
 	<conference-speaker webc:if="session.authors" webc:for="author of session.authors" @attributes="author" :show-bio="true" :show-website="true"></conference-speaker>
 </div>
-
-<block-separator></block-separator>
-
-<h2 id="sponsors">Thank you to our Sponsors!</h2>
-<logo-list></logo-list>

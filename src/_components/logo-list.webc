@@ -28,6 +28,15 @@
 		margin-inline: -1em;
 	}
 }
+
+:host([inline]) {
+	display: flex;
+	gap: 1em;
+}
+:host([inline]) > * {
+	flex-basis: 50%;
+	margin: 0;
+}
 </style>
 <logo-cloudcannon></logo-cloudcannon>
 <logo-artist-activist></logo-artist-activist>
