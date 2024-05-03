@@ -65,3 +65,8 @@ const eleventyComputed = {
 <div class="photo-list large" webc:if="session.authors && session.authors.length > 0">
 	<conference-speaker webc:if="session.authors" webc:for="author of session.authors" @attributes="author" :show-bio="true" :show-website="true"></conference-speaker>
 </div>
+
+<block-separator></block-separator>
+
+<h2 id="sponsors">Thank you to our Sponsors!</h2>
+<logo-list></logo-list>
