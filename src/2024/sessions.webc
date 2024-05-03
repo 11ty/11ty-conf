@@ -43,11 +43,11 @@ const eleventyComputed = {
 
 
 <giant-button>
-	<a :href="addSessionToCalendarUrl('google', session)">🗓️ Add Talk to Calendar</a>
+	<a :href="addSessionToCalendarUrl('ics', session)">🗓️ Add Talk to Calendar</a>
 </giant-button>
 
 <ul class="inline">
-	<li>Add just this talk session to your calendar:</li>
+	<li class="inline-max">Add just this talk session to your calendar:</li>
 	<li><a :href="addSessionToCalendarUrl('ics', session)"><code>ics</code> File</a></li>
 	<li><a :href="addSessionToCalendarUrl('google', session)">Google</a></li>
 	<li><a :href="addSessionToCalendarUrl('outlook', session)">Outlook</a></li>
@@ -56,7 +56,7 @@ const eleventyComputed = {
 </ul>
 
 <ul class="inline rhythm">
-	<li>Or add the entire conference:</li>
+	<li class="inline-max">Or add the entire conference:</li>
 	<li><a :href="addSessionToCalendarUrl('ics', sessions.years['2024'])"><code>ics</code> File</a></li>
 	<li><a :href="addSessionToCalendarUrl('google', sessions.years['2024'])">Google</a></li>
 	<li><a :href="addSessionToCalendarUrl('outlook', sessions.years['2024'])">Outlook</a></li>

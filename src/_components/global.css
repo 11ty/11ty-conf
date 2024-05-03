@@ -138,6 +138,9 @@ blockquote {
 	gap: .25em 1em;
 	padding: 0;
 }
+.inline > .inline-max {
+	flex-basis: 100%;
+}
 .inline > li {
 	margin: 0;
 }

@@ -50,7 +50,7 @@ const layout = "layout.webc";
 <h2 id="schedule">Schedule</h2>
 
 <ul class="inline rhythm">
-	<li>Add the entire conference to your calendar:</li>
+	<li class="inline-max">Add the entire conference to your calendar:</li>
 	<li><a :href="addSessionToCalendarUrl('ics', sessions.years['2024'])"><code>ics</code> File</a></li>
 	<li><a :href="addSessionToCalendarUrl('google', sessions.years['2024'])">Google</a></li>
 	<li><a :href="addSessionToCalendarUrl('outlook', sessions.years['2024'])">Outlook</a></li>
