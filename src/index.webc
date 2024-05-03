@@ -37,11 +37,11 @@ const layout = "layout.webc";
 <ul class="photo-list large">
 	<li webc:for="session of shuffle(sessions['2024'])" webc:if="session.authors && !session.hideAuthorsFromHomePage">
 		<a :href="`/2024/${slugify(session.slugTitle || session.title)}/`">
-			<conference-speaker @attributes="session.authors[0]"></conference-speaker>
+			<conference-speaker webc:for="author of session.authors" @attributes="author"></conference-speaker>
 		</a>
 	</li>
 </ul>
-<p>These speakers were selected via a public <a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">call for proposals</a>.</p>
+<p>Displayed in random order, these speakers were selected via our public <a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">call for proposals</a>.</p>
 <!--- <p><em data-icon="🗓️">March 22 Update</em>: The <strong><a href="https://docs.google.com/forms/d/e/1FAIpQLScdwhO1zfEBvl8mVAJQLWbK0EylD4yPCBpe3Lanz8SvFPI9Xg/viewform">public call for proposals</a> is now closed</strong> and we are in the process of reviewing your entries now. Thanks everyone!</p> --->
 <!--- <p>We’re looking for talks on a variety of topics that will interest folks that care about the craft of building for the web: Best Practices That Work (CSS), Development Trends (e.g. Navigating the <a href="https://css-tricks.com/the-great-divide/">Great Divide</a>), <a href="https://thefutureofjamstack.org/">Jamstack</a>, Front of the front end Development, Design Systems, Accessibility, Web Performance <em>(and probably some Eleventy too!)</em>.</p>
 <p>Get your submission(s) in by end-of-day (<abbr title="Coordinated Universal Time">UTC</abbr>) <strong data-icon="🗓️">March 22</strong>!</p> --->

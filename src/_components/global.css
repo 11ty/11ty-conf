@@ -182,7 +182,7 @@ table td {
 .photo-list .photo-list-hed + * {
 	margin-block-start: 1em;
 }
-.photo-list a[href] {
+.photo-list li > a[href] {
 	text-decoration: none;
 }
 .photo-list .photo-list-hed {
