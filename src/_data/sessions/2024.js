@@ -213,8 +213,8 @@ export default [
 	},
 	{
 		title: "Chinese Type Systems",
-		description: `<p>In this talk, ivan will talk about understanding chinese type systems, pairing chinese fonts, and why its so hard to put your chinese font in the @font-face in CSS. Typesetting on the web with chinese fonts is extremely difficult and ivan will give examples of pages that do this beautifully, and recommendations on how to find these.</p>
-		<p>They will also talk about the history of the chinese language, the differences in character based vs glyph based, and the difficulties of pairing the two types together. They’ll dive into the various classifications of systems that they use and talk about how to notice and pair chinese fonts together, as well as actionably implementing them in CSS and the bundle size of the file. </p>`,
+		description: `<p>In this talk, ivan will talk about understanding Chinese type systems, pairing Chinese fonts, and why its so hard to put your Chinese font in the @font-face in CSS. Typesetting on the web with Chinese fonts is extremely difficult and ivan will give examples of pages that do this beautifully, and recommendations on how to find these.</p>
+		<p>They will also talk about the history of the Chinese language, the differences in character based vs glyph based, and the difficulties of pairing the two types together. They’ll dive into the various classifications of systems that they use and talk about how to notice and pair Chinese fonts together, as well as actionably implementing them in CSS and the bundle size of the file. </p>`,
 		datetime: {
 			start: "2024-05-09T19:55:00Z",
 			end: "2024-05-09T20:06:00Z",
