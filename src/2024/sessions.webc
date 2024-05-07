@@ -11,6 +11,7 @@ const pagination = {
 		return paginationData.filter(entry => !entry.skipPage);
 	}
 };
+
 const eleventyComputed = {
 	title: (data) => {
 		return data.session.title;
@@ -20,8 +21,26 @@ const eleventyComputed = {
 	},
 	permalink: function(data) {
 		return `/2024/${this.slugify(data.session.slugTitle || data.session.title)}/`;
+	},
+	scheduleSessions: function(data) {
+		let sessions = data.sessions['2024'].filter(entry => !entry.skipPage);
+		let index = sessions.findIndex(el => el.title == data.session.title);
+
+		let start = Math.max(0, index - 1);
+		let end = Math.min(sessions.length, index + 2);
+
+		if(index === 0) {
+			return [{}, ...sessions.slice(start, end)];
+		}
+
+		if(end === sessions.length) {
+			return [...sessions.slice(start, end), {}];
+		}
+
+		return sessions.slice(start, end); //.filter(entry => entry.title != data.session.title);
 	}
 };
+
 // </script>
 ---
 <h1 @text="session.title"></h1>
@@ -64,6 +83,35 @@ const eleventyComputed = {
 	<li><a :href="addSessionToCalendarUrl('yahoo', sessions.years['2024'])">Yahoo</a></li>
 </ul>
 
-<div class="photo-list large" webc:if="session.authors && session.authors.length > 0">
+<div class="photo-list large rhythm" webc:if="session.authors && session.authors.length > 0">
 	<conference-speaker webc:if="session.authors" webc:for="author of session.authors" @attributes="author" :show-bio="true" :show-website="true"></conference-speaker>
 </div>
+
+<h2>Schedule</h2>
+<p>View the <a href="/#schedule">full schedule</a>.</p>
+<table>
+	<thead>
+		<tr>
+			<th>Time</th>
+			<th>Talk</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr webc:for="(session, index) of scheduleSessions">
+			<td class="nowrap">
+				<strong webc:if="index === 0">Previous</strong>
+				<strong webc:if="index === 1">Current</strong>
+				<strong webc:if="index === 2">Next</strong>
+				<br>
+				<code webc:if="session.datetime"><localized-time :date="session.datetime.start" @text="displayDateTime(session.datetime.start)"></localized-time></code>
+			</td>
+			<td webc:if="session.title">
+				<a :href="`/2024/${slugify(session.slugTitle || session.title)}/`" webc:if="!session.skipPage">
+					<span @text="session.title"></span>
+				</a>
+				<span webc:else @text="session.title"></span>
+			</td>
+			<td webc:else></td>
+		</tr>
+	</tbody>
+</table>
