@@ -88,7 +88,6 @@ const eleventyComputed = {
 </div>
 
 <h2>Schedule</h2>
-<p>View the <a href="/#schedule">full schedule</a>.</p>
 <table>
 	<thead>
 		<tr>
@@ -106,12 +105,16 @@ const eleventyComputed = {
 				<code webc:if="session.datetime"><localized-time :date="session.datetime.start" @text="displayDateTime(session.datetime.start)"></localized-time></code>
 			</td>
 			<td webc:if="session.title">
-				<a :href="`/2024/${slugify(session.slugTitle || session.title)}/`" webc:if="!session.skipPage">
+				<a :href="`/2024/${slugify(session.slugTitle || session.title)}/`" webc:if="index !== 1 && !session.skipPage">
 					<span @text="session.title"></span>
 				</a>
 				<span webc:else @text="session.title"></span>
 			</td>
-			<td webc:else></td>
+			<td webc:else>-</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><a href="/#schedule"><em>View the full schedule</em></a></td>
 		</tr>
 	</tbody>
 </table>
