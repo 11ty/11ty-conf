@@ -38,21 +38,25 @@ const showTitle = true;
 		<style webc:keep @html="fetchGoogleFontsCss('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@600&display=swap')"></style>
 		<style webc:keep @raw="getBundle('css')"></style>
 
+<!---
 		<link rel="stylesheet" href="/public/lite-yt-embed.css" webc:keep>
 		<script src="/public/lite-yt-embed.js" webc:keep></script>
+--->
 	</head>
 	<body>
 		<page-nav></page-nav>
-		<announcement-banner @url="https://www.youtube.com/watch?v=iLxJ6PtuF9M">Live now — Join on YouTube!</announcement-banner>
+		<announcement-banner @url="https://www.youtube.com/watch?v=iLxJ6PtuF9M">Review the stream on YouTube!</announcement-banner>
 		<header webc:if="showTitle">
 			<sub-title webc:if="page.url == '/'">Join us for the</sub-title>
 			<giant-title :@condensed-title="condensedTitle" :@title-scale="titleScale"></giant-title>
 		</header>
 		<main id="content">
+<!---
 			<h2><a href="https://www.youtube.com/watch?v=iLxJ6PtuF9M">Watch on YouTube</a></h2>
 			<div class="rhythm">
 				<lite-youtube videoid="iLxJ6PtuF9M" playlabel="Play: 11ty Conference"></lite-youtube>
 			</div>
+--->
 
 
 			<div @html="content" webc:nokeep></div>
