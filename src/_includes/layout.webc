@@ -45,7 +45,7 @@ const showTitle = true;
 	</head>
 	<body>
 		<page-nav></page-nav>
-		<announcement-banner @url="https://www.youtube.com/watch?v=iLxJ6PtuF9M">Review the stream on YouTube!</announcement-banner>
+<!--- <announcement-banner @url="https://www.youtube.com/watch?v=iLxJ6PtuF9M">Review the stream on YouTube!</announcement-banner> --->
 		<header webc:if="showTitle">
 			<sub-title webc:if="page.url == '/'">Join us for the</sub-title>
 			<giant-title :@condensed-title="condensedTitle" :@title-scale="titleScale"></giant-title>
