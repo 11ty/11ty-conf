@@ -106,6 +106,8 @@ ${description}`,
 		"node_modules/@zachleat/throbber/throbber.js": "/public/throbber.js",
 		"node_modules/@zachleat/webcare-webshare/webcare-webshare.js": "/public/webcare-webshare.js",
 		"node_modules/@zachleat/hypercard/hypercard.js": "/public/hypercard.js",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.css": "/public/lite-yt-embed.css",
+		"node_modules/lite-youtube-embed/src/lite-yt-embed.js": "/public/lite-yt-embed.js",
 		"src/_components/global.css": "/public/global.css",
 	});
 	eleventyConfig.addPassthroughCopy("robots.txt");

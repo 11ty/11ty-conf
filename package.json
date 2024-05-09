@@ -18,7 +18,8 @@
     "@zachleat/hypercard": "^1.0.2",
     "@zachleat/throbber": "^1.0.3",
     "@zachleat/webcare-webshare": "^1.0.2",
-    "canvas-confetti": "^1.9.2"
+    "canvas-confetti": "^1.9.2",
+    "lite-youtube-embed": "^0.3.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.0.0-alpha.10",
