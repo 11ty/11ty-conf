@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve",
+    "start": "npx @11ty/eleventy --serve --quiet",
     "serverless": "npm run build && npx wrangler pages dev _site"
   },
   "keywords": [],
