@@ -19,8 +19,8 @@ const layout = "layout.webc";
 
 <p>View the <a href="#schedule">full schedule below</a>!</p>
 
-<h2 id="watch"><a href="https://www.youtube.com/watch?v=iLxJ6PtuF9M">Watch on YouTube</a></h2>
-<p><em data-icon="🗓️">May 10 Update</em>: Video of the <a href="https://www.youtube.com/watch?v=iLxJ6PtuF9M">full stream is available on YouTube</a>. Individual talk videos will be available in the coming weeks!</p>
+<h2 id="watch"><a href="https://www.youtube.com/watch?v=iLxJ6PtuF9M&t=1204s">Watch on YouTube</a></h2>
+<p><em data-icon="🗓️">May 10 Update</em>: Video of the <a href="https://www.youtube.com/watch?v=iLxJ6PtuF9M&t=1204s">full stream is available on YouTube</a>. Individual talk videos will be available in the coming weeks!</p>
 
 <div id="subscription"></div>
 <div id="code-of-conduct"></div>
