@@ -26,7 +26,7 @@ const layout = "layout.webc";
 <div id="code-of-conduct"></div>
 <div id="price"></div>
 <h2 id="register">How do I sign up?</h2>
-<p><em data-icon="🗓️">May 10 Update</em>: <strong>Registration is now closed.</strong> Thank you to the the <b @text="buttondown.count"></b> folks that attended the 11ty Conference!</p>
+<p><em data-icon="🗓️">May 10 Update</em>: <strong>Registration is now closed.</strong> Thank you to the the 2005 folks that attended the 11ty Conference!</p>
 <hr>
 <p>Thanks to our wonderful <a href="#sponsors">sponsors</a>, <strong>the conference is free</strong>! If you’re attending and representing a company, <a href="https://opencollective.com/11ty">donations are always appreciated</a>.</p>
 <p>All participants (attendees, speakers, sponsors, staff, organizers, volunteers) will be required to <strong>abide by the <a href="/2024/code-of-conduct/">code of conduct</a></strong>. Please read it thoroughly to ensure a welcoming event for all.</p>
