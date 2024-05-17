@@ -10,8 +10,8 @@ And I want to talk about not
 the dish soap, I want to talk
 
 3109
-00:00:09,104 --> 00:00:12,905
-about CSS, specifically , CSS.
+00:00:09,104 --> 00:00:13,905
+about CSS, specifically the C in CSS.
 
 3110
 00:00:16,095 --> 00:00:18,095
@@ -20,11 +20,12 @@ reason why CSS gets such a
 
 3111
 00:00:19,301 --> 00:00:23,013
-bad on developers.
+bad rep among developers. And it can be genuinely
+puzzling if you don't take the time to understand it.
 
 3112
 00:00:24,407 --> 00:00:27,700
-That's why I'm giving this
+But that's why I'm giving this
 talk. The cascade doesn't have
 
 3113
@@ -43,17 +44,17 @@ awesome.
 
 3116
 00:00:36,589 --> 00:00:38,589
-We have the half serial class
+We have the :has pseudo-class
 and
 
 3117
 00:00:39,792 --> 00:00:41,792
 nesting built into CSS now and
-scope styling, how awesome is
+we're even scope styling!
 
 3118
 00:00:41,792 --> 00:00:43,792
-that?
+How awesome is that?
 
 3119
 00:00:45,892 --> 00:00:48,986
@@ -63,89 +64,88 @@ have the tools to manage the
 3120
 00:00:48,986 --> 00:00:50,986
 cascade in a way that feels
-more hinged for lack of a
+more…
 
 3121
 00:00:50,986 --> 00:00:54,365
-better word.
-Yeah, this is a
+hinged, for lack of a better word.
 
 3122
-00:00:55,958 --> 00:00:59,246
-topic with multiple layers of
-rabbit holes. To keep things
+00:00:54,958 --> 00:00:58,246
+Yeah, this is a vast topic with multiple
+layers of rabbit holes. So,
 
 3123
-00:00:59,246 --> 00:01:01,859
-digestible, I'll simplify my
-explanations and provide
+00:00:58,246 --> 00:01:01,859
+To keep things digestible, I'll simplify
+my explanations and
 
 3124
 00:01:01,859 --> 00:01:03,859
-practical suggestions along the
+provide practical suggestions along the
 way.
 
 3125
 00:01:06,748 --> 00:01:08,748
-So to understand the cascade,
+So, to understand the cascade,
 we're going to start with a
 
 3126
 00:01:08,748 --> 00:01:10,748
-completely blank
+completely blank slate
 
 3127
 00:01:10,748 --> 00:01:12,748
-slate with minimum amount of
-HTML required to file a page or
+with the minimum amount of
+HTML required to style a page,
 
 3128
 00:01:12,748 --> 00:01:14,748
-create a page, rather, not even
-style it.
+or create a page rather.
+We're not even going to style it.
 
 3129
 00:01:17,625 --> 00:01:19,625
-And let's put a humble button
-element in there. And
+And, let's put a humble button
+element in there.
 
 3130
 00:01:19,625 --> 00:01:21,718
-immediately, we can see that
-this button element still has
+Immediately, we can see that
+this button element still
 
 3131
-00:01:21,718 --> 00:01:23,831
-default styling, even though
-there's not CSS on the page.
+00:01:21,718 --> 00:01:25,831
+has some default styling, even though
+there's no CSS on the page.
 
 3132
-00:01:26,628 --> 00:01:28,628
-Earlier Miriam explained this
-in more detail.
+00:01:26,628 --> 00:01:29,628
+Earlier, Miriam already explained this
+in more detail, but
 
 3133
 00:01:30,725 --> 00:01:32,725
-But these styles come from the
-user style sheet.
+These default styles come from the
+user-agent style sheet.
 
 3134
 00:01:34,310 --> 00:01:36,310
 And yes, these default styles
-do respect the light and dark
+do respect the light and dark theme.
 
 3135
 00:01:36,310 --> 00:01:38,310
-team . So my system, operating
+So like, my system,
 
 3136
-00:01:40,804 --> 00:01:42,804
-system uses dark theme, this
-button is styled in a dark
+00:01:39,804 --> 00:01:42,804
+operating system uses dark theme, so this
+button is styled in a dark theme.
 
 3137
-00:01:42,804 --> 00:01:44,804
-theme . I won't spoil the
+00:01:43,804 --> 00:01:46,591
+I won't spoil the
 surprise, because
 
 3138
@@ -154,9 +154,9 @@ I'm sure Sara's going to talk
 about this later today.
 
 3139
-00:01:49,882 --> 00:01:51,882
+00:01:49,882 --> 00:01:53,882
 But yeah, you can have dark
-theme without writing CSS .
+theme without writing CSS.
 
 3140
 00:01:56,179 --> 00:01:59,187
@@ -164,23 +164,23 @@ Yeah, the user style sheet is
 literally CSS style but built
 
 3141
-00:01:59,187 --> 00:02:01,187
-into the browser, this is where
+00:01:59,187 --> 00:02:02,187
+into the browser. This is where
 the cascade starts.
 
 3142
-00:02:04,274 --> 00:02:06,587
+00:02:04,274 --> 00:02:08,587
 On this slide, I have a screen
-shot of style sheet.
+shot of Chromium's user agent style sheet.
 
 3143
 00:02:09,584 --> 00:02:13,169
 I went to their source code and
-found it there.
+found it there. Thie file is some
 
 3144
 00:02:13,169 --> 00:02:15,169
-It's like hundred lines long.
+hundreds of lines long.
 
 3145
 00:02:16,453 --> 00:02:18,453
@@ -189,23 +189,22 @@ small subsection
 
 3146
 00:02:20,349 --> 00:02:23,435
-where this affects input, text
-areas, and buttons . And this
+where this rule affects input, textareas,
+and buttons. And
 
 3147
 00:02:23,435 --> 00:02:25,435
-rule sets up font property,
-this
+This rule sets the font property.
 
 3148
 00:02:27,038 --> 00:02:29,038
-font property is probably the
+This font property is probably the
 reason why every CSS reset
 
 3149
-00:02:30,122 --> 00:02:33,428
-that you see is something like
-inherit, buttons
+00:02:30,122 --> 00:02:34,428
+that you see uses something like
+font:inherit on buttons and inputs
 
 3150
 00:02:36,535 --> 00:02:38,535
@@ -215,7 +214,7 @@ match their
 3151
 00:02:39,943 --> 00:02:43,645
 font size and font family of
-their surroundings .
+their surroundings.
 
 3152
 00:02:43,645 --> 00:02:45,645
@@ -225,153 +224,152 @@ step in the cascade.
 3153
 00:02:46,543 --> 00:02:49,040
 And then, come author styles.
-This is the more interesting
+This is the more interesting part.
 
 3154
 00:02:49,040 --> 00:02:51,040
-part. This is where the party
+This is where the party
 happens.
 
 3155
 00:02:54,634 --> 00:02:58,828
 Before that, I want to talk
-about shadow DOM really quick.
+about shadow DOM really quick. Bear with me.
 
 3156
-00:03:02,618 --> 00:03:04,618
+00:03:02,618 --> 00:03:05,218
 Shadow DOM allows you to attach
-an internal
+an internal DOM tree to an element.
 
 3157
-00:03:07,025 --> 00:03:09,025
-, and it can have hidden from
-the main DOM.
+00:03:05,925 --> 00:03:09,025
+This internal tree can have any arbitrary DOM structure, 
+which is hidden from the main DOM.
 
 3158
-00:03:12,721 --> 00:03:14,721
-And that unlocks cool things
-like encapsulate styling.
+00:03:11,721 --> 00:03:14,721
+SO that unlocks some cool things
+like encapsulated styling.
 
 3159
 00:03:16,302 --> 00:03:18,302
 Even if you don't like using
-Shadow DOM directly, which is
+Shadow DOM directly,
 
 3160
 00:03:18,302 --> 00:03:20,302
-totally
+which is totally understandable,
 
 3161
 00:03:20,302 --> 00:03:22,882
-understandable, it's still good
-to know because many built-in
+it's still good to know
+because many built-in elements
 
 3162
 00:03:22,882 --> 00:03:24,882
-elements use Shadow DO,
+elements use Shadow DOM underneath,
 
 3163
-00:03:24,892 --> 00:03:26,892
-M underneath.
+00:03:24,892 --> 00:03:28,892
+And I've written this handy blog post,
+if you want to learn more.
 
 3164
-00:03:29,667 --> 00:03:33,875
-And I attached this blog post
-if you want to learn more. I
+00:03:230,667 --> 00:03:33,875
+But yeah, essentially, I explain how
+shadow DOM works here
 
 3165
 00:03:33,875 --> 00:03:35,875
-explain how Shadow DOM works
-here and this animation showing
+and I have this animation showing
 
 3166
 00:03:35,875 --> 00:03:38,673
 how the light DOM and Shadow
-DOM are interlinked together.
+DOM are interleaved together.
 
 3167
-00:03:43,876 --> 00:03:48,370
-I explained, cool. I have a
-screen shot of the detailed
+00:03:43,876 --> 00:03:47,370
+Ok it's playing, cool. I have a
+screen shot of the
 
 3168
-00:03:48,370 --> 00:03:50,370
-element, which is
+00:03:47,370 --> 00:03:50,370
+details element, which shows that
 
 3169
-00:03:51,460 --> 00:03:53,460
-built into HTML itself, also
-uses Shadow DOM.
+00:03:51,460 --> 00:03:55,460
+The details element, which is built into HTML itself,
+also uses Shadow DOM.
 
 3170
 00:03:55,966 --> 00:03:57,966
-Even if you don't use it
-directly, you are using it
+So even if you don't use it
+directly,
 
 3171
 00:03:57,966 --> 00:03:59,966
-indirectly.
+you are using shadow DOM indirectly.
 
 3172
 00:03:59,966 --> 00:04:02,647
 And yeah, the reason I bring
-this up is Shadow DOM styles
+this up is
 
 3173
-00:04:05,641 --> 00:04:09,153
-cascade after the user spells,
-if you have ha
+00:04:03,641 --> 00:04:09,153
+Shadow DOM styles cascade after the user-agent styles.
+but before the rest of the page styles.
 
 3174
-00:04:12,458 --> 00:04:14,458
-my button component which is a
-regular button and
+00:04:11,458 --> 00:04:14,458
+So if you have my-button component, which slots a
+regular button, and you
 
 3175
 00:04:15,662 --> 00:04:17,662
-style both from inside and
-outside Shadow DOM, the outside
+style this button both from inside and
+outside Shadow DOM,
 
 3176
 00:04:17,662 --> 00:04:19,662
-styles will win.
+the outside styles will win.
 
 3177
 00:04:20,954 --> 00:04:22,954
 So the overall cascade order,
-so far, goes something
+so far, goes something like
 
 3178
-00:04:24,054 --> 00:04:28,497
-like user agent styles, author
-styles, Shadow DOM styles and
+00:04:23,054 --> 00:04:28,497
+The user agent styles, the author styles.
+And within the author styles, the Shadow DOM styles,
 
 3179
-00:04:28,497 --> 00:04:30,497
-the rest of the page styles.
+00:04:28,497 --> 00:04:31,497
+and then rest of the page styles.
 
 3180
-00:04:31,794 --> 00:04:34,004
+00:04:31,794 --> 00:04:35,504
 There's also the inline style
-attribute which comes after
+attribute, which comes after these.
 
 3181
-00:04:34,004 --> 00:04:36,004
-these. But that's not part of
-cascade.
+00:04:36,004 --> 00:04:38,004
+But that's like, not really part of the cascade.
 
 3182
 00:04:39,392 --> 00:04:43,001
 The browser doesn't need to
-resolve the cascade in order to
+resolve
 
 3183
-00:04:43,001 --> 00:04:45,001
-get the style attribute.
+00:04:43,001 --> 00:04:45,801
+the cascade in order to get the style attribute.
 
 3184
-00:04:46,303 --> 00:04:48,303
-It's literally attached to the
+00:04:46,303 --> 00:04:49,303
+Because it's literally attached to the
 element itself.
 
 3185
@@ -379,157 +377,156 @@ element itself.
 But yeah, now that
 
 3186
-00:04:55,493 --> 00:04:57,493
+00:04:54,493 --> 00:04:57,493
 we understand Shadow DOM, we
-can talk about the rest of the
+can talk about the rest of the page.
 
 3187
-00:04:57,493 --> 00:04:59,493
-page. The most simple concept
+00:04:57,493 --> 00:05:00,493
+The first and most simple concept
 is order of appearance.
 
 3188
-00:05:01,370 --> 00:05:03,370
+00:05:01,370 --> 00:05:04,370
 So for example, you can style a
-button using
+button using an
 
 3189
 00:05:04,906 --> 00:05:06,906
 an element selector and you can
-make it pretty straight
+make it hotpink. Pretty straightforward.
 
 3190
-00:05:06,906 --> 00:05:08,906
-forward. But what happens when
-there's two of the rules?
+00:05:06,906 --> 00:05:10,096
+But what happens when
+there's two of these rules?
 
 3191
 00:05:10,096 --> 00:05:13,586
-The last one wins, this makes
-sense. CSS written, top to
+The last one wins. This makes sense.
+CSS is written, it goes from
 
 3192
 00:05:13,586 --> 00:05:15,586
-bottom and the last one
+top to bottom and the last one
 
 3193
 00:05:15,586 --> 00:05:19,066
 overrides anything before it.
-But these element selectors
+But these
 
 3194
 00:05:19,066 --> 00:05:21,066
-aren't super useful on their
-own. What if you only want to
+element selectors aren't super useful
+on their own.
 
 3195
-00:05:21,066 --> 00:05:23,066
-style this one particular
-button?
+00:05:21,066 --> 00:05:24,066
+What if you only want to style this
+one particular button?
 
 3196
-00:05:25,402 --> 00:05:27,402
+00:05:25,402 --> 00:05:28,402
 This is where I would use a
-class instead of an element
+class instead of an element selector.
 
 3197
-00:05:27,402 --> 00:05:29,402
-selector . But when we do this,
+00:05:28,402 --> 00:05:30,402
+But when we do this,
 we find that
 
 3198
-00:05:31,102 --> 00:05:33,102
+00:05:31,102 --> 00:05:34,102
 the order of appearance seems
 to not matter anymore.
 
 3199
-00:05:35,394 --> 00:05:37,404
-The class selector wins over
-the element selector even if it
+00:05:35,394 --> 00:05:39,604
+The class selector wins over the element selector,
+even if it comes before.
 
 3200
-00:05:37,404 --> 00:05:39,404
-comes before.
+00:05:40,604 --> 00:05:42,404
 So what's going on here?
 
 3201
-00:05:42,482 --> 00:05:44,482
-And thens a to that is
+00:05:42,482 --> 00:05:45,482
+And the answer to that is
 specificity.
 
 3202
-00:05:44,575 --> 00:05:48,965
+00:05:45,575 --> 00:05:48,965
 Hopefully, I said that right.
-Specificity. I'm not going to
+Specificity.
 
 3203
 00:05:48,965 --> 00:05:51,259
-go into too much detail here
-because it's a complex, but
+I'm not going to go into too much detail here,
+because
 
 3204
-00:05:51,259 --> 00:05:53,259
-pretty easily understood topic.
+00:05:51,259 --> 00:05:54,259
+it's a complex, but pretty easily understood topic.
 
 3205
-00:05:56,452 --> 00:05:58,452
-Just Specificity is a score
-made of three parts.
+00:05:56,452 --> 00:06:00,452
+The gist of it is…
+Specificity is a score made of three parts.
 
 3206
-00:06:01,637 --> 00:06:03,637
+00:06:01,637 --> 00:06:04,637
 Starting from the right side,
-elements and pseudo element
+elements and pseudo-element selectors
 
 3207
 00:06:04,843 --> 00:06:06,843
-selectors contribute to the
-least significant part,
+contribute to the
+least significant part.
 
 3208
-00:06:06,843 --> 00:06:08,843
-classes, and attribute
-selectors and pseudo classes go
+00:06:06,843 --> 00:06:09,843
+Classes, and attribute selectors,
+and pseudo classes
 
 3209
-00:06:08,843 --> 00:06:10,847
-in the middle and IDs go in the
+00:06:09,843 --> 00:06:13,847
+go in the middle; and IDs go in the
 most significant part.
 
 3210
 00:06:14,840 --> 00:06:16,938
-So the browser will take the
-score and use it to determine
+So the browser will take this
+score and
 
 3211
-00:06:16,938 --> 00:06:18,938
-which selector wins.
+00:06:16,938 --> 00:06:19,938
+use it to determine which selector wins.
 
 3212
 00:06:21,434 --> 00:06:23,434
 Chrome dev tools even shows you
-the specificity when you hover
+the specificity
 
 3213
-00:06:23,434 --> 00:06:25,434
-selector.
+00:06:23,434 --> 00:06:25,234
+when you hover a selector.
 
 3214
-00:06:26,331 --> 00:06:28,331
-If I go and inspect this,
+00:06:25,331 --> 00:06:28,331
+So If I go and inspect this,
 
 3215
 00:06:29,422 --> 00:06:33,648
-and I hover over selector, you
-can see it says, 201, that's
+and I hover over a selector, you
+can see it says, 2-0-1.
 
 3216
 00:06:33,648 --> 00:06:35,648
-the specificity score.
+That's the specificity score.
 
 3217
 00:06:40,033 --> 00:06:42,033
-Yeah, you don't have to
+So yeah, you don't have to
 calculate it by hand,
 
 3218
@@ -537,154 +534,147 @@ calculate it by hand,
 essentially.
 
 3219
-00:06:47,424 --> 00:06:49,424
+00:06:47,424 --> 00:06:50,424
 So in the previous example,
-specificity of the button
+specificity of the button selector,
 
 3220
 00:06:50,826 --> 00:06:53,919
-selector, the button class was
-0 10, but the specificity of
+the button class was 0-1-0, but
 
 3221
-00:06:53,919 --> 00:06:58,836
-the element was 001, so it's
-more specific, it's by order of
+00:06:53,919 --> 00:06:59,836
+the specificity of the element was 0-0-1,
+so the button class wins because it's more specific,
 
 3222
-00:06:58,836 --> 00:07:03,414
-appearance.
-As you can imagine, with really
+00:06:59,836 --> 00:07:02,414
+despite order of appearance.
 
 3223
 00:07:03,414 --> 00:07:05,414
-large selectors, the
+As you can imagine, with really large selectors,
 
 3224
-00:07:06,620 --> 00:07:08,620
-specificity would become a bit
-cumbersome
+00:07:05,620 --> 00:07:09,620
+the specificity would become a bit
+cumbersome to manage.
 
 3225
 00:07:09,748 --> 00:07:11,748
-to manage and that's why the
-general advice given to us is
+That's why the general advice given to us is
 
 3226
-00:07:11,748 --> 00:07:13,748
+00:07:11,748 --> 00:07:14,748
 keep specificity low.
 And this is good advice.
 
 3227
-00:07:15,251 --> 00:07:17,251
+00:07:15,251 --> 00:07:18,251
 We should almost certainly
-avoid ID selectors, for
+avoid ID selectors, for example.
 
 3228
-00:07:17,251 --> 00:07:19,251
-example. And we can still use
-them.
+00:07:18,251 --> 00:07:20,251
+And we can still use them.
 
 3229
-00:07:23,044 --> 00:07:25,044
-We can still use them instead
+00:07:21,044 --> 00:07:24,044
+Like, instead of using #ID,
 
 3230
-00:07:26,654 --> 00:07:28,654
-of #ID, we can use a natural
-selector
+00:07:24,654 --> 00:07:26,654
+we can just use an attribute selector.
 
 3231
-00:07:29,746 --> 00:07:31,746
-. Or we can make a class
+00:07:28,746 --> 00:07:31,746
+Or we can just make it a class
 specifically for the thing
 
 3232
 00:07:31,746 --> 00:07:34,223
-you're selecting.
-So it's easy to understand the
+that we're selecting.
 
 3233
 00:07:34,223 --> 00:07:38,828
-problem with high specificity,
-but keeping specificity low can
+So it's easy to understand the problem with
+high specificity, but…
 
 3234
 00:07:38,828 --> 00:07:42,034
-sometimes be challenging,
-especially when you want to
+Keeping specificity low can sometimes be challenging,
 
 3235
 00:07:42,034 --> 00:07:44,034
-share styles between different
-elements
+especially when you want to share styles between different
+elements.
 
 3236
-00:07:45,639 --> 00:07:48,830
-, so you might, like, you might
-be tempted to make
+00:07:46,639 --> 00:07:50,830
+So you might, like,
+you might be tempted to make
 
 3237
-00:07:51,935 --> 00:07:54,128
-a single class or every bend of
+00:07:51,935 --> 00:07:56,128
+a single class for every variant of
 the button.
 
 3238
-00:07:57,319 --> 00:07:59,319
-But each shares the base cloud
+00:07:55,319 --> 00:08:00,319
+But then each variant needs to share the
+base styles of the button, right?
 
 3239
 00:08:01,130 --> 00:08:03,130
-of the button and that gets
-complicated.
+and that starts to become complicated.
 
 3240
-00:08:04,715 --> 00:08:08,120
+00:08:03,715 --> 00:08:08,120
 Sometimes, we tend to go too
-far with this advice . Where we
+far with this advice,
 
 3241
-00:08:08,120 --> 00:08:10,120
-want to keep specificity, not
-just low, but
+00:08:08,120 --> 00:08:11,120
+where we want to keep specificity
+not just low, but
 
 3242
-00:08:11,214 --> 00:08:13,214
+00:08:11,214 --> 00:08:14,214
 totally flat, by only using
 single class selectors.
 
 3243
 00:08:15,304 --> 00:08:17,910
 This usually is done through a
-convention or tooling like CSS
+convention like BEM,
 
 3244
 00:08:17,910 --> 00:08:19,910
-Modules.
+or through tooling like CSS Modules.
 
 3245
-00:08:21,493 --> 00:08:23,493
+00:08:21,493 --> 00:08:24,293
 And yeah, I've always just
-found this kind
+found this kind of advice
 
 3246
-00:08:24,304 --> 00:08:27,000
-of advice restrictive. It feels
-like using CSS without the
+00:08:25,304 --> 00:08:27,000
+a bit restrictive.
+It kinda feels like using CSS
 
 3247
 00:08:27,000 --> 00:08:29,000
-cascade.
+without the cascade.
 
 3248
 00:08:30,289 --> 00:08:32,289
 So, yeah, for the rest of the
-presentation, I want to show
+presentation,
 
 3249
-00:08:32,289 --> 00:08:34,289
-you how much better things can
-be with modern CSS .
+00:08:32,289 --> 00:08:36,289
+I want to show you how much better things can
+be with modern CSS.
 
 3250
 00:08:37,362 --> 00:08:39,362
@@ -697,35 +687,36 @@ controlling specificity and
 controlling the cascade itself.
 
 3252
-00:08:42,869 --> 00:08:44,869
+00:08:43,869 --> 00:08:45,869
 Let's start with the easy one.
 
 3253
 00:08:46,161 --> 00:08:48,161
-You might already know you can
+You might already know that you can
 increase the specificity of a
 
 3254
-00:08:48,161 --> 00:08:50,161
+00:08:48,161 --> 00:08:51,161
 class selector by chaining it
 to itself.
 
 3255
-00:08:52,749 --> 00:08:54,749
+00:08:52,749 --> 00:08:57,749
 You can even use CSS nesting to
+chain nested ampersands,
 
 3256
 00:08:58,156 --> 00:09:00,156
-chain ampersands, this can
+and that way you avoid repeating yourself.
 
 3257
-00:09:01,361 --> 00:09:03,361
-be pretty useful when you need
-it, but only increases the
+00:09:00,361 --> 00:09:03,361
+This can be be pretty useful when you need it,
+but it only
 
 3258
 00:09:03,361 --> 00:09:05,361
-middle portion of the
+increases the middle portion of the
 specificity.
 
 3259
@@ -735,70 +726,68 @@ of blow your mind, but you can
 
 3260
 00:09:08,777 --> 00:09:10,777
-use the is
+use the :is pseudo-class
 
 3261
 00:09:10,890 --> 00:09:12,890
-pseudo class to make a huge
+to make a huge
 jump in specificity.
 
 3262
-00:09:14,785 --> 00:09:17,877
-This is pseudo class, it's
-interesting, lets you group
+00:09:14,785 --> 00:09:16,877
+This :is pseudo class, it's
+interesting.
 
 3263
-00:09:17,877 --> 00:09:19,877
-multiple selectors into a
-select
+00:09:16,877 --> 00:09:20,877
+It lets you group multiple selectors into a
+select selector,
 
 3264
-00:09:22,089 --> 00:09:24,089
-single selector, but changes
-the specificity of the whole
+00:09:21,089 --> 00:09:24,089
+but it changes the specificity of the whole thing,
+so that
 
 3265
 00:09:24,089 --> 00:09:28,281
-thing so only the strongest
-selector in the group counts.
+only the strongest selector in the group counts.
 
 3266
-00:09:28,281 --> 00:09:30,281
+00:09:28,281 --> 00:09:31,281
 What this means is, you can
 have a class selector act
 
 3267
-00:09:31,370 --> 00:09:33,370
+00:09:31,370 --> 00:09:34,370
 like it has the specificity of
 the ID selector.
 
 3268
-00:09:35,973 --> 00:09:38,275
+00:09:36,973 --> 00:09:38,275
 And this ID selector doesn't
-need to exist. It can just be
+even need to exist.
 
 3269
-00:09:38,275 --> 00:09:40,275
-there hanging by itself.
+00:09:38,275 --> 00:09:41,275
+It can just be there, hanging by itself.
 
 3270
-00:09:43,174 --> 00:09:45,174
+00:09:43,174 --> 00:09:46,174
 You can do the same thing even
-easier using the not pseudo
+easier
 
 3271
-00:09:45,174 --> 00:09:48,257
-class. So this one requires you
-to use
+00:09:45,174 --> 00:09:50,257
+using the not pseudo-class.
+So this one requires you to use
 
 3272
 00:09:51,242 --> 00:09:53,242
-the impossible selector where
-you can use
+the impossible selector, where
 
 3273
 00:09:54,851 --> 00:09:58,719
-two IDs because, remember, an
+you can use two IDs because, remember, an
 element can only have one ID.
 
 3274
@@ -809,22 +798,21 @@ match, and we're saying,
 3275
 00:10:00,719 --> 00:10:03,921
 never not match this selector.
-So this will match the thing
 
 3276
 00:10:04,312 --> 00:10:09,001
-you chain it to. I love this
-because you can chain it to
+So this will match the thing you chain it to.
+I love this because
 
 3277
 00:10:09,001 --> 00:10:12,405
-anything to scope it down, just
-how much you want while
+you can chain it to anything to scope it down, just
+how much you want
 
 3278
 00:10:12,405 --> 00:10:14,405
-retaining the super high
-specificity .
+while retaining the super high
+specificity.
 
 3279
 00:10:15,995 --> 00:10:19,201
@@ -832,13 +820,13 @@ And if you chain it to the
 universal selector, it'll match
 
 3280
-00:10:19,201 --> 00:10:21,593
-everything by having the high
-specificity that we want. You
+00:10:19,201 --> 00:10:22,193
+everything while having the high
+specificity that we want.
 
 3281
-00:10:21,593 --> 00:10:23,593
-shouldn't need this very often.
+00:10:22,193 --> 00:10:24,593
+You shouldn't need this very often.
 
 3282
 00:10:24,890 --> 00:10:27,587
@@ -852,88 +840,83 @@ have the highest priority.
 3284
 00:10:31,881 --> 00:10:33,881
 So with that out of the way,
-let's talk about decreasing
 
 3285
 00:10:33,881 --> 00:10:35,881
-specificity.
-We know how to increase it, how
+let's talk about decreasing specificity.
 
 3286
-00:10:35,881 --> 00:10:37,881
-do we decrease it? Because
-that's kind of the goal, right?
+00:10:35,881 --> 00:10:38,881
+We know how to increase it,
+but how do we decrease it?
 
 3287
-00:10:40,772 --> 00:10:42,772
-We want to keep specificity
-low, at least that's what
+00:10:39,772 --> 00:10:42,772
+Because that's kind of the goal, right?
+We want to keep specificity low.
 
 3288
 00:10:42,772 --> 00:10:44,772
-everybody tells us . So that's
-where the rare pseudo class
+At least that's what everybody tells us.
 
 3289
 00:10:44,772 --> 00:10:47,177
-comes in .
-There is except it doesn't add
+So that's where the :where pseudo-class comes in.
+:where is just like :is,
 
 3290
-00:10:47,177 --> 00:10:49,177
-to the specificity.
+00:10:47,177 --> 00:10:50,177
+except it doesn't add to the specificity.
 
 3291
 00:10:50,471 --> 00:10:52,471
 We can put an ID selector in
-there, and it'll have zero
+there, and it'll still have
 
 3292
 00:10:52,471 --> 00:10:54,471
-specificity.
+zero specificity.
 
 3293
-00:10:54,774 --> 00:10:56,774
-And just like is, you can chain
+00:10:54,774 --> 00:10:57,774
+And just like :is, you can chain
 it to other selectors
 
 3294
-00:10:59,327 --> 00:11:03,337
-. So you can have some parts
-inside that don't count towards
+00:10:59,327 --> 00:11:03,837
+So you can have some parts inside the :where.
+They don't count towards the specificity.
 
 3295
-00:11:03,337 --> 00:11:05,337
-the specificity, but the things
-outside
+00:11:03,837 --> 00:11:06,337
+But the things that are outside do count.
 
 3296
-00:11:05,337 --> 00:11:08,028
-do count.
-There's one restriction
+00:11:07,337 --> 00:11:08,828
+There's one restriction here,
 
 3297
 00:11:11,028 --> 00:11:14,124
-here you can't put a pseudo
-element selector inside, but
+You can't put a pseudo-element selector
+inside :is and :where,
 
 3298
 00:11:14,124 --> 00:11:17,714
-that's just a thing that you'll
-get used to. But yeah, in other
+but that's just a thing that you'll
+get used to.
 
 3299
-00:11:17,714 --> 00:11:19,714
-words, we now have a CSS
+00:11:17,714 --> 00:11:20,714
+But yeah, in other words, we now have a
 
 3300
 00:11:20,807 --> 00:11:22,807
-native way of writing any kind
-of selector you want with just
+CSS-native way of writing any kind
+of selector we want
 
 3301
-00:11:22,807 --> 00:11:24,807
-the right amount of
+00:11:22,807 --> 00:11:26,807
+with just the right amount of
 specificity. That's awesome.
 
 3302
@@ -943,85 +926,83 @@ CSS is awesome.
 3303
 00:11:31,142 --> 00:11:34,044
 The most obvious way to use
-where is when you want to
+:where is when you want to
 
 3304
 00:11:34,044 --> 00:11:36,044
-create select this for CSS
-preset. This kind of makes
+create zero-specificity selectors
+for a CSS reset.
 
 3305
-00:11:36,044 --> 00:11:38,044
-sense.
+00:11:36,044 --> 00:11:39,044
+This kind of makes sense
 
 3306
 00:11:39,834 --> 00:11:41,834
-You want the reset to have the
-lowest cascade priority. You
+becase you want the reset to have the
+lowest cascade priority.
 
 3307
 00:11:41,834 --> 00:11:43,834
-put everything in where.
+So you just put everything in :where.
 
 3308
-00:11:44,423 --> 00:11:47,516
-And I built my own reset that
-uses this technique . And you
+00:11:44,123 --> 00:11:47,516
+And I actually built my own reset that
+uses this technique.
 
 3309
 00:11:47,516 --> 00:11:49,516
-can find it on NPM under
+And you can find it on NPM
 
 3310
-00:11:52,530 --> 00:11:54,530
-the end cap name space.
+00:11:50,530 --> 00:11:54,530
+under the @ACAB namespace.
 
 3311
 00:11:55,827 --> 00:11:57,827
-With where, you can make zero
-specificity, but many don't do
-
+With :where, you can make zero
+specificity, but
 3312
-00:11:57,827 --> 00:11:59,827
-that.
+00:11:57,827 --> 00:12:00,827
+maybe don't do that?
+Zero is fine for resets, but
 
 3313
 00:12:01,043 --> 00:12:03,043
-I would actually suggest coming
-up with a desire specificity
+I would actually suggest coming up with
 
 3314
-00:12:03,043 --> 00:12:05,043
-for all of your other styles.
+00:12:03,043 --> 00:12:05,543
+a desired specificity for
+all of your other styles.
 
 3315
 00:12:06,929 --> 00:12:08,929
 So you might want your global
-style to be no higher than
+style to be 
 
 3316
-00:12:08,929 --> 00:12:11,657
-0,0,1. And you can still use
-longer selectors there,
+00:12:08,929 --> 00:12:13,657
+no higher than 0-0-1.
+And you can still use longer selectors there,
 
 3317
 00:12:14,652 --> 00:12:17,747
-like restricting the
-specificity . And yeah, you can
+while restricting the specificity.
 
 3318
 00:12:17,747 --> 00:12:19,747
---
+And yeah, you can--
 
 3319
 00:12:20,853 --> 00:12:22,853
-the point here is you can kind
-of
+The point here is, you can kind of just
 
 3320
-00:12:25,527 --> 00:12:27,527
-just control the specificity
-while not having restrictions
+00:12:23,527 --> 00:12:27,527
+control the specificity
+while not having any restrictions
 
 3321
 00:12:27,527 --> 00:12:29,527
@@ -1029,107 +1010,101 @@ on how you're writing your CSS.
 
 3322
 00:12:30,492 --> 00:12:33,895
-One thing I like to do is,
-like, put everything that is
+One thing I like to do is
 
 3323
 00:12:33,895 --> 00:12:37,604
-nested inside the main rule .
-Put where so that the whole
+Put everything that is nested inside the main rule,
+put :where.
 
 3324
-00:12:40,599 --> 00:12:42,599
-block has a flat specificity,
-and everything inside it has
+00:12:39,599 --> 00:12:42,599
+So that the whole block has a flat specificity,
 
 3325
 00:12:42,599 --> 00:12:44,599
-zero specificity.
+and everything inside it has zero specificity.
 
 3326
 00:12:45,794 --> 00:12:48,887
-So you're like going top to
-down, everything is like using
+So you're like going top to down,
 
 3327
 00:12:48,887 --> 00:12:52,095
-source order or order of
-appearance and, like,
+everything is like using source order,
+or order of appearance
 
 3328
-00:12:52,095 --> 00:12:54,095
-everything inside is flat.
+00:12:54,095 --> 00:12:56,095
+and everything inside is flat.
 
 3329
 00:12:58,079 --> 00:13:00,079
 So you have some specificity,
-but just not too much
+just not too much.
 
 3330
-00:13:01,885 --> 00:13:03,885
-. So yeah, if you haven't use
+00:13:01,885 --> 00:13:05,885
+So yeah, if you haven't used :where,
+give it a shot.
 
 3331
 00:13:05,888 --> 00:13:09,096
-d where, give it a shot, it'll
-solve your headaches and it's
+It'll probably solve many of your headaches, and
+it's very well supported, all the way back to Safari 14.
 
 3332
-00:13:09,096 --> 00:13:12,287
-back all the way back to Safari
-14 . Ask And that brings us to
+00:13:11,096 --> 00:13:13,287
+And that brings us to my favorite topic:
 
 3333
-00:13:15,392 --> 00:13:18,974
-my favorite topic, controlling
-the cascade using layers.
+00:13:14,192 --> 00:13:17,974
+Controlling the cascade using layers.
 
 3334
-00:13:18,974 --> 00:13:20,974
+00:13:17,974 --> 00:13:20,974
 If you have a CSS rule, you can
-wrap it in a layer, an
+wrap it in @layer.
 
 3335
 00:13:20,974 --> 00:13:22,974
-anonymous layer, and you can
-give it a name, and you can put
+This is an anonymous layer.
 
 3336
 00:13:22,974 --> 00:13:24,974
-other styles in it, too.
+You can give it a name
 
 3337
 00:13:24,974 --> 00:13:28,051
-So far, so good. But the
-interesting part is when you
+and you can put other styles in it, too.
+So far, so good.
 
 3338
 00:13:28,051 --> 00:13:30,051
-use multiple layer statements
-and
+But the interesting part is when
+you use multiple layer statements
 
 3339
 00:13:31,256 --> 00:13:33,256
-put different -- or multiple
-layer blocks and put different
+and put different --
+or multiple layer blocks,
 
 3340
 00:13:33,256 --> 00:13:35,256
-styles in them.
+and put different styles in them.
 
 3341
-00:13:36,158 --> 00:13:38,158
+00:13:36,158 --> 00:13:39,558
 So here, the second layer will
-always be the first layer.
+always beat the first layer.
 
 3342
 00:13:40,060 --> 00:13:42,060
-It's kind of like order of
-appearance, but without
+It's kind of like order of appearance
 
 3343
-00:13:42,060 --> 00:13:44,060
-specificity part.
+00:13:42,060 --> 00:13:45,060
+but without the specificity part.
 
 3344
 00:13:45,453 --> 00:13:47,453
@@ -1137,301 +1112,287 @@ So here in the second layer,
 we're using
 
 3345
-00:13:49,665 --> 00:13:53,446
-where pseudo class, but the
-first one still wins. Or
+00:13:47,665 --> 00:13:53,446
+the :where pseudo class,
+but the first one still wins.
 
 3346
-00:13:53,446 --> 00:13:55,446
-actually, I misspoke.
+00:13:53,446 --> 00:13:56,446
+Or actually, I misspoke.
 
 3347
-00:13:56,764 --> 00:13:58,764
-So in the second one, we're
-using the
+00:13:56,764 --> 00:13:59,764
+So in the second one, we're using
+the :where pseudo-class
 
 3348
 00:13:59,856 --> 00:14:01,856
-pseudo class with a lower
-specificity but still wins
+so it has a lower specificity,
+but it still wins
 
 3349
-00:14:01,856 --> 00:14:03,856
+00:14:01,856 --> 00:14:04,856
 because it's in a layer that
 comes later.
 
 3350
-00:14:09,043 --> 00:14:11,248
+00:14:09,043 --> 00:14:12,248
 So the layer order is kind of
-resolved in the way in the
+resolved in the way
 
 3351
-00:14:11,248 --> 00:14:13,248
-order that is defined.
+00:14:12,248 --> 00:14:14,248
+in the order that is defined.
 
 3352
 00:14:14,538 --> 00:14:16,538
-And then, there's on layer
-styles which always have the
+Then there's unlayered styles
 
 3353
-00:14:16,538 --> 00:14:18,538
-highest priority. It'll win
-over all layer styles.
+00:14:16,538 --> 00:14:20,538
+which always have the highest priority.
+They'll win over all layered styles.
 
 3354
-00:14:20,740 --> 00:14:23,329
+00:14:20,740 --> 00:14:24,329
 This might not feel intuitive,
-but it kind of makes sense.
+but it kind of makes sense
 
 3355
-00:14:23,329 --> 00:14:25,329
-You'll get used to it.
+00:14:24,329 --> 00:14:25,329
+and you'll get used to it.
 
 3356
-00:14:26,621 --> 00:14:28,621
-The way I think about it, you
-want to start with you lower
+00:14:26,121 --> 00:14:28,621
+The way I think about it is,
+you want to start with
 
 3357
 00:14:28,621 --> 00:14:30,621
-priority
+your lower-priority layers.
 
 3358
 00:14:30,621 --> 00:14:32,621
-layer so you can put your CSS
-reset in a layer and leave
+So you can put your CSS reset
+in a layer
 
 3359
 00:14:32,621 --> 00:14:34,621
-everything else unlayered.
+and leave everything else unlayered.
 
 3360
-00:14:35,517 --> 00:14:37,517
+00:14:35,517 --> 00:14:38,517
 This kind of allows you to
-slowly add layers to your
+slowly add layers to your codebase.
 
 3361
-00:14:37,517 --> 00:14:39,517
-codebase . Yeah, that's
+00:14:39,517 --> 00:14:41,517
+So yeah, that's kind of an
+introduction to layers.
 
 3362
-00:14:40,623 --> 00:14:43,918
-kind of my introduction to
-layer. I still have some time
+00:14:42,623 --> 00:14:43,918
+I still have some time so
 
 3363
 00:14:43,918 --> 00:14:45,918
-so I'm going to dive a little
-bit deeper. I mentioned layer
+I'm going to dive a little
+bit deeper.
 
 3364
-00:14:45,918 --> 00:14:47,918
-order.
+00:14:45,918 --> 00:14:48,918
+I mentioned layer order, it's…
 
 3365
-00:14:50,207 --> 00:14:52,207
-It's the layers are prioritized
-in the order that they first
+00:14:49,207 --> 00:14:53,207
+The layers are prioritized in the
+order that they first appear.
 
 3366
-00:14:52,207 --> 00:14:54,207
-appear . So if you have layer A
-and layer B and
+00:14:54,207 --> 00:14:56,207
+So if you have layer A and layer B
 
 3367
 00:14:56,405 --> 00:14:58,405
-write layer A, again, the rules
+and then you write layer A again,
 
 3368
-00:14:59,813 --> 00:15:01,813
-inside the second appearance of
-layer A will still lose to
+00:14:58,813 --> 00:15:01,813
+the rules inside the second appearance of
+layer A will still lose to layer B.
 
 3369
-00:15:01,813 --> 00:15:03,813
-layer B . The layer A was
-already defined all the way up
+00:15:01,813 --> 00:15:04,813
+Because the layer A was already
 
 3370
-00:15:03,813 --> 00:15:08,710
-there. To make this more
-predictable, you can separate
+00:15:04,813 --> 00:15:07,710
+defined all the way up there.
 
 3371
 00:15:08,710 --> 00:15:10,710
-layer statements from layer
-blocks.
+To make this more predictable, we can
 
 3372
 00:15:10,710 --> 00:15:13,823
-The layer statement will define
-the order and the layer blocks
+separate layer statements from layer blocks.
 
 3373
-00:15:13,823 --> 00:15:19,123
-will contain the actual rules.
-And you probably want to define
+00:15:13,823 --> 00:15:18,123
+The layer statement will define the order
+and the layer blocks will contain the actual rules.
 
 3374
-00:15:19,123 --> 00:15:21,826
-the layer order up front
-because all of your other
+00:15:18,123 --> 00:15:21,026
+And you probably want to define the layer order
+up front,
 
 3375
-00:15:21,826 --> 00:15:23,826
-styles or before all of your
-other styles.
+00:15:21,026 --> 00:15:24,826
+because all of your other styles, or --
+before all of your other styles.
 
 3376
-00:15:26,727 --> 00:15:28,727
-You can put the layer
-statements in the
+00:15:26,727 --> 00:15:29,727
+You can put the layer statements in the
 
 3377
 00:15:29,826 --> 00:15:33,428
-beginning of your first style
-sheet, but what I like to do is
+beginning of your first style sheet,
+but what I like to do is
 
 3378
 00:15:33,428 --> 00:15:35,428
-put it in style tag, and put
-the style tag all the way up in
+I put it in a style tag, and I put
+that style tag
 
 3379
 00:15:35,428 --> 00:15:37,534
-the head.
-Because I don't trust
+all the way up in the head.
+Beacause…
+
 
 3380
-00:15:40,139 --> 00:15:43,432
-bundlers to put my first style
-sheet in the correct place. So
+00:15:39,139 --> 00:15:43,432
+I don't trust bundlers to put my first style
+sheet in the correct place.
 
 3381
 00:15:43,432 --> 00:15:45,432
-I just like doing it myself
-before any
+So I just like, do it myself
 
 3382
-00:15:45,432 --> 00:15:49,346
-other style sheets are linked.
-So, yeah. Let's go even deeper.
+00:15:45,432 --> 00:15:48,346
+before any other style sheets are linked.
 
 3383
-00:15:52,542 --> 00:15:54,542
-So we can nest layers, this
-functionality is built into
+00:15:50,142 --> 00:15:54,542
+So yeah, let's go even deeper.
+So we can nest layers.
 
 3384
 00:15:54,542 --> 00:15:58,553
-layers. So it's separate from
-CSS nesting. You can nest
+This functionality is built into layers,
+so it's separate from CSS nesting.
 
 3385
-00:15:58,553 --> 00:16:00,553
-layers without using CSS
-nesting.
+00:15:58,553 --> 00:16:01,553
+You can nest layers without using CSS nesting.
 
 3386
-00:16:02,952 --> 00:16:04,952
+00:16:02,952 --> 00:16:05,952
 And if you only want to
-reference a nested
+reference a nested sub-layer,
 
 3387
 00:16:06,047 --> 00:16:08,551
-sublayer, you can use the dot
-syntax.
+you can also use the dot syntax.
 
 3388
-00:16:11,752 --> 00:16:13,752
-But it gets even more
-interesting when you do use CSS
+00:16:11,752 --> 00:16:14,752
+But it gets even more interesting
+when you do use CSS nesting.
 
 3389
-00:16:14,954 --> 00:16:18,161
-nesting, because you can put a
-layer block inside another
+00:16:14,954 --> 00:16:20,161
+Because you can put a layer block
+inside another CSS rule, like a class selector.
 
 3390
-00:16:20,870 --> 00:16:24,041
-CSS rule, like a class
-selector. You want to style
+00:16:21,161 --> 00:16:23,041
+This is useful when you want to
 
 3391
-00:16:24,041 --> 00:16:26,041
-different parts of the same
-component using different
+00:16:23,041 --> 00:16:25,041
+style different parts of the same component
 
 3392
-00:16:26,041 --> 00:16:28,041
-layers.
+00:16:25,041 --> 00:16:27,441
+using different layers.
 
 3393
 00:16:29,640 --> 00:16:31,640
-I want to point out that this
-is a CSS nesting is a
+I do want to point out that this
+CSS nesting
 
 3394
-00:16:31,640 --> 00:16:33,640
-relatively new feature, so you
+00:16:31,640 --> 00:16:34,640
+is a relatively new feature, so you
 might want to use preprocessors
 
 3395
-00:16:35,936 --> 00:16:39,245
-, SaaS to trans
+00:16:34,936 --> 00:16:39,245
+like PostCSS or Sass to transpile
+this part out for you.
 
 3396
-00:16:40,349 --> 00:16:43,650
-get this part out for you. I
-find this useful especially
+00:16:40,849 --> 00:16:43,650
+This pattern I find this useful, especially
 
 3397
-00:16:43,650 --> 00:16:45,650
-when different part of the
-components need to have
+00:16:43,650 --> 00:16:46,650
+when different part of the same component
+need to have different priorities.
 
 3398
-00:16:45,650 --> 00:16:48,550
-different priorities. For
-example, I might have overrides
+00:16:46,650 --> 00:16:49,550
+For example, I might have overrides
 
 3399
-00:16:48,550 --> 00:16:50,550
+00:16:49,550 --> 00:16:50,550
 as a sublayer where I put
 
 3400
 00:16:50,958 --> 00:16:53,754
-my scaler styles and print
-styles.
+all my forced-colors styles
+and print styles.
 
 3401
 00:16:53,754 --> 00:16:55,754
-These should always be all of
-the other styles of the
+Because these should always beat
 
 3402
 00:16:55,754 --> 00:16:57,754
-component.
+all of the other styles of the component.
 
 3403
 00:17:00,065 --> 00:17:03,361
-Moving on to layer strengths
-and the idea of style sheets.
+Moving on, layers transcend
+the idea of style sheets.
 
 3404
-00:17:03,361 --> 00:17:05,361
-You can reference the same
-layer name in multiple CSS
+00:17:03,361 --> 00:17:05,961
+So you can reference the same
+layer name in multiple CSS files
 
 3405
 00:17:06,461 --> 00:17:08,461
-files and they'll work just
-like you expect regardless of
+and they'll work just
+like you expect
 
 3406
 00:17:08,461 --> 00:17:10,461
-how they're imported.
+regardless of how they're imported.
 
 3407
 00:17:10,971 --> 00:17:12,971
@@ -1441,136 +1402,130 @@ components layer that is
 3408
 00:17:12,971 --> 00:17:14,971
 referenced in every single one
-of your components and within
+of your components
 
 3409
-00:17:17,480 --> 00:17:19,480
-single file components,
+00:17:15,480 --> 00:17:19,480
+and even within single file components,
+in Svelte or Vue or Astro.
 
 3410
-00:17:22,492 --> 00:17:24,492
-in Vue or Astro, you can import
+00:17:22,492 --> 00:17:25,492
+You can also import an external CSS file
 into a layer.
 
 3411
 00:17:29,710 --> 00:17:33,008
-The external CSS pod doesn't
-need to contain any layers. And
+The external CSS file doesn't even
+need to contain any layers
 
 3412
 00:17:33,008 --> 00:17:35,008
-I want to give a shout out to
-CSS
+And I want to give a shout out to
+PostCSS-import here.
 
 3413
 00:17:36,109 --> 00:17:38,109
-import here, it can transform
-the import statements to
+It can transform these import statements
 
 3414
-00:17:39,313 --> 00:17:41,313
-layer block statements and
-inline all of the contents of
+00:17:38,313 --> 00:17:41,313
+into layer block statements,
+and inline all of the contents of
 
 3415
-00:17:41,313 --> 00:17:43,313
-the style sheet and even works
+00:17:41,313 --> 00:17:44,313
+the style sheets. And it even works
 for remote URLs.
 
 3416
-00:17:45,006 --> 00:17:47,006
-This is great for performance,
-mainly.
+00:17:46,006 --> 00:17:48,006
+This is great for performance, mainly.
 
 3417
 00:17:50,305 --> 00:17:52,305
-And I want to talk about SAUTSZ
-SaaS real quick.
+And I want to talk about Sass real quick.
 
 3418
-00:17:54,729 --> 00:17:56,729
-Layers were just like you
-expect in SaaS, but when you
+00:17:53,729 --> 00:17:56,729
+Layers work just like you'expect in Sass.
 
 3419
 00:17:56,729 --> 00:17:58,729
-want to combine multiple SaaS
-files into a single layer, you
+But when you want to combine
 
 3420
 00:17:58,729 --> 00:18:00,729
-need
+multiple Sass files into a single layer,
 
 3421
-00:18:00,926 --> 00:18:03,223
-to use metaupload CSS, you
-can't use the use statement.
+00:18:00,926 --> 00:18:04,223
+you need to use meta.load-CSS.
+You can't use the use statement.
 
 3422
 00:18:06,419 --> 00:18:08,419
 This was a recent update made
-to SaaS to ensure that meta.
+to Sass to ensure that.
 
 3423
 00:18:10,413 --> 00:18:13,017
-load CSS is a canonical way to
-use layers in SaaS.
+meta.load CSS is the canonical way to
+use layers in Sass.
 
 3424
 00:18:16,211 --> 00:18:18,211
-And finally, the most important
-slide, you might have used
+And finally, the most important slide.
 
 3425
-00:18:19,307 --> 00:18:21,307
-the important keyword to win
-specificity battles in the
+00:18:18,307 --> 00:18:22,607
+You might have used the !important keyword to
+win specificity battles in the past.
 
 3426
-00:18:21,307 --> 00:18:23,503
-past. But we all know it's a
-shameful hack and the general
+00:18:22,907 --> 00:18:24,503
+But we all know it's a
+shameful hack
 
 3427
-00:18:23,503 --> 00:18:25,503
-advice is to
+00:18:24,503 --> 00:18:25,503
+and the general advice is to
 
 3428
-00:18:25,503 --> 00:18:28,307
-avoid important. And earlier, I
-already showed various ways
+00:18:25,503 --> 00:18:27,307
+avoid !important.
 
 3429
-00:18:29,610 --> 00:18:32,907
-to increase specificity. So if
-you want to just win a
+00:18:28,610 --> 00:18:32,007
+And earlier, I already showed various ways
+to increase specificity.
 
 3430
-00:18:32,907 --> 00:18:34,907
+00:18:32,007 --> 00:18:34,907
+So if you want to just win a
 specificity battle, then
 
 3431
-00:18:35,514 --> 00:18:39,108
+00:18:35,514 --> 00:18:38,108
 use one of those techniques
-instead of important.
+instead of !important.
 
 3432
-00:18:39,108 --> 00:18:42,119
-But the reason why important is
-interesting here is emerges
+00:18:38,108 --> 00:18:41,119
+But the reason !important is interesting here is
 
 3433
-00:18:42,119 --> 00:18:44,119
-kind of differently in layers.
+00:18:41,119 --> 00:18:44,119
+it works kind of differently in layers.
 
 3434
 00:18:45,412 --> 00:18:47,412
-The important keyword is more
-important when used in lower
+The !important keyword is more
+important
 
 3435
 00:18:47,412 --> 00:18:49,412
-priority layers.
+when used in lower priority layers.
 
 3436
 00:18:49,520 --> 00:18:52,727
@@ -1579,177 +1534,171 @@ Miriam was explaining earlier
 
 3437
 00:18:52,727 --> 00:18:54,727
-that
+that user-agents and user preferences
 
 3438
 00:18:55,933 --> 00:18:57,933
-user agents and preferences
-might declare some styles that
+might want to declare some styles that
 
 3439
 00:18:57,933 --> 00:18:59,933
 are legitimately important.
 
 3440
-00:18:59,933 --> 00:19:01,933
+00:18:59,933 --> 00:19:02,433
 So even though all of the other
-user styles are less important,
+user-agent styles are less important,
 
 3441
-00:19:01,933 --> 00:19:03,933
-they want to say this
-particular thing should be more
+00:19:02,433 --> 00:19:03,933
+they want to say
 
 3442
-00:19:03,933 --> 00:19:05,933
-important . So works similarly
-in layers.
+00:19:03,933 --> 00:19:07,933
+this particular thing should be more important
+So it works similarly in layers.
 
 3443
 00:19:09,337 --> 00:19:11,337
-So CSS reset, you might have a
-rule that says,
+So in a CSS reset, you might have a
+rule that says
 
 3444
-00:19:14,355 --> 00:19:18,161
-may not be important if the
-dialog is not open.
+00:19:12,355 --> 00:19:15,861
+display: none !important
+if the dialog is not open.
 
 3445
-00:19:18,161 --> 00:19:20,161
-This helps ensure that
-subsequent layers can't
+00:19:15,861 --> 00:19:17,161
+This kind of helps ensure that
 
 3446
-00:19:21,264 --> 00:19:23,264
-accidentally override the
-display when it's always meant
+00:19:18,264 --> 00:19:23,264
+subsequent layers can't accidentally override
+the display when it's always meant
 
 3447
 00:19:23,264 --> 00:19:25,264
-to be hidden
+to be hidden.
 
 3448
 00:19:25,264 --> 00:19:28,073
-. I've done that accidentally
+I've done that accidentally
 so many times where I set a
 
 3449
 00:19:28,073 --> 00:19:30,073
-display grid
+display: grid on the dialog
 
 3450
 00:19:30,980 --> 00:19:32,980
-on the dialog and it shows when
-it's not supposed to be
+and it shows when it's not
+supposed to be showing.
 
 3451
 00:19:32,980 --> 00:19:34,980
-showing. So now I handle that
-in my reset.
+So now I handle that in my reset instead.
 
 3452
 00:19:36,395 --> 00:19:38,395
 If you take everything we've
-seen about layers so far, our
+seen about layers so far,
 
 3453
 00:19:38,395 --> 00:19:40,395
-cascade
+our cascade order looks something like this:
 
 3454
 00:19:40,395 --> 00:19:43,302
-overlooks something like the
-user styles and the page styles
+the user-agent styles, then the page styles
 
 3455
 00:19:43,302 --> 00:19:45,302
-and the Shadow DOM styles ask
+and the Shadow DOM styles
 
 3456
-00:19:46,508 --> 00:19:48,715
-and and unlayered styles and
-the important styles come after
+00:19:45,508 --> 00:19:48,715
+with their layer order and unlayered styles.
+And then the inline style attribute.
 
 3457
-00:19:48,715 --> 00:19:50,715
-all of that.
+00:19:48,715 --> 00:19:51,715
+And then the important styles come
+after all of that.
 
 3458
 00:19:52,732 --> 00:19:54,732
 And since I'm running out of
-time, I won't go into too much
+time, I won't go into
 
 3459
 00:19:54,732 --> 00:19:56,732
-detail here, but important
-style also have their own
+too much detail here, but
 
 3460
 00:19:56,732 --> 00:19:58,732
-quirks. In that, the user agent
-important
+important styles also have their own quirks,
+in that
 
 3461
-00:20:01,461 --> 00:20:03,461
-styles are more important than
-inline style attributes, for
+00:19:59,461 --> 00:20:03,461
+The user agent !important styles are more
+important than inline style attributes
 
 3462
-00:20:03,461 --> 00:20:05,461
-example.
+00:20:03,461 --> 00:20:04,461
+for example.
 
 3463
 00:20:07,072 --> 00:20:09,072
 But yeah, I'm going to talk
-about browser support real
+about browser support real quick
 
 3464
 00:20:09,072 --> 00:20:13,875
-quick. Browser, I think, 2022,
-February, is when all browsers
+So browsers…
+I think, 2022 February is when
 
 3465
-00:20:13,875 --> 00:20:17,091
-shipped cascade layers. It was
-a coordinated rollout and very
+00:20:13,875 --> 00:20:18,091
+all browsers shipped cascade layers.
+It was like a coordinated rollout
 
 3466
-00:20:17,091 --> 00:20:19,091
-impressive to watch.
+00:20:18,091 --> 00:20:19,591
+and it was very impressive to watch.
 
 3467
-00:20:20,592 --> 00:20:23,693
-But if that still makes you
-uneasy, there's post cascade
+00:20:20,592 --> 00:20:23,993
+But if that still makes you uneasy,
+there's PostCSS-cascade-layers
 
 3468
-00:20:23,693 --> 00:20:25,693
-layers, which polyfills
-everything
+00:20:23,993 --> 00:20:25,493
+which polyfills
 
 3469
-00:20:26,502 --> 00:20:28,502
-we've talked about so far.
+00:20:25,502 --> 00:20:28,502
+everything that we've
+talked about so far.
 
 3470
 00:20:30,109 --> 00:20:33,315
-And then, there's revert layer,
-I haven't talked about it so
+And then, there's revert-layer,
+I haven't talked about it so far
 
 3471
-00:20:33,315 --> 00:20:35,315
-far because it's such
+00:20:33,315 --> 00:20:36,315
+because it's such a vast topic.
 
 3472
-00:20:36,525 --> 00:20:38,934
-a broad topic. You might not
-want to use it yet.
+00:20:36,525 --> 00:20:39,934
+But more importantly, it cannot be polyfilled.
+So you might not want to use it yet.
 
 3473
 00:20:41,141 --> 00:20:43,141
-I have a blog post on this
-topic.
+I have a blog post on this topic.
 
 3474
 00:20:44,440 --> 00:20:48,445
@@ -1757,27 +1706,25 @@ And the only part I want to
 mention just right now is that
 
 3475
-00:20:48,445 --> 00:20:50,445
+00:20:48,445 --> 00:20:52,445
 if you're trying to use revert,
-consider
+consider using revert-layer instead.
 
 3476
-00:20:50,445 --> 00:20:53,264
-revert layer instead. It works
-even when you don't use cascade
+00:20:52,445 --> 00:20:53,264
+It works even when
 
 3477
 00:20:53,264 --> 00:20:55,264
-layers.
+you don't use cascade layers.
 
 3478
-00:20:59,366 --> 00:21:01,972
-Then, there's some best
-practices. I think I'll skip
+00:21:00,366 --> 00:21:02,472
+Then, there's some best practices.
 
 3479
-00:21:01,972 --> 00:21:03,972
-that.
+00:21:03,572 --> 00:21:05,572
+I think I'll skip that.
 
 3480
 00:21:09,687 --> 00:21:11,687
@@ -1785,7 +1732,7 @@ Slides are stuck.
 
 3481
 00:21:16,396 --> 00:21:18,396
-Oh, no, OK, sure.
+Oh, no. OK, sure.
 
 3482
 00:21:20,099 --> 00:21:22,099
@@ -1797,14 +1744,14 @@ I was going to show that layers
 and scope are different.
 
 3484
-00:21:26,012 --> 00:21:28,012
-This is a CSS tricks article
+00:21:25,012 --> 00:21:28,812
+This is a CSS-tricks article
 written by Miriam Suzanne.
 
 3485
 00:21:29,717 --> 00:21:31,717
 And yeah, I really want to
-emphasize this point is that
+emphasize this point, it's that
 
 3486
 00:21:31,717 --> 00:21:34,218
@@ -1812,26 +1759,26 @@ layers and scopes are different
 things.
 
 3487
-00:21:34,218 --> 00:21:36,218
+00:21:34,218 --> 00:21:36,918
 You don't want to create a
-layer for every single
+layer for every single component.
 
 3488
-00:21:36,218 --> 00:21:38,514
-component. They can overlap so
-you can have layers within the
+00:21:37,518 --> 00:21:38,514
+They can overlap.
 
 3489
 00:21:38,514 --> 00:21:40,514
-same
+So you can have
 
 3490
 00:21:41,613 --> 00:21:43,613
-component or don't use it scope
+layers within the component.
+But don't use it to
 
 3491
-00:21:45,625 --> 00:21:47,625
-your CSS.
+00:21:45,125 --> 00:21:47,625
+scope your CSS.
 
 3492
 00:21:51,332 --> 00:21:53,332
@@ -1839,24 +1786,24 @@ And I think we can wrap it up
 here since I ran out of time.
 
 3493
-00:21:54,931 --> 00:21:58,031
+00:21:54,931 --> 00:21:57,531
 I just want to mention one last
-thing, that I think Peter
+thing, that I think
 
 3494
-00:21:58,031 --> 00:22:00,031
-Griffin would really enjoy
+00:21:57,531 --> 00:22:00,031
+Peter Griffin would really enjoy
 using cascade layers.
 
 3495
 00:22:04,128 --> 00:22:07,336
-Yeah, that's all, if you want
-to learn more, subscribe to my
+So yeah, that's all.
+If you want to learn more,
 
 3496
-00:22:07,336 --> 00:22:09,336
-RSS feed, and that's all for
-me.
+00:22:07,336 --> 00:22:10,536
+subscribe to my RSS feed,
+and that's all from me.
 
 3497
 00:22:15,145 --> 00:22:17,145
@@ -1965,12 +1912,12 @@ Called the root?
 3519
 00:23:24,617 --> 00:23:28,407
 Or?
-≫ MAYANK: Yeah. HTML and root
+≫ MAYANK: Yeah. HTML and :root
 
 3520
 00:23:28,407 --> 00:23:30,407
 are going to be the same thing
-to each other.
+usually.
 
 3521
 00:23:30,407 --> 00:23:33,295
@@ -1985,7 +1932,7 @@ more specificity?
 3523
 00:23:40,480 --> 00:23:42,480
 ≫ MAYANK: Yeah, and if you wrap
-it in rare to make the zero
+it in :where to make it zero
 
 3524
 00:23:42,480 --> 00:23:44,480
@@ -1993,7 +1940,7 @@ specificity, it'll still work.
 
 3525
 00:23:45,589 --> 00:23:47,589
-Because unlayer styles over
+Because unlayered styles win over
 layer styles.
 
 3526
