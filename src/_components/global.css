@@ -5,6 +5,7 @@
 	--step-0: clamp(3.5em, -0.0263em + 17.6316vw, 7.6875em);
 	--rhythm: 2rem; /* 32px /16 */
 	--page-margin: .5rem;
+	--page-max: 27rem;
 }
 @media (min-width: 37.5em) { /* 600px */
 	:root {
@@ -65,7 +66,7 @@ body {
 main,
 footer {
 	margin-inline: auto;
-	max-width: 27rem; /* 432px /16 */
+	max-width: var(--page-max); /* 432px /16 */
 }
 main {
 	margin-block-end: var(--rhythm);

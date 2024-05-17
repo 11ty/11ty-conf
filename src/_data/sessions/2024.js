@@ -37,7 +37,8 @@ export default [
 			avatarAlt: "Miriam stands in front of a microphone doing some public speaking with a slide deck projected in the background.",
 			website: "https://www.oddbird.net/",
 			bio: `<p>Miriam is an artist, developer, and open web advocate. She’s a co-founder of <a href="https://oddbird.net" target="_blank" rel="noopener">OddBird</a>, providing a range of web design and development services; and Invited Expert on the W3C CSS Working Group, developing new web standards like Cascade Layers, Container Queries, and Scope; and member of the <a href="https://sass-lang.com/" target="_blank" rel="noopener">Sass</a> core team. Miriam also provides in-depth CSS workshops and trainings, along with the team at OddBird. Offline, she might be repairing clocks, knitting socks, or creating hybrid performances with <a href="http://teacupgorilla.com" target="_blank" rel="noopener">Teacup Gorilla</a> & <a href="http://grapefruitlab.com" target="_blank" rel="noopener">Grapefruit Lab</a>.</p>`,
-		}]
+		}],
+		videoId: "uaN9kY8lKPU",
 	},
 	{
 		title: "11ty and Large-Project Tooling",

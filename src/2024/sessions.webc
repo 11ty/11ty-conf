@@ -45,7 +45,15 @@ const eleventyComputed = {
 ---
 <h1 @text="session.title"></h1>
 
+<div class="rhythm" webc:if="session.videoId">
+	<p><a :href="`https://www.youtube.com/watch?v=${session.videoId}`"><img :src="`https://v1.opengraph.11ty.dev/https%3A%2F%2Fyoutube.com%2Fwatch%3Fv%3D${session.videoId}/auto/jpeg/`" alt="Poster image for YouTube video" width="1200" height="675"><br>Watch <b @text="session.title"></b> on YouTube</a></p>
+</div>
+
 <div @html="session.description"></div>
+
+<giant-button webc:if="session.videoId">
+	<a :href="`https://www.youtube.com/watch?v=${session.videoId}`">Watch on YouTube</a>
+</giant-button>
 
 <block-separator></block-separator>
 
@@ -59,11 +67,6 @@ const eleventyComputed = {
 	<dt webc:if="session.datetime.duration">How long is this talk?</dt>
 	<dd webc:if="session.datetime.duration"><strong @text="session.datetime.duration"></strong></dd>
 </dl>
-
-
-<giant-button>
-	<a :href="addSessionToCalendarUrl('ics', session)">🗓️ Add Talk to Calendar</a>
-</giant-button>
 
 <ul class="inline">
 	<li class="inline-max">Add just this talk session to your calendar:</li>
