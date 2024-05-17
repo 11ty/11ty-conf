@@ -1,0 +1,1606 @@
+795
+00:00:00,000 --> 00:00:02,000
+≫ MIRIAM: All right.
+
+796
+00:00:03,580 --> 00:00:06,975
+Yeah. We're going to be talking
+about the origins of the
+
+797
+00:00:10,277 --> 00:00:12,277
+web, but especially design on
+the web using
+
+798
+00:00:15,083 --> 00:00:17,083
+CHSS, cascading HTML style
+sheets proposed
+
+799
+00:00:18,890 --> 00:00:21,786
+by Hokum Lee in 1994. This is
+still archived online. You can
+
+800
+00:00:21,786 --> 00:00:23,786
+read it. I recommend it.
+
+801
+00:00:24,788 --> 00:00:27,788
+It's fascinating, the original
+design of the language.
+
+802
+00:00:27,788 --> 00:00:29,788
+But this wasn't the only
+proposal for design on the web.
+
+803
+00:00:31,895 --> 00:00:33,895
+And it wasn't the first
+proposal for design on the web.
+
+804
+00:00:35,193 --> 00:00:38,289
+It was actually based on
+several existing proposals like
+
+805
+00:00:38,289 --> 00:00:41,693
+the one built into the Viola
+browser, or this easily
+
+806
+00:00:41,693 --> 00:00:43,693
+parsable format where I have
+
+807
+00:00:44,898 --> 00:00:46,898
+no idea what's going
+
+808
+00:00:48,309 --> 00:00:50,309
+on, equals 14, I don't know.
+
+809
+00:00:53,505 --> 00:00:57,607
+But CSS solved a major problem
+for this new platform. Not a
+
+810
+00:00:57,607 --> 00:00:59,607
+technical problem exactly, but
+a
+
+811
+00:01:00,809 --> 00:01:02,809
+philosophical problem,
+political, like all of the
+
+812
+00:01:02,809 --> 00:01:04,809
+decisions
+
+813
+00:01:04,809 --> 00:01:06,809
+we make when we're designing a
+new platform or interface.
+
+814
+00:01:08,824 --> 00:01:12,327
+The first web browser,
+developed by CERN,
+
+815
+00:01:15,133 --> 00:01:17,133
+called the hyperbrowser www.
+
+816
+00:01:18,840 --> 00:01:20,840
+editor was developed for the
+fancy machine for this graphic
+
+817
+00:01:20,840 --> 00:01:22,840
+interface , but you can't make
+a worldwide web by saying
+
+818
+00:01:24,752 --> 00:01:26,752
+it works on my machine and
+everyone else is a edge case.
+
+819
+00:01:28,451 --> 00:01:30,451
+They hired Nicola Pello to
+design, it's text only, you
+
+820
+00:01:30,451 --> 00:01:33,252
+don't have to install it. Any
+device with an internet
+
+821
+00:01:33,252 --> 00:01:35,466
+connection can log into the
+CERN servers and browse the
+
+822
+00:01:35,466 --> 00:01:37,965
+web. This becomes the mission
+statement.
+
+823
+00:01:39,366 --> 00:01:41,867
+Web for all, web on everything.
+And everything is a lot of
+
+824
+00:01:41,867 --> 00:01:43,867
+things.
+
+825
+00:01:44,171 --> 00:01:47,480
+There's so many different
+things that the web is on. And
+
+826
+00:01:47,480 --> 00:01:49,480
+that includes devices without
+any screen or
+
+827
+00:01:50,687 --> 00:01:52,687
+visual display at all as well
+as screen readers, which do
+
+828
+00:01:52,687 --> 00:01:54,687
+read the screen.
+
+829
+00:01:55,596 --> 00:01:57,596
+So are sort of a combination of
+interfaces .
+
+830
+00:01:59,702 --> 00:02:02,906
+If we really want this to work,
+web for all web on everything,
+
+831
+00:02:02,906 --> 00:02:05,418
+then we get some interesting
+constraints.
+
+832
+00:02:08,619 --> 00:02:12,430
+And these are documented on the
+first website, the HTML
+
+833
+00:02:12,430 --> 00:02:14,430
+documentation that was launched
+around 1991.
+
+834
+00:02:14,430 --> 00:02:16,430
+And is also still online. You
+can go read that, as well.
+
+835
+00:02:19,846 --> 00:02:23,052
+And it says browsers should
+ignore tags, which they do not
+
+836
+00:02:23,052 --> 00:02:25,462
+understand and ignore
+attributes which they do not
+
+837
+00:02:25,462 --> 00:02:27,462
+understand of tags which they
+do.
+
+849
+00:02:31,069 --> 00:02:34,166
+So browsers should ignore tags
+they don't understand, so you
+
+850
+00:02:34,166 --> 00:02:36,166
+can see here, hopefully, in
+this
+
+851
+00:02:38,372 --> 00:02:40,372
+code I've inserted a lot of
+tags that aren't real
+
+852
+00:02:41,479 --> 00:02:44,685
+. They're fake tags, I made
+them up and the browser's
+
+853
+00:02:44,685 --> 00:02:46,685
+ignoring them and displays the
+tags it understands and
+
+854
+00:02:47,891 --> 00:02:49,901
+displays the content inside of
+those tags . Also ignoring
+
+855
+00:02:49,901 --> 00:02:51,901
+attributes I made up.
+
+856
+00:02:54,102 --> 00:02:56,102
+That's become very useful as we
+start doing web components and
+
+857
+00:02:56,102 --> 00:02:58,716
+custom attributes. This was
+planned from the beginning.
+
+858
+00:03:01,519 --> 00:03:04,826
+The goal is to protect content
+over code. The code is
+
+859
+00:03:04,826 --> 00:03:06,826
+optional, the content is
+essential.
+
+860
+00:03:08,235 --> 00:03:10,235
+Whatever else happens, browsers
+should protect the content.
+
+861
+00:03:11,537 --> 00:03:13,537
+And that's why we can still see
+this first website on modern
+
+862
+00:03:13,537 --> 00:03:15,537
+browsers.
+
+863
+00:03:15,762 --> 00:03:17,762
+And we can also load modern
+browsers, modern websites on
+
+864
+00:03:17,762 --> 00:03:20,375
+the first browser. This is an
+emulator you can go play with
+
+865
+00:03:20,375 --> 00:03:25,399
+of the www. Browser. You don't
+see -- sorry, that's a lot of
+
+866
+00:03:25,399 --> 00:03:30,303
+noise. You don't see CSS in
+images, but all the text is
+
+867
+00:03:30,303 --> 00:03:33,706
+there. You can see via
+international symposium
+
+868
+00:03:36,708 --> 00:03:38,708
+website, and my cascading style
+systems workshop website, they
+
+869
+00:03:38,708 --> 00:03:40,708
+load fine. And the content is
+preserved.
+
+870
+00:03:44,026 --> 00:03:46,026
+This limitation becomes even
+
+871
+00:03:46,131 --> 00:03:49,436
+more dramatic for graphic
+design. In order for HTML to be
+
+872
+00:03:49,436 --> 00:03:51,436
+a common language between all
+platforms
+
+873
+00:03:53,039 --> 00:03:55,039
+, we can't have any
+device-specific markup
+
+874
+00:03:56,246 --> 00:04:00,054
+or anything which requires
+control over fonts and colors.
+
+875
+00:04:00,054 --> 00:04:02,054
+That's in the original
+documentation web design
+
+876
+00:04:03,153 --> 00:04:05,153
+will never happen, at least in
+the graphic sense.
+
+877
+00:04:06,946 --> 00:04:10,755
+And the problem isn't styling
+documents online, that's easy
+
+878
+00:04:10,755 --> 00:04:14,364
+enough and all of the early
+browsers provided internal
+
+879
+00:04:14,364 --> 00:04:16,364
+style sheets, even the text
+
+880
+00:04:17,465 --> 00:04:20,563
+-only browser, you can see it
+has all caps headings and space
+
+881
+00:04:20,563 --> 00:04:23,967
+between paragraphs .
+So there's styles happening
+
+882
+00:04:23,967 --> 00:04:25,967
+here, but the styles are
+
+883
+00:04:27,173 --> 00:04:30,275
+provided by the browser, so
+there's this same across all
+
+884
+00:04:30,275 --> 00:04:32,275
+websites, they depend what
+browser you're using.
+
+885
+00:04:33,685 --> 00:04:35,685
+And this is fundamentally
+different from print design.
+
+886
+00:04:35,685 --> 00:04:38,693
+Right? Where we get to describe
+everything about our page.
+
+887
+00:04:38,693 --> 00:04:40,693
+In fact, we describe the page
+itself. How big is it?
+
+888
+00:04:41,901 --> 00:04:45,704
+And then, it stays that size
+forever. It's static. So we can
+
+889
+00:04:45,704 --> 00:04:48,800
+export to a PDF or a JPEG or
+send it to the printer and what
+
+890
+00:04:48,800 --> 00:04:50,800
+we get back is exactly what we
+designed.
+
+891
+00:04:52,315 --> 00:04:54,315
+And you can click on it all you
+want, nothing's going to
+
+892
+00:04:54,315 --> 00:04:56,315
+happen. It just sits there.
+
+893
+00:04:57,214 --> 00:05:00,311
+The same was true for other
+digital formats at the time .
+
+894
+00:05:00,311 --> 00:05:03,413
+Postscript had been around for
+almost a decade . That's the
+
+895
+00:05:03,413 --> 00:05:05,413
+basis of PDFs, which came
+slight , I think around the
+
+896
+00:05:05,413 --> 00:05:10,024
+same time. It's a page
+description language. So like
+
+897
+00:05:10,024 --> 00:05:12,024
+print, we describe a static
+
+898
+00:05:12,024 --> 00:05:15,333
+page, how big is it? Where does
+each thing go? And we set the
+
+899
+00:05:15,333 --> 00:05:20,341
+fonts and colors, et cetera.
+We get all of the control in
+
+900
+00:05:20,341 --> 00:05:25,745
+those systems, but that control
+comes at a cost. The page,
+
+901
+00:05:25,745 --> 00:05:28,749
+print or PDF is a static medium
+. It can't adapt a context or
+
+902
+00:05:28,749 --> 00:05:30,749
+preferences.
+
+903
+00:05:31,253 --> 00:05:34,855
+And that's a limitation of the
+medium. Go read John Elsop
+
+904
+00:05:37,854 --> 00:05:39,854
+'s style of web design from
+2000, it's still relevant . I
+
+905
+00:05:39,854 --> 00:05:41,854
+won't wait.
+
+906
+00:05:41,854 --> 00:05:43,854
+Web styles have to be
+different. They have to be
+
+907
+00:05:43,854 --> 00:05:45,854
+contextual. Even static sites
+aren't static.
+
+908
+00:05:48,757 --> 00:05:50,757
+What we ship is not always what
+our audience sees
+
+909
+00:05:52,165 --> 00:05:55,368
+. So styles must adapt to all
+of the different situations
+
+910
+00:05:55,368 --> 00:05:57,378
+where they might show up
+because the web is responsive
+
+911
+00:05:57,378 --> 00:05:59,476
+to context. And that's a
+political vision from the
+
+912
+00:05:59,476 --> 00:06:01,476
+beginning.
+
+913
+00:06:03,869 --> 00:06:05,869
+Not just the width of the
+viewport, but user needs
+
+914
+00:06:06,969 --> 00:06:08,969
+and preferences, device
+interfaces, and changing
+
+915
+00:06:08,969 --> 00:06:10,969
+capabilities over time. In
+other words, we're not alone.
+
+916
+00:06:13,591 --> 00:06:15,591
+We're part of an ecosystem here
+and our decisions impact other
+
+917
+00:06:15,591 --> 00:06:19,897
+people. We don't get final say.
+We're collaborating with the
+
+918
+00:06:19,897 --> 00:06:21,897
+browsers who are
+
+919
+00:06:23,305 --> 00:06:25,305
+instructed to ignore us when we
+go off the rails.
+
+920
+00:06:27,610 --> 00:06:29,610
+And we're also collaborating
+with the people who interact
+
+921
+00:06:29,610 --> 00:06:31,610
+with our sites
+
+922
+00:06:31,610 --> 00:06:34,024
+on their chosen devices with
+varying capabilities , with a
+
+923
+00:06:34,024 --> 00:06:36,024
+browser that they choose, and
+wearing
+
+924
+00:06:37,126 --> 00:06:40,731
+these handy little tool belts
+that I think are very cute. And
+
+925
+00:06:40,731 --> 00:06:42,731
+we're probably also
+collaborating with aliens,
+
+926
+00:06:42,731 --> 00:06:44,731
+maybe, who knows, if they're
+around, we should collaborate
+
+927
+00:06:44,731 --> 00:06:46,731
+with them. They're just trying
+to get home.
+
+928
+00:06:49,452 --> 00:06:51,452
+The CHSS proposal is
+
+929
+00:06:51,452 --> 00:06:54,660
+explicitly designed around this
+collaboration. That's how the
+
+930
+00:06:54,660 --> 00:06:56,660
+document starts
+
+931
+00:06:57,866 --> 00:07:00,279
+. This proposal tries to soften
+the tension between the author
+
+932
+00:07:00,279 --> 00:07:02,279
+and the reader.
+
+933
+00:07:02,784 --> 00:07:04,784
+It's specifically for that.
+
+934
+00:07:06,477 --> 00:07:08,477
+And, if conflicts arise, the
+user should have the last word.
+
+935
+00:07:11,273 --> 00:07:13,273
+And that is built into the
+cascade itself.
+
+936
+00:07:17,188 --> 00:07:20,392
+It's the first step of the
+cascade is that the user styles
+
+937
+00:07:20,392 --> 00:07:24,803
+can override the author styles
+when it's important from step
+
+938
+00:07:24,803 --> 00:07:26,803
+one, origins important, when
+the user
+
+939
+00:07:26,803 --> 00:07:29,405
+marks sometime important, they
+take priority over everything.
+
+940
+00:07:29,405 --> 00:07:31,405
+That's the purpose of
+importance.
+
+941
+00:07:32,699 --> 00:07:34,699
+It's not for us to get into
+petty
+
+942
+00:07:35,793 --> 00:07:38,888
+squabbles, but to maintain
+balance in the universe and
+
+943
+00:07:38,888 --> 00:07:40,888
+give power back to the...  I
+don't know...
+
+944
+00:07:42,182 --> 00:07:44,182
+rebel users, I don't know.
+Analogies are hard.
+
+945
+00:07:48,070 --> 00:07:50,676
+A Jedi uses importance for
+knowledge for defense, never
+
+946
+00:07:50,676 --> 00:07:55,081
+for attack. This also becomes a
+core W3C principle.
+
+947
+00:07:58,278 --> 00:08:00,278
+If a tradeoff needs to be made
+in the design of the platform
+
+948
+00:08:00,278 --> 00:08:02,278
+itself, always put user needs
+above all.
+
+949
+00:08:05,094 --> 00:08:07,094
+So under these sort of absurd
+constraints,
+
+950
+00:08:08,702 --> 00:08:10,702
+design seemed almost impossible
+on the web
+
+951
+00:08:12,310 --> 00:08:14,310
+. If we want this political
+vision, how are we going to
+
+952
+00:08:14,310 --> 00:08:16,310
+control fonts and colors, for
+example, we can't
+
+953
+00:08:16,310 --> 00:08:18,602
+.
+But nobody was happy with that
+
+954
+00:08:18,602 --> 00:08:20,602
+outcome.
+
+955
+00:08:22,102 --> 00:08:25,199
+When every site looks the same,
+that's not just boring for
+
+956
+00:08:25,199 --> 00:08:27,199
+people who are trying to brand
+their product, it's kind of
+
+957
+00:08:27,199 --> 00:08:29,199
+boring for everybody. People
+like design.
+
+958
+00:08:33,500 --> 00:08:35,500
+The turning point came in 1993
+when
+
+959
+00:08:35,907 --> 00:08:39,200
+Mosaic added the image tag to
+HTML. This was before web
+
+960
+00:08:39,200 --> 00:08:41,200
+standards, web styles were
+suddenly possible
+
+961
+00:08:41,205 --> 00:08:43,597
+through the image tag.
+You could just throw everything
+
+962
+00:08:43,597 --> 00:08:45,597
+into an image.
+
+963
+00:08:47,887 --> 00:08:49,887
+And then, when it breaks,
+there's no content to protect.
+
+964
+00:08:51,494 --> 00:08:54,588
+This fundamentally breaks
+everything that was special
+
+965
+00:08:54,588 --> 00:08:56,588
+about the political
+
+966
+00:08:56,588 --> 00:09:00,016
+vision of HTML. If it doesn't
+load, it's just lost. This was
+
+967
+00:09:00,016 --> 00:09:02,016
+a real risk to the platform.
+
+968
+00:09:03,510 --> 00:09:05,510
+The web could've become a giant
+fax machine where pictures
+
+969
+00:09:06,004 --> 00:09:09,396
+of text would be passed along.
+So there's a real race
+
+970
+00:09:12,498 --> 00:09:15,700
+between 1993 and 1994, a rush
+of different proposals trying
+
+971
+00:09:15,700 --> 00:09:19,305
+to figure out how are we going
+to get styles on the web is
+
+972
+00:09:19,305 --> 00:09:21,305
+that that don't
+
+973
+00:09:21,305 --> 00:09:23,434
+break what makes the web
+special?
+
+974
+00:09:23,434 --> 00:09:25,434
+I recommend checking out a
+bunch of these. They're really
+
+975
+00:09:25,434 --> 00:09:28,531
+fascinating. But all of them
+talk about this problem.
+
+976
+00:09:31,936 --> 00:09:33,936
+Allow the authors, that's us,
+building the web.
+
+977
+00:09:36,940 --> 00:09:39,443
+To attach style hints. Styles,
+not rules, but hints and
+
+978
+00:09:39,443 --> 00:09:41,443
+suggestions.
+
+979
+00:09:43,156 --> 00:09:45,156
+This phrase shows up over and
+over in many of the proposals.
+
+980
+00:09:46,859 --> 00:09:49,070
+Provide hints that the browser
+may or may not use. Again,
+
+981
+00:09:49,070 --> 00:09:51,070
+we're drawing from HTML's rules
+there.
+
+982
+00:09:55,835 --> 00:09:57,835
+A set of hints or suggestions
+to the renderer, which might be
+
+983
+00:09:57,835 --> 00:09:59,835
+used .
+
+984
+00:10:02,343 --> 00:10:05,440
+In Hokum's proposal, authors
+and publishers have stylistic
+
+985
+00:10:05,440 --> 00:10:07,548
+influence without resorting to
+page description languages.
+
+986
+00:10:07,548 --> 00:10:10,656
+That's called out specifically.
+We're not giving us full
+
+987
+00:10:10,656 --> 00:10:14,260
+control. Only the ability to
+provide some
+
+988
+00:10:16,170 --> 00:10:19,778
+influence.
+And this uses the same
+
+989
+00:10:19,778 --> 00:10:21,778
+resilient logic as HTML
+
+990
+00:10:24,386 --> 00:10:26,386
+. And we can see that, again,
+did I leave that tab open?
+
+991
+00:10:26,595 --> 00:10:28,595
+I did not. Let's go back to it.
+
+992
+00:10:32,219 --> 00:10:34,219
+In CSS, I've done the same
+thing. Calling colors that
+
+993
+00:10:34,219 --> 00:10:36,219
+don't exist.
+
+994
+00:10:37,045 --> 00:10:39,355
+Oh, my I must have -- that
+became content.
+
+995
+00:10:44,766 --> 00:10:46,766
+I'm using colors that don't
+exist.
+
+996
+00:10:48,067 --> 00:10:50,170
+I'm useing entire declarations
+that don't exist.
+
+997
+00:10:50,170 --> 00:10:52,170
+Selectors that don't exist.
+
+998
+00:10:53,674 --> 00:10:55,674
+Everything can just
+
+999
+00:10:56,482 --> 00:10:59,092
+be ignored and it's fine.
+That's how CSS is designed. We
+
+1000
+00:10:59,092 --> 00:11:01,092
+can be ignored.
+
+1001
+00:11:02,795 --> 00:11:04,795
+And this is the reason that the
+default overflow is visible.
+
+1002
+00:11:07,307 --> 00:11:10,514
+If we get cocky and make a box
+too small for our text,
+
+1003
+00:11:10,514 --> 00:11:14,921
+browsers will try to bail us
+out. Not because it's the
+
+1004
+00:11:14,921 --> 00:11:16,921
+best-looking solution, but
+because the web will
+
+1005
+00:11:18,021 --> 00:11:20,021
+try to protect content whenever
+
+1006
+00:11:21,027 --> 00:11:24,435
+it can, browsers are helping us
+out here.
+
+1007
+00:11:24,435 --> 00:11:26,435
+This is another design
+principle of the W3C.
+
+1008
+00:11:26,737 --> 00:11:30,240
+Content should be viewable and
+accessible by default. And the
+
+1009
+00:11:30,240 --> 00:11:32,240
+browser ensures that's the case
+unless
+
+1010
+00:11:32,240 --> 00:11:34,953
+we go in and mess it up.
+Indesign doesn't have to worry
+
+1011
+00:11:34,953 --> 00:11:36,953
+about
+
+1012
+00:11:36,953 --> 00:11:39,458
+this. Accidental overflow can
+be found and fixed before we
+
+1013
+00:11:39,458 --> 00:11:41,458
+hit publish or after
+
+1014
+00:11:41,458 --> 00:11:44,064
+we get a proof and fix it.
+And then, once it's fixed, it
+
+1015
+00:11:44,064 --> 00:11:46,064
+stays the way we designed it.
+It's not going to change.
+
+1016
+00:11:46,064 --> 00:11:50,279
+It's not going to move. But
+we're doing graphic design of
+
+1017
+00:11:50,279 --> 00:11:52,279
+unknown
+
+1018
+00:11:53,381 --> 00:11:55,381
+content with unknown
+collaborators on an infinite
+
+1019
+00:11:55,381 --> 00:11:59,197
+and unknowable canvas across
+operating systems, interfaces,
+
+1020
+00:11:59,197 --> 00:12:01,197
+languages, writing modes.
+
+1021
+00:12:01,197 --> 00:12:03,197
+It's absurd what we're trying
+to do here. What this language
+
+1022
+00:12:03,197 --> 00:12:05,197
+is trying to accomplish.
+
+1023
+00:12:06,582 --> 00:12:09,082
+I don't know any other tool
+that is trying to do this in
+
+1024
+00:12:09,082 --> 00:12:11,082
+design.
+
+1025
+00:12:11,691 --> 00:12:14,986
+There are too many variables to
+consider. The point of CSS is
+
+1026
+00:12:14,986 --> 00:12:16,986
+to make it so we don't
+
+1027
+00:12:16,986 --> 00:12:18,986
+have to worry about all of
+them.
+
+1028
+00:12:22,297 --> 00:12:24,297
+We have We hand some of that
+over to the browser, that's why
+
+1029
+00:12:24,297 --> 00:12:26,297
+CSS is a declarative language.
+
+1030
+00:12:26,297 --> 00:12:28,297
+We literally write our hints as
+declarations of property and
+
+1031
+00:12:28,297 --> 00:12:30,297
+value.
+
+1032
+00:12:31,298 --> 00:12:34,394
+And some of those can seem like
+simple concepts, the width of a
+
+1033
+00:12:34,394 --> 00:12:36,394
+box, 500
+
+1034
+00:12:37,401 --> 00:12:39,705
+pixels, some are more abstract.
+Wrapping text so it looks
+
+1035
+00:12:39,705 --> 00:12:41,705
+pretty, whatever that means.
+
+1036
+00:12:44,704 --> 00:12:46,704
+Even the concepts that
+
+1037
+00:12:47,405 --> 00:12:50,704
+seem simple, hide a deeper
+complexity. Should the box be
+
+1038
+00:12:50,704 --> 00:12:53,602
+smaller on a higher resolution?
+What do we mean by a pixel?
+
+1039
+00:12:56,801 --> 00:12:58,801
+And how does the unit respond
+to zooming in or out?
+
+1040
+00:13:01,511 --> 00:13:03,511
+And are we talking about the
+width of the content where the
+
+1041
+00:13:03,511 --> 00:13:05,511
+padding and border are
+additional to that width?
+
+1042
+00:13:05,910 --> 00:13:09,505
+Or the width of the whole box
+with the borders and padding?
+
+1043
+00:13:09,505 --> 00:13:11,505
+There's not one universal
+answer.
+
+1044
+00:13:11,505 --> 00:13:14,403
+It depends on what we're doing.
+And maybe we really don't want
+
+1045
+00:13:14,403 --> 00:13:16,403
+the width at all, we're
+thinking about the in line
+
+1046
+00:13:16,403 --> 00:13:18,403
+size. The size available to a
+line of text.
+
+1047
+00:13:22,614 --> 00:13:24,614
+Or maybe we should be sizing
+the box based
+
+1048
+00:13:25,287 --> 00:13:29,684
+on its contents, the min size
+or max size.
+
+1049
+00:13:29,684 --> 00:13:31,684
+Or the size of a character in
+the font we're using, or
+
+1050
+00:13:32,783 --> 00:13:34,783
+based on context, parent
+
+1051
+00:13:35,874 --> 00:13:37,874
+element, viewport, container,
+some combination of those, the
+
+1052
+00:13:37,874 --> 00:13:39,874
+minimum of two values.
+
+1053
+00:13:41,665 --> 00:13:44,872
+Everything in CSS is based on
+this constant back and forth,
+
+1054
+00:13:44,872 --> 00:13:46,872
+context pushing in, defining
+the
+
+1055
+00:13:47,971 --> 00:13:49,971
+space variable, and content
+pushing out, taking up space,
+
+1056
+00:13:49,971 --> 00:13:51,971
+and
+
+1057
+00:13:51,971 --> 00:13:54,798
+we're trying to make those two
+always work together.
+
+1058
+00:13:54,798 --> 00:13:56,798
+How do we ensure that our
+content will fit
+
+1059
+00:13:56,892 --> 00:14:00,283
+any container that we put it
+in? We can't. We don't have all
+
+1060
+00:14:00,283 --> 00:14:02,283
+of that information.
+
+1061
+00:14:03,571 --> 00:14:05,571
+We don't know but the browser
+does have that information.
+
+1062
+00:14:07,448 --> 00:14:10,538
+So if we want this power, we
+have to give up some control .
+
+1063
+00:14:10,538 --> 00:14:15,720
+The most useful parts
+of CSS express this kind of
+
+1064
+00:14:15,720 --> 00:14:19,332
+abstract behavior, letting the
+browser work out the details.
+
+1065
+00:14:19,332 --> 00:14:21,332
+If we can avoid touching it, we
+should.
+
+1066
+00:14:21,335 --> 00:14:25,428
+The browser knows more than we
+do. So, we're using an
+
+1067
+00:14:25,428 --> 00:14:28,634
+expressive language, not
+describing the page in step by
+
+1068
+00:14:28,634 --> 00:14:30,634
+step de
+
+1069
+00:14:31,042 --> 00:14:34,337
+tail, but expressing high-level
+concepts. Our job is poetic,
+
+1070
+00:14:34,337 --> 00:14:36,337
+providing subtext
+
+1071
+00:14:37,432 --> 00:14:40,450
+for the browser, no the just
+the resulting style, but the
+
+1072
+00:14:40,450 --> 00:14:45,525
+purpose of a style choice. And
+units are great for this.
+
+1073
+00:14:45,525 --> 00:14:47,730
+And it's why CSS has so many
+units because they help convey
+
+1074
+00:14:47,730 --> 00:14:49,730
+this meaning and intent.
+
+1075
+00:14:51,227 --> 00:14:54,728
+So, 1em and 16 pixels may in
+some cases by default look the
+
+1076
+00:14:54,728 --> 00:14:56,728
+same.
+
+1077
+00:14:56,987 --> 00:14:58,987
+But they have very different
+meanings.
+
+1078
+00:15:01,244 --> 00:15:04,046
+They adapt differently in
+different context.
+
+1079
+00:15:04,046 --> 00:15:06,046
+So our job is not to make it
+look good on my device.
+
+1080
+00:15:08,750 --> 00:15:10,750
+But to make sure it adapts to
+different contexts as needed.
+
+1081
+00:15:14,252 --> 00:15:16,252
+Adapting to unexpected changes
+in the
+
+1082
+00:15:16,252 --> 00:15:18,252
+context. Similar with layout
+methods.
+
+1083
+00:15:21,252 --> 00:15:23,252
+Flex and grid can give us the
+same result in a static
+
+1084
+00:15:23,252 --> 00:15:25,339
+setting. But they move
+differently. They behave
+
+1085
+00:15:25,339 --> 00:15:29,528
+differently.
+It's useful to learn both
+
+1086
+00:15:29,528 --> 00:15:31,528
+because they're going to
+
+1087
+00:15:32,734 --> 00:15:34,734
+act differently in different
+contexts.
+
+1088
+00:15:37,041 --> 00:15:39,041
+Even when we can get the same
+result, they have different
+
+1089
+00:15:39,041 --> 00:15:41,041
+meanings, and that's worth
+paying attention to.
+
+1090
+00:15:41,634 --> 00:15:43,634
+We're trying to express more
+meaning with fewer constraints.
+
+1091
+00:15:46,535 --> 00:15:48,535
+Expressing our intent clearly
+using hints and suggestions for
+
+1092
+00:15:48,535 --> 00:15:50,535
+the browser.
+
+1093
+00:15:52,847 --> 00:15:54,847
+So, to me, this meme, the CSS
+is awesome box breaking meme.
+
+1094
+00:15:57,774 --> 00:15:59,774
+It actually perfectly captures
+what is awesome about
+
+1095
+00:16:00,976 --> 00:16:04,077
+CSS and how much can go wrong
+when we try to control things
+
+1096
+00:16:04,077 --> 00:16:06,077
+that
+
+1097
+00:16:06,177 --> 00:16:08,177
+we shouldn't necessarily
+control. When we add too many
+
+1098
+00:16:08,177 --> 00:16:10,177
+constraints at once.
+
+1099
+00:16:11,678 --> 00:16:13,678
+So how can we loosen our grip
+on this?
+
+1100
+00:16:21,385 --> 00:16:23,385
+There are several things we can
+do.
+
+1101
+00:16:28,487 --> 00:16:30,487
+We could change
+
+1102
+00:16:31,893 --> 00:16:34,278
+the -- we could remove the
+width and height constraints .
+
+1103
+00:16:34,278 --> 00:16:36,278
+And oh, we could keep that font
+size.
+
+1104
+00:16:36,977 --> 00:16:40,277
+Let's see. Yeah, we could --
+the height's not going to do
+
+1105
+00:16:40,277 --> 00:16:42,277
+much in this case,
+
+1106
+00:16:42,277 --> 00:16:44,277
+but the width there, that's
+going to help.
+
+1107
+00:16:45,888 --> 00:16:49,094
+We could even say the min width
+is min content and otherwise,
+
+1108
+00:16:49,094 --> 00:16:51,094
+we leave the max height and
+width.
+
+1109
+00:16:54,202 --> 00:16:56,202
+We could change this to
+
+1110
+00:16:56,302 --> 00:16:59,702
+overflow, wrap break word. We
+could play with hyphens, or we
+
+1111
+00:17:03,012 --> 00:17:05,621
+could, yeah, if we're going to
+break word there, we want to
+
+1112
+00:17:05,621 --> 00:17:08,916
+get rid of the max height. We
+could decide if we want the
+
+1113
+00:17:08,916 --> 00:17:10,916
+height to move or the width to
+move.
+
+1114
+00:17:10,916 --> 00:17:12,916
+We can change overflow to clip
+or scroll.
+
+1115
+00:17:18,497 --> 00:17:20,497
+Get all sorts of different ways
+that we can mess with this box.
+
+1116
+00:17:22,101 --> 00:17:25,025
+I mean, I think the most fun is
+just, there we go . CSS is rad.
+
+1117
+00:17:27,430 --> 00:17:29,430
+That fits perfectly in our box.
+
+1118
+00:17:38,658 --> 00:17:40,658
+Yeah, so I love that meme for
+the wrong reasons.
+
+1119
+00:17:42,855 --> 00:17:44,855
+To avoid harm, we don't want to
+describe a static
+
+1120
+00:17:46,466 --> 00:17:49,560
+page but express a design
+vision through hints and
+
+1121
+00:17:49,560 --> 00:17:51,560
+suggestions, help the browser
+
+1122
+00:17:52,767 --> 00:17:54,767
+understand the constraints that
+are important for our de sign.
+
+1123
+00:17:57,270 --> 00:17:59,270
+So that when things change,
+browsers can adapt
+
+1124
+00:18:01,476 --> 00:18:03,873
+to -- can adapt our design to
+those changes.
+
+1125
+00:18:07,074 --> 00:18:09,074
+We're designing systems, in
+facts I would say cascade
+
+1126
+00:18:10,573 --> 00:18:12,573
+ing style sheet is a designing
+system, it's a set of guides
+
+1127
+00:18:12,573 --> 00:18:14,573
+for maintaining cohesive design
+across a variety of contexts.
+
+1128
+00:18:17,501 --> 00:18:19,501
+It's the kind of design system
+that a browser can read and do
+
+1129
+00:18:19,501 --> 00:18:21,501
+something with.
+
+1130
+00:18:22,216 --> 00:18:25,505
+To avoid harm, we use a light
+touch. We define the outer
+
+1131
+00:18:25,505 --> 00:18:28,710
+boundaries, the constraints of
+our design, rather than every
+
+1132
+00:18:28,710 --> 00:18:30,710
+little detail.
+
+1133
+00:18:32,310 --> 00:18:35,719
+We provide hints that help the
+browser understand our goals
+
+1134
+00:18:35,719 --> 00:18:37,719
+that let the browser take care
+of the details.
+
+1135
+00:18:40,917 --> 00:18:42,917
+This is our job as designers,
+design engineers, whatever we
+
+1136
+00:18:42,917 --> 00:18:44,917
+want to call ourselves.
+
+1137
+00:18:46,120 --> 00:18:49,335
+Everything else in CSS is built
+around this political vision to
+
+1138
+00:18:49,335 --> 00:18:51,335
+protect the content, protect
+the
+
+1139
+00:18:52,546 --> 00:18:54,546
+user, and our first
+responsibility is not to break
+
+1140
+00:18:54,546 --> 00:18:56,546
+that .
+
+1141
+00:18:56,546 --> 00:19:00,655
+Thanks.

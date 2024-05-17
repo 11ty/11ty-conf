@@ -1,0 +1,1817 @@
+1209
+00:00:00,000 --> 00:00:02,500
+Yeah sure, and I’ll go ahead
+and proceed
+
+1210
+00:00:02,500 --> 00:00:06,520
+I'm Paul
+
+1211
+00:00:06,520 --> 00:00:08,520
+Everitt, developer advocate as
+Mike mentioned.
+
+1212
+00:00:10,623 --> 00:00:12,623
+We're going to talk about using
+11ty on larger
+
+1213
+00:00:13,826 --> 00:00:17,031
+projects, but first, I wanted
+to give a big thank you to all
+
+1214
+00:00:17,031 --> 00:00:19,031
+of you to you,
+
+1215
+00:00:19,031 --> 00:00:21,640
+especially to Zach for this
+conference. It's like you
+
+1216
+00:00:21,640 --> 00:00:23,640
+crawled inside my brain and
+found the
+
+1217
+00:00:24,844 --> 00:00:26,844
+exact speakers and the exact
+topics that I would be
+
+1218
+00:00:26,844 --> 00:00:28,844
+interested in seeing.
+
+1219
+00:00:31,727 --> 00:00:33,727
+And not only that, Zach created
+this community
+
+1220
+00:00:33,727 --> 00:00:35,727
+around 11ty, which is
+fantastic.
+
+1221
+00:00:38,236 --> 00:00:41,050
+I'm just such a supporter and
+advocate for everything he's
+
+1222
+00:00:41,050 --> 00:00:43,050
+doing.
+
+1223
+00:00:44,547 --> 00:00:46,547
+And like was mentioned before,
+trying to put the web back in
+
+1224
+00:00:46,547 --> 00:00:48,547
+the web. So let's begin.
+
+1225
+00:00:48,547 --> 00:00:51,751
+We have a website called the
+
+1226
+00:00:55,522 --> 00:00:57,522
+JetBrains guide.
+
+1227
+00:01:00,628 --> 00:01:02,628
+It has content, we've been
+working on it for a while
+
+1228
+00:01:02,636 --> 00:01:05,938
+while with a big friend of
+11ty. And when I started this,
+
+1229
+00:01:05,938 --> 00:01:07,938
+in 2018
+
+1230
+00:01:09,040 --> 00:01:11,849
+, I used Gatsby. No, seriously,
+please, stay.
+
+1231
+00:01:19,063 --> 00:01:21,063
+We all make decisions, just
+like getting beat up on the
+
+1232
+00:01:22,163 --> 00:01:24,163
+playground as a kid, you can
+learn from your mistakes, but
+
+1233
+00:01:24,163 --> 00:01:26,163
+we also can learn some of the
+things that can take us
+
+1234
+00:01:26,163 --> 00:01:28,163
+forward.
+
+1235
+00:01:28,163 --> 00:01:31,466
+I learned a lot about modern
+web, good and the bad.
+
+1236
+00:01:31,466 --> 00:01:33,466
+Learned a lot about I come from
+
+1237
+00:01:34,571 --> 00:01:36,571
+a CMS background, I learned a
+lot about modern CMSs.
+
+1238
+00:01:38,570 --> 00:01:42,377
+And there was a point when
+Collin came to me and said, you
+
+1239
+00:01:42,377 --> 00:01:45,476
+know, really everyone hates you
+about this Gatsby thing and so,
+
+1240
+00:01:45,476 --> 00:01:47,476
+you really got to make a change
+here.
+
+1241
+00:01:49,265 --> 00:01:52,564
+Let's go to 11ty. But we wanted
+to keep the developer
+
+1242
+00:01:52,564 --> 00:01:55,568
+experience we had from the
+tooling . We wanted to keep
+
+1243
+00:01:55,568 --> 00:01:57,568
+some of the author experience
+that we had.
+
+1244
+00:01:58,869 --> 00:02:00,869
+So we went away and added some
+of the
+
+1245
+00:02:02,088 --> 00:02:04,088
+things to 11ty and
+realistically, that's the talk
+
+1246
+00:02:04,088 --> 00:02:06,088
+for today, what did we do with
+11ty to support things that
+
+1247
+00:02:09,261 --> 00:02:11,261
+you might want to do with a
+Gatsby
+
+1248
+00:02:12,663 --> 00:02:15,269
+. Things you might want to do
+with a CMS. Things you might
+
+1249
+00:02:15,269 --> 00:02:17,269
+want to do with a larger
+system.
+
+1250
+00:02:20,374 --> 00:02:22,374
+What do I mean?
+
+1251
+00:02:23,676 --> 00:02:25,676
+We rolled out a codebase that
+used typescript and used a
+
+1252
+00:02:25,676 --> 00:02:27,676
+templating language, TSX.
+
+1253
+00:02:27,990 --> 00:02:31,792
+JSX, TSX. As an 11ty template
+
+1254
+00:02:35,501 --> 00:02:37,501
+ing language, not as a browser
+rendered templating language.
+
+1255
+00:02:40,309 --> 00:02:42,309
+We also added in, I like to do
+tests
+
+1256
+00:02:43,408 --> 00:02:45,408
+-first development, we added in
+V test, and friends, the
+
+1257
+00:02:45,408 --> 00:02:47,408
+friends we'll cover in a
+moment.
+
+1258
+00:02:48,974 --> 00:02:52,181
+And some other stuff I hope
+we'll have time to get to about
+
+1259
+00:02:52,181 --> 00:02:55,390
+improving the author experience
+with automatically generating
+
+1260
+00:02:55,390 --> 00:02:57,390
+JSON schema, and then, one of
+the things I kind
+
+1261
+00:02:58,491 --> 00:03:00,698
+of was intrigued about from
+Gatsby was its GraphQL query
+
+1262
+00:03:00,698 --> 00:03:02,698
+model.
+
+1263
+00:03:05,294 --> 00:03:07,294
+One little point, if you're
+ever doing GraphQL
+
+1264
+00:03:08,395 --> 00:03:11,492
+and you -- and Gatsby, and you
+think you want to do custom
+
+1265
+00:03:11,492 --> 00:03:13,492
+GraphQL schema extensions,
+don't.
+
+1266
+00:03:14,102 --> 00:03:16,102
+All right.
+
+1267
+00:03:19,208 --> 00:03:22,418
+The real philosophy P behind
+this is, doing your web
+
+1268
+00:03:22,418 --> 00:03:24,418
+development in small little
+chunks so you can stay in the
+
+1269
+00:03:24,418 --> 00:03:27,490
+flow. And you're not like doing
+a whole build with console
+
+1270
+00:03:30,592 --> 00:03:32,592
+logs and poking around hoping
+to stumbling across the problem
+
+1271
+00:03:32,592 --> 00:03:35,011
+that you're having.
+Instead, it feels like
+
+1272
+00:03:35,011 --> 00:03:37,011
+development with joy.
+
+1273
+00:03:40,518 --> 00:03:42,518
+As I go through this, you don't
+have to follow
+
+1274
+00:03:43,627 --> 00:03:47,432
+along too closely, I'm going to
+go pretty fast through the how
+
+1275
+00:03:47,432 --> 00:03:49,432
+and try to get more to the
+demos that show a little bit
+
+1276
+00:03:49,432 --> 00:03:51,432
+more of the why .
+And the reason you don't have
+
+1277
+00:03:51,432 --> 00:03:53,432
+to is because we put up
+
+1278
+00:03:54,161 --> 00:03:56,161
+an 8-part tutorial with text
+and code and
+
+1279
+00:03:58,401 --> 00:04:00,401
+videos walking through each one
+of the steps that I'm going to
+
+1280
+00:04:00,401 --> 00:04:02,401
+go through a little bit today.
+
+1281
+00:04:04,213 --> 00:04:06,213
+I'll take a look over here and
+see if there's anything I need
+
+1282
+00:04:06,213 --> 00:04:08,213
+to catch up on in comments, as
+well.
+
+1283
+00:04:10,026 --> 00:04:12,026
+With that in mind, let's do a
+quick tour of how we got to
+
+1284
+00:04:12,026 --> 00:04:14,026
+tooling.
+
+1285
+00:04:14,650 --> 00:04:16,650
+For 11ty. First in the package
+.
+
+1286
+00:04:19,860 --> 00:04:22,067
+json as Zach mentioned in the
+opening remarks, we started
+
+1287
+00:04:22,067 --> 00:04:24,067
+with ESM modules.
+
+1288
+00:04:24,067 --> 00:04:26,067
+This was something in 3. 0 that
+we got when we did this in 2.
+
+1289
+00:04:28,915 --> 00:04:30,915
+0, we had to stick with
+CommonJS.
+
+1290
+00:04:33,916 --> 00:04:37,021
+The hero of the show is a
+package called TS X, and it is
+
+1291
+00:04:37,021 --> 00:04:39,021
+a layer on top of ES build
+
+1292
+00:04:40,429 --> 00:04:42,429
+that gives you a bunch of
+sensible defaults so that you
+
+1293
+00:04:42,429 --> 00:04:44,429
+don't have to think about it so
+much, which is good because I
+
+1294
+00:04:44,429 --> 00:04:46,429
+don't really understand a lot
+of these decisions.
+
+1295
+00:04:48,740 --> 00:04:50,740
+And it winds up feeling like a
+Node replacement.
+
+1296
+00:04:54,454 --> 00:04:56,454
+The command node, obviously,
+it's running node under the
+
+1297
+00:04:56,454 --> 00:04:58,454
+hood,
+
+1298
+00:04:58,454 --> 00:05:00,454
+but you run TSX instead and you
+inherit all of this stuff.
+
+1299
+00:05:03,277 --> 00:05:06,886
+Then, we needed something to
+render a VDOM, I guess, is the
+
+1300
+00:05:06,886 --> 00:05:08,886
+best way to put it
+
+1301
+00:05:09,495 --> 00:05:11,800
+into a string, and this is the
+package we used. It had a
+
+1302
+00:05:11,800 --> 00:05:13,800
+number of things that we really
+needed.
+
+1303
+00:05:14,217 --> 00:05:16,217
+Versus a package we were using
+before.
+
+1304
+00:05:17,734 --> 00:05:19,734
+What this means, we're not
+using React anywhere.
+
+1305
+00:05:23,844 --> 00:05:25,844
+There's no React, Preact,
+
+1306
+00:05:28,649 --> 00:05:30,649
+this package renders or JSX
+into a string.
+
+1307
+00:05:33,963 --> 00:05:35,963
+And then for the component
+driven development workflow, we
+
+1308
+00:05:35,963 --> 00:05:37,963
+like to sit in tests . So V
+
+1309
+00:05:39,971 --> 00:05:42,478
+test is a wonderful package and
+it's super speedy. Friends came
+
+1310
+00:05:42,478 --> 00:05:46,389
+along for the ride with V test.
+A browser called Happy DOM and
+
+1311
+00:05:49,494 --> 00:05:51,494
+testing library that has a
+philosophy of testing your site
+
+1312
+00:05:51,494 --> 00:05:53,494
+the way people use it.
+
+1313
+00:05:54,707 --> 00:05:56,707
+In an accessibility oriented
+way with rules and stuff like
+
+1314
+00:05:56,707 --> 00:05:58,707
+that.
+
+1315
+00:05:58,827 --> 00:06:02,531
+And then, finally, in the
+package. json, these are the
+
+1316
+00:06:02,531 --> 00:06:07,544
+two build scripts. You notice
+the TSX in front and the
+
+1317
+00:06:09,351 --> 00:06:11,351
+config file is written in
+typescript.
+
+1318
+00:06:12,653 --> 00:06:14,653
+I won't go into TS config
+because I frankly don't
+
+1319
+00:06:14,653 --> 00:06:16,653
+understand it that way.
+
+1320
+00:06:17,652 --> 00:06:20,757
+But typescript has support for
+JSX, so we turn it on with the
+
+1321
+00:06:20,757 --> 00:06:22,757
+misnamed value React JSX.
+
+1322
+00:06:23,872 --> 00:06:27,481
+It doesn't actually have any
+React.
+
+1323
+00:06:27,481 --> 00:06:30,988
+And then, second, pointing it
+at our package, the JSX async
+
+1324
+00:06:34,091 --> 00:06:36,091
+runtime which then teaches the
+compiler where everything is so
+
+1325
+00:06:36,091 --> 00:06:38,091
+we don't have to manually
+import.
+
+1326
+00:06:42,351 --> 00:06:45,863
+Here is our 11ty config file.
+11ty has support out of the box
+
+1327
+00:06:45,863 --> 00:06:47,863
+for JavaScript templates.
+
+1328
+00:06:49,177 --> 00:06:51,590
+And what we want to do is say,
+these file extensions are
+
+1329
+00:06:51,590 --> 00:06:53,590
+actually JavaScript.
+
+1330
+00:06:54,895 --> 00:06:56,895
+Even though it says jsx,
+THOECHB it says ts.
+
+1331
+00:06:59,899 --> 00:07:01,899
+Because that tsx package is
+going to transparentally
+
+1332
+00:07:01,899 --> 00:07:03,899
+convert all of that into
+JavaScript.
+
+1333
+00:07:08,221 --> 00:07:10,221
+Finally, in the config, this
+was the big breakthrough
+
+1334
+00:07:10,221 --> 00:07:12,221
+eleventy.
+
+1335
+00:07:13,125 --> 00:07:16,332
+config gives us a plug point to
+do transforms, and in one
+
+1336
+00:07:16,332 --> 00:07:18,332
+central location instead of
+doing it throughout the code,
+
+1337
+00:07:18,332 --> 00:07:20,332
+we were able to transform a jsx
+node into a
+
+1338
+00:07:23,943 --> 00:07:25,943
+string asynchronously, and
+then, just for fun, we
+
+1339
+00:07:25,943 --> 00:07:27,943
+centralized the placement of
+
+1340
+00:07:29,046 --> 00:07:31,046
+a dot.
+
+1341
+00:07:32,843 --> 00:07:37,448
+One last step, we wanted to do
+testing and so in vtest, it has
+
+1342
+00:07:37,448 --> 00:07:40,655
+support for the fake browsers,
+out of the box, it supports
+
+1343
+00:07:40,655 --> 00:07:42,655
+happy dom, this was the line
+that we put in to get our good
+
+1344
+00:07:42,655 --> 00:07:47,045
+testing. I'll take a look over.
+And see, no, not a lot
+
+1345
+00:07:47,641 --> 00:07:50,550
+of dependencies. We removed
+dependencies, in fact, as we
+
+1346
+00:07:50,550 --> 00:07:52,550
+went along.
+
+1347
+00:07:53,447 --> 00:07:55,447
+OK. Over to some demos.
+
+1348
+00:07:58,043 --> 00:08:01,742
+I'll go ahead and switch over
+to...  the sample repository,
+
+1349
+00:08:01,742 --> 00:08:03,742
+and then, I'll go back to our
+
+1350
+00:08:03,753 --> 00:08:07,339
+repository to show some of this
+in action.
+
+1351
+00:08:07,339 --> 00:08:09,339
+I'm going to show you an
+end-to-end of the smallest
+
+1352
+00:08:09,339 --> 00:08:11,339
+possible thing without a lot of
+extra concepts.
+
+1353
+00:08:13,841 --> 00:08:17,248
+Here is the home page or my
+site, and you see that it's got
+
+1354
+00:08:17,248 --> 00:08:20,343
+layout, front matter,
+everything we understand, but
+
+1355
+00:08:20,343 --> 00:08:22,343
+because I've switched over to
+this tooling
+
+1356
+00:08:23,437 --> 00:08:25,437
+friendly approach, I don't have
+to think too much about files
+
+1357
+00:08:27,649 --> 00:08:31,141
+anymore, and I can think about
+symbols.
+
+1358
+00:08:31,141 --> 00:08:33,141
+And so every page on the site
+has a main layout, and I can
+
+1359
+00:08:33,358 --> 00:08:36,463
+navigate to this main layout.
+This is what the file looks
+
+1360
+00:08:36,463 --> 00:08:38,463
+like.
+
+1361
+00:08:39,757 --> 00:08:41,757
+If you've done any of the ESM
+stuff, this line will look
+
+1362
+00:08:41,757 --> 00:08:43,757
+familiar to you.
+
+1363
+00:08:43,864 --> 00:08:45,864
+You need to export a named
+export called render.
+
+1364
+00:08:48,762 --> 00:08:51,863
+I rename everything so that I
+can have similar bombsymbols so
+
+1365
+00:08:51,863 --> 00:08:53,863
+everything isn't
+
+1366
+00:08:53,863 --> 00:08:57,409
+named render. I've got a
+function called main layout.
+
+1367
+00:08:57,409 --> 00:09:00,909
+This might look a little
+React-y to you. And what it's
+
+1368
+00:09:00,909 --> 00:09:02,909
+doing is saying, hey, I'm going
+to
+
+1369
+00:09:05,119 --> 00:09:07,119
+be passed these two things, I
+know what I'm going to get
+
+1370
+00:09:07,119 --> 00:09:09,119
+passed,
+
+1371
+00:09:09,119 --> 00:09:11,615
+and any caller can get
+auto-complete for this .
+
+1372
+00:09:11,615 --> 00:09:13,615
+You can get auto-complete
+because we
+
+1373
+00:09:15,227 --> 00:09:17,227
+do props and prompts in a
+typescript type.
+
+1374
+00:09:18,332 --> 00:09:21,633
+And now, tooling can help me. I
+can mouse over this and see
+
+1375
+00:09:21,633 --> 00:09:23,633
+what is the
+
+1376
+00:09:23,633 --> 00:09:25,835
+contract that needs to be
+obeyed? And what I can
+
+1377
+00:09:25,835 --> 00:09:27,835
+destructure from it?
+
+1378
+00:09:30,337 --> 00:09:32,337
+I can get auto-complete,
+obviously.
+
+1379
+00:09:33,941 --> 00:09:37,141
+I can get a squiggle if I make
+a mistake . I could even
+
+1380
+00:09:37,141 --> 00:09:39,141
+decide, no, really, I want this
+to be
+
+1381
+00:09:39,141 --> 00:09:41,850
+called "heading. " And
+everywhere in my project that
+
+1382
+00:09:41,850 --> 00:09:43,850
+uses that will
+
+1383
+00:09:44,951 --> 00:09:46,951
+now use heading, including
+
+1384
+00:09:48,358 --> 00:09:50,358
+the prompts because there's
+great tooling support for
+
+1385
+00:09:50,358 --> 00:09:52,358
+typescript.
+There's great tooling support
+
+1386
+00:09:52,358 --> 00:09:55,966
+for jsx, and if I don't like
+that, I undo it. And everything
+
+1387
+00:09:55,966 --> 00:09:57,966
+in the universe goes back to
+what I had
+
+1388
+00:09:58,572 --> 00:10:01,873
+before I did the refactoring.
+Again, this is stuff that
+
+1389
+00:10:01,873 --> 00:10:03,873
+people are familiar
+
+1390
+00:10:04,969 --> 00:10:06,969
+with in the frontend
+
+1391
+00:10:08,066 --> 00:10:10,066
+world, and we're getting the
+good parts of that while
+
+1392
+00:10:10,066 --> 00:10:12,676
+leaving the whole agenda of
+client-side rendering.
+
+1393
+00:10:15,876 --> 00:10:17,876
+I'm returning jsx instead of a
+template, I
+
+1394
+00:10:18,171 --> 00:10:21,471
+get all of the stuff like
+auto-complete in here. And
+
+1395
+00:10:21,471 --> 00:10:23,471
+then, this is a fun one,
+
+1396
+00:10:24,882 --> 00:10:26,882
+I'm showing -- writing my site
+in
+
+1397
+00:10:27,982 --> 00:10:30,287
+a reusable component-driven
+fashion . So I do little units
+
+1398
+00:10:30,287 --> 00:10:32,287
+of increment.
+
+1399
+00:10:33,596 --> 00:10:35,596
+And I can get auto-complete of
+my headings.
+
+1400
+00:10:40,802 --> 00:10:42,802
+And when I do the
+auto-complete, generates
+
+1401
+00:10:44,009 --> 00:10:46,009
+the report for me, and I get
+all of the things that you
+
+1402
+00:10:46,009 --> 00:10:48,009
+would expect from good tooling.
+
+1403
+00:10:48,611 --> 00:10:51,813
+I can then navigate to the
+heading, see how it's
+
+1404
+00:10:51,813 --> 00:10:53,813
+implemented, and then, I can do
+the way I
+
+1405
+00:10:54,519 --> 00:10:56,519
+do development, which is in a
+test.
+
+1406
+00:10:57,811 --> 00:11:00,910
+And so, I'm working over here,
+I've got my test over here .
+
+1407
+00:11:00,910 --> 00:11:02,910
+And if I
+
+1408
+00:11:04,115 --> 00:11:07,419
+changed this word to "Zach "
+and run this test, it's going
+
+1409
+00:11:10,925 --> 00:11:12,925
+to fail, and I might be
+confused why it failed
+
+1410
+00:11:14,036 --> 00:11:17,141
+. Well, I can go into the
+debugger, stop on this line,
+
+1411
+00:11:17,141 --> 00:11:19,141
+that's the first time
+
+1412
+00:11:20,548 --> 00:11:22,548
+through, and I see, oh, yeah,
+duh, I passed in --
+
+1413
+00:11:23,752 --> 00:11:25,752
+I didn't pass in tsx, I passed
+in Zach, that's why I ran into
+
+1414
+00:11:25,752 --> 00:11:27,752
+the problem.
+
+1415
+00:11:29,456 --> 00:11:32,160
+So that's a little bit of a run
+through of the test-driven
+
+1416
+00:11:32,160 --> 00:11:36,860
+development approach on this.
+I'll look over here. And see.
+
+1417
+00:11:36,860 --> 00:11:38,860
+Some comments.
+
+1418
+00:11:39,359 --> 00:11:41,359
+Hey, Collin, thank you for
+helping me out here.
+
+1419
+00:11:42,664 --> 00:11:46,977
+I do like the minimum layout in
+my IDE in here.
+
+1420
+00:11:50,176 --> 00:11:52,176
+And with all of that in mind,
+here's the way I actually work.
+
+1421
+00:11:54,686 --> 00:11:56,808
+I run vtest in watch mode.
+Because it's so fast.
+
+1422
+00:11:59,815 --> 00:12:01,815
+And I run it in watch mode
+under the debugger.
+
+1423
+00:12:03,118 --> 00:12:06,723
+And so, I've got my entire 11ty
+development that is running at
+
+1424
+00:12:06,723 --> 00:12:08,723
+all times
+
+1425
+00:12:08,723 --> 00:12:11,334
+whenever I make a change. And
+so, if I fix
+
+1426
+00:12:14,654 --> 00:12:17,158
+this, that's my turn around
+time. I didn't go to a browser
+
+1427
+00:12:17,158 --> 00:12:22,072
+and hit reload. I didn't run an
+11ty build.
+
+1428
+00:12:25,877 --> 00:12:27,877
+In fact, if I wanted to, and
+I'm like, I'm confused here, I
+
+1429
+00:12:27,877 --> 00:12:31,892
+don't have a bug, I just don't
+know what's going on here. Set
+
+1430
+00:12:31,892 --> 00:12:33,892
+a break point, press space, and
+you will stop there.
+
+1431
+00:12:35,496 --> 00:12:37,496
+And sometimes, 11ty hands me a
+lot of
+
+1432
+00:12:38,601 --> 00:12:41,704
+data, a lot of surface area in
+page, a lot of surface area in
+
+1433
+00:12:41,704 --> 00:12:43,704
+data, and I get confused, I'm a
+man of a certain age.
+
+1434
+00:12:44,113 --> 00:12:47,612
+I just want to see what's
+available. And this is what I
+
+1435
+00:12:47,612 --> 00:12:51,022
+do to stop at a certain point
+in rendering and see what is
+
+1436
+00:12:51,022 --> 00:12:53,022
+available to me at that point.
+
+1437
+00:12:53,026 --> 00:12:55,232
+All right. I will continue.
+
+1438
+00:13:00,638 --> 00:13:02,638
+Obviously, we want to see does
+this
+
+1439
+00:13:03,847 --> 00:13:05,847
+thing actually render a
+template that can be used in a
+
+1440
+00:13:05,847 --> 00:13:07,847
+browser?
+
+1441
+00:13:10,055 --> 00:13:12,055
+So after I've done all of my
+development, that's when I
+
+1442
+00:13:12,055 --> 00:13:14,055
+actually
+
+1443
+00:13:14,055 --> 00:13:16,662
+go over to a browser and look
+at it . And, yes, actually,
+
+1444
+00:13:18,863 --> 00:13:22,155
+it is a very nice size. It did
+render, it could use a little
+
+1445
+00:13:22,155 --> 00:13:26,646
+bit of help from Miriam on the
+styling, obviously.
+
+1446
+00:13:26,646 --> 00:13:28,646
+That's an end-to-end
+
+1447
+00:13:29,742 --> 00:13:31,742
+tour of the minima with about 5
+minutes
+
+1448
+00:13:32,950 --> 00:13:34,950
+left, I'll take a look at what
+we're doing in our knowledge
+
+1449
+00:13:34,950 --> 00:13:36,950
+base . Feel free to ask any
+questions, Collin is show
+
+1450
+00:13:39,156 --> 00:13:41,156
+runner with me on that project,
+and he can answer anything over
+
+1451
+00:13:41,156 --> 00:13:43,156
+there.
+
+1452
+00:13:43,951 --> 00:13:47,048
+I'm going to switch over to our
+actual project . This is our
+
+1453
+00:13:47,048 --> 00:13:49,048
+knowledge base.
+
+1454
+00:13:49,749 --> 00:13:51,749
+It's pretty big.
+
+1455
+00:13:53,044 --> 00:13:55,228
+So this is all the content, or
+all the programming languages
+
+1456
+00:13:55,228 --> 00:13:57,228
+that JetBrain supports.
+
+1457
+00:14:01,728 --> 00:14:03,728
+These are all of the components
+that we have that are isolate
+
+1458
+00:14:05,135 --> 00:14:07,135
+d and easy to test and stuff
+like that we can use wherever.
+
+1459
+00:14:10,023 --> 00:14:12,023
+And so, this is, again, test
+driven development
+
+1460
+00:14:13,120 --> 00:14:15,120
+. What I'm going to do this
+time is I'm going to run all of
+
+1461
+00:14:15,120 --> 00:14:17,120
+the tests in the entire site
+under the debugger.
+
+1462
+00:14:20,620 --> 00:14:22,620
+Vtest will fire it up the first
+time, it'll take a few seconds
+
+1463
+00:14:23,714 --> 00:14:25,714
+to fire up the first time vtest
+has gotten faster. I could
+
+1464
+00:14:25,714 --> 00:14:27,714
+speed this up.
+
+1465
+00:14:28,616 --> 00:14:30,616
+Once it's running, all of my
+tests pass, I have 131 tests.
+
+1466
+00:14:32,925 --> 00:14:35,723
+And I make a mistake. Here is a
+usage of a test. I'm calling
+
+1467
+00:14:35,723 --> 00:14:37,723
+the heading.
+
+1468
+00:14:38,403 --> 00:14:40,403
+Passing in the two values. I
+make a mistake.
+
+1469
+00:14:42,998 --> 00:14:45,090
+And then, my test no longer
+passes, I get a little squiggle
+
+1470
+00:14:45,090 --> 00:14:47,090
+here.
+
+1471
+00:14:48,381 --> 00:14:50,381
+I can mouse over it and get
+more information for exactly
+
+1472
+00:14:50,381 --> 00:14:52,381
+what the problem is.
+
+1473
+00:14:53,467 --> 00:14:55,467
+But that's a pretty fast turn
+around time under the debugger
+
+1474
+00:14:55,467 --> 00:14:57,467
+for working with your site.
+
+1475
+00:14:58,572 --> 00:15:00,572
+And we never went to the
+browser, and we never did
+
+1476
+00:15:00,572 --> 00:15:02,572
+console log.
+
+1477
+00:15:05,166 --> 00:15:07,166
+The part that I wanted to
+finish with is the other stuff
+
+1478
+00:15:07,166 --> 00:15:10,064
+besides just developer
+experience. We also added some
+
+1479
+00:15:10,064 --> 00:15:12,064
+stuff from an authoring
+experience.
+
+1480
+00:15:13,965 --> 00:15:16,775
+So if you were interested in
+leaving Gatsby, these are some
+
+1481
+00:15:16,775 --> 00:15:18,775
+of the kinds of things you
+might also be interested in.
+
+1482
+00:15:25,174 --> 00:15:27,174
+For example, I'm sitting in a
+markdown file.
+
+1483
+00:15:28,465 --> 00:15:30,465
+This is actually the tutorial
+that we wrote for this
+
+1484
+00:15:30,465 --> 00:15:32,465
+conference . And I have front
+matter up here.
+
+1485
+00:15:36,577 --> 00:15:38,577
+Well, my front matter actually
+has a schema.
+
+1486
+00:15:39,868 --> 00:15:41,868
+And so, if I were to write
+author, I get auto-complete.
+
+1487
+00:15:45,966 --> 00:15:47,966
+But I don't get autocomplete
+just of the keys, I
+
+1488
+00:15:49,773 --> 00:15:51,773
+get auto-complete of the
+values, that is actually
+
+1489
+00:15:53,384 --> 00:15:57,385
+i... y...
+
+1490
+00:15:58,785 --> 00:16:02,384
+markdown file. PWE was the
+thing, it's in content
+
+1491
+00:16:05,490 --> 00:16:07,490
+space, it's not in software
+space.
+
+1492
+00:16:07,997 --> 00:16:11,695
+How are we doing that?
+We have a bunch of resources
+
+1493
+00:16:15,003 --> 00:16:17,110
+that we define in typescript,
+and let me go to tip model.
+
+1494
+00:16:18,503 --> 00:16:22,394
+Tip models, yeah. We define our
+schemas in typescript.
+
+1495
+00:16:24,390 --> 00:16:26,390
+Here's the schema for a tip.
+
+1496
+00:16:27,684 --> 00:16:29,684
+And then, we use type box to
+convert that to a JSON schema
+
+1497
+00:16:29,684 --> 00:16:31,684
+we can enforce.
+
+1498
+00:16:34,242 --> 00:16:37,437
+And then, every single time you
+hit save, we rerun some
+
+1499
+00:16:40,433 --> 00:16:42,433
+code that writes a JSON schema.
+
+1500
+00:16:42,735 --> 00:16:45,633
+We dump all of the schemas to
+disk. And here's what the
+
+1501
+00:16:45,633 --> 00:16:47,633
+schema looks like.
+
+1502
+00:16:50,130 --> 00:16:52,130
+And so the IDE sees this, it
+sees that
+
+1503
+00:16:53,337 --> 00:16:55,337
+these are all of the possible
+values, and we give an
+
+1504
+00:16:55,337 --> 00:16:57,337
+authoring experience where an
+author.
+
+1505
+00:16:58,242 --> 00:17:01,538
+This was the thinking that
+killed us in Gatsby. You would
+
+1506
+00:17:01,538 --> 00:17:03,538
+put in a wrong value, and you
+
+1507
+00:17:03,538 --> 00:17:05,538
+would fail.
+
+1508
+00:17:07,636 --> 00:17:09,636
+And you would fail obscurely,
+and you would have no hope
+
+1509
+00:17:09,636 --> 00:17:11,636
+other than coming to me and
+getting me to look at your
+
+1510
+00:17:11,636 --> 00:17:13,636
+branch.
+
+1511
+00:17:13,636 --> 00:17:16,023
+We really wanted with the
+embrace of 11ty, we really
+
+1512
+00:17:16,023 --> 00:17:18,023
+wanted to give a better
+authoring experience on this.
+
+1513
+00:17:20,519 --> 00:17:22,519
+Some other things we would like
+to talk about at a later
+
+1514
+00:17:23,624 --> 00:17:26,125
+date, things such as the
+content model that has plugable
+
+1515
+00:17:26,125 --> 00:17:28,125
+resource types and the queries.
+
+1516
+00:17:28,226 --> 00:17:31,519
+Zach is adding in 3. 0, more
+hook points that are exactly
+
+1517
+00:17:31,519 --> 00:17:33,519
+the hook points
+
+1518
+00:17:34,927 --> 00:17:36,927
+we need for validation, for
+custom collections , and things
+
+1519
+00:17:36,927 --> 00:17:38,927
+like that.
+
+1520
+00:17:40,513 --> 00:17:42,513
+And then, we also were
+confronted with something for
+
+1521
+00:17:42,513 --> 00:17:44,513
+client side rendering where we
+wanted to keep the templating
+
+1522
+00:17:44,513 --> 00:17:46,521
+that we had and had to do a
+work around for that.
+
+1523
+00:17:49,717 --> 00:17:51,717
+With that in mind, this has
+been a wonderful experience for
+
+1524
+00:17:51,717 --> 00:17:53,717
+us.
+
+1525
+00:17:53,717 --> 00:17:56,519
+Any of you that are interested
+in moving from a larger system
+
+1526
+00:17:56,519 --> 00:17:58,519
+with all of this tooling, such
+as Gatsby,
+
+1527
+00:17:59,621 --> 00:18:02,523
+over to 11ty, please reach out,
+let's see what we can do
+
+1528
+00:18:02,523 --> 00:18:07,523
+working all of this stuff
+together.
+
+1529
+00:18:07,523 --> 00:18:11,015
+.
+≫ MIKE: Thank you so much,
+
+1530
+00:18:11,015 --> 00:18:13,015
+Paul, it's always interesting
+seeing, like,
+
+1531
+00:18:15,110 --> 00:18:17,110
+how these big use are cases --
+how 11ty
+
+1532
+00:18:19,179 --> 00:18:21,179
+can and does a very good job of
+it, of adapting to handle
+
+1533
+00:18:21,179 --> 00:18:23,179
+something like that.
+
+1534
+00:18:24,170 --> 00:18:26,170
+It was really interesting
+seeing that workflow.
+
+1535
+00:18:29,768 --> 00:18:31,768
+Which like a site, the scale of
+your knowledge base,
+
+1536
+00:18:32,779 --> 00:18:35,080
+it makes a lot of sense that
+you need all of that tooling.
+
+1537
+00:18:35,080 --> 00:18:37,080
+What was the buildout time?
+
+1538
+00:18:38,576 --> 00:18:40,576
+And how long did it take you to
+transition from Gatsby to the
+
+1539
+00:18:40,576 --> 00:18:42,576
+11ty setup?
+
+1540
+00:18:45,172 --> 00:18:47,382
+≫ PAUL: Collin and I did a
+first shot in 11ty 2 and got it
+
+1541
+00:18:47,382 --> 00:18:50,880
+out the door. And then in the
+second shot, we did a lot of
+
+1542
+00:18:50,880 --> 00:18:52,880
+just
+
+1543
+00:18:54,085 --> 00:18:56,085
+redesign the user design and
+user experience and stuff.
+
+1544
+00:18:58,273 --> 00:19:01,582
+And along the way, as we really
+got into what 11ty
+
+1545
+00:19:04,380 --> 00:19:06,380
+could do for us, it changed the
+idea of the knowledge base
+
+1546
+00:19:06,380 --> 00:19:08,380
+completely.
+
+1547
+00:19:10,081 --> 00:19:12,081
+You know, we'll let authors
+create their own channels, and
+
+1548
+00:19:13,177 --> 00:19:15,177
+they can write templates
+because this is simple enough
+
+1549
+00:19:15,177 --> 00:19:17,177
+that it can be put in the hands
+of mere
+
+1550
+00:19:18,375 --> 00:19:20,375
+mortals.
+≫ MIKE: That's awesome.
+
+1551
+00:19:23,056 --> 00:19:25,847
+So the workflow and GitHub
+pulling in those --
+
+1552
+00:19:25,847 --> 00:19:27,847
+≫ PAUL: Indeed.
+≫ MIKE: That's awesome.
+
+1553
+00:19:30,942 --> 00:19:32,942
+≫ PAUL: Just -- to reinforce
+the point you're
+
+1554
+00:19:34,032 --> 00:19:36,032
+making, people might have this
+idea that 11ty is for personal
+
+1555
+00:19:36,032 --> 00:19:38,032
+blogs. Let's change that.
+
+1556
+00:19:40,524 --> 00:19:42,524
+Let's tell people that you can
+do big projects,
+
+1557
+00:19:43,619 --> 00:19:47,202
+Zach continues to add what's
+needed for that. And let's see
+
+1558
+00:19:47,202 --> 00:19:50,308
+how far we can go before 11ty
+runs out of steam.
+
+1559
+00:19:52,904 --> 00:19:54,904
+≫ MIKE: Yeah, it's actually
+ideal for doing something like
+
+1560
+00:19:54,904 --> 00:19:56,904
+that. Like, what other kind of
+benefits have you
+
+1561
+00:19:59,613 --> 00:20:02,112
+seen from move inging from
+Gatsby to 11ty? I imagine your
+
+1562
+00:20:02,112 --> 00:20:04,112
+build time came down?
+
+1563
+00:20:04,614 --> 00:20:06,614
+Yeah, did it come down?
+
+1564
+00:20:12,831 --> 00:20:16,134
+≫ PAUL: It came down from
+infinity. What happened was,
+
+1565
+00:20:16,134 --> 00:20:18,134
+you couldn't trust the Gatsby
+cache,
+
+1566
+00:20:19,338 --> 00:20:21,338
+so you had to do a full build
+all the time and in our CI, it
+
+1567
+00:20:21,338 --> 00:20:23,338
+would never complete before the
+CI canceled the job.
+
+1568
+00:20:23,650 --> 00:20:26,654
+≫ MIKE: OK. That's a lot less.
+
+1569
+00:20:28,258 --> 00:20:30,357
+[ Laughter ]
+So you'd have to build locally
+
+1570
+00:20:30,357 --> 00:20:32,444
+and push it up?
+≫ PAUL: Yeah, right.
+
+1571
+00:20:33,041 --> 00:20:37,032
+≫ MIKE: Wow. Incredible. Yeah,
+that's a big win.
+
+1572
+00:20:39,024 --> 00:20:42,039
+CI being able to build your
+site.
+
+1573
+00:20:45,231 --> 00:20:47,231
+≫ PAUL: Indeed, and from an
+authoring experience
+
+1574
+00:20:47,231 --> 00:20:49,231
+perspective, I know we're going
+to be thinking -- actually, the
+
+1575
+00:20:49,231 --> 00:20:51,441
+talks at this conference are
+very author-focused. And that's
+
+1576
+00:20:51,441 --> 00:20:53,441
+great.
+
+1577
+00:20:53,441 --> 00:20:55,441
+It's not just machinery.
+
+1578
+00:20:59,733 --> 00:21:01,733
+When you can build sites that
+give you the feedback that
+
+1579
+00:21:01,733 --> 00:21:03,733
+instantaneously
+
+1580
+00:21:03,733 --> 00:21:06,229
+and provide the hook points for
+people like me that are
+
+1581
+00:21:06,229 --> 00:21:08,229
+interested in content
+management systems, you can
+
+1582
+00:21:08,229 --> 00:21:12,332
+have an authoring experience
+that is really fantastic.
+
+1583
+00:21:12,332 --> 00:21:15,327
+There's nothing worse than an
+author that feels dumb, right?
+
+1584
+00:21:15,327 --> 00:21:17,327
+≫ MIKE: Yeah.
+
+1585
+00:21:19,222 --> 00:21:21,222
+And ultimately, like, most
+websites are managed by
+
+1586
+00:21:21,222 --> 00:21:23,222
+nontechnical people.
+
+1587
+00:21:24,331 --> 00:21:26,331
+It's so important to think
+about the workflows and empower
+
+1588
+00:21:26,331 --> 00:21:28,331
+editors .
+
+1589
+00:21:28,331 --> 00:21:30,638
+≫ PAUL: They're not developers,
+they're humans.
+
+1590
+00:21:30,638 --> 00:21:32,638
+≫ MIKE: Thanks, again, for
+joining today, Paul. Fantastic.
+
+1591
+00:21:32,638 --> 00:21:34,638
+≫ PAUL: Thanks for having me.
+≫ MIKE: All right.

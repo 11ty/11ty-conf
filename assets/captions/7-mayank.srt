@@ -1,0 +1,2017 @@
+
+3107
+00:00:00,000 --> 00:00:04,293
+So this talk is titled don't
+fear the cascade.
+
+3108
+00:00:04,293 --> 00:00:09,104
+And I want to talk about not
+the dish soap, I want to talk
+
+3109
+00:00:09,104 --> 00:00:12,905
+about CSS, specifically , CSS.
+
+3110
+00:00:16,095 --> 00:00:18,095
+The cascade is probably the
+reason why CSS gets such a
+
+3111
+00:00:19,301 --> 00:00:23,013
+bad on developers.
+
+3112
+00:00:24,407 --> 00:00:27,700
+That's why I'm giving this
+talk. The cascade doesn't have
+
+3113
+00:00:27,700 --> 00:00:29,700
+to be this unknown, scary
+thing.
+
+3114
+00:00:31,485 --> 00:00:33,485
+If you haven't been keeping up,
+CSS has legitimately become
+
+3115
+00:00:33,485 --> 00:00:35,485
+awesome.
+
+3116
+00:00:36,589 --> 00:00:38,589
+We have the half serial class
+and
+
+3117
+00:00:39,792 --> 00:00:41,792
+nesting built into CSS now and
+scope styling, how awesome is
+
+3118
+00:00:41,792 --> 00:00:43,792
+that?
+
+3119
+00:00:45,892 --> 00:00:48,986
+And for the first time ever, we
+have the tools to manage the
+
+3120
+00:00:48,986 --> 00:00:50,986
+cascade in a way that feels
+more hinged for lack of a
+
+3121
+00:00:50,986 --> 00:00:54,365
+better word.
+Yeah, this is a
+
+3122
+00:00:55,958 --> 00:00:59,246
+topic with multiple layers of
+rabbit holes. To keep things
+
+3123
+00:00:59,246 --> 00:01:01,859
+digestible, I'll simplify my
+explanations and provide
+
+3124
+00:01:01,859 --> 00:01:03,859
+practical suggestions along the
+way.
+
+3125
+00:01:06,748 --> 00:01:08,748
+So to understand the cascade,
+we're going to start with a
+
+3126
+00:01:08,748 --> 00:01:10,748
+completely blank
+
+3127
+00:01:10,748 --> 00:01:12,748
+slate with minimum amount of
+HTML required to file a page or
+
+3128
+00:01:12,748 --> 00:01:14,748
+create a page, rather, not even
+style it.
+
+3129
+00:01:17,625 --> 00:01:19,625
+And let's put a humble button
+element in there. And
+
+3130
+00:01:19,625 --> 00:01:21,718
+immediately, we can see that
+this button element still has
+
+3131
+00:01:21,718 --> 00:01:23,831
+default styling, even though
+there's not CSS on the page.
+
+3132
+00:01:26,628 --> 00:01:28,628
+Earlier Miriam explained this
+in more detail.
+
+3133
+00:01:30,725 --> 00:01:32,725
+But these styles come from the
+user style sheet.
+
+3134
+00:01:34,310 --> 00:01:36,310
+And yes, these default styles
+do respect the light and dark
+
+3135
+00:01:36,310 --> 00:01:38,310
+team . So my system, operating
+
+3136
+00:01:40,804 --> 00:01:42,804
+system uses dark theme, this
+button is styled in a dark
+
+3137
+00:01:42,804 --> 00:01:44,804
+theme . I won't spoil the
+surprise, because
+
+3138
+00:01:46,591 --> 00:01:48,591
+I'm sure Sara's going to talk
+about this later today.
+
+3139
+00:01:49,882 --> 00:01:51,882
+But yeah, you can have dark
+theme without writing CSS .
+
+3140
+00:01:56,179 --> 00:01:59,187
+Yeah, the user style sheet is
+literally CSS style but built
+
+3141
+00:01:59,187 --> 00:02:01,187
+into the browser, this is where
+the cascade starts.
+
+3142
+00:02:04,274 --> 00:02:06,587
+On this slide, I have a screen
+shot of style sheet.
+
+3143
+00:02:09,584 --> 00:02:13,169
+I went to their source code and
+found it there.
+
+3144
+00:02:13,169 --> 00:02:15,169
+It's like hundred lines long.
+
+3145
+00:02:16,453 --> 00:02:18,453
+Specifically, I'm showing a
+small subsection
+
+3146
+00:02:20,349 --> 00:02:23,435
+where this affects input, text
+areas, and buttons . And this
+
+3147
+00:02:23,435 --> 00:02:25,435
+rule sets up font property,
+this
+
+3148
+00:02:27,038 --> 00:02:29,038
+font property is probably the
+reason why every CSS reset
+
+3149
+00:02:30,122 --> 00:02:33,428
+that you see is something like
+inherit, buttons
+
+3150
+00:02:36,535 --> 00:02:38,535
+just so these elements will
+match their
+
+3151
+00:02:39,943 --> 00:02:43,645
+font size and font family of
+their surroundings .
+
+3152
+00:02:43,645 --> 00:02:45,645
+So, yeah, this is the first
+step in the cascade.
+
+3153
+00:02:46,543 --> 00:02:49,040
+And then, come author styles.
+This is the more interesting
+
+3154
+00:02:49,040 --> 00:02:51,040
+part. This is where the party
+happens.
+
+3155
+00:02:54,634 --> 00:02:58,828
+Before that, I want to talk
+about shadow DOM really quick.
+
+3156
+00:03:02,618 --> 00:03:04,618
+Shadow DOM allows you to attach
+an internal
+
+3157
+00:03:07,025 --> 00:03:09,025
+, and it can have hidden from
+the main DOM.
+
+3158
+00:03:12,721 --> 00:03:14,721
+And that unlocks cool things
+like encapsulate styling.
+
+3159
+00:03:16,302 --> 00:03:18,302
+Even if you don't like using
+Shadow DOM directly, which is
+
+3160
+00:03:18,302 --> 00:03:20,302
+totally
+
+3161
+00:03:20,302 --> 00:03:22,882
+understandable, it's still good
+to know because many built-in
+
+3162
+00:03:22,882 --> 00:03:24,882
+elements use Shadow DO,
+
+3163
+00:03:24,892 --> 00:03:26,892
+M underneath.
+
+3164
+00:03:29,667 --> 00:03:33,875
+And I attached this blog post
+if you want to learn more. I
+
+3165
+00:03:33,875 --> 00:03:35,875
+explain how Shadow DOM works
+here and this animation showing
+
+3166
+00:03:35,875 --> 00:03:38,673
+how the light DOM and Shadow
+DOM are interlinked together.
+
+3167
+00:03:43,876 --> 00:03:48,370
+I explained, cool. I have a
+screen shot of the detailed
+
+3168
+00:03:48,370 --> 00:03:50,370
+element, which is
+
+3169
+00:03:51,460 --> 00:03:53,460
+built into HTML itself, also
+uses Shadow DOM.
+
+3170
+00:03:55,966 --> 00:03:57,966
+Even if you don't use it
+directly, you are using it
+
+3171
+00:03:57,966 --> 00:03:59,966
+indirectly.
+
+3172
+00:03:59,966 --> 00:04:02,647
+And yeah, the reason I bring
+this up is Shadow DOM styles
+
+3173
+00:04:05,641 --> 00:04:09,153
+cascade after the user spells,
+if you have ha
+
+3174
+00:04:12,458 --> 00:04:14,458
+my button component which is a
+regular button and
+
+3175
+00:04:15,662 --> 00:04:17,662
+style both from inside and
+outside Shadow DOM, the outside
+
+3176
+00:04:17,662 --> 00:04:19,662
+styles will win.
+
+3177
+00:04:20,954 --> 00:04:22,954
+So the overall cascade order,
+so far, goes something
+
+3178
+00:04:24,054 --> 00:04:28,497
+like user agent styles, author
+styles, Shadow DOM styles and
+
+3179
+00:04:28,497 --> 00:04:30,497
+the rest of the page styles.
+
+3180
+00:04:31,794 --> 00:04:34,004
+There's also the inline style
+attribute which comes after
+
+3181
+00:04:34,004 --> 00:04:36,004
+these. But that's not part of
+cascade.
+
+3182
+00:04:39,392 --> 00:04:43,001
+The browser doesn't need to
+resolve the cascade in order to
+
+3183
+00:04:43,001 --> 00:04:45,001
+get the style attribute.
+
+3184
+00:04:46,303 --> 00:04:48,303
+It's literally attached to the
+element itself.
+
+3185
+00:04:51,283 --> 00:04:53,283
+But yeah, now that
+
+3186
+00:04:55,493 --> 00:04:57,493
+we understand Shadow DOM, we
+can talk about the rest of the
+
+3187
+00:04:57,493 --> 00:04:59,493
+page. The most simple concept
+is order of appearance.
+
+3188
+00:05:01,370 --> 00:05:03,370
+So for example, you can style a
+button using
+
+3189
+00:05:04,906 --> 00:05:06,906
+an element selector and you can
+make it pretty straight
+
+3190
+00:05:06,906 --> 00:05:08,906
+forward. But what happens when
+there's two of the rules?
+
+3191
+00:05:10,096 --> 00:05:13,586
+The last one wins, this makes
+sense. CSS written, top to
+
+3192
+00:05:13,586 --> 00:05:15,586
+bottom and the last one
+
+3193
+00:05:15,586 --> 00:05:19,066
+overrides anything before it.
+But these element selectors
+
+3194
+00:05:19,066 --> 00:05:21,066
+aren't super useful on their
+own. What if you only want to
+
+3195
+00:05:21,066 --> 00:05:23,066
+style this one particular
+button?
+
+3196
+00:05:25,402 --> 00:05:27,402
+This is where I would use a
+class instead of an element
+
+3197
+00:05:27,402 --> 00:05:29,402
+selector . But when we do this,
+we find that
+
+3198
+00:05:31,102 --> 00:05:33,102
+the order of appearance seems
+to not matter anymore.
+
+3199
+00:05:35,394 --> 00:05:37,404
+The class selector wins over
+the element selector even if it
+
+3200
+00:05:37,404 --> 00:05:39,404
+comes before.
+So what's going on here?
+
+3201
+00:05:42,482 --> 00:05:44,482
+And thens a to that is
+specificity.
+
+3202
+00:05:44,575 --> 00:05:48,965
+Hopefully, I said that right.
+Specificity. I'm not going to
+
+3203
+00:05:48,965 --> 00:05:51,259
+go into too much detail here
+because it's a complex, but
+
+3204
+00:05:51,259 --> 00:05:53,259
+pretty easily understood topic.
+
+3205
+00:05:56,452 --> 00:05:58,452
+Just Specificity is a score
+made of three parts.
+
+3206
+00:06:01,637 --> 00:06:03,637
+Starting from the right side,
+elements and pseudo element
+
+3207
+00:06:04,843 --> 00:06:06,843
+selectors contribute to the
+least significant part,
+
+3208
+00:06:06,843 --> 00:06:08,843
+classes, and attribute
+selectors and pseudo classes go
+
+3209
+00:06:08,843 --> 00:06:10,847
+in the middle and IDs go in the
+most significant part.
+
+3210
+00:06:14,840 --> 00:06:16,938
+So the browser will take the
+score and use it to determine
+
+3211
+00:06:16,938 --> 00:06:18,938
+which selector wins.
+
+3212
+00:06:21,434 --> 00:06:23,434
+Chrome dev tools even shows you
+the specificity when you hover
+
+3213
+00:06:23,434 --> 00:06:25,434
+selector.
+
+3214
+00:06:26,331 --> 00:06:28,331
+If I go and inspect this,
+
+3215
+00:06:29,422 --> 00:06:33,648
+and I hover over selector, you
+can see it says, 201, that's
+
+3216
+00:06:33,648 --> 00:06:35,648
+the specificity score.
+
+3217
+00:06:40,033 --> 00:06:42,033
+Yeah, you don't have to
+calculate it by hand,
+
+3218
+00:06:42,033 --> 00:06:44,033
+essentially.
+
+3219
+00:06:47,424 --> 00:06:49,424
+So in the previous example,
+specificity of the button
+
+3220
+00:06:50,826 --> 00:06:53,919
+selector, the button class was
+0 10, but the specificity of
+
+3221
+00:06:53,919 --> 00:06:58,836
+the element was 001, so it's
+more specific, it's by order of
+
+3222
+00:06:58,836 --> 00:07:03,414
+appearance.
+As you can imagine, with really
+
+3223
+00:07:03,414 --> 00:07:05,414
+large selectors, the
+
+3224
+00:07:06,620 --> 00:07:08,620
+specificity would become a bit
+cumbersome
+
+3225
+00:07:09,748 --> 00:07:11,748
+to manage and that's why the
+general advice given to us is
+
+3226
+00:07:11,748 --> 00:07:13,748
+keep specificity low.
+And this is good advice.
+
+3227
+00:07:15,251 --> 00:07:17,251
+We should almost certainly
+avoid ID selectors, for
+
+3228
+00:07:17,251 --> 00:07:19,251
+example. And we can still use
+them.
+
+3229
+00:07:23,044 --> 00:07:25,044
+We can still use them instead
+
+3230
+00:07:26,654 --> 00:07:28,654
+of #ID, we can use a natural
+selector
+
+3231
+00:07:29,746 --> 00:07:31,746
+. Or we can make a class
+specifically for the thing
+
+3232
+00:07:31,746 --> 00:07:34,223
+you're selecting.
+So it's easy to understand the
+
+3233
+00:07:34,223 --> 00:07:38,828
+problem with high specificity,
+but keeping specificity low can
+
+3234
+00:07:38,828 --> 00:07:42,034
+sometimes be challenging,
+especially when you want to
+
+3235
+00:07:42,034 --> 00:07:44,034
+share styles between different
+elements
+
+3236
+00:07:45,639 --> 00:07:48,830
+, so you might, like, you might
+be tempted to make
+
+3237
+00:07:51,935 --> 00:07:54,128
+a single class or every bend of
+the button.
+
+3238
+00:07:57,319 --> 00:07:59,319
+But each shares the base cloud
+
+3239
+00:08:01,130 --> 00:08:03,130
+of the button and that gets
+complicated.
+
+3240
+00:08:04,715 --> 00:08:08,120
+Sometimes, we tend to go too
+far with this advice . Where we
+
+3241
+00:08:08,120 --> 00:08:10,120
+want to keep specificity, not
+just low, but
+
+3242
+00:08:11,214 --> 00:08:13,214
+totally flat, by only using
+single class selectors.
+
+3243
+00:08:15,304 --> 00:08:17,910
+This usually is done through a
+convention or tooling like CSS
+
+3244
+00:08:17,910 --> 00:08:19,910
+Modules.
+
+3245
+00:08:21,493 --> 00:08:23,493
+And yeah, I've always just
+found this kind
+
+3246
+00:08:24,304 --> 00:08:27,000
+of advice restrictive. It feels
+like using CSS without the
+
+3247
+00:08:27,000 --> 00:08:29,000
+cascade.
+
+3248
+00:08:30,289 --> 00:08:32,289
+So, yeah, for the rest of the
+presentation, I want to show
+
+3249
+00:08:32,289 --> 00:08:34,289
+you how much better things can
+be with modern CSS .
+
+3250
+00:08:37,362 --> 00:08:39,362
+The two topics that I would
+broadly cover are
+
+3251
+00:08:39,770 --> 00:08:42,869
+controlling specificity and
+controlling the cascade itself.
+
+3252
+00:08:42,869 --> 00:08:44,869
+Let's start with the easy one.
+
+3253
+00:08:46,161 --> 00:08:48,161
+You might already know you can
+increase the specificity of a
+
+3254
+00:08:48,161 --> 00:08:50,161
+class selector by chaining it
+to itself.
+
+3255
+00:08:52,749 --> 00:08:54,749
+You can even use CSS nesting to
+
+3256
+00:08:58,156 --> 00:09:00,156
+chain ampersands, this can
+
+3257
+00:09:01,361 --> 00:09:03,361
+be pretty useful when you need
+it, but only increases the
+
+3258
+00:09:03,361 --> 00:09:05,361
+middle portion of the
+specificity.
+
+3259
+00:09:06,777 --> 00:09:08,777
+Now, this next part might kind
+of blow your mind, but you can
+
+3260
+00:09:08,777 --> 00:09:10,777
+use the is
+
+3261
+00:09:10,890 --> 00:09:12,890
+pseudo class to make a huge
+jump in specificity.
+
+3262
+00:09:14,785 --> 00:09:17,877
+This is pseudo class, it's
+interesting, lets you group
+
+3263
+00:09:17,877 --> 00:09:19,877
+multiple selectors into a
+select
+
+3264
+00:09:22,089 --> 00:09:24,089
+single selector, but changes
+the specificity of the whole
+
+3265
+00:09:24,089 --> 00:09:28,281
+thing so only the strongest
+selector in the group counts.
+
+3266
+00:09:28,281 --> 00:09:30,281
+What this means is, you can
+have a class selector act
+
+3267
+00:09:31,370 --> 00:09:33,370
+like it has the specificity of
+the ID selector.
+
+3268
+00:09:35,973 --> 00:09:38,275
+And this ID selector doesn't
+need to exist. It can just be
+
+3269
+00:09:38,275 --> 00:09:40,275
+there hanging by itself.
+
+3270
+00:09:43,174 --> 00:09:45,174
+You can do the same thing even
+easier using the not pseudo
+
+3271
+00:09:45,174 --> 00:09:48,257
+class. So this one requires you
+to use
+
+3272
+00:09:51,242 --> 00:09:53,242
+the impossible selector where
+you can use
+
+3273
+00:09:54,851 --> 00:09:58,719
+two IDs because, remember, an
+element can only have one ID.
+
+3274
+00:09:58,719 --> 00:10:00,719
+So this selector would never
+match, and we're saying,
+
+3275
+00:10:00,719 --> 00:10:03,921
+never not match this selector.
+So this will match the thing
+
+3276
+00:10:04,312 --> 00:10:09,001
+you chain it to. I love this
+because you can chain it to
+
+3277
+00:10:09,001 --> 00:10:12,405
+anything to scope it down, just
+how much you want while
+
+3278
+00:10:12,405 --> 00:10:14,405
+retaining the super high
+specificity .
+
+3279
+00:10:15,995 --> 00:10:19,201
+And if you chain it to the
+universal selector, it'll match
+
+3280
+00:10:19,201 --> 00:10:21,593
+everything by having the high
+specificity that we want. You
+
+3281
+00:10:21,593 --> 00:10:23,593
+shouldn't need this very often.
+
+3282
+00:10:24,890 --> 00:10:27,587
+But it's so handy when you just
+want to have certain styles,
+
+3283
+00:10:27,587 --> 00:10:29,587
+have the highest priority.
+
+3284
+00:10:31,881 --> 00:10:33,881
+So with that out of the way,
+let's talk about decreasing
+
+3285
+00:10:33,881 --> 00:10:35,881
+specificity.
+We know how to increase it, how
+
+3286
+00:10:35,881 --> 00:10:37,881
+do we decrease it? Because
+that's kind of the goal, right?
+
+3287
+00:10:40,772 --> 00:10:42,772
+We want to keep specificity
+low, at least that's what
+
+3288
+00:10:42,772 --> 00:10:44,772
+everybody tells us . So that's
+where the rare pseudo class
+
+3289
+00:10:44,772 --> 00:10:47,177
+comes in .
+There is except it doesn't add
+
+3290
+00:10:47,177 --> 00:10:49,177
+to the specificity.
+
+3291
+00:10:50,471 --> 00:10:52,471
+We can put an ID selector in
+there, and it'll have zero
+
+3292
+00:10:52,471 --> 00:10:54,471
+specificity.
+
+3293
+00:10:54,774 --> 00:10:56,774
+And just like is, you can chain
+it to other selectors
+
+3294
+00:10:59,327 --> 00:11:03,337
+. So you can have some parts
+inside that don't count towards
+
+3295
+00:11:03,337 --> 00:11:05,337
+the specificity, but the things
+outside
+
+3296
+00:11:05,337 --> 00:11:08,028
+do count.
+There's one restriction
+
+3297
+00:11:11,028 --> 00:11:14,124
+here you can't put a pseudo
+element selector inside, but
+
+3298
+00:11:14,124 --> 00:11:17,714
+that's just a thing that you'll
+get used to. But yeah, in other
+
+3299
+00:11:17,714 --> 00:11:19,714
+words, we now have a CSS
+
+3300
+00:11:20,807 --> 00:11:22,807
+native way of writing any kind
+of selector you want with just
+
+3301
+00:11:22,807 --> 00:11:24,807
+the right amount of
+specificity. That's awesome.
+
+3302
+00:11:27,843 --> 00:11:29,843
+CSS is awesome.
+
+3303
+00:11:31,142 --> 00:11:34,044
+The most obvious way to use
+where is when you want to
+
+3304
+00:11:34,044 --> 00:11:36,044
+create select this for CSS
+preset. This kind of makes
+
+3305
+00:11:36,044 --> 00:11:38,044
+sense.
+
+3306
+00:11:39,834 --> 00:11:41,834
+You want the reset to have the
+lowest cascade priority. You
+
+3307
+00:11:41,834 --> 00:11:43,834
+put everything in where.
+
+3308
+00:11:44,423 --> 00:11:47,516
+And I built my own reset that
+uses this technique . And you
+
+3309
+00:11:47,516 --> 00:11:49,516
+can find it on NPM under
+
+3310
+00:11:52,530 --> 00:11:54,530
+the end cap name space.
+
+3311
+00:11:55,827 --> 00:11:57,827
+With where, you can make zero
+specificity, but many don't do
+
+3312
+00:11:57,827 --> 00:11:59,827
+that.
+
+3313
+00:12:01,043 --> 00:12:03,043
+I would actually suggest coming
+up with a desire specificity
+
+3314
+00:12:03,043 --> 00:12:05,043
+for all of your other styles.
+
+3315
+00:12:06,929 --> 00:12:08,929
+So you might want your global
+style to be no higher than
+
+3316
+00:12:08,929 --> 00:12:11,657
+0,0,1. And you can still use
+longer selectors there,
+
+3317
+00:12:14,652 --> 00:12:17,747
+like restricting the
+specificity . And yeah, you can
+
+3318
+00:12:17,747 --> 00:12:19,747
+--
+
+3319
+00:12:20,853 --> 00:12:22,853
+the point here is you can kind
+of
+
+3320
+00:12:25,527 --> 00:12:27,527
+just control the specificity
+while not having restrictions
+
+3321
+00:12:27,527 --> 00:12:29,527
+on how you're writing your CSS.
+
+3322
+00:12:30,492 --> 00:12:33,895
+One thing I like to do is,
+like, put everything that is
+
+3323
+00:12:33,895 --> 00:12:37,604
+nested inside the main rule .
+Put where so that the whole
+
+3324
+00:12:40,599 --> 00:12:42,599
+block has a flat specificity,
+and everything inside it has
+
+3325
+00:12:42,599 --> 00:12:44,599
+zero specificity.
+
+3326
+00:12:45,794 --> 00:12:48,887
+So you're like going top to
+down, everything is like using
+
+3327
+00:12:48,887 --> 00:12:52,095
+source order or order of
+appearance and, like,
+
+3328
+00:12:52,095 --> 00:12:54,095
+everything inside is flat.
+
+3329
+00:12:58,079 --> 00:13:00,079
+So you have some specificity,
+but just not too much
+
+3330
+00:13:01,885 --> 00:13:03,885
+. So yeah, if you haven't use
+
+3331
+00:13:05,888 --> 00:13:09,096
+d where, give it a shot, it'll
+solve your headaches and it's
+
+3332
+00:13:09,096 --> 00:13:12,287
+back all the way back to Safari
+14 . Ask And that brings us to
+
+3333
+00:13:15,392 --> 00:13:18,974
+my favorite topic, controlling
+the cascade using layers.
+
+3334
+00:13:18,974 --> 00:13:20,974
+If you have a CSS rule, you can
+wrap it in a layer, an
+
+3335
+00:13:20,974 --> 00:13:22,974
+anonymous layer, and you can
+give it a name, and you can put
+
+3336
+00:13:22,974 --> 00:13:24,974
+other styles in it, too.
+
+3337
+00:13:24,974 --> 00:13:28,051
+So far, so good. But the
+interesting part is when you
+
+3338
+00:13:28,051 --> 00:13:30,051
+use multiple layer statements
+and
+
+3339
+00:13:31,256 --> 00:13:33,256
+put different -- or multiple
+layer blocks and put different
+
+3340
+00:13:33,256 --> 00:13:35,256
+styles in them.
+
+3341
+00:13:36,158 --> 00:13:38,158
+So here, the second layer will
+always be the first layer.
+
+3342
+00:13:40,060 --> 00:13:42,060
+It's kind of like order of
+appearance, but without
+
+3343
+00:13:42,060 --> 00:13:44,060
+specificity part.
+
+3344
+00:13:45,453 --> 00:13:47,453
+So here in the second layer,
+we're using
+
+3345
+00:13:49,665 --> 00:13:53,446
+where pseudo class, but the
+first one still wins. Or
+
+3346
+00:13:53,446 --> 00:13:55,446
+actually, I misspoke.
+
+3347
+00:13:56,764 --> 00:13:58,764
+So in the second one, we're
+using the
+
+3348
+00:13:59,856 --> 00:14:01,856
+pseudo class with a lower
+specificity but still wins
+
+3349
+00:14:01,856 --> 00:14:03,856
+because it's in a layer that
+comes later.
+
+3350
+00:14:09,043 --> 00:14:11,248
+So the layer order is kind of
+resolved in the way in the
+
+3351
+00:14:11,248 --> 00:14:13,248
+order that is defined.
+
+3352
+00:14:14,538 --> 00:14:16,538
+And then, there's on layer
+styles which always have the
+
+3353
+00:14:16,538 --> 00:14:18,538
+highest priority. It'll win
+over all layer styles.
+
+3354
+00:14:20,740 --> 00:14:23,329
+This might not feel intuitive,
+but it kind of makes sense.
+
+3355
+00:14:23,329 --> 00:14:25,329
+You'll get used to it.
+
+3356
+00:14:26,621 --> 00:14:28,621
+The way I think about it, you
+want to start with you lower
+
+3357
+00:14:28,621 --> 00:14:30,621
+priority
+
+3358
+00:14:30,621 --> 00:14:32,621
+layer so you can put your CSS
+reset in a layer and leave
+
+3359
+00:14:32,621 --> 00:14:34,621
+everything else unlayered.
+
+3360
+00:14:35,517 --> 00:14:37,517
+This kind of allows you to
+slowly add layers to your
+
+3361
+00:14:37,517 --> 00:14:39,517
+codebase . Yeah, that's
+
+3362
+00:14:40,623 --> 00:14:43,918
+kind of my introduction to
+layer. I still have some time
+
+3363
+00:14:43,918 --> 00:14:45,918
+so I'm going to dive a little
+bit deeper. I mentioned layer
+
+3364
+00:14:45,918 --> 00:14:47,918
+order.
+
+3365
+00:14:50,207 --> 00:14:52,207
+It's the layers are prioritized
+in the order that they first
+
+3366
+00:14:52,207 --> 00:14:54,207
+appear . So if you have layer A
+and layer B and
+
+3367
+00:14:56,405 --> 00:14:58,405
+write layer A, again, the rules
+
+3368
+00:14:59,813 --> 00:15:01,813
+inside the second appearance of
+layer A will still lose to
+
+3369
+00:15:01,813 --> 00:15:03,813
+layer B . The layer A was
+already defined all the way up
+
+3370
+00:15:03,813 --> 00:15:08,710
+there. To make this more
+predictable, you can separate
+
+3371
+00:15:08,710 --> 00:15:10,710
+layer statements from layer
+blocks.
+
+3372
+00:15:10,710 --> 00:15:13,823
+The layer statement will define
+the order and the layer blocks
+
+3373
+00:15:13,823 --> 00:15:19,123
+will contain the actual rules.
+And you probably want to define
+
+3374
+00:15:19,123 --> 00:15:21,826
+the layer order up front
+because all of your other
+
+3375
+00:15:21,826 --> 00:15:23,826
+styles or before all of your
+other styles.
+
+3376
+00:15:26,727 --> 00:15:28,727
+You can put the layer
+statements in the
+
+3377
+00:15:29,826 --> 00:15:33,428
+beginning of your first style
+sheet, but what I like to do is
+
+3378
+00:15:33,428 --> 00:15:35,428
+put it in style tag, and put
+the style tag all the way up in
+
+3379
+00:15:35,428 --> 00:15:37,534
+the head.
+Because I don't trust
+
+3380
+00:15:40,139 --> 00:15:43,432
+bundlers to put my first style
+sheet in the correct place. So
+
+3381
+00:15:43,432 --> 00:15:45,432
+I just like doing it myself
+before any
+
+3382
+00:15:45,432 --> 00:15:49,346
+other style sheets are linked.
+So, yeah. Let's go even deeper.
+
+3383
+00:15:52,542 --> 00:15:54,542
+So we can nest layers, this
+functionality is built into
+
+3384
+00:15:54,542 --> 00:15:58,553
+layers. So it's separate from
+CSS nesting. You can nest
+
+3385
+00:15:58,553 --> 00:16:00,553
+layers without using CSS
+nesting.
+
+3386
+00:16:02,952 --> 00:16:04,952
+And if you only want to
+reference a nested
+
+3387
+00:16:06,047 --> 00:16:08,551
+sublayer, you can use the dot
+syntax.
+
+3388
+00:16:11,752 --> 00:16:13,752
+But it gets even more
+interesting when you do use CSS
+
+3389
+00:16:14,954 --> 00:16:18,161
+nesting, because you can put a
+layer block inside another
+
+3390
+00:16:20,870 --> 00:16:24,041
+CSS rule, like a class
+selector. You want to style
+
+3391
+00:16:24,041 --> 00:16:26,041
+different parts of the same
+component using different
+
+3392
+00:16:26,041 --> 00:16:28,041
+layers.
+
+3393
+00:16:29,640 --> 00:16:31,640
+I want to point out that this
+is a CSS nesting is a
+
+3394
+00:16:31,640 --> 00:16:33,640
+relatively new feature, so you
+might want to use preprocessors
+
+3395
+00:16:35,936 --> 00:16:39,245
+, SaaS to trans
+
+3396
+00:16:40,349 --> 00:16:43,650
+get this part out for you. I
+find this useful especially
+
+3397
+00:16:43,650 --> 00:16:45,650
+when different part of the
+components need to have
+
+3398
+00:16:45,650 --> 00:16:48,550
+different priorities. For
+example, I might have overrides
+
+3399
+00:16:48,550 --> 00:16:50,550
+as a sublayer where I put
+
+3400
+00:16:50,958 --> 00:16:53,754
+my scaler styles and print
+styles.
+
+3401
+00:16:53,754 --> 00:16:55,754
+These should always be all of
+the other styles of the
+
+3402
+00:16:55,754 --> 00:16:57,754
+component.
+
+3403
+00:17:00,065 --> 00:17:03,361
+Moving on to layer strengths
+and the idea of style sheets.
+
+3404
+00:17:03,361 --> 00:17:05,361
+You can reference the same
+layer name in multiple CSS
+
+3405
+00:17:06,461 --> 00:17:08,461
+files and they'll work just
+like you expect regardless of
+
+3406
+00:17:08,461 --> 00:17:10,461
+how they're imported.
+
+3407
+00:17:10,971 --> 00:17:12,971
+So you might have a giant
+components layer that is
+
+3408
+00:17:12,971 --> 00:17:14,971
+referenced in every single one
+of your components and within
+
+3409
+00:17:17,480 --> 00:17:19,480
+single file components,
+
+3410
+00:17:22,492 --> 00:17:24,492
+in Vue or Astro, you can import
+into a layer.
+
+3411
+00:17:29,710 --> 00:17:33,008
+The external CSS pod doesn't
+need to contain any layers. And
+
+3412
+00:17:33,008 --> 00:17:35,008
+I want to give a shout out to
+CSS
+
+3413
+00:17:36,109 --> 00:17:38,109
+import here, it can transform
+the import statements to
+
+3414
+00:17:39,313 --> 00:17:41,313
+layer block statements and
+inline all of the contents of
+
+3415
+00:17:41,313 --> 00:17:43,313
+the style sheet and even works
+for remote URLs.
+
+3416
+00:17:45,006 --> 00:17:47,006
+This is great for performance,
+mainly.
+
+3417
+00:17:50,305 --> 00:17:52,305
+And I want to talk about SAUTSZ
+SaaS real quick.
+
+3418
+00:17:54,729 --> 00:17:56,729
+Layers were just like you
+expect in SaaS, but when you
+
+3419
+00:17:56,729 --> 00:17:58,729
+want to combine multiple SaaS
+files into a single layer, you
+
+3420
+00:17:58,729 --> 00:18:00,729
+need
+
+3421
+00:18:00,926 --> 00:18:03,223
+to use metaupload CSS, you
+can't use the use statement.
+
+3422
+00:18:06,419 --> 00:18:08,419
+This was a recent update made
+to SaaS to ensure that meta.
+
+3423
+00:18:10,413 --> 00:18:13,017
+load CSS is a canonical way to
+use layers in SaaS.
+
+3424
+00:18:16,211 --> 00:18:18,211
+And finally, the most important
+slide, you might have used
+
+3425
+00:18:19,307 --> 00:18:21,307
+the important keyword to win
+specificity battles in the
+
+3426
+00:18:21,307 --> 00:18:23,503
+past. But we all know it's a
+shameful hack and the general
+
+3427
+00:18:23,503 --> 00:18:25,503
+advice is to
+
+3428
+00:18:25,503 --> 00:18:28,307
+avoid important. And earlier, I
+already showed various ways
+
+3429
+00:18:29,610 --> 00:18:32,907
+to increase specificity. So if
+you want to just win a
+
+3430
+00:18:32,907 --> 00:18:34,907
+specificity battle, then
+
+3431
+00:18:35,514 --> 00:18:39,108
+use one of those techniques
+instead of important.
+
+3432
+00:18:39,108 --> 00:18:42,119
+But the reason why important is
+interesting here is emerges
+
+3433
+00:18:42,119 --> 00:18:44,119
+kind of differently in layers.
+
+3434
+00:18:45,412 --> 00:18:47,412
+The important keyword is more
+important when used in lower
+
+3435
+00:18:47,412 --> 00:18:49,412
+priority layers.
+
+3436
+00:18:49,520 --> 00:18:52,727
+This feels strange, but I think
+Miriam was explaining earlier
+
+3437
+00:18:52,727 --> 00:18:54,727
+that
+
+3438
+00:18:55,933 --> 00:18:57,933
+user agents and preferences
+might declare some styles that
+
+3439
+00:18:57,933 --> 00:18:59,933
+are legitimately important.
+
+3440
+00:18:59,933 --> 00:19:01,933
+So even though all of the other
+user styles are less important,
+
+3441
+00:19:01,933 --> 00:19:03,933
+they want to say this
+particular thing should be more
+
+3442
+00:19:03,933 --> 00:19:05,933
+important . So works similarly
+in layers.
+
+3443
+00:19:09,337 --> 00:19:11,337
+So CSS reset, you might have a
+rule that says,
+
+3444
+00:19:14,355 --> 00:19:18,161
+may not be important if the
+dialog is not open.
+
+3445
+00:19:18,161 --> 00:19:20,161
+This helps ensure that
+subsequent layers can't
+
+3446
+00:19:21,264 --> 00:19:23,264
+accidentally override the
+display when it's always meant
+
+3447
+00:19:23,264 --> 00:19:25,264
+to be hidden
+
+3448
+00:19:25,264 --> 00:19:28,073
+. I've done that accidentally
+so many times where I set a
+
+3449
+00:19:28,073 --> 00:19:30,073
+display grid
+
+3450
+00:19:30,980 --> 00:19:32,980
+on the dialog and it shows when
+it's not supposed to be
+
+3451
+00:19:32,980 --> 00:19:34,980
+showing. So now I handle that
+in my reset.
+
+3452
+00:19:36,395 --> 00:19:38,395
+If you take everything we've
+seen about layers so far, our
+
+3453
+00:19:38,395 --> 00:19:40,395
+cascade
+
+3454
+00:19:40,395 --> 00:19:43,302
+overlooks something like the
+user styles and the page styles
+
+3455
+00:19:43,302 --> 00:19:45,302
+and the Shadow DOM styles ask
+
+3456
+00:19:46,508 --> 00:19:48,715
+and and unlayered styles and
+the important styles come after
+
+3457
+00:19:48,715 --> 00:19:50,715
+all of that.
+
+3458
+00:19:52,732 --> 00:19:54,732
+And since I'm running out of
+time, I won't go into too much
+
+3459
+00:19:54,732 --> 00:19:56,732
+detail here, but important
+style also have their own
+
+3460
+00:19:56,732 --> 00:19:58,732
+quirks. In that, the user agent
+important
+
+3461
+00:20:01,461 --> 00:20:03,461
+styles are more important than
+inline style attributes, for
+
+3462
+00:20:03,461 --> 00:20:05,461
+example.
+
+3463
+00:20:07,072 --> 00:20:09,072
+But yeah, I'm going to talk
+about browser support real
+
+3464
+00:20:09,072 --> 00:20:13,875
+quick. Browser, I think, 2022,
+February, is when all browsers
+
+3465
+00:20:13,875 --> 00:20:17,091
+shipped cascade layers. It was
+a coordinated rollout and very
+
+3466
+00:20:17,091 --> 00:20:19,091
+impressive to watch.
+
+3467
+00:20:20,592 --> 00:20:23,693
+But if that still makes you
+uneasy, there's post cascade
+
+3468
+00:20:23,693 --> 00:20:25,693
+layers, which polyfills
+everything
+
+3469
+00:20:26,502 --> 00:20:28,502
+we've talked about so far.
+
+3470
+00:20:30,109 --> 00:20:33,315
+And then, there's revert layer,
+I haven't talked about it so
+
+3471
+00:20:33,315 --> 00:20:35,315
+far because it's such
+
+3472
+00:20:36,525 --> 00:20:38,934
+a broad topic. You might not
+want to use it yet.
+
+3473
+00:20:41,141 --> 00:20:43,141
+I have a blog post on this
+topic.
+
+3474
+00:20:44,440 --> 00:20:48,445
+And the only part I want to
+mention just right now is that
+
+3475
+00:20:48,445 --> 00:20:50,445
+if you're trying to use revert,
+consider
+
+3476
+00:20:50,445 --> 00:20:53,264
+revert layer instead. It works
+even when you don't use cascade
+
+3477
+00:20:53,264 --> 00:20:55,264
+layers.
+
+3478
+00:20:59,366 --> 00:21:01,972
+Then, there's some best
+practices. I think I'll skip
+
+3479
+00:21:01,972 --> 00:21:03,972
+that.
+
+3480
+00:21:09,687 --> 00:21:11,687
+Slides are stuck.
+
+3481
+00:21:16,396 --> 00:21:18,396
+Oh, no, OK, sure.
+
+3482
+00:21:20,099 --> 00:21:22,099
+There was an iframe here where
+I was going to show that layers
+
+3483
+00:21:22,099 --> 00:21:24,099
+and scope are different.
+
+3484
+00:21:26,012 --> 00:21:28,012
+This is a CSS tricks article
+written by Miriam Suzanne.
+
+3485
+00:21:29,717 --> 00:21:31,717
+And yeah, I really want to
+emphasize this point is that
+
+3486
+00:21:31,717 --> 00:21:34,218
+layers and scopes are different
+things.
+
+3487
+00:21:34,218 --> 00:21:36,218
+You don't want to create a
+layer for every single
+
+3488
+00:21:36,218 --> 00:21:38,514
+component. They can overlap so
+you can have layers within the
+
+3489
+00:21:38,514 --> 00:21:40,514
+same
+
+3490
+00:21:41,613 --> 00:21:43,613
+component or don't use it scope
+
+3491
+00:21:45,625 --> 00:21:47,625
+your CSS.
+
+3492
+00:21:51,332 --> 00:21:53,332
+And I think we can wrap it up
+here since I ran out of time.
+
+3493
+00:21:54,931 --> 00:21:58,031
+I just want to mention one last
+thing, that I think Peter
+
+3494
+00:21:58,031 --> 00:22:00,031
+Griffin would really enjoy
+using cascade layers.
+
+3495
+00:22:04,128 --> 00:22:07,336
+Yeah, that's all, if you want
+to learn more, subscribe to my
+
+3496
+00:22:07,336 --> 00:22:09,336
+RSS feed, and that's all for
+me.
+
+3497
+00:22:15,145 --> 00:22:17,145
+≫ MIKE: I just learned so much
+there.
+
+3498
+00:22:19,354 --> 00:22:22,460
+It's like a pain I didn't know
+I had where I feel like in a
+
+3499
+00:22:22,460 --> 00:22:24,460
+lot of situations I add a
+
+3500
+00:22:25,562 --> 00:22:28,661
+lot of specificity to kind of
+wrangle the browser to do what
+
+3501
+00:22:28,661 --> 00:22:30,661
+I want
+
+3502
+00:22:32,467 --> 00:22:34,467
+when, actually, what I want is
+layers, which
+
+3503
+00:22:34,877 --> 00:22:38,784
+not aware of at all.
+Yeah. It's going to take me a
+
+3504
+00:22:38,784 --> 00:22:40,784
+while to get my head around
+that.
+
+3505
+00:22:40,784 --> 00:22:43,286
+≫ MAYANK: Yeah.
+≫ MIKE: It's a completely
+
+3506
+00:22:43,286 --> 00:22:45,286
+different paradigm.
+
+3507
+00:22:46,890 --> 00:22:48,890
+≫ MAYANK: The thing I tell
+people is, start with just the
+
+3508
+00:22:48,890 --> 00:22:53,670
+reset . Put that in your, in a
+layer, and if you have some
+
+3509
+00:22:53,670 --> 00:22:55,670
+third party styles, put
+
+3510
+00:22:56,771 --> 00:22:58,771
+that in a layer, you don't have
+to migrate your whole codebase
+
+3511
+00:22:58,771 --> 00:23:00,771
+to layers right away.
+≫ MIKE: Yeah.
+
+3512
+00:23:01,773 --> 00:23:03,773
+And so the advantage of doing
+that is -- let's take a
+
+3513
+00:23:04,876 --> 00:23:08,082
+really basic reset of, I'm
+setting the margin of HTML
+
+3514
+00:23:08,082 --> 00:23:10,082
+element to zero.
+
+3515
+00:23:12,485 --> 00:23:14,485
+So that's in my reset in a lay
+er.
+
+3516
+00:23:16,396 --> 00:23:18,396
+But now, I decide I actually
+want some padding on my HTML
+
+3517
+00:23:19,602 --> 00:23:22,315
+, so then, I can have HTML and
+what's a nonlayer called?
+
+3518
+00:23:22,315 --> 00:23:24,315
+Called the root?
+
+3519
+00:23:24,617 --> 00:23:28,407
+Or?
+≫ MAYANK: Yeah. HTML and root
+
+3520
+00:23:28,407 --> 00:23:30,407
+are going to be the same thing
+to each other.
+
+3521
+00:23:30,407 --> 00:23:33,295
+≫ MIKE: Yeah, now I can set my
+padding on the HTML and
+
+3522
+00:23:35,693 --> 00:23:37,693
+it'll just work without any
+more specificity?
+
+3523
+00:23:40,480 --> 00:23:42,480
+≫ MAYANK: Yeah, and if you wrap
+it in rare to make the zero
+
+3524
+00:23:42,480 --> 00:23:44,480
+specificity, it'll still work.
+
+3525
+00:23:45,589 --> 00:23:47,589
+Because unlayer styles over
+layer styles.
+
+3526
+00:23:47,589 --> 00:23:49,589
+≫ MIKE: That's awesome. Very
+cool.
+
+3527
+00:23:51,568 --> 00:23:53,568
+Mayank, thanks for sharing that
+today, I learned a lot. I'm
+
+3528
+00:23:53,568 --> 00:23:55,568
+glad you're here.
+
+3529
+00:23:55,568 --> 00:23:57,568
+≫ MAYANK: Thanks for having me.
+≫ MIKE: All right.
+

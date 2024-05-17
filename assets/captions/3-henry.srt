@@ -1,0 +1,1420 @@
+1796
+00:00:00,000 --> 00:00:02,295
+Hey, my name's Henry,
+
+1797
+00:00:02,295 --> 00:00:05,295
+the font's name is
+
+1798
+00:00:07,100 --> 00:00:09,100
+Manuka, I'm a creative
+technologist.
+
+1799
+00:00:10,897 --> 00:00:14,194
+I also spent time in New York
+City, based in Denver. Super
+
+1800
+00:00:14,194 --> 00:00:16,194
+into hand crafted web code,
+poetic
+
+1801
+00:00:17,397 --> 00:00:19,397
+computation, CSS, and most
+importantly for today, also,
+
+1802
+00:00:19,397 --> 00:00:21,397
+shit posting. So thanks for
+coming to the talk.
+
+1803
+00:00:21,397 --> 00:00:24,079
+Digital frontiers,
+
+1804
+00:00:28,382 --> 00:00:30,382
+Indie web cowboys, owning your
+post with posse.
+
+1805
+00:00:31,690 --> 00:00:33,690
+I'm super excited to get
+started with this one.
+
+1806
+00:00:39,796 --> 00:00:41,796
+We were given this vast realm
+of self-discovery , philosophy
+
+1807
+00:00:41,796 --> 00:00:44,585
+and joy and community. But most
+of us spend most of our time in
+
+1808
+00:00:44,585 --> 00:00:47,889
+the bad lands of brain rot and
+attention farming and
+
+1809
+00:00:50,287 --> 00:00:53,581
+doom scrolling and general bad
+vibes.
+
+1810
+00:00:53,581 --> 00:00:55,581
+We break our backs, the foundry
+
+1811
+00:00:57,792 --> 00:00:59,792
+of algorithmic content as
+endeavoring of our
+
+1812
+00:01:01,194 --> 00:01:04,288
+sharing our interests corrupted
+into the hollow twin of content
+
+1813
+00:01:04,288 --> 00:01:06,288
+creation, to trap attention
+
+1814
+00:01:07,493 --> 00:01:09,493
+spans, list
+
+1815
+00:01:10,898 --> 00:01:13,697
+the thread emoji digital dams
+to harvest scroll inertia.
+
+1816
+00:01:13,697 --> 00:01:15,697
+However, it's not all bad.
+
+1817
+00:01:17,599 --> 00:01:19,599
+There's plenty of folks who
+oppose this mundane and
+
+1818
+00:01:19,599 --> 00:01:21,599
+uninspirational for profit
+corporate web, folks who
+
+1819
+00:01:21,599 --> 00:01:24,103
+instead believe in the strange
+and surprising web, hand built,
+
+1820
+00:01:24,103 --> 00:01:26,103
+cell phone web.
+
+1821
+00:01:26,103 --> 00:01:28,794
+The battle for the soul of the
+net is fought upon three
+
+1822
+00:01:28,794 --> 00:01:30,794
+particular
+
+1823
+00:01:31,886 --> 00:01:34,091
+stages, well, OK, it's many
+stages, but I'd love to focus
+
+1824
+00:01:34,091 --> 00:01:36,091
+on three of them in particular.
+
+1825
+00:01:36,091 --> 00:01:38,091
+Holy smokes, I'm killing it.
+One, do you own your content?
+
+1826
+00:01:41,273 --> 00:01:43,273
+If the companies that own the
+platform
+
+1827
+00:01:46,682 --> 00:01:49,888
+disappeared tomorrow or
+devoured by the board
+
+1828
+00:01:49,888 --> 00:01:51,888
+millionaire, would your content
+have somewhere to live or also
+
+1829
+00:01:51,888 --> 00:01:53,888
+vanish ? Two, can your content
+go anywhere it wants?
+
+1830
+00:01:55,978 --> 00:01:57,978
+If I want to find your posts,
+do I need to go to a specific
+
+1831
+00:01:57,978 --> 00:01:59,978
+platform? Or can I find and
+reply to and share and
+
+1832
+00:02:02,776 --> 00:02:04,776
+be delayed by those posts or
+that content wherever
+
+1833
+00:02:05,880 --> 00:02:07,880
+it prefers to dwell, wherever I
+prefer to dwell, rather ?
+
+1834
+00:02:07,880 --> 00:02:09,880
+Three, are you in control?
+
+1835
+00:02:10,881 --> 00:02:13,975
+Can you post anything you want
+or does someone decide, for
+
+1836
+00:02:13,975 --> 00:02:15,975
+instance, that you have a
+limited number of characters or
+
+1837
+00:02:17,070 --> 00:02:19,070
+you can only post images as a
+certain resolution
+
+1838
+00:02:20,873 --> 00:02:23,975
+? What good is a banger shit
+post, Mr. Anderson if you can't
+
+1839
+00:02:23,975 --> 00:02:25,975
+pair it with a gif?
+
+1840
+00:02:27,265 --> 00:02:29,265
+Those are familiar with what
+the heck I'm talking about will
+
+1841
+00:02:30,356 --> 00:02:33,862
+recognize these as some of the
+core tenets of the IND
+
+1842
+00:02:36,776 --> 00:02:38,776
+Indie web movement.
+
+1843
+00:02:40,065 --> 00:02:42,065
+You own your demand and can
+verify and identify yourself
+
+1844
+00:02:42,065 --> 00:02:44,065
+across the web, owning your
+content, and the specific
+
+1845
+00:02:45,966 --> 00:02:47,966
+subject of today's talk,
+publishing on your own site
+
+1846
+00:02:47,966 --> 00:02:49,966
+first.
+
+1847
+00:02:50,345 --> 00:02:53,548
+So POSSE, or publish on your
+own site syndicate elsewhere,
+
+1848
+00:02:53,548 --> 00:02:55,548
+is the idea that for example,
+if I've got a banger
+
+1849
+00:02:56,641 --> 00:02:59,729
+shit post and I often do, I can
+create that post on my website,
+
+1850
+00:02:59,729 --> 00:03:03,733
+write some software to reformat
+and propagate it to other
+
+1851
+00:03:03,733 --> 00:03:05,733
+common places of conversation,
+such as
+
+1852
+00:03:07,146 --> 00:03:09,146
+Mastodon or Blue Sky, no other
+places.
+
+1853
+00:03:11,532 --> 00:03:13,532
+And use additional tools and
+standards to make the post and
+
+1854
+00:03:13,532 --> 00:03:15,532
+the inevitable content
+surrounding it because I said
+
+1855
+00:03:15,532 --> 00:03:18,545
+it was a banger, serialized and
+read by anyone in any arena,
+
+1856
+00:03:18,545 --> 00:03:20,545
+always
+
+1857
+00:03:21,749 --> 00:03:23,749
+linking back to the home URL
+post, which by the way, will
+
+1858
+00:03:23,749 --> 00:03:25,749
+never change .
+
+1859
+00:03:26,136 --> 00:03:28,136
+I'll get a little more in-depth
+on this, but right off the rip,
+
+1860
+00:03:28,136 --> 00:03:30,136
+this solves everything.
+
+1861
+00:03:36,325 --> 00:03:39,929
+I own it, syndicating to RSS
+and social media that make my
+
+1862
+00:03:39,929 --> 00:03:43,133
+posts are good or worthwhile,
+which is everyone, engage with
+
+1863
+00:03:43,133 --> 00:03:45,133
+them in the preferred format
+and back feeding
+
+1864
+00:03:46,227 --> 00:03:48,227
+the conversation that's
+happening in all of those
+
+1865
+00:03:48,227 --> 00:03:50,227
+places to my website collects
+all of the great conversation
+
+1866
+00:03:50,227 --> 00:03:52,227
+and engagement in one place.
+And there's more wins to be
+
+1867
+00:03:52,227 --> 00:03:54,227
+had.
+
+1868
+00:03:55,423 --> 00:03:58,619
+Storing bangers canonically
+allows you to be a better
+
+1869
+00:04:01,922 --> 00:04:03,922
+steward of the web because you
+can prevent link rot, thanks,
+
+1870
+00:04:05,125 --> 00:04:08,216
+Twitter, and then, search
+engines will learn to prefer
+
+1871
+00:04:08,216 --> 00:04:10,216
+your site and search results if
+they continue following links
+
+1872
+00:04:10,216 --> 00:04:12,705
+back to your site .
+So, I can see by your
+
+1873
+00:04:12,705 --> 00:04:14,705
+individual faces, which
+
+1874
+00:04:16,113 --> 00:04:18,113
+I can see that everyone's on
+board with the strategy for
+
+1875
+00:04:18,113 --> 00:04:20,113
+posting online.
+
+1876
+00:04:20,505 --> 00:04:23,211
+In the rest of this talk, I'll
+briefly cover a light technical
+
+1877
+00:04:23,211 --> 00:04:25,211
+implementation of POSSE.
+
+1878
+00:04:26,507 --> 00:04:29,008
+If you're feeling stoked on a
+content syndication strategy
+
+1879
+00:04:29,008 --> 00:04:31,008
+but not ready to take the leap,
+you do have options.
+
+1880
+00:04:35,115 --> 00:04:38,507
+Such as COPE. So briefly some
+alternative strategies are
+
+1881
+00:04:41,016 --> 00:04:43,016
+COPE, create once, publish
+everywhere. It's the default
+
+1882
+00:04:43,016 --> 00:04:45,016
+strategy.
+
+1883
+00:04:45,408 --> 00:04:48,501
+The problem with posting the
+same content everywhere, at
+
+1884
+00:04:48,501 --> 00:04:50,501
+best, you're growing X number
+of audiences on disparate
+
+1885
+00:04:52,306 --> 00:04:54,306
+folks' sites, fractured digital
+identity, there's
+
+1886
+00:04:57,113 --> 00:04:59,113
+pesos, publish elsewhere and
+syndicate on your own site.
+
+1887
+00:05:01,103 --> 00:05:04,014
+There's actually room for PESOS
+as an are archival sense.
+
+1888
+00:05:07,212 --> 00:05:09,212
+Publishers, the Tweetback
+project allows you to collect
+
+1889
+00:05:10,420 --> 00:05:12,420
+historical posts from the
+fractured identities and give
+
+1890
+00:05:12,420 --> 00:05:14,420
+them a nice forever home
+somewhere with a nice lawn,
+
+1891
+00:05:14,420 --> 00:05:16,420
+careful,
+
+1892
+00:05:16,420 --> 00:05:18,733
+he's a rescue. Also publish
+elsewhere syndicate everything
+
+1893
+00:05:18,733 --> 00:05:20,733
+to a silo.
+
+1894
+00:05:22,514 --> 00:05:24,514
+Not because it's a good
+strategy but because the
+
+1895
+00:05:25,921 --> 00:05:29,531
+Indie web folks love a fuckin
+algorithm, and you've got to
+
+1896
+00:05:29,531 --> 00:05:32,824
+love them for it. I'm going to
+sprint through building an
+
+1897
+00:05:32,824 --> 00:05:34,824
+application that creates and
+reads content.
+
+1898
+00:05:35,327 --> 00:05:38,618
+P
+We're going to make an app that
+
+1899
+00:05:38,618 --> 00:05:40,618
+syndicates, capturing
+engagement on
+
+1900
+00:05:41,710 --> 00:05:44,801
+sites and rendering the
+conversation back on our site .
+
+1901
+00:05:44,801 --> 00:05:47,894
+Before I get into this, many
+extremely bright people have
+
+1902
+00:05:47,894 --> 00:05:49,894
+gone here before, many of them
+aren't speaking today.
+
+1903
+00:05:51,079 --> 00:05:54,363
+I admire all of these people
+massively. This would not be
+
+1904
+00:05:54,363 --> 00:05:56,363
+possible without their talks
+and blog posts and their work.
+
+1905
+00:05:58,143 --> 00:06:00,143
+There's a bibliography for this
+talk, it's coming, I'll make it
+
+1906
+00:06:00,143 --> 00:06:04,152
+available after I shut the hell
+up.
+
+1907
+00:06:04,152 --> 00:06:06,152
+Oh, yeah, and the other thing,
+I meant to use this talk as an
+
+1908
+00:06:06,152 --> 00:06:08,152
+excuse to rework the publishing
+strategy on my actual personal
+
+1909
+00:06:08,152 --> 00:06:10,152
+site, but as
+
+1910
+00:06:10,460 --> 00:06:12,460
+I'm sure many of you can relate
+to, I'm still redesigning it.
+
+1911
+00:06:15,557 --> 00:06:18,655
+That's showbiz, baby, instead ,
+we're going to create a
+
+1912
+00:06:18,655 --> 00:06:20,655
+distinct and memorable
+
+1913
+00:06:22,063 --> 00:06:24,063
+domain and that's showbiz,
+baby,
+
+1914
+00:06:25,076 --> 00:06:28,768
+or showbiz. baby. Don't worry
+about the specific code. It's
+
+1915
+00:06:28,768 --> 00:06:30,768
+an 11-minute talk.
+
+1916
+00:06:30,868 --> 00:06:32,868
+I'm going to make everything
+available after I get off
+
+1917
+00:06:32,868 --> 00:06:34,868
+stage.
+We'll start by creating an 11ty
+
+1918
+00:06:34,868 --> 00:06:37,958
+project with two templates. One
+that lists all of the bangers
+
+1919
+00:06:37,958 --> 00:06:39,958
+and one that
+
+1920
+00:06:41,054 --> 00:06:44,645
+creates individual permalinks
+for the bangers. You might be
+
+1921
+00:06:44,645 --> 00:06:46,645
+able to see in the market, if
+you can see that, that I'm
+
+1922
+00:06:46,645 --> 00:06:48,653
+using a format called Hcard as
+part of microformats 2, which
+
+1923
+00:06:48,653 --> 00:06:50,653
+is
+
+1924
+00:06:51,751 --> 00:06:53,751
+a system of classes that we add
+to the HTML to make our
+
+1925
+00:06:55,361 --> 00:06:58,369
+information structured and
+easily parsed by like crawlers
+
+1926
+00:06:58,369 --> 00:07:00,369
+that come to look.
+
+1927
+00:07:02,065 --> 00:07:04,065
+This is useful because we can
+indicate who wrote the bangers
+
+1928
+00:07:04,065 --> 00:07:06,065
+and what the useful parts of
+each banger are.
+
+1929
+00:07:07,766 --> 00:07:09,766
+Yeah, microformats  2, I got
+off sync with the tabs.
+
+1930
+00:07:12,370 --> 00:07:14,370
+All of this stuff is like super
+well documented online.
+
+1931
+00:07:18,276 --> 00:07:20,276
+It's a little bit wild west.
+
+1932
+00:07:21,176 --> 00:07:24,473
+On the topic of
+aweuthentication. We use the
+
+1933
+00:07:24,473 --> 00:07:26,473
+domain as identity and use it
+to
+
+1934
+00:07:26,473 --> 00:07:29,482
+verify other instances of our
+identity. Since my website and
+
+1935
+00:07:29,482 --> 00:07:32,576
+GitHub account are both me, I
+can verify those two identities
+
+1936
+00:07:32,576 --> 00:07:34,576
+by linking to my GitHub account
+from my
+
+1937
+00:07:35,676 --> 00:07:38,773
+site and linking back to my
+site from my GitHub account
+
+1938
+00:07:38,773 --> 00:07:40,773
+useing realm A links .
+
+1939
+00:07:42,674 --> 00:07:44,674
+This is the basis for Indie web
+authentication
+
+1940
+00:07:46,081 --> 00:07:48,081
+. Since I'm the only person
+that can edit my website and
+
+1941
+00:07:48,081 --> 00:07:50,081
+GitHub account, it's reasonable
+to assume that both of those
+
+1942
+00:07:50,081 --> 00:07:54,287
+sources are me.
+Once we've verified and back
+
+1943
+00:07:54,287 --> 00:07:56,287
+linked ourselves different
+places online, we
+
+1944
+00:07:57,491 --> 00:07:59,491
+can use a service called
+
+1945
+00:08:01,097 --> 00:08:04,302
+Indie auth that can handle
+authentication and web mentions
+
+1946
+00:08:04,302 --> 00:08:06,302
+and add a few lines of code to
+the head of our
+
+1947
+00:08:07,399 --> 00:08:09,399
+site to tell the services that
+they can go to Indie auth to
+
+1948
+00:08:09,399 --> 00:08:11,399
+verify us.
+
+1949
+00:08:12,206 --> 00:08:14,206
+Also, oh, there's like -- this
+is off script.
+
+1950
+00:08:15,907 --> 00:08:17,907
+There are some serious power
+houses of the Indieweb in the
+
+1951
+00:08:17,907 --> 00:08:19,907
+chat right now.
+
+1952
+00:08:20,815 --> 00:08:22,815
+If I'm getting anything wrong,
+feel free to rip me apart.
+
+1953
+00:08:28,125 --> 00:08:30,125
+I specifically used GitHub in
+
+1954
+00:08:31,405 --> 00:08:34,501
+the realm example because they
+have a sign-in example that
+
+1955
+00:08:34,501 --> 00:08:37,598
+Indie will coopt so you can
+sign in securely as GitHub and
+
+1956
+00:08:37,598 --> 00:08:39,598
+verify that I am my GitHub
+account and by extension, also
+
+1957
+00:08:39,598 --> 00:08:42,605
+my website.
+But great, so now we've got a
+
+1958
+00:08:42,605 --> 00:08:44,605
+website that verifies our
+identity using
+
+1959
+00:08:46,410 --> 00:08:48,507
+Indieauth and capable of
+telling other services how to
+
+1960
+00:08:48,507 --> 00:08:50,507
+authenticationuthenticate us.
+
+1961
+00:08:51,804 --> 00:08:53,804
+Through publishing, it's 11ty,
+we could create markdown files
+
+1962
+00:08:53,804 --> 00:08:55,804
+by hand, but it's still really
+nice, turns out, to go to a
+
+1963
+00:08:55,804 --> 00:08:59,194
+website and click post. There's
+nothing that clears the ass
+
+1964
+00:09:01,303 --> 00:09:04,702
+of sending the Tweet. In this
+case, I'm using Erin
+
+1965
+00:09:07,808 --> 00:09:09,808
+Pereki's micropublish er
+
+1966
+00:09:10,616 --> 00:09:12,822
+er Quill. This will feel like
+magic the first time you do it.
+
+1967
+00:09:16,025 --> 00:09:19,434
+We're going to grab a token and
+proceed with our micropub end
+
+1968
+00:09:19,434 --> 00:09:21,434
+point that Quill will speak to.
+
+1969
+00:09:23,631 --> 00:09:25,631
+So I'm basically, we need to
+accept publish requests from
+
+1970
+00:09:26,441 --> 00:09:29,743
+Quill and convert them into
+files that 11ty can build. I'm
+
+1971
+00:09:29,743 --> 00:09:31,743
+going to create, I'm using
+Netlify functions for this
+
+1972
+00:09:31,743 --> 00:09:33,743
+because it's what I know .
+Create a file function/micropub
+
+1973
+00:09:33,743 --> 00:09:35,743
+and add the
+
+1974
+00:09:36,431 --> 00:09:38,431
+corresponding endpoint to the
+head on our in dex.
+
+1975
+00:09:40,937 --> 00:09:42,937
+HTML, go to this end point to
+make publish requests.
+
+1976
+00:09:46,144 --> 00:09:49,045
+Also, I'll be using GitHub's
+octokit tool to converting into
+
+1977
+00:09:49,045 --> 00:09:51,045
+flat files in the GitHub repo.
+
+1978
+00:09:52,143 --> 00:09:54,245
+We can grab a quick token from
+there, as well. And we can
+
+1979
+00:09:54,245 --> 00:09:56,245
+throw all of the tokens into a
+.
+
+1980
+00:09:57,742 --> 00:09:59,742
+end file and make them
+available, but not public in
+
+1981
+00:09:59,742 --> 00:10:01,742
+your environment. And then, we
+can use them in the micropub
+
+1982
+00:10:01,742 --> 00:10:03,742
+function.
+Here's the function.
+
+1983
+00:10:06,729 --> 00:10:09,740
+This borrows heavily from
+Robert's tutorial publishing VI
+
+1984
+00:10:09,740 --> 00:10:14,540
+writer. Here's the general
+vibe. One, listen for post
+
+1985
+00:10:14,540 --> 00:10:17,633
+requests and check their
+veritoken matches the one from
+
+1986
+00:10:17,633 --> 00:10:19,633
+Quill,
+
+1987
+00:10:21,253 --> 00:10:23,253
+publish the content and
+template them in a way that
+
+1988
+00:10:23,253 --> 00:10:25,253
+11ty can work with. I made
+markdown files with a timestamp
+
+1989
+00:10:25,253 --> 00:10:27,942
+in the front matter.
+And then, commit both the newly
+
+1990
+00:10:27,942 --> 00:10:29,942
+created file to
+
+1991
+00:10:31,039 --> 00:10:34,350
+GitHub and then, also, like a
+-- some way to let -- like
+
+1992
+00:10:37,346 --> 00:10:39,346
+basically a JSON file that
+contains the most recently
+
+1993
+00:10:39,346 --> 00:10:41,346
+posted post. I'll use it later.
+
+1994
+00:10:44,548 --> 00:10:46,548
+But once that function's
+deployed, we can sign into
+
+1995
+00:10:46,548 --> 00:10:48,548
+Quill with our website, feels
+amazing, make a post, and then,
+
+1996
+00:10:48,548 --> 00:10:50,548
+watch
+
+1997
+00:10:51,053 --> 00:10:53,053
+it magically appear on our site
+pending a build set. Publishing
+
+1998
+00:10:53,053 --> 00:10:55,053
+sorted.
+Next, we've got to talk about
+
+1999
+00:10:55,053 --> 00:10:57,053
+web mentions. This is the
+conversation aspects.
+
+2000
+00:10:59,984 --> 00:11:04,895
+From the Indieweb Wiki, it's a
+super powerful protocol.
+
+2001
+00:11:08,301 --> 00:11:10,301
+It lets us like, you know,
+lightweight way and
+
+2002
+00:11:11,407 --> 00:11:13,407
+standardized way tell our
+friends and colleagues that
+
+2003
+00:11:13,407 --> 00:11:15,407
+we're referencing their blogs,
+et cetera, and lets us know
+
+2004
+00:11:15,407 --> 00:11:19,523
+when folks are referencing or
+talking about our work.
+
+2005
+00:11:19,523 --> 00:11:22,836
+There's another service called
+Webmention.
+
+2006
+00:11:26,243 --> 00:11:29,338
+io, lets us read web mentions
+from all over the web . We'll
+
+2007
+00:11:29,338 --> 00:11:31,338
+sign up using the same
+
+2008
+00:11:32,544 --> 00:11:34,544
+Indieauth steps as Quill, add
+the mention endpoint to the
+
+2009
+00:11:34,544 --> 00:11:36,649
+head. If it's feeling
+repetitive, we're establishing
+
+2010
+00:11:36,649 --> 00:11:39,952
+patterns, baby, and throw the
+API key on our . end for later.
+
+2011
+00:11:40,156 --> 00:11:44,359
+We can get web mentions from
+other blogs, et cetera, just
+
+2012
+00:11:44,359 --> 00:11:46,359
+like right off the rip.
+
+2013
+00:11:47,655 --> 00:11:49,655
+But because this talk is
+particularly concerned with
+
+2014
+00:11:49,655 --> 00:11:51,655
+posting bangers, we need to
+work out some way to collect
+
+2015
+00:11:51,655 --> 00:11:54,059
+and share conversations, likes
+B,
+
+2016
+00:11:57,055 --> 00:11:59,066
+and replies, et cetera, from
+social media . A free service
+
+2017
+00:11:59,066 --> 00:12:01,066
+that does exactly that.
+
+2018
+00:12:04,571 --> 00:12:09,877
+Con VRTs engagement into web
+mentions.
+
+2019
+00:12:09,877 --> 00:12:12,976
+Collecting engagement on the
+other sites, et cetera, and
+
+2020
+00:12:12,976 --> 00:12:14,976
+then, also to indicate and
+create posts we can track
+
+2021
+00:12:16,070 --> 00:12:18,070
+web mentions on that was the
+like publish on our own site,
+
+2022
+00:12:18,070 --> 00:12:20,070
+bridgy does that.
+
+2023
+00:12:21,378 --> 00:12:23,589
+So, OK, once a post is created
+and published on our own site,
+
+2024
+00:12:23,589 --> 00:12:25,589
+we need to do the syndicate
+elsewhere part.
+
+2025
+00:12:25,892 --> 00:12:27,892
+I'm going to use another
+Netlify function, it's what I
+
+2026
+00:12:27,892 --> 00:12:29,892
+know. If you're an API genius
+and want to do this a different
+
+2027
+00:12:29,892 --> 00:12:33,209
+way, you can . The world is
+your oyster.
+
+2028
+00:12:33,209 --> 00:12:35,209
+Here's the function.
+
+2029
+00:12:36,512 --> 00:12:39,322
+Again, TLDR, 11-minute talk, by
+the way. We're going to grab
+
+2030
+00:12:39,322 --> 00:12:41,322
+the last published note.
+
+2031
+00:12:42,430 --> 00:12:44,430
+I stored it in the JSON file
+like I said.
+
+2032
+00:12:45,935 --> 00:12:49,539
+Ping Bridgy with a request to
+publish to Mastodon and this
+
+2033
+00:12:49,539 --> 00:12:52,500
+most recent post .
+And that's literally it.
+
+2034
+00:12:55,709 --> 00:12:59,112
+It'll just like Bridgy will
+automatically post our posts ,
+
+2035
+00:12:59,112 --> 00:13:01,112
+I've got -- somebody should've
+proofread
+
+2036
+00:13:02,208 --> 00:13:04,208
+this script, bro, holy smokes,
+to Mastodon and
+
+2037
+00:13:05,309 --> 00:13:07,309
+it's like four lines of code
+like blue sky, other
+
+2038
+00:13:07,309 --> 00:13:09,309
+syndication targets, whatever
+you want.
+
+2039
+00:13:10,114 --> 00:13:12,114
+So our flow is now completely
+automated from I thought of a
+
+2040
+00:13:12,114 --> 00:13:14,114
+genius post and I posted it via
+Quill to having it published
+
+2041
+00:13:17,332 --> 00:13:19,332
+on our personal site and copy
+out to Mastodon, to whatever,
+
+2042
+00:13:19,332 --> 00:13:21,332
+with a link back to our
+original site.
+
+2043
+00:13:22,338 --> 00:13:24,338
+So, on to the final step here.
+
+2044
+00:13:26,043 --> 00:13:28,043
+Oh, crap, I've gone a little
+bit over. I'm sorry.
+
+2045
+00:13:30,454 --> 00:13:32,454
+Really cool now, the
+conversations from all of these
+
+2046
+00:13:32,454 --> 00:13:34,454
+different sources are collected
+as web mentions.
+
+2047
+00:13:35,357 --> 00:13:38,564
+So we can show all of those
+conversations from the
+
+2048
+00:13:38,564 --> 00:13:40,564
+bluebird, the butterfly, the
+elephant, in one place.
+
+2049
+00:13:42,350 --> 00:13:44,350
+So folks don't have to miss out
+on a reply because
+
+2050
+00:13:45,755 --> 00:13:47,755
+they prefer Blue Sky, they can
+click back and read everything .
+
+2051
+00:13:50,059 --> 00:13:53,264
+It's pretty easy to use 11ty
+data files, run me the check,
+
+2052
+00:13:53,264 --> 00:13:55,264
+Zach, to collect
+
+2053
+00:13:56,357 --> 00:13:58,357
+web mentions as JSON from the
+web mention API that I
+
+2054
+00:13:58,357 --> 00:14:00,357
+mentioned earlier . And then
+render them into templates,
+
+2055
+00:14:02,550 --> 00:14:04,550
+Maxbook has a fantastic
+tutorial on this . This borrows
+
+2056
+00:14:04,550 --> 00:14:08,547
+from that heavily, obviously.
+And I've included
+
+2057
+00:14:08,547 --> 00:14:10,547
+implementation of that in the
+
+2058
+00:14:10,547 --> 00:14:12,547
+GitHub repo, again, available
+after the talk.
+
+2059
+00:14:12,547 --> 00:14:14,834
+But that's it. Like, after
+maybe two hours of work, you're
+
+2060
+00:14:17,829 --> 00:14:19,829
+owning all of your content,
+you're divested from the whims
+
+2061
+00:14:19,829 --> 00:14:22,925
+of social media silos and sicko
+owners and made the web more
+
+2062
+00:14:22,925 --> 00:14:24,925
+kind.
+
+2063
+00:14:25,221 --> 00:14:28,521
+There's a million enhancements
+that can be made to this. You
+
+2064
+00:14:28,521 --> 00:14:30,521
+can follow Cy Sia
+
+2065
+00:14:31,614 --> 00:14:34,715
+'s amazing guide, you could add
+media endpoint in case you want
+
+2066
+00:14:34,715 --> 00:14:37,907
+to post gifs, use microformats
+to let folks find
+
+2067
+00:14:40,510 --> 00:14:44,495
+a post from your site back on
+to the silo, if you want.
+
+2068
+00:14:44,495 --> 00:14:47,589
+All the code for today will be
+examinable, like, under the
+
+2069
+00:14:47,589 --> 00:14:49,589
+microscope, whatever, online,
+on my personal website, Henry.
+
+2070
+00:14:51,974 --> 00:14:53,974
+codes in the next couple of
+days. Oh, I didn't mean to
+
+2071
+00:14:53,974 --> 00:14:55,974
+leave that in there.
+
+2072
+00:14:57,265 --> 00:14:59,561
+Oh, yeah, no, sorry, first big
+talk, bear with me. And then,
+
+2073
+00:14:59,561 --> 00:15:02,660
+yeah, thanks for listening
+today. Thank you for 11ty for
+
+2074
+00:15:02,660 --> 00:15:04,660
+having me and all of these
+other amazing speakers.
+
+2075
+00:15:07,362 --> 00:15:09,464
+I'm literally so honored to be
+sharing the estage to these
+
+2076
+00:15:09,464 --> 00:15:11,464
+people.
+
+2077
+00:15:12,166 --> 00:15:14,166
+I've been looking up to y'all
+since I was a wee child.
+
+2078
+00:15:16,360 --> 00:15:19,460
+Last minute plug, if you 11ty
+sickos love personal websites,
+
+2079
+00:15:19,460 --> 00:15:21,460
+visit us at
+
+2080
+00:15:21,460 --> 00:15:23,460
+personalsite. es and share
+yours.
+
+2081
+00:15:25,065 --> 00:15:28,267
+You can filter by RSS feed, you
+can do whatever you want . Find
+
+2082
+00:15:28,267 --> 00:15:30,267
+me somewhere JAUP line, Free
+Palestine, thanks so much.
+
+2083
+00:15:32,373 --> 00:15:34,503
+≫ MIKE: Thank you so much. That
+was amazing.
+
+2084
+00:15:37,703 --> 00:15:39,703
+Those principles of the
+Indieweb are so important
+
+2085
+00:15:40,915 --> 00:15:42,915
+as we've seen in the past
+decade play out.
+
+2086
+00:15:46,345 --> 00:15:50,048
+We really are the ones that
+need to push these ideas and
+
+2087
+00:15:53,356 --> 00:15:55,356
+, as you showed, like 11ty's a
+great tool to kind
+
+2088
+00:15:55,356 --> 00:15:59,485
+of be at the core of that
+publishing platform.
+
+2089
+00:15:59,485 --> 00:16:02,483
+≫ HENRY: Yeah, and it's a
+stronger and stronger strategy.
+
+2090
+00:16:05,381 --> 00:16:07,381
+≫ MIKE: We're going to move on
+to our next speaker, thanks,
+
+2091
+00:16:07,381 --> 00:16:09,381
+again, Henry.
+≫ HENRY: Thank you so much.

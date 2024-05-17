@@ -1,0 +1,2286 @@
+
+3887
+00:00:00,000 --> 00:00:04,699
+We're going to talk about web
+components today.
+
+3888
+00:00:04,699 --> 00:00:07,600
+Full disclosure, I have ADHD, I
+might bounce off screen as I
+
+3889
+00:00:07,600 --> 00:00:09,600
+move around a little bit today.
+
+3890
+00:00:10,895 --> 00:00:12,895
+Web components sit in this
+uncanny valley.
+
+3891
+00:00:15,489 --> 00:00:17,897
+Not quite react React
+components, not with the grain
+
+3892
+00:00:17,897 --> 00:00:19,897
+of the web either.
+
+3893
+00:00:21,195 --> 00:00:23,195
+I think a lot of that is really
+because we've been thinking
+
+3894
+00:00:23,195 --> 00:00:25,195
+about and using them wrong.
+
+3895
+00:00:26,095 --> 00:00:28,095
+Today, I want to show you what
+I think is a better way to use
+
+3896
+00:00:29,192 --> 00:00:31,192
+web components, or at least one
+that works with the grain of if
+
+3897
+00:00:31,192 --> 00:00:33,192
+web rather than against it.
+
+3898
+00:00:35,296 --> 00:00:37,296
+Mike, thanks for that great
+introduction, I'm
+
+3899
+00:00:39,701 --> 00:00:41,701
+Chris Ferdinandi, you can find
+me on gomakethings. com.
+
+3900
+00:00:44,496 --> 00:00:46,496
+I teach how to make things in
+the web through courses,
+
+3901
+00:00:46,496 --> 00:00:48,496
+workshops , and daily developer
+tips newsletter, and
+
+3902
+00:00:49,399 --> 00:00:52,693
+I consult with amazing
+companies. These days, that
+
+3903
+00:00:52,693 --> 00:00:54,693
+means building custom web
+components, like
+
+3904
+00:00:54,704 --> 00:00:57,905
+I recently did for a project
+with NASA.
+
+3905
+00:00:57,905 --> 00:00:59,905
+The thing with web components,
+they've been around for a
+
+3906
+00:00:59,905 --> 00:01:01,905
+really long time. They were
+first announced in 2011, which
+
+3907
+00:01:01,905 --> 00:01:03,905
+is over a decade
+
+3908
+00:01:04,619 --> 00:01:06,921
+ago, and they've been
+supporting major browsers for
+
+3909
+00:01:06,921 --> 00:01:08,921
+years.
+
+3910
+00:01:11,022 --> 00:01:13,022
+Now, when they first came out,
+a lot of folks thought they
+
+3911
+00:01:13,022 --> 00:01:15,022
+were going to be the thing that
+finally killed React.
+
+3912
+00:01:17,233 --> 00:01:19,233
+And if you're watching in 2024
+or beyond, you
+
+3913
+00:01:20,141 --> 00:01:22,141
+know that they weren't. React
+started to swallow up
+
+3914
+00:01:22,141 --> 00:01:24,141
+everything.
+
+3915
+00:01:26,147 --> 00:01:28,147
+And people often use them like
+you would a React component.
+
+3916
+00:01:29,446 --> 00:01:32,536
+So a lot of tutorials that you
+see start with an empty custom
+
+3917
+00:01:32,536 --> 00:01:34,536
+HTML element and then, they use
+JavaScript to inject the HTML.
+
+3918
+00:01:38,632 --> 00:01:41,726
+And don't forget about the
+shadow DOM, there was a lot of
+
+3919
+00:01:41,726 --> 00:01:43,726
+hype around using the shadow
+DOM
+
+3920
+00:01:44,419 --> 00:01:47,712
+to keep the HTML isolated from
+the rest of the UI. This was
+
+3921
+00:01:47,712 --> 00:01:49,712
+promoted as a key feature of
+web components.
+
+3922
+00:01:51,497 --> 00:01:53,497
+Of course, once you do that,
+your HTML doesn't have
+
+3923
+00:01:54,704 --> 00:01:56,797
+access to your global styles
+sheets, so you need to inject
+
+3924
+00:01:56,797 --> 00:01:58,797
+your CSS with JavaScript, too.
+
+3925
+00:02:01,386 --> 00:02:03,386
+This approach feels a lot like
+React but native
+
+3926
+00:02:04,479 --> 00:02:07,686
+. But if you want React-like
+components or React-like
+
+3927
+00:02:07,686 --> 00:02:09,686
+experience, React and smaller
+libraries
+
+3928
+00:02:10,895 --> 00:02:12,895
+like Preact, honestly in my
+opinion, they do it better.
+
+3929
+00:02:14,995 --> 00:02:16,995
+That sounds weird coming from
+someone who spends their whole
+
+3930
+00:02:16,995 --> 00:02:18,995
+career
+
+3931
+00:02:19,205 --> 00:02:21,205
+evangelizing vanilla
+JavaScript, but the reality
+
+3932
+00:02:21,205 --> 00:02:23,205
+that web components don't have
+data reactivity, although you
+
+3933
+00:02:23,205 --> 00:02:25,205
+can hack that in with
+
+3934
+00:02:25,388 --> 00:02:28,883
+proxies, they don't have DOM
+diffing. And they don't have
+
+3935
+00:02:28,883 --> 00:02:32,953
+support for single- file
+components.
+
+3936
+00:02:32,953 --> 00:02:34,953
+Although, if you use a plugin
+like Zach's web C,
+
+3937
+00:02:34,953 --> 00:02:38,653
+you can kind of sort of make
+that work. If you're a
+
+3938
+00:02:38,653 --> 00:02:41,464
+developer who likes React, web
+components often aren't React-y
+
+3939
+00:02:41,464 --> 00:02:43,464
+enough.
+
+3940
+00:02:44,957 --> 00:02:48,053
+But because this approach often
+starts with an empty element
+
+3941
+00:02:48,053 --> 00:02:50,053
+that relies on JavaScript to
+render its content, web
+
+3942
+00:02:51,147 --> 00:02:53,147
+standards and progressive
+enhancement evangelists like
+
+3943
+00:02:53,147 --> 00:02:55,147
+myself also dislike this
+approach.
+
+3944
+00:02:57,328 --> 00:02:59,328
+I think this is why it feels
+like it's taken so long for web
+
+3945
+00:02:59,328 --> 00:03:01,426
+components to catch on. For the
+rest of this talk, I want to
+
+3946
+00:03:01,426 --> 00:03:03,426
+show you a better way.
+
+3947
+00:03:04,920 --> 00:03:06,920
+It's the approach that I use
+with NASA and various other
+
+3948
+00:03:06,920 --> 00:03:08,920
+clients to build web components
+that are simple, reliable, and
+
+3949
+00:03:08,920 --> 00:03:13,116
+that work more with the grain
+of the web.
+
+3950
+00:03:13,116 --> 00:03:15,116
+Here's the agenda for the rest
+of this talk.
+
+3951
+00:03:16,405 --> 00:03:18,405
+We're going to start by talking
+about a new way to build web
+
+3952
+00:03:18,405 --> 00:03:20,405
+components
+
+3953
+00:03:20,405 --> 00:03:22,405
+or a different way to build web
+components that's more with the
+
+3954
+00:03:22,405 --> 00:03:24,405
+grain of the web. We're going
+to dig into tips and tricks
+
+3955
+00:03:24,405 --> 00:03:26,689
+that make working with web
+components easier and we're
+
+3956
+00:03:26,689 --> 00:03:28,689
+going to round things out by
+looking at specific
+
+3957
+00:03:30,496 --> 00:03:32,496
+examples, including building a
+web component this way from
+
+3958
+00:03:32,496 --> 00:03:34,496
+scratch .
+
+3959
+00:03:36,886 --> 00:03:38,886
+Let's start by talking about a
+new way about thinking about
+
+3960
+00:03:39,094 --> 00:03:43,795
+web components that honestly
+kind of old school. November of
+
+3961
+00:03:43,795 --> 00:03:45,795
+last year, Jeremy Keith wrote
+an article about this approach
+
+3962
+00:03:45,795 --> 00:03:47,795
+. And he wrote, try not to
+
+3963
+00:03:48,992 --> 00:03:52,288
+bring React mindset with you.
+Do you really need to invent a
+
+3964
+00:03:52,288 --> 00:03:54,288
+new component from
+
+3965
+00:03:55,896 --> 00:03:57,896
+scratch or can you use HTML up
+to the limit
+
+3966
+00:03:58,987 --> 00:04:03,182
+and unHans enhance the markup?
+It's a name that started to
+
+3967
+00:04:03,182 --> 00:04:05,182
+stick and I'm seeing it pop
+
+3968
+00:04:05,187 --> 00:04:07,978
+up more and more around the
+web.
+
+3969
+00:04:07,978 --> 00:04:09,978
+HTML web component is about
+progressive enhancement.
+
+3970
+00:04:11,264 --> 00:04:13,264
+So rather than an empty
+element, you start with
+
+3971
+00:04:13,264 --> 00:04:15,264
+perfectly functional HTML
+
+3972
+00:04:15,264 --> 00:04:17,264
+. Here, we have a collection of
+headings and some content that
+
+3973
+00:04:17,264 --> 00:04:19,264
+goes with them.
+
+3974
+00:04:20,164 --> 00:04:22,164
+Let's imagine we eventually
+want this to be an accordion
+
+3975
+00:04:22,164 --> 00:04:24,164
+component where clicking or
+tapping on the heading causes
+
+3976
+00:04:24,164 --> 00:04:28,583
+the content that goes with it
+to get expanded or hidden.
+
+3977
+00:04:28,583 --> 00:04:32,685
+We can use a web component for
+that. As a convenient way to
+
+3978
+00:04:32,685 --> 00:04:34,685
+enhance what's already there
+into something more powerful
+
+3979
+00:04:34,685 --> 00:04:36,988
+and interactive. And we start
+that process by wrapping our
+
+3980
+00:04:36,988 --> 00:04:38,988
+content in a custom element.
+
+3981
+00:04:42,086 --> 00:04:44,086
+In this case, we'll call it
+accordion group because that's
+
+3982
+00:04:44,086 --> 00:04:46,086
+a very easy and obvious
+description of what this thing
+
+3983
+00:04:46,086 --> 00:04:48,691
+is going to be.
+When the web component runs and
+
+3984
+00:04:48,691 --> 00:04:51,189
+does its thing, the HTML and
+the DOM ends up looking
+
+3985
+00:04:51,189 --> 00:04:53,189
+different.
+
+3986
+00:04:54,476 --> 00:04:56,476
+You end up with button elements
+around the heading texts so you
+
+3987
+00:04:56,476 --> 00:04:58,476
+have a focusable interactive
+element, you get
+
+3988
+00:05:01,569 --> 00:05:03,569
+some ARIA
+
+3989
+00:05:04,653 --> 00:05:06,653
+attributes so that screen
+readers understand the
+
+3990
+00:05:06,653 --> 00:05:08,653
+interactions on the page . And
+the content gets hidden by
+
+3991
+00:05:08,653 --> 00:05:11,928
+default using the hidden
+attribute.
+
+3992
+00:05:11,928 --> 00:05:13,928
+But if this never actually ran,
+you would still
+
+3993
+00:05:14,533 --> 00:05:17,822
+have perfectly functional
+markup. And that's really the
+
+3994
+00:05:17,822 --> 00:05:19,822
+big difference between HTML
+
+3995
+00:05:20,914 --> 00:05:23,326
+web components and the way they
+were historically presented in
+
+3996
+00:05:23,326 --> 00:05:25,326
+a lot of older tutorials talk
+about them.
+
+3997
+00:05:25,326 --> 00:05:28,925
+Now, this probably looks a lot
+like old school DOM
+
+3998
+00:05:28,925 --> 00:05:32,029
+manipulation. If you've been
+around for a while, this is how
+
+3999
+00:05:32,029 --> 00:05:34,029
+we used to build things.
+
+4000
+00:05:35,730 --> 00:05:38,829
+And honestly, it really is, but
+web components bring a lot of
+
+4001
+00:05:38,829 --> 00:05:43,730
+benefits that make building
+interactive UI a lot easier.
+
+4002
+00:05:43,730 --> 00:05:48,218
+For starters, they're, in my
+opinion, easier to write.
+
+4003
+00:05:48,218 --> 00:05:50,218
+You get to write your HTML as
+HTML rather than HTML in JS,
+
+4004
+00:05:50,218 --> 00:05:52,218
+yuck.
+
+4005
+00:05:54,719 --> 00:05:56,719
+And rather THARN
+
+4006
+00:05:59,128 --> 00:06:01,128
+than unique selectors, yo you
+combine your components once
+
+4007
+00:06:01,128 --> 00:06:03,244
+and wrap your HTML in your
+custom element.
+
+4008
+00:06:03,244 --> 00:06:05,244
+You can even have multiple
+versions on a page.
+
+4009
+00:06:06,936 --> 00:06:08,936
+Each one automatically
+instantiates as its own unique
+
+4010
+00:06:08,936 --> 00:06:13,223
+instance.
+Because functional HTML is
+
+4011
+00:06:13,223 --> 00:06:15,223
+there, people get a usable
+experience immediately.
+
+4012
+00:06:16,818 --> 00:06:18,818
+And if your web component fails
+to load for some reason, users
+
+4013
+00:06:20,025 --> 00:06:22,025
+still have a perfectly
+functional experience instead
+
+4014
+00:06:22,025 --> 00:06:24,025
+of one that doesn't work.
+
+4015
+00:06:25,823 --> 00:06:27,823
+Web components also let you
+provide options and settings
+
+4016
+00:06:27,823 --> 00:06:29,823
+declaratively in the markup.
+
+4017
+00:06:31,332 --> 00:06:33,332
+This makes it a lot more
+obvious what's happening just
+
+4018
+00:06:33,332 --> 00:06:35,332
+by looking at the HTML.
+
+4019
+00:06:35,332 --> 00:06:38,629
+The behavior isn't hidden away
+in a JavaScript file somewhere.
+
+4020
+00:06:38,629 --> 00:06:40,629
+And you can include multiple
+instances, each with their own
+
+4021
+00:06:40,629 --> 00:06:42,629
+settings , through the HTML
+alone.
+
+4022
+00:06:45,329 --> 00:06:47,329
+No more instantiating with
+different selectors and
+
+4023
+00:06:47,329 --> 00:06:49,329
+settings , often some
+JavaScript file you have to
+
+4024
+00:06:49,329 --> 00:06:51,329
+hunt down every time you want
+to make an update.
+
+4025
+00:06:55,025 --> 00:06:57,025
+Let's look at tips and tricks
+that make working with web
+
+4026
+00:06:57,025 --> 00:06:59,025
+components even easier.
+
+4027
+00:07:00,330 --> 00:07:02,330
+Now, if you've never created a
+web component before, I think
+
+4028
+00:07:02,330 --> 00:07:04,330
+it's worthwhile to start by
+kind of building
+
+4029
+00:07:05,438 --> 00:07:07,438
+one, and we're going to start
+with a custom element.
+
+4030
+00:07:09,028 --> 00:07:11,028
+Here, I'm going to use the most
+cliche of examples, a
+
+4031
+00:07:11,028 --> 00:07:13,028
+countercomponent. So you get a
+button, you click it, and the
+
+4032
+00:07:13,028 --> 00:07:15,028
+text updates
+
+4033
+00:07:15,724 --> 00:07:17,724
+to indicate how many times it's
+been clicked or tapped or
+
+4034
+00:07:17,724 --> 00:07:19,724
+activated.
+
+4035
+00:07:19,724 --> 00:07:22,918
+This is honestly kind of a
+terrible example for an HTML
+
+4036
+00:07:22,918 --> 00:07:24,918
+web component, you're not
+progressively
+
+4037
+00:07:26,329 --> 00:07:28,329
+enhancing anything, the button
+is absolutely useless without
+
+4038
+00:07:28,329 --> 00:07:30,329
+the JavaScript. But it's a
+really simple tutorial to
+
+4039
+00:07:30,329 --> 00:07:32,329
+explain. So if you've never
+worked with web components
+
+4040
+00:07:32,329 --> 00:07:34,329
+before, it's a great way to
+
+4041
+00:07:34,329 --> 00:07:36,329
+kind of wrap your head around
+some of the concepts.
+
+4042
+00:07:36,329 --> 00:07:38,926
+We're going to roll with it. We
+start by wrapping some existing
+
+4043
+00:07:38,926 --> 00:07:41,136
+HTML with a custom element. In
+this case, count up.
+
+4044
+00:07:44,332 --> 00:07:47,936
+And then, in our JavaScript
+file, we use the custom
+
+4045
+00:07:47,936 --> 00:07:49,936
+elements define method to
+define a custom
+
+4046
+00:07:49,936 --> 00:07:53,137
+element and associate behavior
+with it.
+
+4047
+00:07:53,137 --> 00:07:55,137
+You pass in the name of the
+custom element as a string.
+
+4048
+00:07:56,843 --> 00:07:58,843
+And just as a quick aside, web
+component
+
+4049
+00:07:59,940 --> 00:08:03,145
+, custom elements have to have
+a dash in them, single word
+
+4050
+00:08:03,145 --> 00:08:05,145
+elements are reserved for
+browser native elements
+
+4051
+00:08:05,450 --> 00:08:07,954
+. When you make your own, it
+has to have one dash. We pass
+
+4052
+00:08:07,954 --> 00:08:09,954
+the name in, here it's count
+up.
+
+4053
+00:08:11,455 --> 00:08:13,455
+And we pass in a class that
+extends the HTML element class.
+
+4054
+00:08:15,455 --> 00:08:17,873
+Your class needs to have a
+constructer method in it. And
+
+4055
+00:08:17,873 --> 00:08:19,873
+that runs automatically on each
+element and creates
+
+4056
+00:08:19,873 --> 00:08:23,384
+unique instance of your
+component. And then, inside the
+
+4057
+00:08:23,384 --> 00:08:25,384
+constructer, you always run the
+
+4058
+00:08:25,384 --> 00:08:27,495
+super method first. This gives
+you access to the properties
+
+4059
+00:08:27,495 --> 00:08:29,495
+and methods of the HTML
+
+4060
+00:08:30,310 --> 00:08:33,611
+element class that this class
+is extending. And then, after
+
+4061
+00:08:33,611 --> 00:08:37,017
+that, you can run any of your
+custom code .
+
+4062
+00:08:37,017 --> 00:08:39,017
+Now, web components provide
+some useful ways
+
+4063
+00:08:40,121 --> 00:08:42,121
+to handle that, and in
+particular, they make
+
+4064
+00:08:42,121 --> 00:08:44,121
+encapsulation really easy.
+
+4065
+00:08:45,136 --> 00:08:48,538
+It's built in, even without the
+shadow DOM. So while light DOM
+
+4066
+00:08:51,540 --> 00:08:53,540
+elements, so things not in the
+shadow DOM
+
+4067
+00:08:54,942 --> 00:08:56,942
+will still be accessible,
+they're scoped to your custom
+
+4068
+00:08:56,942 --> 00:08:58,942
+element . And that provides
+some unique benefits.
+
+4069
+00:08:59,741 --> 00:09:03,348
+For example, in your web
+component, this keyword refers
+
+4070
+00:09:03,348 --> 00:09:05,348
+to the current
+
+4071
+00:09:06,556 --> 00:09:08,556
+instantiation of the component
+and the custom element wrapped
+
+4072
+00:09:08,556 --> 00:09:12,574
+around it. You can define
+properties on it. In this case,
+
+4073
+00:09:12,574 --> 00:09:14,574
+we're setting a count property
+of zero and we're going to
+
+4074
+00:09:14,574 --> 00:09:17,578
+increase that every time the
+button is clicked.
+
+4075
+00:09:17,578 --> 00:09:19,578
+And, you can search for
+elements inside
+
+4076
+00:09:20,786 --> 00:09:22,786
+your custom element by scoping
+them to the this keyword.
+
+4077
+00:09:25,689 --> 00:09:28,893
+If I use the query selector
+method on this, I'm looking for
+
+4078
+00:09:28,893 --> 00:09:30,893
+the button inside my custom
+element rather than everywhere
+
+4079
+00:09:30,893 --> 00:09:33,898
+in the DOM. So it makes finding
+elements in your component and
+
+4080
+00:09:35,000 --> 00:09:38,111
+manipulating them way easier.
+You don't have to use any
+
+4081
+00:09:38,111 --> 00:09:40,111
+weird, special tricks.
+
+4082
+00:09:40,925 --> 00:09:42,925
+You also get built in CSS
+scoping, if you want it.
+
+4083
+00:09:44,228 --> 00:09:47,329
+By using the light DOM instead
+of the shadow DOM, your web
+
+4084
+00:09:47,329 --> 00:09:49,329
+component will automatically
+
+4085
+00:09:50,431 --> 00:09:52,431
+inherit your style sheet
+styles, and in my opinion, one
+
+4086
+00:09:52,431 --> 00:09:54,431
+of the biggest wins of this
+approach because
+
+4087
+00:09:58,738 --> 00:10:00,738
+shadow DOM styling, is a
+painful experience. This gets
+
+4088
+00:10:00,738 --> 00:10:03,352
+around this. But if you want to
+scope styles in your web
+
+4089
+00:10:03,352 --> 00:10:05,352
+component, you can use the
+custom HTML
+
+4090
+00:10:05,359 --> 00:10:07,359
+element as part of your
+selector string.
+
+4091
+00:10:10,063 --> 00:10:13,161
+Here, our button is going to
+inherit all of the button
+
+4092
+00:10:13,161 --> 00:10:15,161
+global styles and we can
+override or modify
+
+4093
+00:10:16,548 --> 00:10:18,548
+by prefixing with the count up
+element.
+
+4094
+00:10:21,446 --> 00:10:23,446
+You can even use CSS to detect
+when the JavaScript is ready
+
+4095
+00:10:24,152 --> 00:10:27,455
+with the defined pseudo class.
+And if you define it with the
+
+4096
+00:10:27,455 --> 00:10:29,455
+not pseudo class,
+
+4097
+00:10:29,963 --> 00:10:31,963
+you can detect when the
+JavaScript for the component is
+
+4098
+00:10:31,963 --> 00:10:33,963
+not ready. If you've ever
+written a DOM manipulation
+
+4099
+00:10:33,963 --> 00:10:36,570
+library before and done
+something like add a class to
+
+4100
+00:10:40,277 --> 00:10:42,277
+the document or the body
+element, that way you can
+
+4101
+00:10:42,277 --> 00:10:44,277
+modify your styling depending
+on whether the library has
+
+4102
+00:10:44,277 --> 00:10:47,702
+loaded, or not, you don't have
+to do that anymore.
+
+4103
+00:10:47,702 --> 00:10:49,702
+Web components provide a
+built-in way to detect that.
+
+4104
+00:10:50,008 --> 00:10:52,008
+Using the defined pseudo class.
+
+4105
+00:10:54,918 --> 00:10:56,918
+Web components also have some
+built-in methods that make
+
+4106
+00:10:56,918 --> 00:10:59,033
+handling events easier. With
+the add event listener method,
+
+4107
+00:11:02,033 --> 00:11:04,033
+you can pass in an object
+instead of a callback function
+
+4108
+00:11:04,033 --> 00:11:06,033
+as that second argument .
+If the object has a handle
+
+4109
+00:11:06,033 --> 00:11:08,949
+event method, that method will
+automatically run response to
+
+4110
+00:11:08,949 --> 00:11:11,655
+the event and receive the event
+object as an argument.
+
+4111
+00:11:15,060 --> 00:11:17,060
+Now, why would you do that
+instead of a callback function?
+
+4112
+00:11:19,768 --> 00:11:21,768
+A lot of it has to do with this
+keyword we talked about
+
+4113
+00:11:21,768 --> 00:11:23,768
+earlier. In a normal callback
+function, the "
+
+4114
+00:11:26,166 --> 00:11:28,166
+this" keyword doesn't refer to
+the instance, it refers to
+
+4115
+00:11:28,166 --> 00:11:30,166
+either the element
+
+4116
+00:11:30,166 --> 00:11:32,166
+or the window object depending
+on the context in which it's
+
+4117
+00:11:32,166 --> 00:11:34,166
+used.
+
+4118
+00:11:34,474 --> 00:11:37,577
+But in the handle event method,
+this is the instance, which
+
+4119
+00:11:37,577 --> 00:11:39,577
+means we can access those
+properties like count that we
+
+4120
+00:11:40,678 --> 00:11:43,780
+need to manipulate some things,
+as well as if we had other
+
+4121
+00:11:43,780 --> 00:11:46,984
+methods in our class, we could
+run those, too, without having
+
+4122
+00:11:46,984 --> 00:11:48,984
+to do things like use the bind
+method
+
+4123
+00:11:50,388 --> 00:11:53,593
+or some weird hacks with arrow
+functions and timing around WHN
+
+4124
+00:11:53,593 --> 00:11:56,904
+when we create callback
+functions .
+
+4125
+00:11:56,904 --> 00:11:58,904
+And in this particular
+instance, we are increasing our
+
+4126
+00:11:58,904 --> 00:12:00,904
+count by one. And then, we're
+updating the text inside our
+
+4127
+00:12:00,904 --> 00:12:02,904
+button to show how many times
+it's been clicked.
+
+4128
+00:12:06,723 --> 00:12:08,723
+If you need to listen to more
+than one type of event, you can
+
+4129
+00:12:08,723 --> 00:12:10,723
+create "on" methods in your
+class with each of your
+
+4130
+00:12:10,723 --> 00:12:13,033
+different event types and use
+the handle event method to
+
+4131
+00:12:13,033 --> 00:12:15,033
+automatically route them
+
+4132
+00:12:15,033 --> 00:12:18,450
+. Here, I have an on click
+event. And whenever that event
+
+4133
+00:12:18,450 --> 00:12:20,450
+type fires, my
+
+4134
+00:12:21,543 --> 00:12:23,543
+handle event method is going to
+automatically
+
+4135
+00:12:24,952 --> 00:12:26,952
+run that for me so you don't
+have to use a bunch of if else
+
+4136
+00:12:26,952 --> 00:12:28,952
+statements.
+
+4137
+00:12:29,248 --> 00:12:32,843
+Set handle event to do the work
+for you .
+
+4138
+00:12:32,843 --> 00:12:34,843
+With web components, you use
+custom attributes in
+
+4139
+00:12:35,936 --> 00:12:37,936
+your HTML to define your
+options
+
+4140
+00:12:40,339 --> 00:12:43,840
+and settings . Say you wanteded
+to define,
+
+4141
+00:12:47,352 --> 00:12:49,352
+42, you could add a start
+attribute and give it a value.
+
+4142
+00:12:51,252 --> 00:12:53,252
+In your constructer, you can
+use the
+
+4143
+00:12:54,464 --> 00:12:56,464
+get attribute method to get
+that attribute and the parse
+
+4144
+00:12:56,464 --> 00:12:58,464
+float to convert it from a
+string into a number, and
+
+4145
+00:13:00,761 --> 00:13:03,267
+if that attribute exists and a
+valid number, you use it for
+
+4146
+00:13:03,267 --> 00:13:05,267
+this count instead of the
+default of zero.
+
+4147
+00:13:05,267 --> 00:13:07,464
+If not, you fall back. Users
+don't have to use it but they
+
+4148
+00:13:07,464 --> 00:13:09,464
+have the option.
+
+4149
+00:13:11,049 --> 00:13:13,049
+What had makes this approach
+particularly nice is you can
+
+4150
+00:13:13,049 --> 00:13:15,049
+now have
+
+4151
+00:13:15,049 --> 00:13:17,238
+multiple instances of your Web
+Component on a page, each one
+
+4152
+00:13:17,238 --> 00:13:19,238
+can have their own options,
+settings, and properties
+
+4153
+00:13:19,739 --> 00:13:21,739
+, you never have to write any
+additional JavaScript.
+
+4154
+00:13:25,042 --> 00:13:27,042
+And you can tell by looking at
+the element what its specific
+
+4155
+00:13:27,042 --> 00:13:29,042
+settings are and how you expect
+it to behavior.
+
+4156
+00:13:29,834 --> 00:13:33,040
+And while Web Components don't
+have reactive data like React
+
+4157
+00:13:33,040 --> 00:13:35,040
+or Vue does, they do have a
+built
+
+4158
+00:13:35,347 --> 00:13:37,347
+-in mechanism for detecting
+attribute changes.
+
+4159
+00:13:39,139 --> 00:13:42,348
+For example, let's say you
+wanted to stop the count up
+
+4160
+00:13:42,348 --> 00:13:44,348
+component from counting when
+the pause attribute is added to
+
+4161
+00:13:44,348 --> 00:13:46,533
+it.
+First, you define an
+
+4162
+00:13:49,529 --> 00:13:51,529
+array of attributes you want to
+observe and assign them to the
+
+4163
+00:13:51,529 --> 00:13:53,529
+static observed attributes
+property. And you do this for
+
+4164
+00:13:53,529 --> 00:13:57,731
+performance reasons. So if you
+were watching every single
+
+4165
+00:13:57,731 --> 00:13:59,731
+attribute that
+
+4166
+00:14:00,829 --> 00:14:03,920
+could or could not be added or
+changed on an element, it could
+
+4167
+00:14:03,920 --> 00:14:07,031
+start to bog down the memory
+and create performance issues.
+
+4168
+00:14:07,031 --> 00:14:09,031
+You say, just pay attention to
+these.
+
+4169
+00:14:10,828 --> 00:14:13,526
+Whenever one of those
+attributes is changed in some
+
+4170
+00:14:13,526 --> 00:14:16,821
+way, the attribute changed
+callback method runs. And this
+
+4171
+00:14:16,821 --> 00:14:18,821
+will be triggered whenever an
+observed method is added,
+
+4172
+00:14:18,821 --> 00:14:21,220
+removed, or changes in value.
+And it receives three arguments
+
+4173
+00:14:21,220 --> 00:14:23,220
+automatically.
+
+4174
+00:14:24,518 --> 00:14:26,518
+The name of the attribute, its
+old value, and its new value.
+
+4175
+00:14:29,621 --> 00:14:32,712
+If you want to detect whether
+the attribute has been added,
+
+4176
+00:14:32,712 --> 00:14:34,712
+removed, or changed, you can
+check the old and new
+
+4177
+00:14:35,919 --> 00:14:38,817
+value properties when an
+attribute was just added, the
+
+4178
+00:14:38,817 --> 00:14:40,817
+old value will be null because
+there was nothing there before.
+
+4179
+00:14:40,817 --> 00:14:42,817
+When it's been removed, the new
+value will be null
+
+4180
+00:14:45,494 --> 00:14:47,494
+. In all other situations,
+where the value's just
+
+4181
+00:14:47,494 --> 00:14:49,494
+changing, it will be a string.
+
+4182
+00:14:49,874 --> 00:14:51,874
+It could be an empty string,
+could have some sort of value
+
+4183
+00:14:51,874 --> 00:14:53,874
+with it, but it'll be a string.
+
+4184
+00:14:55,375 --> 00:14:58,980
+In this particular case, if the
+attribute was removed, so if
+
+4185
+00:14:58,980 --> 00:15:02,069
+the -- I'm sorry, if it was
+added, rather , if the old
+
+4186
+00:15:02,069 --> 00:15:04,069
+value was null, we're going to
+remove our click event
+
+4187
+00:15:04,069 --> 00:15:08,431
+listeners. We stop detecting
+clicks.
+
+4188
+00:15:08,431 --> 00:15:10,431
+When the attribute gets
+removed, we are going to add
+
+4189
+00:15:10,431 --> 00:15:12,431
+our click event listener back
+on.
+
+4190
+00:15:15,213 --> 00:15:18,224
+Let's look at some examples of
+things HTML web components are
+
+4191
+00:15:18,224 --> 00:15:20,224
+particularly great at.
+
+4192
+00:15:23,520 --> 00:15:26,529
+Let's say you have a button and
+you want to show or hide some
+
+4193
+00:15:26,529 --> 00:15:28,529
+content when it's pressed.
+
+4194
+00:15:29,113 --> 00:15:31,113
+This is a classic show/hide
+disclosure component.
+
+4195
+00:15:34,410 --> 00:15:36,507
+First, we'd start by wrapping a
+custom element around it . The
+
+4196
+00:15:36,507 --> 00:15:38,507
+obviously named show/hide.
+
+4197
+00:15:39,801 --> 00:15:41,801
+Now, you have an easy way to
+associate a button and content
+
+4198
+00:15:41,801 --> 00:15:43,801
+that goes with it. But if
+there's no JavaScript, users
+
+4199
+00:15:43,801 --> 00:15:46,468
+still get the content. In our
+JavaScript, we'll start by
+
+4200
+00:15:46,468 --> 00:15:48,468
+defining our custom
+
+4201
+00:15:49,553 --> 00:15:51,553
+element, we'll pass in
+show/hide and our class that
+
+4202
+00:15:51,553 --> 00:15:53,553
+extends the HTML element.
+
+4203
+00:15:54,122 --> 00:15:56,122
+And then, inside the
+constructer for that class,
+
+4204
+00:15:56,122 --> 00:15:58,122
+we'll run the super method and
+we'll define our properties.
+
+4205
+00:16:00,502 --> 00:16:02,502
+Maybe we'll get the button
+using the query selector method
+
+4206
+00:16:02,502 --> 00:16:04,502
+on this . And then, we will get
+the
+
+4207
+00:16:06,797 --> 00:16:08,797
+content, the next element
+sibling, and assign that to a
+
+4208
+00:16:08,797 --> 00:16:12,659
+property, as well. That way, we
+can access them later. Next,
+
+4209
+00:16:12,659 --> 00:16:14,659
+the initial UI.
+
+4210
+00:16:16,147 --> 00:16:18,525
+We'll add an ARIA expanded
+value with the value of false.
+
+4211
+00:16:18,525 --> 00:16:22,008
+This is an accessibility
+requirement. So it conveys to
+
+4212
+00:16:22,008 --> 00:16:24,008
+people who use screen
+
+4213
+00:16:25,213 --> 00:16:27,213
+readers what type of
+interaction they could expect
+
+4214
+00:16:27,213 --> 00:16:29,213
+from that button and what the
+current state of it and its
+
+4215
+00:16:29,213 --> 00:16:31,213
+content are.
+And then, we'll hide the
+
+4216
+00:16:31,213 --> 00:16:33,213
+content using the hidden
+attribute.
+
+4217
+00:16:34,175 --> 00:16:38,269
+Now, the HTML UI looks like
+this after a Web Component
+
+4218
+00:16:38,269 --> 00:16:40,269
+instantiates and runs.
+
+4219
+00:16:40,757 --> 00:16:42,757
+Next, we will add a click event
+listener to our button.
+
+4220
+00:16:44,044 --> 00:16:48,658
+And we'll do that by passing
+the instance, this, into the
+
+4221
+00:16:48,658 --> 00:16:53,352
+add event listener. That way,
+we can take advantage of the
+
+4222
+00:16:53,352 --> 00:16:55,352
+handle event method.
+
+4223
+00:16:56,925 --> 00:16:58,925
+Under the ARIA show/hide
+pattern,
+
+4224
+00:17:00,730 --> 00:17:02,730
+it should have an expanded
+value of true when it's visible
+
+4225
+00:17:02,730 --> 00:17:04,730
+and false when it's hidden.
+
+4226
+00:17:05,309 --> 00:17:08,915
+Inside our handle event method,
+we can check the current value
+
+4227
+00:17:08,915 --> 00:17:10,915
+of that attribute on our button
+and show or hide the content
+
+4228
+00:17:10,915 --> 00:17:13,413
+accordingly. If it has a value
+of true, content is currently
+
+4229
+00:17:13,413 --> 00:17:15,413
+visible,
+
+4230
+00:17:16,498 --> 00:17:18,498
+we'll change it to false, and
+we'll set the hidden attribute
+
+4231
+00:17:18,498 --> 00:17:20,498
+to hide that content.
+
+4232
+00:17:21,677 --> 00:17:23,677
+Otherwise, we'll set it to true
+to show the content and
+
+4233
+00:17:24,688 --> 00:17:28,175
+remove the hidden attribute so
+you can see it.
+
+4234
+00:17:28,175 --> 00:17:30,175
+Now, that we have a functional
+component, we might try adding
+
+4235
+00:17:30,175 --> 00:17:32,175
+some styling to make it look a
+little bit nicer.
+
+4236
+00:17:34,157 --> 00:17:36,157
+We might, for example, change
+the button color based on
+
+4237
+00:17:36,157 --> 00:17:38,823
+whether the content is hidden
+or visible.
+
+4238
+00:17:38,823 --> 00:17:41,913
+We'll give it maybe a blue
+color as the default, and we'll
+
+4239
+00:17:41,913 --> 00:17:43,913
+make it darker when ARIA
+
+4240
+00:17:45,005 --> 00:17:47,005
+expanded equals true, which we
+can do by using an attribute
+
+4241
+00:17:47,005 --> 00:17:49,005
+selector in the CSS.
+
+4242
+00:17:49,905 --> 00:17:52,994
+Because we only want this to
+apply to our show hide
+
+4243
+00:17:52,994 --> 00:17:54,994
+component, we will scope our
+CSS to
+
+4244
+00:17:55,079 --> 00:17:58,365
+that element. And maybe we want
+to hide the button element
+
+4245
+00:17:58,365 --> 00:18:00,365
+until our web component
+JavaScript
+
+4246
+00:18:00,776 --> 00:18:02,776
+loads since it requires
+JavaScript to work.
+
+4247
+00:18:04,666 --> 00:18:08,450
+It's functionless until the Web
+Component starts. We can use
+
+4248
+00:18:08,450 --> 00:18:10,450
+the not and defined pseudo
+classes for that
+
+4249
+00:18:10,743 --> 00:18:12,743
+. And display none on our
+button to hide it.
+
+4250
+00:18:14,317 --> 00:18:18,722
+Another example, we talked
+about little bit earlier, Web
+
+4251
+00:18:18,722 --> 00:18:21,332
+Components are great for
+transform LG ing headings and
+
+4252
+00:18:21,332 --> 00:18:23,332
+content.
+
+4253
+00:18:24,825 --> 00:18:26,825
+No worries, users still have
+access to all of the headings
+
+4254
+00:18:26,825 --> 00:18:28,825
+and all of the content.
+I'm not going to walk through
+
+4255
+00:18:28,825 --> 00:18:30,825
+the code for the rest of these
+because we would be here all
+
+4256
+00:18:30,825 --> 00:18:33,494
+day. Just some more examples to
+kind of get your brain going on
+
+4257
+00:18:33,494 --> 00:18:35,494
+what
+
+4258
+00:18:35,494 --> 00:18:37,494
+you can do with this approach
+to web components.
+
+4259
+00:18:39,478 --> 00:18:41,891
+You might also take a list of
+anchor elements and their so
+
+4260
+00:18:41,891 --> 00:18:43,891
+associated content and turn
+them into toggle tabs. No
+
+4261
+00:18:43,891 --> 00:18:46,873
+JavaScript? Users get a
+perfectly functional collection
+
+4262
+00:18:46,873 --> 00:18:48,873
+of anchor links and content.
+
+4263
+00:18:51,382 --> 00:18:53,382
+One of my favorite uses,
+though, is forms.
+
+4264
+00:18:54,674 --> 00:18:57,879
+The project I did for NASA
+involved building out an entire
+
+4265
+00:18:57,879 --> 00:18:59,879
+app and it was done almost
+exclusively
+
+4266
+00:19:00,296 --> 00:19:03,584
+through Form Interactions. I
+like to create forms that work
+
+4267
+00:19:03,584 --> 00:19:05,584
+with old school server submits
+and full page reloads by
+
+4268
+00:19:05,584 --> 00:19:08,788
+default. So you provide an
+action that points to
+
+4269
+00:19:11,781 --> 00:19:13,781
+some sort of server pass, the
+form sends its data
+
+4270
+00:19:14,870 --> 00:19:17,955
+to that path and the server
+does some stuff . And then, I
+
+4271
+00:19:17,955 --> 00:19:19,955
+use Web Components to turn them
+into
+
+4272
+00:19:21,360 --> 00:19:23,360
+a A
+
+4273
+00:19:25,366 --> 00:19:27,366
+JAX forms and show a status
+message or update the UI
+
+4274
+00:19:27,366 --> 00:19:29,366
+instead of reloading the entire
+page.
+
+4275
+00:19:30,633 --> 00:19:33,726
+Without JavaScript, you still
+get a perfectly usable form or
+
+4276
+00:19:33,726 --> 00:19:35,726
+in the case with the NASA
+project, a perfectly usable
+
+4277
+00:19:35,726 --> 00:19:38,634
+app. But with it, you get
+something even better, faster,
+
+4278
+00:19:38,634 --> 00:19:41,965
+snappier . If you
+
+4279
+00:19:44,961 --> 00:19:46,961
+forget everything else about
+this talk, and I really hope
+
+4280
+00:19:46,961 --> 00:19:48,961
+you remember more than just
+this, but if you only remember
+
+4281
+00:19:48,961 --> 00:19:51,553
+one thing, I hope your key
+takeaway is to start
+
+4282
+00:19:54,540 --> 00:19:58,514
+with functional HTML and then
+enhance with Web Components. If
+
+4283
+00:19:58,514 --> 00:20:00,514
+you found this interesting, I
+put together a bunch of
+
+4284
+00:20:00,514 --> 00:20:02,514
+additional resources for
+building HTML
+
+4285
+00:20:06,130 --> 00:20:08,708
+Web Components on gomake things.
+com, you can find boilerplates
+
+4286
+00:20:08,708 --> 00:20:10,708
+and more. Thank you all so
+much. This was a lot of fun.
+
+4287
+00:20:14,587 --> 00:20:18,264
+≫ MIKE: Chris, that was
+incredible. I'm going to agree
+
+4288
+00:20:18,264 --> 00:20:20,264
+with a lot of the chat.
+
+4289
+00:20:21,759 --> 00:20:23,759
+That's probably the best
+introduction to Web Components
+
+4290
+00:20:23,759 --> 00:20:25,936
+that I've heard.
+≫ CHRIS: Thank you.
+
+4291
+00:20:25,936 --> 00:20:27,936
+≫ MIKE: Yeah.
+
+4292
+00:20:29,223 --> 00:20:31,223
+I feel like just seeing that
+and a lot of things click into
+
+4293
+00:20:31,223 --> 00:20:33,223
+place.
+
+4294
+00:20:34,123 --> 00:20:36,218
+Particularly, like the defined,
+not defined, I haven't -- I
+
+4295
+00:20:36,218 --> 00:20:38,218
+wasn't aware of that.
+
+4296
+00:20:39,706 --> 00:20:41,706
+But it's such an elegant
+solution to that problem .
+
+4297
+00:20:44,692 --> 00:20:47,103
+I've just been adding classes
+to things recently to -- JS on
+
+4298
+00:20:47,103 --> 00:20:49,103
+or something like that.
+
+4299
+00:20:49,488 --> 00:20:52,088
+≫ CHRIS: Yeah, thank you.
+≫ MIKE: That's awesome.
+
+4300
+00:20:55,279 --> 00:20:58,366
+So yeah, what do you think the
+-- what should we be excited
+
+4301
+00:20:58,366 --> 00:21:00,366
+about in the web component
+
+4302
+00:21:01,572 --> 00:21:03,572
+space
+
+4303
+00:21:04,177 --> 00:21:08,161
+? Clearly we need more adoption
+and awareness around this.
+
+4304
+00:21:08,161 --> 00:21:10,161
+≫ CHRIS: Yeah, so I'm
+particularly pessimistic about
+
+4305
+00:21:12,373 --> 00:21:14,373
+shadow DOM, in general, it has
+valid uses.
+
+4306
+00:21:15,671 --> 00:21:17,671
+But if you're someone who
+enjoys that or wish you could
+
+4307
+00:21:17,671 --> 00:21:19,671
+do more with
+
+4308
+00:21:19,681 --> 00:21:22,884
+Shadow DOM but also you wish
+you could do the HTML first
+
+4309
+00:21:22,884 --> 00:21:24,884
+approach I described today,
+
+4310
+00:21:28,299 --> 00:21:30,299
+it's now possible to use
+declarative Shadow
+
+4311
+00:21:31,391 --> 00:21:33,391
+DOM, so you can write the stuff
+that's going to end up in the
+
+4312
+00:21:34,488 --> 00:21:36,488
+Shadow DOM in your HTML rather
+than having to historically
+
+4313
+00:21:36,488 --> 00:21:38,488
+they would all have to be
+generated through JavaScript.
+
+4314
+00:21:40,094 --> 00:21:42,094
+So, you know, there's now a way
+to do that without it. I think
+
+4315
+00:21:42,094 --> 00:21:44,094
+that's pretty exciting.
+
+4316
+00:21:48,901 --> 00:21:51,988
+Not specific to Web Components
+itself, but one thing I really,
+
+4317
+00:21:51,988 --> 00:21:53,988
+I think the biggest thing that
+we're
+
+4318
+00:21:55,078 --> 00:21:58,282
+missing from the web platform
+as a whole is some sort of
+
+4319
+00:21:58,282 --> 00:22:00,282
+method that allows diffing the
+DOM and
+
+4320
+00:22:01,484 --> 00:22:03,484
+selecting the API without
+clobbering everything, right?
+
+4321
+00:22:05,867 --> 00:22:07,867
+Where you say, here's an
+element, what it should look
+
+4322
+00:22:07,867 --> 00:22:09,867
+like, change just what needs to
+get changed. We need that.
+
+4323
+00:22:11,141 --> 00:22:13,141
+That, in my opinion, would be
+the thing that really kills
+
+4324
+00:22:13,141 --> 00:22:15,141
+React
+
+4325
+00:22:15,141 --> 00:22:17,742
+. You know, until then.
+≫ MIKE: Where do you think that
+
+4326
+00:22:17,742 --> 00:22:19,742
+comes from?
+
+4327
+00:22:21,626 --> 00:22:23,626
+The browser specification and
+...
+
+4328
+00:22:25,891 --> 00:22:27,891
+≫ CHRIS: Yeah, I don't think
+I've even seen a specification
+
+4329
+00:22:27,891 --> 00:22:29,891
+for that . I know there are --
+I heard rumors there's maybe
+
+4330
+00:22:29,891 --> 00:22:33,479
+some specs specific to Web
+Components for doing something
+
+4331
+00:22:33,479 --> 00:22:35,479
+like that.
+
+4332
+00:22:36,765 --> 00:22:38,765
+Maybe, as a proposal, not like
+anything that's on a track to
+
+4333
+00:22:38,765 --> 00:22:41,050
+get built. But I would love
+that just as a general, like,
+
+4334
+00:22:41,050 --> 00:22:43,050
+thing for the
+
+4335
+00:22:44,456 --> 00:22:47,353
+web, not just Web
+Component-specific .
+
+4336
+00:22:47,353 --> 00:22:49,353
+≫ MIKE: Yeah, that would be
+incredible.
+
+4337
+00:22:50,648 --> 00:22:53,733
+Zach was telling me recently
+that React, latest version of
+
+4338
+00:22:53,733 --> 00:22:56,831
+React has custom component
+support, so maybe React --
+
+4339
+00:22:56,831 --> 00:22:58,831
+≫ CHRIS: Finally.
+
+4340
+00:23:00,409 --> 00:23:02,409
+≫ MIKE: Kind of meets in the
+middle of Web Components and
+
+4341
+00:23:02,409 --> 00:23:04,409
+brings a lot of the ideas to a
+broad
+
+4342
+00:23:06,513 --> 00:23:08,513
+er audience of web developers.
+≫ CHRIS: Yeah, that would be
+
+4343
+00:23:08,513 --> 00:23:11,378
+wonderful. I think the toughest
+thing with Web Components in
+
+4344
+00:23:11,378 --> 00:23:13,378
+general is
+
+4345
+00:23:14,467 --> 00:23:17,674
+really just if you're used to
+thinking about things in a
+
+4346
+00:23:17,674 --> 00:23:19,674
+React-y way, wrapping
+
+4347
+00:23:20,877 --> 00:23:22,877
+your brain around the whole
+this is
+
+4348
+00:23:24,087 --> 00:23:27,475
+more...  React components are
+everything in one place and Web
+
+4349
+00:23:30,460 --> 00:23:32,460
+Components are separation of
+concerns and each thing does
+
+4350
+00:23:32,460 --> 00:23:34,460
+what it does best .
+And it's a mental shift.
+
+4351
+00:23:36,118 --> 00:23:38,118
+So, yeah, I would like to see
+more of that.
+
+4352
+00:23:40,211 --> 00:23:43,819
+I think one of the -- we're
+starting to see more big
+
+4353
+00:23:43,819 --> 00:23:46,913
+companies use Web Components,
+maybe bigger open source
+
+4354
+00:23:46,913 --> 00:23:48,913
+projects around it, I'm hoping
+the tide is starting to shift.
+
+4355
+00:23:51,489 --> 00:23:53,489
+And you have projects like
+Enhance that use Web
+
+4356
+00:23:53,992 --> 00:23:55,992
+Components as the foundation
+for an entire static site
+
+4357
+00:23:55,992 --> 00:23:58,184
+generator. That's pretty cool,
+too.
+
+4358
+00:24:01,472 --> 00:24:03,472
+≫ MIKE: Well, appreciate
+everything you're doing to
+
+4359
+00:24:03,472 --> 00:24:05,472
+evangelize
+
+4360
+00:24:05,472 --> 00:24:07,472
+Web Components, that was an
+incredible introduction to Web
+
+4361
+00:24:07,472 --> 00:24:09,472
+Components.
+≫ CHRIS: Thank you so much.

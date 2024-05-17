@@ -1,0 +1,1199 @@
+3552
+00:00:00,000 --> 00:00:04,000
+≫ DAVID: Fantastic, thank you
+Liam and I both work at CloudCannon
+
+3553
+00:00:04,000 --> 00:00:08,000
+CloudCannon is a visual CMS for
+11ty and for other SSGs,
+
+3554
+00:00:08,000 --> 00:00:9,1000
+and broadly speaking
+
+3555
+00:00:09,1000 --> 00:00:11,1000
+we focus on two
+things, we want to make it
+
+3556
+00:00:11,1000 --> 00:00:13,1000
+easier
+
+3557
+00:00:13,1000 --> 00:00:16,615
+for everyone to manage the
+content, and the visual
+
+3558
+00:00:16,615 --> 00:00:18,615
+interface, and on creating and
+supporting open source
+
+3559
+00:00:19,713 --> 00:00:21,713
+SSG, agnostic tooling
+
+3560
+00:00:22,810 --> 00:00:27,560
+. It's important for us that
+there's absolutely no vendor
+
+3561
+00:00:27,560 --> 00:00:29,560
+locking in CloudCannon, we
+think your site, your source,
+
+3562
+00:00:29,560 --> 00:00:31,560
+and your content should be
+yours and stored in your Git
+
+3563
+00:00:31,560 --> 00:00:33,560
+repo. You can take it when you
+want to, it's fully portable.
+
+3564
+00:00:34,866 --> 00:00:36,866
+Today, we're joining forces to
+talk about how CloudCannon
+
+3565
+00:00:38,070 --> 00:00:41,276
+has a feature called site
+mounting that can combine with
+
+3566
+00:00:41,276 --> 00:00:43,276
+a new open source tool that
+creates a static API.
+
+3567
+00:00:45,370 --> 00:00:47,370
+And that's aimed at allowing
+
+3568
+00:00:48,576 --> 00:00:50,576
+large organizations to receive
+the same benefits of static
+
+3569
+00:00:50,576 --> 00:00:52,576
+sites and CMS as smaller single
+site orgs.
+
+3570
+00:00:58,893 --> 00:01:02,186
+So site mounting. Site mounting
+allows multiple sites to sync
+
+3571
+00:01:02,186 --> 00:01:04,186
+to one build image
+
+3572
+00:01:04,186 --> 00:01:06,290
+on CloudCannon. You might have
+seen this in action on 11ty
+
+3573
+00:01:06,290 --> 00:01:08,290
+already
+
+3574
+00:01:09,702 --> 00:01:11,702
+. Zach made a video about it
+when the feature first launched
+
+3575
+00:01:11,702 --> 00:01:13,702
+last year.
+
+3576
+00:01:13,702 --> 00:01:16,201
+But today, in addition to
+shearing components and layup
+
+3577
+00:01:16,201 --> 00:01:18,201
+files on sites, we're going to
+
+3578
+00:01:19,290 --> 00:01:21,290
+demonstrate a data link and
+group of connected sites 11ty
+
+3579
+00:01:21,290 --> 00:01:23,290
+sites , enabling content
+syndication and
+
+3580
+00:01:25,585 --> 00:01:27,585
+aggregation, new tool
+
+3581
+00:01:27,994 --> 00:01:30,994
+flatlink.
+
+3582
+00:01:36,192 --> 00:01:38,192
+≫ LIAM: Flatlake is tool we're
+developing similar to the way
+
+3583
+00:01:39,394 --> 00:01:42,597
+the static site generator spits
+out static HTML files that can
+
+3584
+00:01:42,597 --> 00:01:45,782
+be used as a website, Flat
+
+3585
+00:01:49,287 --> 00:01:52,490
+lake spits out JSON files that
+can be query . We'll show how
+
+3586
+00:01:52,490 --> 00:01:55,992
+to aggregate and share content
+between stand alone 11ty sites.
+
+3587
+00:02:03,973 --> 00:02:05,973
+≫ DAVID: Let's imagine we're
+tasked with building several
+
+3588
+00:02:05,973 --> 00:02:07,973
+real good websites for quite a
+large organization.
+
+3589
+00:02:08,355 --> 00:02:10,355
+We're going to demo four
+smaller sites connected to one
+
+3590
+00:02:10,355 --> 00:02:12,460
+larger parent site, but there's
+no technical limit. We'll call
+
+3591
+00:02:12,460 --> 00:02:15,747
+out the larger site real big
+company. You can check it out
+
+3592
+00:02:15,747 --> 00:02:17,747
+if you like Real Big.
+
+3593
+00:02:19,445 --> 00:02:21,445
+company, look at the GitHub,
+it's all connected.
+
+3594
+00:02:22,823 --> 00:02:24,823
+We love static sites, we love
+flat files, we love 11ty.
+
+3595
+00:02:28,410 --> 00:02:31,615
+And our smaller sites static
+laboratories, 11ty
+
+3596
+00:02:31,615 --> 00:02:33,615
+incorporated, and
+
+3597
+00:02:34,824 --> 00:02:36,824
+liminal interfaces. It's very
+unbrand.
+
+3598
+00:02:39,206 --> 00:02:41,818
+You can imagine a large
+corporation or university,
+
+3599
+00:02:41,818 --> 00:02:43,818
+perhaps, needing a setup like
+this.
+
+3600
+00:02:47,603 --> 00:02:49,603
+They may or may not be
+technical, they'll be managing
+
+3601
+00:02:49,603 --> 00:02:51,894
+several hundred sites. So, I
+can jump into this right now,
+
+3602
+00:02:55,400 --> 00:02:57,400
+I'm editing on CloudCannon,
+this is an 11ty
+
+3603
+00:02:58,602 --> 00:03:02,073
+site I'm editing, I'm marking
+down live in the visual.
+
+3604
+00:03:02,073 --> 00:03:04,073
+It's great, right?
+
+3605
+00:03:04,073 --> 00:03:06,073
+Really good for a single site.
+I can edit everything quickly.
+
+3606
+00:03:07,792 --> 00:03:12,093
+I can add page components that
+our developer has built. But
+
+3607
+00:03:12,093 --> 00:03:14,093
+what about a smaller site?
+
+3608
+00:03:15,191 --> 00:03:17,191
+Had What about our smaller
+sites?
+
+3609
+00:03:18,792 --> 00:03:21,403
+If we want to jump to what the
+big corporation needs, what if
+
+3610
+00:03:21,403 --> 00:03:23,403
+they want to spin up a new
+site?
+
+3611
+00:03:23,503 --> 00:03:26,803
+They have quite a large wish
+list here. How do they get
+
+3612
+00:03:26,803 --> 00:03:28,803
+exactly the same page building
+components in each site ?
+
+3613
+00:03:31,014 --> 00:03:33,014
+What about brand recognition
+for the real big corporate
+
+3614
+00:03:33,014 --> 00:03:35,014
+family. And perhaps, more
+importantly, if we update a
+
+3615
+00:03:35,014 --> 00:03:37,014
+layout or a component, how can
+it be reflected on all of our
+
+3616
+00:03:37,014 --> 00:03:39,014
+sites?
+
+3617
+00:03:39,014 --> 00:03:42,621
+That's a pretty decent sized
+wish list. And of course, we
+
+3618
+00:03:42,621 --> 00:03:44,621
+want this on 11ty for all of
+the performance benefits of a
+
+3619
+00:03:44,621 --> 00:03:46,922
+static site and on CloudCannon
+for the benefits of visual edit
+
+3620
+00:03:50,033 --> 00:03:52,033
+or without content stored in
+Git. We can do all of this.
+
+3621
+00:03:54,744 --> 00:03:57,550
+We can see this in action here,
+this is Xity, a subsidiary of
+
+3622
+00:03:57,550 --> 00:04:00,951
+real big company. You can see
+here, our
+
+3623
+00:04:04,055 --> 00:04:07,263
+site is retrieving the source
+files from the component
+
+3624
+00:04:07,263 --> 00:04:10,768
+library, that's the shear ed
+common re
+
+3625
+00:04:14,273 --> 00:04:16,273
+shared common repo and from the
+common repo into the sites
+
+3626
+00:04:16,273 --> 00:04:18,273
+includes layouts.
+
+3627
+00:04:18,490 --> 00:04:20,988
+This is pretty straightforward
+setup. Just an option within
+
+3628
+00:04:20,988 --> 00:04:22,988
+CloudCannon to set up.
+
+3629
+00:04:24,582 --> 00:04:26,582
+Here's a simplified version
+where our site folder and our
+
+3630
+00:04:26,582 --> 00:04:28,582
+conflict
+
+3631
+00:04:29,190 --> 00:04:31,800
+tent files are sourced from the
+content repo and layouts
+
+3632
+00:04:31,800 --> 00:04:33,800
+sourced from the central repo.
+
+3633
+00:04:35,396 --> 00:04:37,396
+And the important aspect is
+that from here the 11ty
+
+3634
+00:04:38,602 --> 00:04:41,699
+build proceeds as if all files
+were arranged in one folder
+
+3635
+00:04:41,699 --> 00:04:43,699
+originally and thus built as
+
+3636
+00:04:43,699 --> 00:04:46,384
+one unified stacked site.
+And once any files in the
+
+3637
+00:04:46,384 --> 00:04:48,384
+common repo are changed, layout
+
+3638
+00:04:49,480 --> 00:04:51,480
+is tweaked, perhaps, or a new
+page building component is
+
+3639
+00:04:53,487 --> 00:04:55,487
+added, any downstream link
+sites have immediate access to
+
+3640
+00:04:55,487 --> 00:04:57,487
+the new components and any
+layout changes will
+
+3641
+00:04:57,487 --> 00:05:02,287
+automatically rebuild every
+affected site.
+
+3642
+00:05:02,287 --> 00:05:06,888
+≫ LIAM: Where are we?
+
+3643
+00:05:13,698 --> 00:05:15,698
+Now that we can share codes
+between the sites in our
+
+3644
+00:05:15,698 --> 00:05:17,698
+company, it'll be great if we
+could share content, too.
+
+3645
+00:05:18,694 --> 00:05:20,694
+So, bringing up their next wish
+
+3646
+00:05:23,701 --> 00:05:27,009
+list, we have the content
+wishlist.
+
+3647
+00:05:32,618 --> 00:05:35,719
+So, on the main corporate
+website, we want to rehost some
+
+3648
+00:05:35,719 --> 00:05:37,719
+of the
+
+3649
+00:05:38,922 --> 00:05:42,027
+featured news articles from
+each division, plus for every
+
+3650
+00:05:42,027 --> 00:05:44,027
+division's website, we want to
+list the news articles
+
+3651
+00:05:44,027 --> 00:05:46,027
+from every other division.
+
+3652
+00:05:47,742 --> 00:05:49,742
+With this level of
+interconnection between sites,
+
+3653
+00:05:49,742 --> 00:05:51,742
+a typical approach would force
+us to move the source of truth
+
+3654
+00:05:51,742 --> 00:05:53,742
+for our content
+
+3655
+00:05:54,251 --> 00:05:56,251
+out of our sites and into some
+central data link.
+
+3656
+00:05:58,158 --> 00:06:00,864
+But we don't want our team to
+have to edit a data lake
+
+3657
+00:06:00,864 --> 00:06:02,864
+directly, we want them to edit
+their site in context.
+
+3658
+00:06:04,372 --> 00:06:06,372
+To achieve that, we're going to
+show how Flatlake and
+
+3659
+00:06:07,981 --> 00:06:11,785
+site mounting work together to
+create a static Git base data
+
+3660
+00:06:11,785 --> 00:06:13,785
+lake, without change in
+workflow for
+
+3661
+00:06:13,785 --> 00:06:16,694
+the company. You can picture
+building this with something
+
+3662
+00:06:16,694 --> 00:06:18,694
+like site mounting on its own.
+
+3663
+00:06:23,292 --> 00:06:25,292
+The burden of understanding all
+of the source files means this
+
+3664
+00:06:25,292 --> 00:06:27,292
+approach doesn't scale beyond a
+few sites.
+
+3665
+00:06:30,910 --> 00:06:32,910
+We're going to use Flatlake
+
+3666
+00:06:34,003 --> 00:06:36,610
+to aggregate into a static API
+and give every website access
+
+3667
+00:06:36,610 --> 00:06:38,610
+to the data at build time.
+
+3668
+00:06:39,116 --> 00:06:42,440
+We're going to keep the content
+experience grounded in their
+
+3669
+00:06:42,440 --> 00:06:44,440
+website, not in some giant
+database.
+
+3670
+00:06:48,239 --> 00:06:50,239
+Flatlake is driven by a single
+configuration file and runs as
+
+3671
+00:06:50,239 --> 00:06:52,239
+a stand alone command.
+
+3672
+00:06:54,355 --> 00:06:56,355
+Our data lake repo
+
+3673
+00:06:57,763 --> 00:07:01,059
+with just a Flatlake build
+file. Looking down the file, we
+
+3674
+00:07:01,059 --> 00:07:03,059
+see the extent of Flatlake
+setup.
+
+3675
+00:07:05,556 --> 00:07:07,556
+We define a news collection,
+give it a set of inputs, one
+
+3676
+00:07:07,556 --> 00:07:11,861
+for each division's news
+folder.
+
+3677
+00:07:11,861 --> 00:07:13,861
+We merge in some data to each
+input to filter by division.
+
+3678
+00:07:16,457 --> 00:07:18,457
+And I accidentally clicked on
+the wrong thing .
+
+3679
+00:07:21,172 --> 00:07:23,172
+[ Laughter ]
+Here we are.
+
+3680
+00:07:25,572 --> 00:07:27,572
+And -- there we go.
+
+3681
+00:07:32,887 --> 00:07:36,083
+And -- we tell Flatlake we want
+the
+
+3682
+00:07:39,188 --> 00:07:41,188
+front data and the frontend
+content to be part of the same
+
+3683
+00:07:41,188 --> 00:07:43,188
+API . You'll notice this repo
+
+3684
+00:07:44,997 --> 00:07:46,997
+doesn't contain the content
+it's referencing. How you
+
+3685
+00:07:46,997 --> 00:07:48,997
+achieve that depends on the
+environment.
+
+3686
+00:07:50,199 --> 00:07:52,199
+Locally, tends to use symbolic
+links or Git submodules can be
+
+3687
+00:07:52,199 --> 00:07:54,199
+good.
+
+3688
+00:07:55,305 --> 00:07:57,305
+But for this talk, we're going
+back to our good friend site
+
+3689
+00:07:57,305 --> 00:07:59,409
+mounting. In CloudCannon, we
+mount from each of the division
+
+3690
+00:07:59,409 --> 00:08:02,023
+sites into the data lake and
+hit build.
+
+3691
+00:08:05,225 --> 00:08:07,225
+Behind the scenes, Flatlake
+pulls the
+
+3692
+00:08:08,631 --> 00:08:11,840
+markdown content files and
+metadata and builds them up
+
+3693
+00:08:11,840 --> 00:08:13,840
+into what I've been calling a
+static API
+
+3694
+00:08:14,938 --> 00:08:16,938
+. If we look at Flatlake's
+output
+
+3695
+00:08:18,037 --> 00:08:21,136
+directory, we can see a bunch
+of folders containing JSON
+
+3696
+00:08:21,136 --> 00:08:23,136
+files, files that list every
+item in a given collection or
+
+3697
+00:08:23,136 --> 00:08:25,438
+globally.
+And there are files that
+
+3698
+00:08:25,438 --> 00:08:27,438
+aggregate content on certain
+data.
+
+3699
+00:08:28,736 --> 00:08:30,736
+For example, highlighted as a
+file that lists every news post
+
+3700
+00:08:30,736 --> 00:08:32,736
+that was written by David.
+
+3701
+00:08:34,438 --> 00:08:37,645
+Within it, we see the JSON
+RENGS representation of the
+
+3702
+00:08:37,645 --> 00:08:41,848
+content that Flatlake ingested.
+The content allows you to host
+
+3703
+00:08:41,848 --> 00:08:43,848
+them as a live API
+
+3704
+00:08:43,848 --> 00:08:47,053
+with pagenation. And since this
+is a flat folder full
+
+3705
+00:08:50,050 --> 00:08:52,050
+of files, we can load it as
+data, which we'll do for our
+
+3706
+00:08:52,050 --> 00:08:54,050
+real big company.
+
+3707
+00:08:54,549 --> 00:08:56,549
+So far, we've been site
+mounting source files from one
+
+3708
+00:08:56,549 --> 00:08:58,549
+site to another, which anyone
+can do on CloudCannon.
+
+3709
+00:08:59,145 --> 00:09:02,246
+To use our content as site
+data, we want to output the
+
+3710
+00:09:02,246 --> 00:09:05,346
+files . We can mount the data
+files that generated into all
+
+3711
+00:09:05,346 --> 00:09:07,346
+of
+
+3712
+00:09:08,757 --> 00:09:12,067
+Real Big's 11ty sites. And it's
+a feature of our higher tier
+
+3713
+00:09:12,067 --> 00:09:14,067
+plans and unlocks
+
+3714
+00:09:14,067 --> 00:09:16,067
+options for larger teams.
+
+3715
+00:09:17,772 --> 00:09:20,869
+With the static JSON files on
+disc, it's trivial to pull and
+
+3716
+00:09:20,869 --> 00:09:22,869
+use this data.
+
+3717
+00:09:24,469 --> 00:09:27,580
+On the main website, we're
+pulling Flatlake's files adds
+
+3718
+00:09:27,580 --> 00:09:29,580
+computer data ready to be used.
+
+3719
+00:09:33,687 --> 00:09:36,394
+Since this glues together with
+siting, you don't need to
+
+3720
+00:09:36,394 --> 00:09:38,394
+trigger any builds.
+
+3721
+00:09:39,892 --> 00:09:41,892
+One one of our we write a new
+article,
+
+3722
+00:09:43,496 --> 00:09:46,593
+it triggers Flatlake and
+triggers every site that
+
+3723
+00:09:46,593 --> 00:09:48,593
+consumes it to build with the
+aggregated
+
+3724
+00:09:48,593 --> 00:09:51,394
+content automatically. And a
+great feature of the
+
+3725
+00:09:51,394 --> 00:09:53,394
+syndication is it works
+seamlessly
+
+3726
+00:09:53,394 --> 00:09:56,701
+with the Git workflows. Content
+only syndicates when
+
+3727
+00:09:59,701 --> 00:10:01,701
+it lands on a main branch, and
+each site can have as many
+
+3728
+00:10:01,701 --> 00:10:03,701
+environments as they need
+without leaking content.
+
+3729
+00:10:04,400 --> 00:10:06,400
+No need to fork one giant data
+lake or maintain version
+
+3730
+00:10:06,400 --> 00:10:08,400
+content within it.
+
+3731
+00:10:10,207 --> 00:10:12,207
+With all O that in place, plus
+more liquid content
+
+3732
+00:10:13,304 --> 00:10:15,709
+behind the scenes, we have
+content syndicated and shown
+
+3733
+00:10:15,709 --> 00:10:17,709
+across of Real Big's web
+properties.
+
+3734
+00:10:19,011 --> 00:10:21,011
+On the main corporate website,
+you can list and read all
+
+3735
+00:10:21,011 --> 00:10:23,011
+featured news articles from the
+divisions.
+
+3736
+00:10:23,925 --> 00:10:25,925
+And we made the related
+articles section of each
+
+3737
+00:10:25,925 --> 00:10:27,925
+division's website list the
+latest news from all of
+
+3738
+00:10:27,925 --> 00:10:29,925
+divisions, as well.
+
+3739
+00:10:34,534 --> 00:10:36,534
+≫ DAVID: All of this dev work
+only happens once behind the
+
+3740
+00:10:36,534 --> 00:10:38,534
+scenes . For a team of editors,
+website users and perhaps, the
+
+3741
+00:10:40,840 --> 00:10:42,840
+nontechnical content folk, all
+they need to do is
+
+3742
+00:10:44,047 --> 00:10:46,948
+never get to the site they're
+working on, choose the content
+
+3743
+00:10:46,948 --> 00:10:48,948
+type that they're creating or
+editing, and just get to work.
+
+3744
+00:10:49,353 --> 00:10:52,655
+They have the layout and the
+components already. And once
+
+3745
+00:10:52,655 --> 00:10:55,163
+published, the content will be
+syndicated to the parent site
+
+3746
+00:10:55,163 --> 00:10:57,163
+as well as to any other sites
+that mount the data lake.
+
+3747
+00:10:59,668 --> 00:11:01,668
+It's also important to remember
+that editors don't
+
+3748
+00:11:02,766 --> 00:11:06,174
+need to wade through just to
+get the content, they get it in
+
+3749
+00:11:06,174 --> 00:11:08,174
+situ in the environment just
+for them.
+
+3750
+00:11:09,776 --> 00:11:11,776
+And that kind of sums up how a
+real big company can build
+
+3751
+00:11:13,384 --> 00:11:16,685
+real good static websites with
+a great tool like 11ty. Can
+
+3752
+00:11:16,685 --> 00:11:18,685
+share layouts across any number
+of sites,
+
+3753
+00:11:19,890 --> 00:11:21,890
+aggregate, syndicate the
+content, and can keep
+
+3754
+00:11:21,890 --> 00:11:23,890
+everything portable
+
+3755
+00:11:23,890 --> 00:11:26,598
+with Git-based CMS, and that
+means as I've said before, no
+
+3756
+00:11:26,598 --> 00:11:28,598
+vendor locking, you always
+control your
+
+3757
+00:11:28,598 --> 00:11:31,301
+content as we think you should.
+If you'd like to try any of
+
+3758
+00:11:31,301 --> 00:11:33,301
+this out for yourself, please
+have a look at CloudCannon.
+
+3759
+00:11:35,417 --> 00:11:37,417
+com, and Zach and Mike
+mentioned earlier, we have
+
+3760
+00:11:38,621 --> 00:11:40,631
+a draw for a free migration to
+CloudCannon and a bunch of
+
+3761
+00:11:40,631 --> 00:11:42,631
+discounted plans over at
+CloudCannon.
+
+3762
+00:11:42,736 --> 00:11:47,341
+com/11tyConf. This is only open
+during the conference. So you
+
+3763
+00:11:47,341 --> 00:11:50,945
+have a couple of hours to
+enter, still.
+
+3764
+00:11:50,945 --> 00:11:52,945
+If you do miss out on those,
+you can
+
+3765
+00:11:54,153 --> 00:11:56,257
+still try out with a free trial
+in one of the included
+
+3766
+00:11:56,257 --> 00:11:58,257
+starters.
+
+3767
+00:11:59,550 --> 00:12:01,550
+We have a new team plan we've
+added for universities and
+
+3768
+00:12:01,550 --> 00:12:03,550
+colleges who, I think, are
+quite likely to find site
+
+3769
+00:12:03,550 --> 00:12:06,448
+mounting and Flatlake a really
+handy solution to manage that
+
+3770
+00:12:06,448 --> 00:12:08,448
+standard several hundred sites.
+
+3771
+00:12:10,547 --> 00:12:12,547
+You can also check out Flatlake
+at flatlake.
+
+3772
+00:12:13,048 --> 00:12:16,442
+app. And finally, do feel free
+to take a look at Real
+
+3773
+00:12:19,152 --> 00:12:21,152
+Big. company.
+
+3774
+00:12:23,134 --> 00:12:26,222
+Read the content that was so
+much fun to write . And check
+
+3775
+00:12:26,222 --> 00:12:28,222
+out the files for Real
+
+3776
+00:12:28,635 --> 00:12:32,129
+Big company if you'd like to
+dig through the source there.
+
+3777
+00:12:32,129 --> 00:12:34,129
+We're happy to answer questions
+in chat after the talk or on
+
+3778
+00:12:34,129 --> 00:12:36,129
+Mastodon, if you prefer. Thanks
+very much.
+
+3779
+00:12:38,132 --> 00:12:42,707
+≫ MIKE: Thanks, team. What a
+duo.
+
+3780
+00:12:50,007 --> 00:12:52,007
+≫ DAVID: That's great.
+
+3781
+00:12:53,295 --> 00:12:56,392
+We're going to move on quickly,
+but I want to quickly ask, what
+
+3782
+00:12:56,392 --> 00:12:58,392
+kind of use cases do
+
+3783
+00:12:59,798 --> 00:13:01,798
+you -- you mentioned,
+universities with a lot of
+
+3784
+00:13:01,798 --> 00:13:03,798
+different websites.
+
+3785
+00:13:04,181 --> 00:13:06,181
+What other use cases do you
+think this would be valuable
+
+3786
+00:13:06,181 --> 00:13:08,181
+for?
+
+3787
+00:13:09,799 --> 00:13:11,799
+≫ DAVID: I think anyone who
+wants to share content to be
+
+3788
+00:13:11,799 --> 00:13:13,799
+able to syndicate
+
+3789
+00:13:13,799 --> 00:13:16,213
+content between sites, anyone
+who wants sites to be
+
+3790
+00:13:16,213 --> 00:13:18,213
+consistent.
+
+3791
+00:13:19,506 --> 00:13:21,506
+It's for the users, people who
+see the website, you could do
+
+3792
+00:13:21,506 --> 00:13:23,506
+either approach
+
+3793
+00:13:23,506 --> 00:13:25,506
+. You could have very different
+websites with exactly the same
+
+3794
+00:13:25,506 --> 00:13:27,506
+components.
+
+3795
+00:13:29,008 --> 00:13:31,008
+I don't think there's a limit
+to where this could go, really.
+
+3796
+00:13:32,802 --> 00:13:36,897
+≫ MIKE: Very cool. Again, just
+like pagefind, it's
+
+3797
+00:13:39,607 --> 00:13:41,607
+dispelling the myth of the
+limitations of static.
+
+3798
+00:13:42,900 --> 00:13:46,103
+Now, you can have a full API of
+your content to access it.
+
+3799
+00:13:49,295 --> 00:13:51,295
+≫ DAVID: That's right, I used
+to work for a university, we
+
+3800
+00:13:51,295 --> 00:13:53,295
+had 300 sites and it was a pain
+to do the content and
+
+3801
+00:13:53,295 --> 00:13:55,596
+everything had to be manually
+synced and kept perfect
+
+3802
+00:13:55,596 --> 00:13:57,596
+separately, and
+
+3803
+00:14:00,004 --> 00:14:02,004
+a tool like this would've saved
+-- would've changed my life .

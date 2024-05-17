@@ -1,0 +1,1205 @@
+2841
+00:00:03,092 --> 00:00:05,092
+So as I was just introduced,
+I'm the director of product
+
+2842
+00:00:05,092 --> 00:00:07,092
+management, I've never been a
+professional web developer but
+
+2843
+00:00:07,092 --> 00:00:09,588
+always worked with developers.
+I've always loved hacking web
+
+2844
+00:00:09,588 --> 00:00:11,588
+stuff, and I think that --
+
+2845
+00:00:12,676 --> 00:00:14,676
+for people like me, who have
+always been sort of adjacent to
+
+2846
+00:00:16,579 --> 00:00:18,579
+technology but not like always
+like knee deep in it, this is
+
+2847
+00:00:18,579 --> 00:00:20,579
+sort of like who it's for.
+Some interesting stats.
+
+2848
+00:00:23,560 --> 00:00:25,560
+Before I started learning 11ty
+
+2849
+00:00:26,647 --> 00:00:29,735
+, I had maybe built one site
+over five years . It was a
+
+2850
+00:00:29,735 --> 00:00:31,735
+Gatsby site, and it made me
+
+2851
+00:00:32,744 --> 00:00:36,032
+cry, and I just sort of like --
+never went back to it. Never
+
+2852
+00:00:36,032 --> 00:00:40,727
+wanted to do anything. Didn't
+want to update it, I was
+
+2853
+00:00:40,727 --> 00:00:45,310
+fearful  I would break stuff.
+And for various reasons, I
+
+2854
+00:00:45,310 --> 00:00:47,310
+started following Zach on
+Twitter and
+
+2855
+00:00:48,201 --> 00:00:50,201
+I was like, well, this seems
+cool, I should give it a shot.
+
+2856
+00:00:51,691 --> 00:00:53,787
+And I've actually built maybe 5
+sites over 5 months. So that's
+
+2857
+00:00:53,787 --> 00:00:55,787
+been really, really fun. And I
+started thinking, why is that ?
+
+2858
+00:00:58,569 --> 00:01:00,569
+Why is it I got so far with one
+tool but not others?
+
+2859
+00:01:03,551 --> 00:01:05,551
+I've tried tons of different
+frameworks, site
+
+2860
+00:01:06,955 --> 00:01:10,048
+generators, and I think for me,
+it's that it was just -- it
+
+2861
+00:01:10,048 --> 00:01:12,048
+feels so much
+
+2862
+00:01:13,130 --> 00:01:15,130
+harder, not easier to build a
+site in
+
+2863
+00:01:16,335 --> 00:01:20,342
+2024 compared to 2000 when, I
+guess, I built my very first
+
+2864
+00:01:20,342 --> 00:01:22,342
+website, you know, hacking
+around, changing HTML
+
+2865
+00:01:23,231 --> 00:01:25,231
+and the CSS and stuff and being
+like, this is really fun.
+
+2866
+00:01:28,209 --> 00:01:30,209
+But then, at some point, it
+stopped feeling
+
+2867
+00:01:31,297 --> 00:01:33,297
+fun or it started to feel like
+it was harder to find fun
+
+2868
+00:01:33,297 --> 00:01:36,096
+things. And getting to build
+sites with 11ty
+
+2869
+00:01:38,403 --> 00:01:40,403
+brought back some of that joy.
+
+2870
+00:01:42,114 --> 00:01:44,114
+So then I started thinking, why
+is that? And how can we help
+
+2871
+00:01:44,114 --> 00:01:46,114
+other people feel that way?
+
+2872
+00:01:46,699 --> 00:01:48,699
+The same sense of, OK, this is
+something cool I want to learn,
+
+2873
+00:01:48,699 --> 00:01:50,699
+again.
+
+2874
+00:01:51,086 --> 00:01:54,178
+And my theory is that there's
+probably too much to learn,
+
+2875
+00:01:54,178 --> 00:01:56,178
+people are not sure where to
+pick up if you're not in
+
+2876
+00:01:56,178 --> 00:01:58,178
+industry, there's so many
+tools, so many frameworks, you
+
+2877
+00:01:58,178 --> 00:02:00,834
+need to know a bit of JS to get
+going to get anything done at
+
+2878
+00:02:00,834 --> 00:02:04,819
+all.
+There's also a lot of conflicts
+
+2879
+00:02:04,819 --> 00:02:06,819
+advice on what you should do
+and a lot of
+
+2880
+00:02:07,910 --> 00:02:10,997
+this advice is about how to get
+into the industry and how to be
+
+2881
+00:02:10,997 --> 00:02:13,982
+a web developer ? How to make
+money? And many of us got into
+
+2882
+00:02:13,982 --> 00:02:15,982
+it because it was fun. So can
+it be fun, again?
+
+2883
+00:02:17,769 --> 00:02:19,769
+So I actually really think so.
+
+2884
+00:02:21,958 --> 00:02:23,958
+I think that we can sort of
+tweak maybe through
+
+2885
+00:02:23,958 --> 00:02:25,958
+documentation and through the
+way we like approach
+
+2886
+00:02:28,137 --> 00:02:30,137
+tutorials to make 11ty
+
+2887
+00:02:31,223 --> 00:02:33,223
+approachable to people who are
+not web developers who don't
+
+2888
+00:02:33,223 --> 00:02:35,223
+think they are . And, you know,
+sometimes,
+
+2889
+00:02:37,516 --> 00:02:40,607
+I don't like the word like
+nontechnical because it feels
+
+2890
+00:02:40,607 --> 00:02:42,607
+like it excludes people who
+don't feel they're technical
+
+2891
+00:02:42,607 --> 00:02:44,607
+enough and certainly, for me, I
+think one of the reasons why I
+
+2892
+00:02:44,607 --> 00:02:46,607
+didn't really
+
+2893
+00:02:47,618 --> 00:02:51,023
+like go knee deep into web dev
+because growing up, I was told,
+
+2894
+00:02:51,023 --> 00:02:53,520
+you're a girl, you can't do
+math, you don't know how to do
+
+2895
+00:02:53,520 --> 00:02:55,520
+stuff, you shouldn't be a web
+developer.
+
+2896
+00:02:57,097 --> 00:03:00,302
+I do think having more
+inclusive approach to things
+
+2897
+00:03:00,302 --> 00:03:02,302
+will
+
+2898
+00:03:05,707 --> 00:03:09,690
+help other people want to learn
+this and this seems doable.
+
+2899
+00:03:09,690 --> 00:03:11,690
+And when I announced I'm moving
+off my
+
+2900
+00:03:13,094 --> 00:03:15,094
+microblog, I was using a
+microblog thing, which is good,
+
+2901
+00:03:15,094 --> 00:03:17,094
+by the
+
+2902
+00:03:17,094 --> 00:03:19,094
+way, I recommend that to people
+who don't know how to build
+
+2903
+00:03:19,094 --> 00:03:21,094
+sites from scratch.
+
+2904
+00:03:21,664 --> 00:03:24,754
+For my photography website, and
+someone emailed me and said, I
+
+2905
+00:03:24,754 --> 00:03:26,754
+want to microblog because you
+used it, it was really cool,
+
+2906
+00:03:26,754 --> 00:03:28,754
+now 11ty, I also want to try
+that. But I really don't know
+
+2907
+00:03:28,754 --> 00:03:30,754
+where to start.
+
+2908
+00:03:31,349 --> 00:03:33,349
+So how do we get people to
+start here with 11ty?
+
+2909
+00:03:36,243 --> 00:03:38,243
+So I think that this was the
+right tool because a lot of
+
+2910
+00:03:38,243 --> 00:03:40,243
+things are like you said, like
+
+2911
+00:03:41,140 --> 00:03:44,524
+Zach said earlier, HTML first.
+Many things work like expected.
+
+2912
+00:03:44,524 --> 00:03:46,524
+It's not filtered through some
+opinionated thing.
+
+2913
+00:03:47,124 --> 00:03:50,616
+You can learn as much or as
+little as you want. So could we
+
+2914
+00:03:50,616 --> 00:03:53,825
+find a way to help people like
+go, here's a bunch of starters,
+
+2915
+00:03:53,825 --> 00:03:55,825
+here's where you deploy it and
+if you want to know more,
+
+2916
+00:03:55,825 --> 00:04:00,220
+figure it out later. And we
+already have friendly
+
+2917
+00:04:00,220 --> 00:04:02,220
+communities.
+
+2918
+00:04:03,513 --> 00:04:05,513
+So how do we, then, sort of
+take that and go maybe a
+
+2919
+00:04:05,513 --> 00:04:07,513
+different set
+
+2920
+00:04:07,513 --> 00:04:10,211
+of people who see themselves as
+not web developers need
+
+2921
+00:04:10,211 --> 00:04:12,211
+different sort of, like,
+knowledge base or different
+
+2922
+00:04:12,211 --> 00:04:15,710
+sort of documentation or
+simplified versions of it.
+
+2923
+00:04:15,710 --> 00:04:18,914
+Or they need to ask questions
+at sort of happy hour thing
+
+2924
+00:04:18,914 --> 00:04:20,914
+maybe on Discord,
+
+2925
+00:04:21,127 --> 00:04:24,221
+maybe these are things we can
+do. And I started thinking that
+
+2926
+00:04:24,221 --> 00:04:26,221
+what would have helped me?
+
+2927
+00:04:27,513 --> 00:04:30,602
+Even just how I got started in
+January when I was learning
+
+2928
+00:04:30,602 --> 00:04:32,602
+11ty, I found
+
+2929
+00:04:33,693 --> 00:04:35,693
+that I was referencing
+Stephanie
+
+2930
+00:04:37,902 --> 00:04:39,991
+, I was referencing Bob, like
+11ty from scratch.
+
+2931
+00:04:43,983 --> 00:04:45,983
+So there's a lot of stuff that,
+you know, I kind of have to put
+
+2932
+00:04:45,983 --> 00:04:48,681
+together and figure out what
+worked for me. But maybe we can
+
+2933
+00:04:48,681 --> 00:04:50,681
+sort of help
+
+2934
+00:04:52,482 --> 00:04:54,482
+curate them for someone that
+feels like an absolute
+
+2935
+00:04:54,482 --> 00:04:56,482
+beginner. Maybe we could have a
+far more opinionated walk
+
+2936
+00:04:56,482 --> 00:04:58,559
+through. Here's a bunch of
+starters, click here, host
+
+2937
+00:04:58,559 --> 00:05:00,559
+here, you know,
+
+2938
+00:05:02,166 --> 00:05:04,166
+sometimes there's decision
+paralysis if we could sort of
+
+2939
+00:05:04,166 --> 00:05:06,166
+help to recuse that, maybe
+people could get further with
+
+2940
+00:05:06,166 --> 00:05:10,082
+the idea that they can, if they
+can get early success, then
+
+2941
+00:05:13,078 --> 00:05:15,078
+they might be inclined to want
+to try to learn even more.
+
+2942
+00:05:16,774 --> 00:05:19,870
+I also think it would be cool
+to write more blog posts about
+
+2943
+00:05:19,870 --> 00:05:21,870
+things that I learned when I
+was
+
+2944
+00:05:22,082 --> 00:05:24,082
+learning web dev as well as
+11ty.
+
+2945
+00:05:27,489 --> 00:05:29,489
+Really, just beginners, there's
+a lot of content out there
+
+2946
+00:05:29,489 --> 00:05:31,489
+obviously is very centered at
+web developers.
+
+2947
+00:05:32,484 --> 00:05:35,582
+But what if we could talk about
+why we picked this thing, why
+
+2948
+00:05:35,582 --> 00:05:37,582
+we used this tool, what you can
+do, and really
+
+2949
+00:05:37,582 --> 00:05:40,488
+simplify accessible ways. I
+think that would be very
+
+2950
+00:05:40,488 --> 00:05:42,488
+explanatory and
+
+2951
+00:05:42,488 --> 00:05:44,488
+reach a far bigger audience.
+
+2952
+00:05:46,470 --> 00:05:49,563
+Maybe there could be pairing or
+like buddy system and we could
+
+2953
+00:05:49,563 --> 00:05:51,563
+have a special channel just for
+
+2954
+00:05:53,569 --> 00:05:55,569
+like newbies to get help
+
+2955
+00:05:56,665 --> 00:06:00,668
+. Those were just ideas that
+came to mind, and I'm
+
+2956
+00:06:00,668 --> 00:06:04,870
+presenting this so we can
+discuss what possible paths we
+
+2957
+00:06:04,870 --> 00:06:06,870
+could pick up in the future, I
+
+2958
+00:06:06,870 --> 00:06:10,345
+certainly volunteer myself for
+a part of it.
+
+2959
+00:06:10,345 --> 00:06:12,345
+And, you know, really, I'm
+interested in doing this
+
+2960
+00:06:12,345 --> 00:06:14,451
+because I think it's important
+to spark joy, again, with the
+
+2961
+00:06:17,767 --> 00:06:19,767
+web, that right now, if
+
+2962
+00:06:21,773 --> 00:06:23,773
+the default option for someone
+who doesn't perceive themselves
+
+2963
+00:06:23,773 --> 00:06:25,773
+to be a developer is to put up
+a squarespace site.
+
+2964
+00:06:26,710 --> 00:06:28,710
+They don't have very much
+control.
+
+2965
+00:06:31,403 --> 00:06:34,812
+I think it's hard to go from
+that squarespace pipeline to
+
+2966
+00:06:34,812 --> 00:06:36,812
+I'm actually going to learn to
+become a web developer
+
+2967
+00:06:36,812 --> 00:06:39,687
+or build stuff for fun
+pipeline.
+
+2968
+00:06:39,687 --> 00:06:41,687
+And so, how can we sort of help
+give people
+
+2969
+00:06:42,696 --> 00:06:44,696
+the tools or at least
+handlebars to get started,
+
+2970
+00:06:44,696 --> 00:06:46,696
+again? On this sort of journey?
+
+2971
+00:06:48,481 --> 00:06:50,481
+So I personally want to see a
+world in which I
+
+2972
+00:06:51,684 --> 00:06:55,686
+can build things that are fun,
+maybe even pointless. I don't
+
+2973
+00:06:55,686 --> 00:06:57,686
+want to just be productive, I
+don't want to just build work
+
+2974
+00:06:57,686 --> 00:06:59,686
+things. I also want to build
+websites, too, for example,
+
+2975
+00:07:05,886 --> 00:07:07,886
+I'm someone that documents a
+lot of Asian Potato chips I
+
+2976
+00:07:07,886 --> 00:07:11,097
+eat. And someone would love an
+Asian potato chip website.
+
+2977
+00:07:15,288 --> 00:07:17,288
+If I genuinely believe that
+11ty empowers me
+
+2978
+00:07:17,897 --> 00:07:19,897
+to do fun stuff like this, I
+think it'll be the same for
+
+2979
+00:07:19,897 --> 00:07:21,897
+other people.
+
+2980
+00:07:21,897 --> 00:07:25,281
+So I'm putting myself out there
+as someone who wants to sort of
+
+2981
+00:07:25,281 --> 00:07:27,281
+help bridge this divide and to
+maybe work on new stuff with
+
+2982
+00:07:28,364 --> 00:07:30,574
+the team, either in like
+writing more blogs or blog
+
+2983
+00:07:30,574 --> 00:07:32,574
+posts to help other people get
+started.
+
+2984
+00:07:34,155 --> 00:07:36,155
+So that's all I have.
+
+2985
+00:07:37,448 --> 00:07:40,838
+≫ MIKE: Yeah, thanks,
+
+2986
+00:07:42,543 --> 00:07:45,837
+Adrianna, that was great. And I
+think you highlighted that step
+
+2987
+00:07:45,837 --> 00:07:49,745
+really well where going from
+
+2988
+00:07:52,737 --> 00:07:55,825
+Squarespace where everything's
+taking care of you to
+
+2989
+00:07:55,825 --> 00:07:57,825
+understanding some of the
+fundamentals and being able to
+
+2990
+00:07:57,825 --> 00:07:59,825
+build your own site and through
+that, having more control, it's
+
+2991
+00:07:59,825 --> 00:08:01,825
+such an important
+
+2992
+00:08:02,329 --> 00:08:04,329
+one that we need to figure out
+how we can help people make
+
+2993
+00:08:04,329 --> 00:08:06,329
+that jump.
+
+2994
+00:08:07,116 --> 00:08:09,116
+≫ ADRIANNA: Yeah, exactly.
+
+2995
+00:08:11,395 --> 00:08:14,884
+≫ MIKE: The web's for everyone,
+it's an open platform. And if
+
+2996
+00:08:14,884 --> 00:08:16,884
+you're confined to the CMS
+platforms, you don't get to
+
+2997
+00:08:16,884 --> 00:08:20,428
+experience that.
+≫ ADRIANNA: Yeah and it's part
+
+2998
+00:08:20,428 --> 00:08:22,428
+of taking back control aspect
+of, you know,
+
+2999
+00:08:23,637 --> 00:08:25,637
+building an open web that so
+many of us are really big fans
+
+3000
+00:08:25,637 --> 00:08:29,334
+of .
+≫ MIKE: Yeah, and it's so cool
+
+3001
+00:08:29,334 --> 00:08:31,334
+hearing about your journey, as
+well,
+
+3002
+00:08:33,143 --> 00:08:35,421
+like five sites in five months?
+≫ ADRIANNA: Five months.
+
+3003
+00:08:36,612 --> 00:08:39,307
+≫ MIKE: Really cool. I hope you
+keep doing that and posting
+
+3004
+00:08:39,307 --> 00:08:41,307
+them.
+
+3005
+00:08:41,686 --> 00:08:45,267
+≫ ADRIANNA: Yeah, I definitely
+will, thank you.
+
+3006
+00:08:45,267 --> 00:08:47,267
+≫ MIKE: Thanks for joining us
+today, Adrianna
+
+3007
+00:08:48,276 --> 00:08:50,276
+. All right.
+
+3008
+00:08:51,166 --> 00:08:55,764
+So we've got our next talk
+coming up. In five minutes.
+
+3009
+00:08:59,350 --> 00:09:01,350
+So, yeah, that was --
+
+3010
+00:09:02,554 --> 00:09:04,554
+I feel like Adrianna really hit
+it on the head there.
+
+3011
+00:09:07,141 --> 00:09:10,230
+Like it's a big -- ask that
+question to the chat . I think
+
+3012
+00:09:10,230 --> 00:09:12,230
+she had good ideas
+
+3013
+00:09:13,318 --> 00:09:15,318
+. But how do we make
+technologies in
+
+3014
+00:09:16,327 --> 00:09:20,820
+and the web as a platform more
+accessible? Outside of like web
+
+3015
+00:09:20,820 --> 00:09:22,820
+developers?
+
+3016
+00:09:26,511 --> 00:09:28,511
+I think,
+
+3017
+00:09:31,917 --> 00:09:34,528
+I think learning computer
+science and web development at
+
+3018
+00:09:34,528 --> 00:09:36,528
+high school should be
+mandatory.
+
+3019
+00:09:42,257 --> 00:09:45,344
+It's such an important part of
+the world now that, like,
+
+3020
+00:09:45,344 --> 00:09:47,344
+understanding these
+technologies, at least to the
+
+3021
+00:09:47,344 --> 00:09:51,047
+high level how they work is
+really important. And it would
+
+3022
+00:09:51,047 --> 00:09:54,235
+just give a lot more knowledge
+and control to everyone .
+
+3023
+00:09:56,343 --> 00:09:59,732
+As a nondeveloper, use GitHub
+is
+
+3024
+00:10:02,044 --> 00:10:05,333
+not an answer that speaks to
+nondevelopers. Yeah, it's like
+
+3025
+00:10:05,333 --> 00:10:07,333
+they can be a big -- it can be
+a
+
+3026
+00:10:07,333 --> 00:10:10,930
+big jump, for sure. A lot of
+the, I think,
+
+3027
+00:10:14,632 --> 00:10:16,632
+that's the other thing about
+Git is
+
+3028
+00:10:17,721 --> 00:10:21,026
+, like, where else do you have
+a workflow
+
+3029
+00:10:23,929 --> 00:10:25,929
+that -- that Git can do?
+
+3030
+00:10:29,231 --> 00:10:31,231
+Google Docs, you can have some
+of those elements
+
+3031
+00:10:32,443 --> 00:10:35,856
+of a Git workflow, you have
+some sort of versioning, yeah,
+
+3032
+00:10:35,856 --> 00:10:38,835
+and like a history of changes.
+You can collaborate with other
+
+3033
+00:10:38,835 --> 00:10:40,835
+people.
+Those are great.
+
+3034
+00:10:43,098 --> 00:10:45,098
+And like a lot of those ideas
+come from
+
+3035
+00:10:47,008 --> 00:10:49,008
+collaboration sort of workflows
+from a version control system.
+
+3036
+00:10:52,506 --> 00:10:54,506
+But when you get into branching
+and merge
+
+3037
+00:10:56,712 --> 00:10:58,712
+ing and pull requests where you
+don't necessarily have
+
+3038
+00:10:58,712 --> 00:11:00,712
+permission on that document,
+but you can still contribute to
+
+3039
+00:11:00,712 --> 00:11:05,039
+it, like, Google Docs falls
+down there immediately.
+
+3040
+00:11:09,031 --> 00:11:11,031
+So, like for the web and
+
+3041
+00:11:12,118 --> 00:11:14,118
+for Git, how do we enable these
+technologies
+
+3042
+00:11:18,325 --> 00:11:20,325
+for technical people
+
+3043
+00:11:21,417 --> 00:11:25,019
+? Git is terrible for new
+folks. Yeah, it can be.
+
+3044
+00:11:29,408 --> 00:11:31,408
+It can be, like, it can be
+scary
+
+3045
+00:11:34,009 --> 00:11:36,009
+. You can
+
+3046
+00:11:37,099 --> 00:11:40,187
+compare Git to DropBox, it's
+easy to get your head around, a
+
+3047
+00:11:40,187 --> 00:11:42,187
+magical folder, whereas Git,
+
+3048
+00:11:43,595 --> 00:11:45,595
+I'm suddenly introduced to the
+terminal or some sort
+
+3049
+00:11:46,675 --> 00:11:48,675
+of application, is like these
+branching lines everywhere,
+
+3050
+00:11:48,675 --> 00:11:50,675
+there's like a lot of concepts
+that you have to be introduced
+
+3051
+00:11:50,675 --> 00:11:55,946
+to.
+Getting comfortable with the
+
+3052
+00:11:55,946 --> 00:11:59,933
+terminal interfaces is a hurdle
+in my opinion. I'm fine with
+
+3053
+00:11:59,933 --> 00:12:01,933
+it, but it can be a challenge
+for newcomers.
+
+3054
+00:12:01,933 --> 00:12:04,815
+Yeah, well said. Maybe we can
+show nondevs how to run build
+
+3055
+00:12:04,815 --> 00:12:06,815
+scripts
+
+3056
+00:12:08,420 --> 00:12:10,420
+inside VSCode, yeah, that's
+true, but still
+
+3057
+00:12:11,508 --> 00:12:14,715
+need VSCode and, like, to use
+the terminal and, I mean, it's
+
+3058
+00:12:14,715 --> 00:12:16,715
+also not
+
+3059
+00:12:16,715 --> 00:12:19,323
+an all or nothing approach.
+Like, if we can make it...
+
+3060
+00:12:23,424 --> 00:12:25,424
+every step we can make it a
+little bit easier, then more
+
+3061
+00:12:25,424 --> 00:12:27,424
+people can access this
+technology.
+
+3062
+00:12:33,005 --> 00:12:35,716
+So many don't (inaudible) with
+Git.
+
+3063
+00:12:42,512 --> 00:12:45,818
+I agree, it's hard to get
+folks,
+
+3064
+00:12:49,923 --> 00:12:51,923
+I love when all this Git stuff
+involved, running commands and
+
+3065
+00:12:51,923 --> 00:12:53,923
+CLI.
+
+3066
+00:12:57,429 --> 00:12:59,429
+Git is awesome, but
+intimidating, maybe 11ty
+
+3067
+00:12:59,429 --> 00:13:01,429
+community can provide a real
+simple introduction.
+
+3068
+00:13:03,936 --> 00:13:05,936
+Yeah, it's like something we're
+thinking about a lot is how can
+
+3069
+00:13:08,146 --> 00:13:10,146
+we give the power of Git
+
+3070
+00:13:12,550 --> 00:13:15,955
+abstract a lot of the
+complexity and then introduce,
+
+3071
+00:13:15,955 --> 00:13:19,045
+we've had a big debate whether
+we introduce new terms or
+
+3072
+00:13:19,045 --> 00:13:21,154
+educate on Git terminology.
+
+3073
+00:13:21,740 --> 00:13:25,730
+So, like, think of a save
+versus a commit.
+
+3074
+00:13:30,723 --> 00:13:34,327
+I think it would be more ideal
+if everyone used the same
+
+3075
+00:13:34,327 --> 00:13:36,327
+language, which would be
+commit, then there's
+
+3076
+00:13:36,742 --> 00:13:38,742
+no ambiguity or confusion
+between those.
+
+3077
+00:13:48,640 --> 00:13:50,640
+Trust me, it would be better,
+too many ideas where the
+
+3078
+00:13:50,640 --> 00:13:52,640
+product is harder to understand
+and use, we've got to speak to
+
+3079
+00:13:52,640 --> 00:13:54,640
+direct impact. For sure.
+
+3080
+00:14:01,412 --> 00:14:03,412
+Nice. Yeah, good ideas there.
+
+3081
+00:14:07,594 --> 00:14:09,594
+DropBox is file storage first,
+
+3082
+00:14:11,405 --> 00:14:15,098
+yeah, that's a good way to put
+it. And different tradeoffs
+
+3083
+00:14:15,098 --> 00:14:17,098
+because
+
+3084
+00:14:18,306 --> 00:14:20,306
+of that.
+
+3085
+00:14:22,883 --> 00:14:24,883
+I worked with
+
+3086
+00:14:27,484 --> 00:14:29,484
+norm engineers at previous jobs
+and they used Git GUI.
+
+3087
+00:14:31,582 --> 00:14:33,582
+I mean, I use a Git GUI.
+
+3088
+00:14:36,167 --> 00:14:39,572
+I just like seeing on the
+screen exactly what's happening
+
+3089
+00:14:39,572 --> 00:14:41,572
+and, like, I use the GitHub
+desktop and
+
+3090
+00:14:42,984 --> 00:14:44,984
+that gives me confidence I'm
+not going to miss something.
+
+3091
+00:14:51,080 --> 00:14:53,080
+Welcome to the terminal, it
+doesn't say anything if you get
+
+3092
+00:14:53,080 --> 00:14:55,469
+it right and screams at you if
+you get it wrong. And also, you
+
+3093
+00:14:55,469 --> 00:14:57,469
+completely break your computer.
+Good luck.

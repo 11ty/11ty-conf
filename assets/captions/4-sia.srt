@@ -1,0 +1,1755 @@
+2106
+00:00:00,000 --> 00:00:01,000
+Thank you.
+
+2107
+00:00:03,108 --> 00:00:05,108
+I'm excited to talk to y'all
+today about why you're probably
+
+2108
+00:00:05,108 --> 00:00:07,108
+doing web performance wrong.
+
+2109
+00:00:07,494 --> 00:00:09,494
+I will admit it's a little bit
+click baity, you're not
+
+2110
+00:00:09,494 --> 00:00:11,494
+actually doing it wrong, but
+maybe you're making your job
+
+2111
+00:00:11,494 --> 00:00:13,494
+harder and getting frustrated
+on the way.
+
+2112
+00:00:19,797 --> 00:00:21,797
+Let me make sure my slides are
+working.
+
+2113
+00:00:21,797 --> 00:00:23,797
+All right. If I were to ask
+y'all, what's the number one
+
+2114
+00:00:23,797 --> 00:00:25,797
+tool you use for making your
+site faster?
+
+2115
+00:00:31,086 --> 00:00:33,397
+I would guess that 90% of you
+are going to say lighthouse,
+
+2116
+00:00:33,397 --> 00:00:35,397
+right? It's a great tool.
+
+2117
+00:00:37,396 --> 00:00:39,396
+I credit it with giving
+
+2118
+00:00:40,803 --> 00:00:42,803
+the web developer community
+more -- or maybe making web
+
+2119
+00:00:42,803 --> 00:00:45,503
+performance more visible to
+everyone. Which was great, but
+
+2120
+00:00:45,503 --> 00:00:48,590
+what you need to understand is
+it's an algorithm and it's
+
+2121
+00:00:48,590 --> 00:00:50,590
+limited and it might point you
+
+2122
+00:00:51,285 --> 00:00:53,285
+in directions that aren't very
+helpful sometimes.
+
+2123
+00:00:56,472 --> 00:00:58,477
+And we're going to talk about
+lighthouse, but also, the tools
+
+2124
+00:00:58,477 --> 00:01:00,477
+that you're probably more used
+to using.
+
+2125
+00:01:01,373 --> 00:01:03,474
+What do I mean by that? This is
+a real case I was looking at
+
+2126
+00:01:03,474 --> 00:01:05,474
+the other day.
+
+2127
+00:01:06,766 --> 00:01:10,258
+And this was its Lighthouse
+report. On the website, they
+
+2128
+00:01:10,258 --> 00:01:12,258
+had a score of 33, and you can
+see,
+
+2129
+00:01:13,662 --> 00:01:15,662
+there's more than 20 different
+audits here that are flagged.
+
+2130
+00:01:17,452 --> 00:01:20,655
+You're probably thinking oh, my
+god if this was your site, and
+
+2131
+00:01:20,655 --> 00:01:22,655
+the next thing, oh, do I have
+to do all of these things to
+
+2132
+00:01:22,655 --> 00:01:24,655
+make my site faster?
+
+2133
+00:01:27,448 --> 00:01:29,448
+And what I want you to do is
+take a step back and think,
+
+2134
+00:01:29,448 --> 00:01:31,448
+what are the primary reasons
+this website is so -- is it
+
+2135
+00:01:31,448 --> 00:01:34,434
+really minimize main thread
+work? Let's take a step back.
+
+2136
+00:01:37,630 --> 00:01:39,630
+Again, my name is Sia,
+
+2137
+00:01:43,239 --> 00:01:45,239
+Karamalegos, but I help make
+merchant sites
+
+2138
+00:01:46,844 --> 00:01:50,629
+FAESer onshop faster on
+Shopify. I have a lot of 11ty
+
+2139
+00:01:50,629 --> 00:01:53,721
+posts on there, although, I
+haven't done enough lately
+
+2140
+00:01:53,721 --> 00:01:55,721
+because I've been working more
+on our Shopify, it's a
+
+2141
+00:01:55,721 --> 00:01:59,601
+performance. Shopify. com site,
+in case you're interested about
+
+2142
+00:01:59,601 --> 00:02:01,601
+web performance at Shopify.
+
+2143
+00:02:01,609 --> 00:02:03,609
+And yeah, all the things. Let's
+keep going.
+
+2144
+00:02:05,797 --> 00:02:09,089
+Let's talk about speed metrics.
+In this presentation, I'm
+
+2145
+00:02:09,089 --> 00:02:11,089
+talking mostly about speed
+because that's what we usually
+
+2146
+00:02:11,089 --> 00:02:13,089
+think about in performance, but
+those other things are really
+
+2147
+00:02:13,089 --> 00:02:15,089
+great, too.
+
+2148
+00:02:15,803 --> 00:02:19,295
+But if this, I'm going to focus
+on loading speed. Because the
+
+2149
+00:02:19,295 --> 00:02:21,295
+idea is to give you information
+about what you could do, which
+
+2150
+00:02:21,295 --> 00:02:24,075
+is applicable to other ones, as
+well.
+
+2151
+00:02:24,075 --> 00:02:26,075
+So when we think about loading
+speed, there's three important
+
+2152
+00:02:26,075 --> 00:02:28,971
+metrics. The one that's user
+important
+
+2153
+00:02:32,676 --> 00:02:34,676
+to real users is contentful
+paint
+
+2154
+00:02:35,766 --> 00:02:37,766
+. That's when the largest item
+on the screen or the viewport
+
+2155
+00:02:37,766 --> 00:02:39,766
+is rendered, which gives the
+user the idea, oh, this page
+
+2156
+00:02:39,766 --> 00:02:41,766
+has loaded.
+
+2157
+00:02:43,845 --> 00:02:45,845
+And the threshold for it is 2.
+
+2158
+00:02:46,538 --> 00:02:49,937
+5 experience. And this one is
+more, it's about
+
+2159
+00:02:52,930 --> 00:02:54,930
+human perceptions of
+performance, but also
+
+2160
+00:02:54,930 --> 00:02:56,930
+achievability and things like
+that.
+
+2161
+00:02:57,918 --> 00:02:59,918
+But we also have a few other
+load
+
+2162
+00:03:01,121 --> 00:03:04,212
+ing metrics, time to first
+byte, when the first byte comes
+
+2163
+00:03:04,212 --> 00:03:06,212
+back from the server, user
+doesn't know or care what that
+
+2164
+00:03:06,212 --> 00:03:08,212
+is . They don't care. But it
+helps us understand what might
+
+2165
+00:03:08,212 --> 00:03:10,212
+be going on.
+
+2166
+00:03:11,349 --> 00:03:15,850
+First contentful paint is the
+clue something 's happening.
+
+2167
+00:03:15,850 --> 00:03:17,946
+That's when the first item is
+rendered. These are the
+
+2168
+00:03:17,946 --> 00:03:19,946
+thresholds for good.
+
+2169
+00:03:21,440 --> 00:03:24,932
+If you've ever used pay speed.
+
+2170
+00:03:28,548 --> 00:03:30,548
+dev, and you have a site that's
+popular enough to have publicly
+
+2171
+00:03:30,548 --> 00:03:32,548
+available data in this data
+set, you might see something
+
+2172
+00:03:32,548 --> 00:03:35,137
+like this. You can see at the
+top it says discover what your
+
+2173
+00:03:35,137 --> 00:03:37,137
+real users are experiencing.
+
+2174
+00:03:38,516 --> 00:03:40,516
+So this is real world data
+
+2175
+00:03:41,721 --> 00:03:44,326
+or, we call it run data for
+short.
+
+2176
+00:03:47,925 --> 00:03:50,634
+It's telling me my largest
+contentful paint is 4.
+
+2177
+00:03:51,630 --> 00:03:55,320
+8 seconds. Largest of 4. 8
+seconds or faster.
+
+2178
+00:03:58,517 --> 00:04:00,517
+And so, you can see we have our
+core web vitals on the top row,
+
+2179
+00:04:01,611 --> 00:04:04,704
+and on the bottom row, the
+extra metrics, plus one that's
+
+2180
+00:04:04,704 --> 00:04:06,704
+about to be deprecated
+
+2181
+00:04:06,704 --> 00:04:08,704
+or semideprecated.
+But we can see this data.
+
+2182
+00:04:11,162 --> 00:04:13,162
+This is how my real users were
+experiencing that same website.
+
+2183
+00:04:16,263 --> 00:04:18,472
+And this, again, is the Chrome
+user experience support, if you
+
+2184
+00:04:18,472 --> 00:04:20,472
+don't know much about that.
+
+2185
+00:04:22,067 --> 00:04:24,067
+So at the top, I have our same
+little kind of waterfall
+
+2186
+00:04:24,067 --> 00:04:26,067
+diagram.
+
+2187
+00:04:27,969 --> 00:04:29,969
+And at the bottom, we have our
+example with the real user data
+
+2188
+00:04:29,969 --> 00:04:31,969
+map to it.
+
+2189
+00:04:31,969 --> 00:04:33,969
+You can see that time to first
+byte, I've extended that row
+
+2190
+00:04:33,969 --> 00:04:35,969
+out to 2. 4 seconds, that was
+the number on the previous
+
+2191
+00:04:35,969 --> 00:04:39,425
+slide. SEP is 3. 8. And LCP is
+4. 8.
+
+2192
+00:04:41,627 --> 00:04:43,627
+So what's the primary
+bottleneck here?
+
+2193
+00:04:48,332 --> 00:04:50,434
+There is no world in which you
+can achieve a 2. 5-second LCP
+
+2194
+00:04:50,434 --> 00:04:53,832
+with a 2. 4 second time to
+first byte. It's just not
+
+2195
+00:04:53,832 --> 00:04:55,832
+possible.
+
+2196
+00:04:59,527 --> 00:05:01,527
+To do your entire first render
+and your largest
+
+2197
+00:05:01,534 --> 00:05:03,534
+contentful paint within . 1
+seconds, it's not possible.
+
+2198
+00:05:07,823 --> 00:05:09,823
+So if I were to, instead, so
+
+2199
+00:05:10,913 --> 00:05:14,006
+the first two on this screen
+are what you've already seen,
+
+2200
+00:05:14,006 --> 00:05:16,006
+and on the bottom, what I've
+done is
+
+2201
+00:05:17,097 --> 00:05:19,097
+I've presented like I made my
+time to first byte good and
+
+2202
+00:05:19,097 --> 00:05:21,097
+then I've met FCP and LCP so
+that you can see, you know,
+
+2203
+00:05:24,317 --> 00:05:26,317
+what would they look like if
+the time to first byte was
+
+2204
+00:05:26,317 --> 00:05:28,317
+faster? Because these are
+sequential. You can't render
+
+2205
+00:05:28,317 --> 00:05:30,317
+the page until you get the
+bytes from the server.
+
+2206
+00:05:31,599 --> 00:05:33,599
+And you can't render the
+largest thing until you've
+
+2207
+00:05:33,599 --> 00:05:35,599
+rendered the page. And
+sometimes, those can happen at
+
+2208
+00:05:35,599 --> 00:05:39,366
+the same time. But, we can see
+now that FCP is, it's still a
+
+2209
+00:05:39,366 --> 00:05:41,366
+little bit slow, it's only .
+
+2210
+00:05:42,654 --> 00:05:45,253
+4 seconds slower and LCP is
+about . 7 seconds slower.
+
+2211
+00:05:47,655 --> 00:05:50,353
+They still have a little bit of
+issues. But that biggest
+
+2212
+00:05:50,353 --> 00:05:53,648
+contributor was actually time
+to first byte. So looking back
+
+2213
+00:05:53,648 --> 00:05:55,648
+at our
+
+2214
+00:05:56,856 --> 00:05:58,856
+lighthouse report, where would
+we have found that out in here?
+
+2215
+00:05:58,856 --> 00:06:00,856
+Well, what's really
+interesting, which it took me a
+
+2216
+00:06:00,856 --> 00:06:03,730
+while to figure this out
+because I was looking for it, I
+
+2217
+00:06:03,730 --> 00:06:05,730
+ran
+
+2218
+00:06:06,938 --> 00:06:08,938
+it twice because I was trying
+to explain, essentially, a
+
+2219
+00:06:08,938 --> 00:06:10,938
+similar point to someone else,
+and it didn't even pop up in
+
+2220
+00:06:10,938 --> 00:06:14,908
+this lighthouse run. It
+actually in
+
+2221
+00:06:16,306 --> 00:06:18,306
+this specific experience, we
+actually had a good time to
+
+2222
+00:06:18,306 --> 00:06:20,306
+first byte. So it didn't even
+trigger what is usually
+
+2223
+00:06:21,606 --> 00:06:25,099
+happening in the real world.
+Additionally, are remember,
+
+2224
+00:06:25,099 --> 00:06:27,099
+that was probably our biggest
+issue.
+
+2225
+00:06:28,679 --> 00:06:30,679
+But because I know there's a
+little bit of issue with FCP
+
+2226
+00:06:30,679 --> 00:06:35,491
+and LCP, my guess is the other
+two are these other two audits,
+
+2227
+00:06:35,491 --> 00:06:39,474
+that's what I think they call
+these things.
+
+2228
+00:06:39,474 --> 00:06:41,474
+But the largest contentful
+paint might have been
+
+2229
+00:06:42,487 --> 00:06:44,487
+lazy loaded, that happens a lot
+on Shopify sites. But this is
+
+2230
+00:06:44,487 --> 00:06:46,487
+not a liquid Shopify site.
+
+2231
+00:06:47,874 --> 00:06:49,874
+And then, render blocking
+resources is a common reason
+
+2232
+00:06:51,486 --> 00:06:53,486
+why first contentful paint is
+slow. All right.
+
+2233
+00:06:56,286 --> 00:06:58,286
+Let's take a step back and
+learn about these two different
+
+2234
+00:06:58,286 --> 00:07:00,286
+types of testing. So what you
+see on here is what we've just
+
+2235
+00:07:00,286 --> 00:07:02,286
+seen.
+
+2236
+00:07:02,358 --> 00:07:04,468
+On the left is that top part of
+PHP web.
+
+2237
+00:07:07,469 --> 00:07:10,758
+dev which is your real user
+data. And on the right, we have
+
+2238
+00:07:10,758 --> 00:07:12,758
+our Lighthouse report that
+you've probably seen a lot,
+
+2239
+00:07:12,758 --> 00:07:14,758
+right?
+
+2240
+00:07:16,138 --> 00:07:18,138
+It's this Lighthouse report,
+you can see in the gray area,
+
+2241
+00:07:18,138 --> 00:07:20,138
+you can see that it was run on
+an emulate
+
+2242
+00:07:21,032 --> 00:07:23,032
+Let's take a step back and
+learn about these two different
+
+2243
+00:07:23,032 --> 00:07:25,032
+types of testing. So what you
+see on here is what we've just
+
+2244
+00:07:25,032 --> 00:07:27,032
+seen. On the left is that top
+part of PHP web.dev which is
+
+2245
+00:07:27,032 --> 00:07:29,032
+your real user data. And on the
+right, we have our Lighthouse
+
+2246
+00:07:29,032 --> 00:07:31,032
+report that you've probably
+seen a lot, right?
+
+2247
+00:07:31,032 --> 00:07:33,032
+It's this Lighthouse report,
+you can see in the gray area,
+
+2248
+00:07:33,032 --> 00:07:35,032
+you can see that it was run on
+an emulated motoG powered phone
+
+2249
+00:07:35,032 --> 00:07:37,032
+using a slow 4G connection. And
+it's just a single run. It's
+
+2250
+00:07:37,032 --> 00:07:39,032
+only a single point of data.
+Whereas on the left, it's
+
+2251
+00:07:39,032 --> 00:07:41,032
+aggregated across the user
+experiences.
+
+2252
+00:07:41,032 --> 00:07:43,032
+On this page, you can see an
+internal report we used at
+
+2253
+00:07:43,032 --> 00:07:45,032
+Shopify that is real user data,
+so we collect data with our own
+
+2254
+00:07:45,032 --> 00:07:47,032
+script. And we can run it
+across our site.
+
+2255
+00:07:47,032 --> 00:07:49,032
+So I like showing this because
+it shows, oh, now I'm going to
+
+2256
+00:07:49,032 --> 00:07:51,032
+break it down by page and
+device type. So I can see that,
+
+2257
+00:07:51,032 --> 00:07:53,210
+you know, the collection page
+has a big problem with CLS,
+
+2258
+00:07:53,210 --> 00:07:55,759
+which is right down here.
+
+2259
+00:07:58,954 --> 00:08:00,954
+But the desktop page has less
+of an issue with CLS.
+
+2260
+00:08:02,529 --> 00:08:04,529
+You can see the differences by
+page and by device, oh, you
+
+2261
+00:08:04,529 --> 00:08:06,529
+know what, it's directional
+clues.
+
+2262
+00:08:07,706 --> 00:08:09,706
+And on the right, is a network
+
+2263
+00:08:10,909 --> 00:08:12,909
+diagram from dev tools, which
+if you've ever run, that would
+
+2264
+00:08:12,909 --> 00:08:14,909
+be considered lab testing, a
+single run.
+
+2265
+00:08:16,006 --> 00:08:18,006
+Left is aggregation, right is
+the single run or lab test.
+
+2266
+00:08:22,189 --> 00:08:24,882
+Again, on the left, this is
+another way to see Chrome user
+
+2267
+00:08:24,882 --> 00:08:26,882
+experience report data, it's a
+cool site called Trio.
+
+2268
+00:08:28,179 --> 00:08:30,179
+The site speed report uses crux
+API.
+
+2269
+00:08:31,968 --> 00:08:33,968
+And I like how you can see
+monthly data in there.
+
+2270
+00:08:36,675 --> 00:08:39,963
+It's aggregated data from
+Chrome specifically. On the
+
+2271
+00:08:39,963 --> 00:08:41,963
+right is your performance panel
+dev tools, which is another
+
+2272
+00:08:41,963 --> 00:08:43,963
+lab testing tool.
+So there's two different types
+
+2273
+00:08:43,963 --> 00:08:45,963
+of testing.
+
+2274
+00:08:47,649 --> 00:08:49,649
+There's real user monitoring,
+also called field of data.
+
+2275
+00:08:51,142 --> 00:08:53,142
+And then there's lab testing,
+which is sometimes called
+
+2276
+00:08:53,142 --> 00:08:55,142
+synthetic testing. Neither one
+of these is better than the
+
+2277
+00:08:55,142 --> 00:08:57,142
+other. They just have their own
+uses.
+
+2278
+00:08:58,810 --> 00:09:00,810
+So you wouldn't use a hammer
+when you need a screwdriver,
+
+2279
+00:09:00,810 --> 00:09:02,810
+and the reverse. So what are
+those differences?
+
+2280
+00:09:06,089 --> 00:09:08,089
+Example tools, again, Chrome
+user experience report is for
+
+2281
+00:09:08,089 --> 00:09:10,089
+real user data. But you can
+also collect this
+
+2282
+00:09:13,079 --> 00:09:15,079
+data yourself, a package I use
+for collecting myself is the
+
+2283
+00:09:15,079 --> 00:09:17,079
+web vitals
+
+2284
+00:09:17,079 --> 00:09:19,584
+NPM package, which is
+maintained by the Chrome team.
+
+2285
+00:09:19,584 --> 00:09:21,584
+There's also Boomerang, which
+is a pulse product.
+
+2286
+00:09:23,685 --> 00:09:25,685
+And there's also, if you wanted
+like a paid service, there's
+
+2287
+00:09:25,893 --> 00:09:27,893
+impulse but also speed curve,
+which I really like.
+
+2288
+00:09:32,886 --> 00:09:34,886
+Lab testing, the tools like
+Lighthouse you're used to,
+
+2289
+00:09:36,293 --> 00:09:39,383
+just the bottom section, the
+one with Lighthouse in it, web
+
+2290
+00:09:39,383 --> 00:09:41,383
+page test, you know, your
+network diagram, your
+
+2291
+00:09:41,383 --> 00:09:43,383
+performance tab in dev tools,
+those are all lab testing.
+
+2292
+00:09:46,581 --> 00:09:49,270
+So RUM is great for when you
+want to see how real users are
+
+2293
+00:09:49,270 --> 00:09:51,270
+experiencing a site.
+
+2294
+00:09:53,363 --> 00:09:55,363
+And reveal those real world
+bottlenecks that might be
+
+2295
+00:09:55,363 --> 00:09:58,157
+hidden in a lab test. Like we
+just saw. What was actually
+
+2296
+00:09:58,157 --> 00:10:00,157
+hidden was there was a time to
+first bite issue.
+
+2297
+00:10:01,856 --> 00:10:04,152
+Lab testing, though, is great
+for detailed data. And you can
+
+2298
+00:10:04,152 --> 00:10:06,152
+more quickly debug and retest.
+
+2299
+00:10:09,141 --> 00:10:11,141
+So their cons are kind of the
+mirror of each other.
+
+2300
+00:10:11,644 --> 00:10:15,537
+RUM, there's going to be
+limited metrics. You only have
+
+2301
+00:10:15,537 --> 00:10:18,729
+a handful of metrics and it's
+hard to debug. You can't go
+
+2302
+00:10:18,729 --> 00:10:20,729
+make a change and quickly see
+if that probably fixed the
+
+2303
+00:10:20,729 --> 00:10:22,729
+issue.
+Instead, you actually have to
+
+2304
+00:10:22,729 --> 00:10:24,729
+use lab testing for that.
+
+2305
+00:10:26,032 --> 00:10:29,506
+But, of course, on, that side,
+it can hide the real world data
+
+2306
+00:10:29,506 --> 00:10:31,506
+and not representative of real
+user experiences.
+
+2307
+00:10:33,807 --> 00:10:35,807
+We're using servers to emulate
+and experience or we're using
+
+2308
+00:10:35,807 --> 00:10:37,807
+our own powerful desktops and
+whatnot to measure.
+
+2309
+00:10:41,209 --> 00:10:45,303
+So what are some of those
+example observations? With RUM,
+
+2310
+00:10:45,303 --> 00:10:48,910
+I can say, oh, LCP is slow on,
+you know, the product page, or
+
+2311
+00:10:48,910 --> 00:10:50,910
+CLS is bad on
+
+2312
+00:10:51,919 --> 00:10:55,507
+the home page on desktop but
+not mobile.
+
+2313
+00:10:55,507 --> 00:10:58,599
+On lab testing, though, what I
+can do is use those what I call
+
+2314
+00:10:58,599 --> 00:11:00,599
+directional clues to
+
+2315
+00:11:01,691 --> 00:11:04,781
+figure out if, oh, I can see
+now that LCP is lazy loaded or
+
+2316
+00:11:04,781 --> 00:11:06,781
+that 5 files are render
+
+2317
+00:11:08,626 --> 00:11:10,626
+blocking, maybe I should
+figure, you know, dig in deeper
+
+2318
+00:11:10,626 --> 00:11:13,119
+on that or that sales banner is
+shifting content down.
+
+2319
+00:11:16,309 --> 00:11:19,511
+So when I debug, what I do is,
+I use real user data and those
+
+2320
+00:11:19,511 --> 00:11:21,511
+gaps between time to
+
+2321
+00:11:22,721 --> 00:11:25,127
+first bite, first contentful
+paint and largest contentful
+
+2322
+00:11:25,127 --> 00:11:27,127
+paint to narrow down the most
+likely issues.
+
+2323
+00:11:28,016 --> 00:11:30,016
+Very similar content...
+
+2324
+00:11:31,307 --> 00:11:34,810
+a very similar concept is LCP
+subparts , and
+
+2325
+00:11:37,916 --> 00:11:39,916
+Estella Frankel had a great
+talk at a conference.
+
+2326
+00:11:42,195 --> 00:11:44,195
+I usually have these specific
+metrics at hand. So this is the
+
+2327
+00:11:44,195 --> 00:11:46,195
+method I used.
+
+2328
+00:11:46,195 --> 00:11:49,681
+But it's a very similar
+concept. So what do I mean by
+
+2329
+00:11:49,681 --> 00:11:51,681
+that
+
+2330
+00:11:53,086 --> 00:11:55,086
+? When we have the three
+metrics, if you have a problem
+
+2331
+00:11:55,086 --> 00:11:57,086
+with one of them, it's usually
+specific to that issue.
+
+2332
+00:11:59,874 --> 00:12:01,874
+If I have a problem with time
+to first byte, you might ask
+
+2333
+00:12:02,770 --> 00:12:05,766
+yourself, why might my server
+be responding slowly?
+
+2334
+00:12:09,153 --> 00:12:11,153
+If instead, you have an issue
+with first contentful paint,
+
+2335
+00:12:11,153 --> 00:12:13,153
+you might want to ask what's
+preventing the render? Do I
+
+2336
+00:12:13,153 --> 00:12:15,153
+have a lot of render blocking
+resources?
+
+2337
+00:12:16,478 --> 00:12:20,481
+Am I using an antiflick r
+snippet because I have AV
+
+2338
+00:12:20,481 --> 00:12:24,358
+testing turned on or something
+like that?
+
+2339
+00:12:24,358 --> 00:12:26,358
+If your LCP is slow, you might
+ask yourself, why is that
+
+2340
+00:12:26,369 --> 00:12:28,369
+LCP element showing up faster?
+Is it because the image was
+
+2341
+00:12:28,369 --> 00:12:30,369
+lazy loaded?
+
+2342
+00:12:32,756 --> 00:12:34,756
+Or if it's text, am I blocking
+the font until the web font
+
+2343
+00:12:34,756 --> 00:12:36,756
+comes in?
+
+2344
+00:12:37,740 --> 00:12:39,740
+So there are different issues
+depending on which part of your
+
+2345
+00:12:39,740 --> 00:12:41,740
+speed is broken.
+
+2346
+00:12:41,740 --> 00:12:44,533
+All right. So now that you know
+that generally, let's take a
+
+2347
+00:12:44,533 --> 00:12:46,533
+look the a
+
+2348
+00:12:48,454 --> 00:12:50,747
+A at some examples. This is
+actually an example of a great
+
+2349
+00:12:50,747 --> 00:12:54,235
+hook performance. There's a
+fast time to first byte, first
+
+2350
+00:12:54,235 --> 00:12:56,235
+contentful paint and largest
+contentful paint.
+
+2351
+00:12:57,615 --> 00:12:59,615
+This is crux data from the trio
+tool.
+
+2352
+00:13:01,457 --> 00:13:04,551
+And this second example, we can
+see that this is somewhat
+
+2353
+00:13:04,551 --> 00:13:06,551
+similar to the one I've shown
+you is that time to first
+
+2354
+00:13:06,551 --> 00:13:08,551
+byte is 1. 7 seconds, that's
+pretty slow.
+
+2355
+00:13:12,339 --> 00:13:14,339
+And so, it's actually impacting
+the other two, even though
+
+2356
+00:13:14,339 --> 00:13:16,339
+there's only a gap of what .
+
+2357
+00:13:16,521 --> 00:13:19,705
+6 seconds to first contentful
+paint ? And . 4 seconds to
+
+2358
+00:13:19,705 --> 00:13:21,705
+largest contentful paint.
+
+2359
+00:13:23,283 --> 00:13:25,283
+While all of these are yellow,
+it's time to first byte that
+
+2360
+00:13:25,283 --> 00:13:27,283
+has the bottleneck here. I'd
+look at server issues.
+
+2361
+00:13:29,473 --> 00:13:31,473
+In this next example, this is
+an easier one because
+
+2362
+00:13:32,678 --> 00:13:34,678
+the first two were actually
+green, we know it's just the
+
+2363
+00:13:35,771 --> 00:13:38,183
+largest contentful paint . I'd
+look at that element to look at
+
+2364
+00:13:38,183 --> 00:13:40,183
+what's going on.
+
+2365
+00:13:41,873 --> 00:13:45,383
+This next one, you can see that
+FCP or LCP is only . 3 seconds
+
+2366
+00:13:45,383 --> 00:13:49,169
+after FCP. So FCP or first
+contentful paint is the primary
+
+2367
+00:13:49,169 --> 00:13:51,169
+bottleneck.
+
+2368
+00:13:57,171 --> 00:14:00,466
+Finally, a lot of cases aren't
+going to be so cut and dry. So
+
+2369
+00:14:00,466 --> 00:14:02,761
+this one, time to first byte is
+good, but FCP and LCP could be
+
+2370
+00:14:02,761 --> 00:14:04,846
+worked on. All right. So those
+are some examples.
+
+2371
+00:14:08,038 --> 00:14:10,038
+Because this is probably the
+stuff you've seen less of and
+
+2372
+00:14:11,133 --> 00:14:13,133
+in the past, you maybe seen
+more of like just the
+
+2373
+00:14:13,133 --> 00:14:15,133
+lighthouse stuff.
+
+2374
+00:14:16,121 --> 00:14:18,823
+So I use that information, and
+then, finally bring up my lab
+
+2375
+00:14:18,823 --> 00:14:20,823
+tool to dig in deeper.
+
+2376
+00:14:23,479 --> 00:14:25,479
+So once I have those
+directional clues, I will dig
+
+2377
+00:14:25,479 --> 00:14:28,975
+in deeper. So for Shopify
+sites, Shopify uses liquid, but
+
+2378
+00:14:28,975 --> 00:14:30,975
+of course, there's a lot more.
+
+2379
+00:14:32,269 --> 00:14:34,269
+We have a server side, it's not
+static generated.
+
+2380
+00:14:35,869 --> 00:14:37,869
+We do use liquid, and I've had
+an article about how to
+
+2381
+00:14:37,869 --> 00:14:39,869
+optimize Shopify sites.
+
+2382
+00:14:40,980 --> 00:14:43,085
+A the lot of these issues are
+going to be similar to the
+
+2383
+00:14:43,085 --> 00:14:45,085
+general web if you're not using
+a frontend framework.
+
+2384
+00:14:46,888 --> 00:14:49,987
+Although, the issues for time
+to first byte being slow on a
+
+2385
+00:14:49,987 --> 00:14:51,987
+static
+
+2386
+00:14:52,090 --> 00:14:55,391
+site might be more, for
+example, around your provider.
+
+2387
+00:14:55,391 --> 00:14:58,596
+So like, if you're using GitHub
+pages, I don't think that's on
+
+2388
+00:14:58,596 --> 00:15:00,596
+a CDN, but if you use Netlify
+
+2389
+00:15:03,608 --> 00:15:05,608
+, there's a CDN for that and
+also cloud front pages.
+
+2390
+00:15:07,921 --> 00:15:09,921
+Depending on your service, that
+could impact your time to first
+
+2391
+00:15:09,921 --> 00:15:11,921
+byte.
+
+2392
+00:15:11,921 --> 00:15:13,921
+But the FCP and LCP, especially
+for eCommerce
+
+2393
+00:15:16,231 --> 00:15:18,231
+sites might be common reasons
+why a site might be slow
+
+2394
+00:15:18,231 --> 00:15:20,231
+compared to the Shopify sites.
+
+2395
+00:15:21,736 --> 00:15:23,736
+So, of course, this is a whole
+other talk and we only have 22
+
+2396
+00:15:23,736 --> 00:15:25,736
+minutes. I'm not going to go
+into the different lab tools.
+
+2397
+00:15:28,549 --> 00:15:30,549
+But what I'm trying to tell you
+is, DOENTS start
+
+2398
+00:15:31,751 --> 00:15:34,956
+don't start with just
+Lighthouse or your lab tool,
+
+2399
+00:15:34,956 --> 00:15:36,956
+you might go down
+
+2400
+00:15:38,163 --> 00:15:40,163
+the rabbit hole with minimizing
+your main thread work, which is
+
+2401
+00:15:40,163 --> 00:15:42,163
+still important and a
+
+2402
+00:15:42,163 --> 00:15:44,163
+valid issue, and especially
+considering, because I think
+
+2403
+00:15:44,163 --> 00:15:46,163
+this site has INP issues, as
+well.
+
+2404
+00:15:47,773 --> 00:15:49,773
+But instead, I want you to
+start with the real user data.
+
+2405
+00:15:49,773 --> 00:15:51,773
+Get your directional clues.
+
+2406
+00:15:53,372 --> 00:15:55,372
+And then, dive deeper with lab,
+only on the specific issues
+
+2407
+00:15:57,431 --> 00:15:59,431
+, essentially, try to get your
+heavy hitters first.
+
+2408
+00:16:00,932 --> 00:16:05,008
+Don't worry what those
+microoptimizations first.
+
+2409
+00:16:05,008 --> 00:16:07,008
+And then, in the end,
+hopefully, you'll have more
+
+2410
+00:16:07,008 --> 00:16:09,008
+time to focus on that hobby
+that you've been neglecting.
+
+2411
+00:16:11,207 --> 00:16:14,294
+So thanks, again, you can find
+out more about me on Sia. codes.
+
+2412
+00:16:14,294 --> 00:16:16,294
+All right.
+
+2413
+00:16:16,488 --> 00:16:18,488
+That's all I have, Mike. I have
+no idea how we're doing on
+
+2414
+00:16:18,488 --> 00:16:20,488
+time.
+[ Laughter ]
+
+2415
+00:16:21,471 --> 00:16:23,471
+≫ MIKE: We've got a few
+minutes.
+
+2416
+00:16:23,471 --> 00:16:25,471
+≫ SIA: All right. Go ahead.
+≫ MIKE: That was great.
+
+2417
+00:16:27,355 --> 00:16:30,445
+I think just that context on
+like, I'm definitely guilty of
+
+2418
+00:16:30,445 --> 00:16:33,128
+doing Lighthouse and then, I
+love a good to do list. OK.
+
+2419
+00:16:33,128 --> 00:16:35,128
+This is my work. I'm going to
+--
+
+2420
+00:16:37,315 --> 00:16:39,315
+≫ SIA: And it's not bad, it's
+just like a computer looking
+
+2421
+00:16:39,315 --> 00:16:41,315
+for common flags . But it can't
+necessarily tell you, like, the
+
+2422
+00:16:41,315 --> 00:16:43,821
+primary reason why your site
+might be slow. So --
+
+2423
+00:16:43,821 --> 00:16:45,821
+≫ MIKE: That's it.
+
+2424
+00:16:47,316 --> 00:16:50,417
+So my question is you kind of
+mentioned this in your talk
+
+2425
+00:16:50,417 --> 00:16:55,415
+that it'll change per use case,
+but what are the most -- where
+
+2426
+00:16:55,415 --> 00:16:59,712
+do you typically see the most
+problems? And what are -- is
+
+2427
+00:16:59,712 --> 00:17:01,712
+there like a common thread
+
+2428
+00:17:01,712 --> 00:17:05,297
+in those performance problems?
+≫ SIA: Oh, well, yeah, I think
+
+2429
+00:17:05,297 --> 00:17:08,502
+it really depends on what
+you're looking at, so like I
+
+2430
+00:17:08,502 --> 00:17:10,502
+said because I work
+
+2431
+00:17:11,600 --> 00:17:14,695
+at Shopify and most of our
+sites are on our Shopify
+
+2432
+00:17:14,695 --> 00:17:16,695
+liquid, essentially, your
+standard, standard system.
+
+2433
+00:17:18,596 --> 00:17:20,596
+We also have Hydrogen, which is
+a headless tool
+
+2434
+00:17:21,295 --> 00:17:24,697
+. But there's common thread. We
+actually used crux DATD data
+
+2435
+00:17:27,501 --> 00:17:29,603
+with http archive. It might be
+hard with your personal sites
+
+2436
+00:17:29,603 --> 00:17:31,603
+to get in there.
+
+2437
+00:17:33,197 --> 00:17:35,197
+But you can also use free tools
+like the
+
+2438
+00:17:36,402 --> 00:17:40,001
+web vitals NPM package to
+collect your own information.
+
+2439
+00:17:40,001 --> 00:17:42,001
+But what we saw using that
+information was that on Shopify
+
+2440
+00:17:42,001 --> 00:17:44,001
+sites, this is not like the
+rest of the web. Like, 80%.
+
+2441
+00:17:46,544 --> 00:17:50,548
+We hit a peak of 80% of Shopify
+liquid sites were lazy loading
+
+2442
+00:17:50,548 --> 00:17:53,745
+their contentful paint image .
+
+2443
+00:17:55,942 --> 00:18:00,046
+The rest of the web was around
+20%. We knew that was a
+
+2444
+00:18:00,046 --> 00:18:02,046
+Shopify-specific systemic issue
+and it was because in our
+
+2445
+00:18:03,182 --> 00:18:05,182
+liquid API, we didn't have
+
+2446
+00:18:06,275 --> 00:18:09,376
+the ability for the way
+Shopify's rendered, we can have
+
+2447
+00:18:09,376 --> 00:18:11,376
+sections repeat, so
+essentially,
+
+2448
+00:18:12,473 --> 00:18:14,473
+if you had a template in
+11ty...
+
+2449
+00:18:17,589 --> 00:18:19,589
+what do we call it?
+
+2450
+00:18:20,885 --> 00:18:23,591
+A it's not template for the
+whole page, but something
+
+2451
+00:18:23,591 --> 00:18:25,591
+you're reusing, but you don't
+know where it is.
+
+2452
+00:18:26,888 --> 00:18:28,888
+So you know you don't want to
+lazy load above the fold, but
+
+2453
+00:18:28,888 --> 00:18:30,888
+you the do -- I'm probably
+going way too in-depth here.
+
+2454
+00:18:30,888 --> 00:18:35,506
+≫ MIKE: No.
+≫ SIA: I added into the API the
+
+2455
+00:18:35,506 --> 00:18:38,766
+ability to know where your
+section on the page so you can
+
+2456
+00:18:38,766 --> 00:18:40,766
+be smarter about how you load
+that thing.
+
+2457
+00:18:40,766 --> 00:18:42,766
+≫ MIKE: Interesting. That's so
+cool.
+
+2458
+00:18:46,242 --> 00:18:48,242
+Like that work is going to
+influence millions of sites.
+
+2459
+00:18:52,947 --> 00:18:54,947
+And really shift the
+performance of the web because
+
+2460
+00:18:54,947 --> 00:18:56,947
+of that.
+
+2461
+00:18:56,947 --> 00:18:58,947
+That's -- such important and
+powerful work.
+
+2462
+00:19:00,829 --> 00:19:05,440
+≫ SIA: It's definitely exciting
+when you can find something
+
+2463
+00:19:05,440 --> 00:19:09,437
+like that and fix it and get
+everyone back on track.
+
+2464
+00:19:09,437 --> 00:19:11,437
+≫ MIKE: Very cool.
+
+2465
+00:19:12,731 --> 00:19:14,731
+If anyone has anymore questions
+or
+
+2466
+00:19:15,827 --> 00:19:18,436
+wants to talk about what
+performance for Sia, reach out
+
+2467
+00:19:18,436 --> 00:19:20,436
+to her on Mastodon.
+
+2468
+00:19:22,827 --> 00:19:24,827
+≫ SIA: Yeah, if you go to sia.
+
+2469
+00:19:26,217 --> 00:19:28,522
+codes, I'm on Blue Sky, but
+that's mostly for shit posts
+
+2470
+00:19:28,522 --> 00:19:30,522
+like Henry was talking about.
+
+2471
+00:19:32,114 --> 00:19:34,114
+≫ MIKE: Thanks, Sia.
+≫ SIA: Thank you.
+

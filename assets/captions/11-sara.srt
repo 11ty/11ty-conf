@@ -1,0 +1,1783 @@
+
+4686
+00:00:00,000 --> 00:00:02,612
+Light mode versus dark mode, I
+have changed the title to
+
+4687
+00:00:02,612 --> 00:00:06,719
+Why Not Both? Or why building
+both dark and light schemes
+
+4688
+00:00:06,719 --> 00:00:11,633
+together is easy, actually.
+I hope I'm not overselling
+
+4689
+00:00:11,633 --> 00:00:16,334
+that. Hi, I'm Sara. I have am
+both an old hand,
+
+4690
+00:00:20,640 --> 00:00:22,640
+like Mike said, I've been
+building websites as a teenager
+
+4691
+00:00:23,247 --> 00:00:25,247
+since 1999, only my own stuff.
+It was only ever really a hobby
+
+4692
+00:00:25,247 --> 00:00:27,247
+thing.
+
+4693
+00:00:27,653 --> 00:00:31,053
+I had a long hiatus. And now
+I'm a newbie, again, I
+
+4694
+00:00:34,058 --> 00:00:36,058
+switched my career from doing
+general electronic and other
+
+4695
+00:00:36,058 --> 00:00:38,058
+stuff in small companies and a
+couple of big companies.
+
+4696
+00:00:40,474 --> 00:00:42,474
+And I jumped into web
+development,
+
+4697
+00:00:42,474 --> 00:00:44,474
+not last year, two years ago
+now. I still feel like a
+
+4698
+00:00:44,474 --> 00:00:46,474
+newbie. I guess I'm not, but I
+feel like one.
+
+4699
+00:00:49,610 --> 00:00:51,610
+Just a little warning that
+there's already been some
+
+4700
+00:00:51,610 --> 00:00:53,610
+movement, there'll be some more
+movement, a tiny bit of
+
+4701
+00:00:53,610 --> 00:00:55,610
+animation and abrupt changes
+between dark and light modes in
+
+4702
+00:00:55,610 --> 00:00:57,610
+this presentation. Because it's
+difficult not to.
+
+4703
+00:00:57,635 --> 00:01:01,046
+If you suffer from migraines,
+epilepsy, strong
+
+4704
+00:01:04,350 --> 00:01:06,350
+astigmiatism,
+
+4705
+00:01:07,758 --> 00:01:09,758
+I'm really sorry, but I hope
+with this information I'm about
+
+4706
+00:01:09,758 --> 00:01:11,758
+to present to you, browsing the
+web will get more comfortable
+
+4707
+00:01:11,758 --> 00:01:14,674
+for you and everyone else.
+So with that aside, I'll try
+
+4708
+00:01:14,674 --> 00:01:16,674
+and warn whenever I'm about to
+flash the screen from dark to
+
+4709
+00:01:16,674 --> 00:01:20,598
+light. Let's get started. Dark
+mode versus light mode.
+
+4710
+00:01:23,202 --> 00:01:26,504
+And we all love a good
+polarizing argument. And what
+
+4711
+00:01:26,504 --> 00:01:29,616
+could be more polarizing in
+dark versus light? But there
+
+4712
+00:01:29,616 --> 00:01:31,616
+are physical reasons to prefer
+one over the other.
+
+4713
+00:01:33,421 --> 00:01:35,421
+And just allowed to prefer dark
+or light mode. That's OK.
+
+4714
+00:01:37,529 --> 00:01:39,529
+You don't have to have a
+logical reason for it because
+
+4715
+00:01:39,529 --> 00:01:41,529
+your eye is your choice.
+
+4716
+00:01:42,342 --> 00:01:46,844
+So that said, why dark mode?
+Your pupils constrict when they
+
+4717
+00:01:46,844 --> 00:01:49,873
+come across a bright page or
+bright anything. I think you
+
+4718
+00:01:49,873 --> 00:01:51,873
+can quite often notice.
+
+4719
+00:01:53,176 --> 00:01:55,279
+You feel the muscles pulling
+your pupil, pulling your iris
+
+4720
+00:01:55,279 --> 00:01:57,279
+inwards to make your pupils
+smaller.
+
+4721
+00:01:58,576 --> 00:02:01,678
+And if you're in a dark
+surroundings, like I am right
+
+4722
+00:02:01,678 --> 00:02:06,789
+now, yeah, it's quarter past
+10:00 here. If you suddenly
+
+4723
+00:02:06,789 --> 00:02:08,789
+jump into a bright website,
+that's uncomfortable.
+
+4724
+00:02:11,898 --> 00:02:14,007
+And then, other people have
+floaters that appear or block
+
+4725
+00:02:14,007 --> 00:02:16,007
+their vision.
+
+4726
+00:02:17,308 --> 00:02:20,515
+A lot of you may, I mean, I'm
+40 now, so sometimes, when I'm
+
+4727
+00:02:20,515 --> 00:02:22,515
+looking up at a bright sky, I
+see these things.
+
+4728
+00:02:25,117 --> 00:02:27,117
+The second example on the right
+is a bit more
+
+4729
+00:02:28,324 --> 00:02:30,324
+what I see, sort of translucent
+something or other drifting
+
+4730
+00:02:30,324 --> 00:02:32,324
+across.
+
+4731
+00:02:33,132 --> 00:02:36,236
+That some people with really
+severe floaters might struggle
+
+4732
+00:02:36,236 --> 00:02:38,236
+to read, text on a light
+background
+
+4733
+00:02:39,337 --> 00:02:41,337
+because the light background
+just sort of is distorted
+
+4734
+00:02:41,337 --> 00:02:43,337
+through the floaters.
+
+4735
+00:02:43,659 --> 00:02:45,659
+Why light mode?
+
+4736
+00:02:47,558 --> 00:02:50,659
+Pupils constrict when coming
+across a bright page . But that
+
+4737
+00:02:50,659 --> 00:02:52,659
+can be a good thing, actually,
+because it's easier to
+
+4738
+00:02:52,659 --> 00:02:54,659
+focus when your pupil is
+smaller.
+
+4739
+00:02:57,377 --> 00:03:00,479
+Like with a camera (inaudible)
+you might close your aperture
+
+4740
+00:03:00,479 --> 00:03:02,479
+in order to get a whole
+landscape in focus.
+
+4741
+00:03:04,894 --> 00:03:06,894
+Whereas if the aperture is
+large, you have to very
+
+4742
+00:03:06,894 --> 00:03:10,705
+carefully focus on separate
+items. You have your foreground
+
+4743
+00:03:10,705 --> 00:03:12,705
+and background and they're
+different and you have to
+
+4744
+00:03:14,314 --> 00:03:16,314
+focus and it's the same with
+your eyes, they have to work to
+
+4745
+00:03:17,522 --> 00:03:19,522
+focus more when your pupil is
+large because everything's
+
+4746
+00:03:19,522 --> 00:03:21,522
+darker.
+
+4747
+00:03:24,234 --> 00:03:26,234
+And then, people have
+astigmiatism
+
+4748
+00:03:29,241 --> 00:03:31,241
+STIG
+
+4749
+00:03:32,652 --> 00:03:34,953
+stigmatism. Light text on dark
+backgrounds can become hard to
+
+4750
+00:03:34,953 --> 00:03:36,953
+read.
+
+4751
+00:03:38,258 --> 00:03:40,258
+They might be clear like they
+are now, but with a little bit
+
+4752
+00:03:40,258 --> 00:03:42,258
+of extra fuzz and your brain
+and eyes work together to
+
+4753
+00:03:44,072 --> 00:03:46,072
+try to sharpen out that fuzz to
+try to focus better.
+
+4754
+00:03:47,677 --> 00:03:49,677
+But when you can't, get away
+from that.
+
+4755
+00:03:52,086 --> 00:03:54,293
+When you can't get...  when you
+start to get headaches.
+
+4756
+00:04:00,501 --> 00:04:02,501
+Interestingly, I found a lot
+more examples about this and
+
+4757
+00:04:02,501 --> 00:04:04,501
+people struggling with dark
+mode, because clearly there's a
+
+4758
+00:04:04,501 --> 00:04:06,501
+lot of people annoyed about
+websites only available in dark
+
+4759
+00:04:06,501 --> 00:04:10,210
+mode.
+So there's really loads of
+
+4760
+00:04:10,210 --> 00:04:12,210
+examples people have made
+
+4761
+00:04:14,825 --> 00:04:16,825
+of slightly fuzzed out or
+distorted text, light text on a
+
+4762
+00:04:16,825 --> 00:04:19,427
+dark background. And even, I'm
+looking at these, and you know,
+
+4763
+00:04:19,427 --> 00:04:21,427
+I'm trying to focus them.
+
+4764
+00:04:23,022 --> 00:04:25,631
+I can feel my eyes and my brain
+trying to focus these bits of
+
+4765
+00:04:25,631 --> 00:04:27,631
+text and I can't, of course.
+
+4766
+00:04:29,039 --> 00:04:31,039
+And if you're staring at this
+all the time, it's going to
+
+4767
+00:04:31,039 --> 00:04:33,039
+hurt.
+
+4768
+00:04:33,039 --> 00:04:35,647
+And I love this one, I am the
+douche
+
+4769
+00:04:38,650 --> 00:04:40,650
+bag that makes people read
+white text on a black
+
+4770
+00:04:40,650 --> 00:04:42,650
+background.
+
+4771
+00:04:42,650 --> 00:04:44,650
+So that would be why you might
+prefer light mode.
+
+4772
+00:04:44,650 --> 00:04:46,650
+Why not both?
+
+4773
+00:04:48,203 --> 00:04:50,203
+Both. Both. Both is good.
+
+4774
+00:04:54,725 --> 00:04:56,725
+I'm sure everyone gets that
+reference.
+
+4775
+00:04:56,725 --> 00:04:59,531
+[ Laughter ]
+Anyway. So in this talk scope,
+
+4776
+00:04:59,531 --> 00:05:01,531
+is just having
+
+4777
+00:05:02,627 --> 00:05:05,937
+your site react to preferred
+color scheme.
+
+4778
+00:05:08,544 --> 00:05:10,544
+So I'm not going to talk about
+manual toggling. It can be
+
+4779
+00:05:10,544 --> 00:05:12,544
+done. I will show you it.
+
+4780
+00:05:17,055 --> 00:05:20,157
+Shortly because with a bit hof
+of JavaScript, it's easy and
+
+4781
+00:05:20,157 --> 00:05:22,157
+you can find advice on the
+internet including
+
+4782
+00:05:22,464 --> 00:05:26,191
+me trying to give advice on it.
+I've got a little toggle here.
+
+4783
+00:05:26,191 --> 00:05:28,191
+Be warned, it's going to go
+white.
+
+4784
+00:05:29,296 --> 00:05:31,296
+And back, again.
+
+4785
+00:05:33,409 --> 00:05:35,409
+I'm back to auto. So the
+toggling is absolutely
+
+4786
+00:05:35,409 --> 00:05:37,409
+possible.
+
+4787
+00:05:37,821 --> 00:05:41,624
+But I'm not going to go into
+how to do that in this talk.
+
+4788
+00:05:43,431 --> 00:05:45,735
+And I must remember to click
+right. So this is what I get
+
+4789
+00:05:45,735 --> 00:05:47,735
+for rolling my own
+presentation.
+
+4790
+00:05:47,840 --> 00:05:49,840
+So starting from scratch. If
+you have no styles, this is no
+
+4791
+00:05:49,840 --> 00:05:51,840
+problem.
+
+4792
+00:05:53,645 --> 00:05:55,645
+However, if you have already
+really big
+
+4793
+00:05:56,853 --> 00:06:00,068
+mature site or design system or
+massive project , this may be
+
+4794
+00:06:00,068 --> 00:06:02,068
+tricky to bring into your
+projects.
+
+4795
+00:06:03,369 --> 00:06:06,772
+If everything already has
+specific colors , branding,
+
+4796
+00:06:06,772 --> 00:06:10,079
+everything's set, it's going to
+be hard to put this back in.
+
+4797
+00:06:10,079 --> 00:06:12,079
+It's possible. I'm sure it's
+possible.
+
+4798
+00:06:12,090 --> 00:06:14,090
+But it's going to be difficult.
+
+4799
+00:06:16,908 --> 00:06:20,008
+But I want you to keep this
+light mode/ dark mode bothness
+
+4800
+00:06:20,008 --> 00:06:22,008
+in mind next time you have --
+you start a new project.
+
+4801
+00:06:25,420 --> 00:06:27,420
+So we know this, we all have
+
+4802
+00:06:28,624 --> 00:06:31,726
+seen default HTML themes, not
+that we look at it anymore
+
+4803
+00:06:31,726 --> 00:06:33,726
+because you probably set your
+CSS reset before you even look
+
+4804
+00:06:33,726 --> 00:06:35,726
+at the page.
+
+4805
+00:06:38,223 --> 00:06:40,223
+I often set everything to just
+san serif at least before I
+
+4806
+00:06:40,223 --> 00:06:42,223
+start anything.
+
+4807
+00:06:42,840 --> 00:06:44,840
+It's standard HTML here.
+There's nothing unusual.
+
+4808
+00:06:48,655 --> 00:06:50,655
+But you may not know that
+there's also default dark
+
+4809
+00:06:50,655 --> 00:06:52,655
+theme.
+
+4810
+00:06:56,664 --> 00:06:58,664
+And everything's done for you,
+the buttons, the inputs, the
+
+4811
+00:06:58,664 --> 00:07:00,664
+link.
+
+4812
+00:07:03,283 --> 00:07:05,283
+Link colors here have all been
+adjusted already to look better
+
+4813
+00:07:05,283 --> 00:07:07,283
+in dark mode. You don't have to
+do it.
+
+4814
+00:07:07,283 --> 00:07:11,713
+The browser's done it for you.
+How do we get to that? You
+
+4815
+00:07:11,713 --> 00:07:13,713
+don't even need CSS.
+
+4816
+00:07:18,826 --> 00:07:20,826
+And Mayank did hint to this
+earlier that you can put a
+
+4817
+00:07:20,826 --> 00:07:22,826
+metatag in your HTML.
+
+4818
+00:07:23,336 --> 00:07:26,435
+The meta  name is color-scheme.
+And the content is light/dark.
+
+4819
+00:07:28,465 --> 00:07:30,465
+You can put dark/light.
+
+4820
+00:07:32,653 --> 00:07:35,749
+It might make a difference if a
+user's OS isn't broadcasting
+
+4821
+00:07:35,749 --> 00:07:37,749
+I'm in
+
+4822
+00:07:37,749 --> 00:07:39,749
+light mode or I'm in dark mode.
+I'm not sure many of them do
+
+4823
+00:07:39,749 --> 00:07:41,749
+that now.
+
+4824
+00:07:42,857 --> 00:07:45,068
+I think almost all of them are
+in light mode or dark mode,
+
+4825
+00:07:45,068 --> 00:07:47,068
+there might be some that don't
+care.
+
+4826
+00:07:48,369 --> 00:07:50,577
+If there's some that don't
+care, if you put dark/light, it
+
+4827
+00:07:50,577 --> 00:07:52,577
+may be that your website shows
+in dark mode first.
+
+4828
+00:07:52,987 --> 00:07:55,794
+As a preference. I haven't been
+able to test it.
+
+4829
+00:07:59,398 --> 00:08:01,398
+You can also put it in your
+CSS.
+
+4830
+00:08:02,696 --> 00:08:06,200
+So, under the root or HTML
+selector, you have color
+
+4831
+00:08:09,306 --> 00:08:11,306
+-scheme, color light/dark.
+
+4832
+00:08:12,414 --> 00:08:16,819
+This website can show up in
+light or dark, no problem.
+
+4833
+00:08:16,819 --> 00:08:20,226
+And then, the browser will
+follow the operating system's
+
+4834
+00:08:20,226 --> 00:08:22,226
+preference and show you your
+preferred version of this
+
+4835
+00:08:22,226 --> 00:08:24,226
+website.
+
+4836
+00:08:28,527 --> 00:08:30,527
+So just as an example, in
+CodePen, tech
+
+4837
+00:08:32,331 --> 00:08:34,331
+nically, it has a separate
+place for the he, head.
+
+4838
+00:08:37,036 --> 00:08:39,036
+You're not supposed to put the
+head here within the HTML, but
+
+4839
+00:08:39,036 --> 00:08:41,036
+you can do it and it seems to
+work. This is what I'm using as
+
+4840
+00:08:41,036 --> 00:08:43,036
+a display.
+
+4841
+00:08:43,654 --> 00:08:45,654
+And because my laptop, my
+Windows is
+
+4842
+00:08:47,462 --> 00:08:50,073
+in dark mode because I prefer
+the dark mode, it's going to
+
+4843
+00:08:50,073 --> 00:08:52,073
+dark.
+
+4844
+00:08:54,273 --> 00:08:56,273
+I could just -- drop dark, go
+back to light.
+
+4845
+00:09:00,990 --> 00:09:02,990
+In fact, I can put some sort of
+gibberish
+
+4846
+00:09:04,192 --> 00:09:06,192
+in there and it'll still be
+light because light remains the
+
+4847
+00:09:06,192 --> 00:09:08,192
+default default.
+
+4848
+00:09:11,402 --> 00:09:13,402
+Or I can say all of this is
+going to be dark.
+
+4849
+00:09:16,913 --> 00:09:18,913
+And just to prove this is the
+case, I'll pop open dev tools
+
+4850
+00:09:18,913 --> 00:09:20,913
+here.
+
+4851
+00:09:27,625 --> 00:09:29,832
+We've got color scheme
+light/dark, prefers from dev
+
+4852
+00:09:29,832 --> 00:09:31,832
+tools. Oh, everything is light.
+
+4853
+00:09:35,235 --> 00:09:37,235
+I'll put it back to automatic,
+which is what my laptop wants
+
+4854
+00:09:37,235 --> 00:09:39,853
+to be. For some reason, this
+gets home in a very
+
+4855
+00:09:43,160 --> 00:09:45,160
+strange position, I suspect
+it's this head getting annoyed
+
+4856
+00:09:45,160 --> 00:09:47,160
+with real head, I'm not sure
+entirely what's going on there.
+
+4857
+00:09:47,160 --> 00:09:50,683
+We also have system colors and
+the most reliable of these is
+
+4858
+00:09:50,683 --> 00:09:52,683
+canvas text.
+
+4859
+00:09:52,683 --> 00:09:55,787
+And canvas. And they're kind of
+what you expect them to be.
+
+4860
+00:09:57,984 --> 00:09:59,984
+Don't confuse them with canvas,
+the element canvas.
+
+4861
+00:10:02,091 --> 00:10:04,091
+Con vas text is the color of
+the text. Canvas is the color
+
+4862
+00:10:04,091 --> 00:10:06,091
+of your background.
+
+4863
+00:10:08,499 --> 00:10:10,499
+Here, you can see I've just
+done
+
+4864
+00:10:13,308 --> 00:10:15,308
+a div with what you've expected
+and I've reversed them. And
+
+4865
+00:10:15,308 --> 00:10:17,308
+just reversed in here.
+
+4866
+00:10:18,514 --> 00:10:20,514
+If I call this dark, it's dark.
+I'll put it back to light.
+
+4867
+00:10:25,613 --> 00:10:27,613
+Or I can do light/dark and
+it'll turn dark, again,
+
+4868
+00:10:27,613 --> 00:10:31,409
+because my laptop is in dark
+mode. So you can apply color
+
+4869
+00:10:31,409 --> 00:10:34,815
+scheme to elements, but you do
+need to put the canvas text and
+
+4870
+00:10:34,815 --> 00:10:36,815
+the canvas in there first.
+
+4871
+00:10:40,087 --> 00:10:42,087
+If I just remove them
+
+4872
+00:10:43,183 --> 00:10:46,586
+here, it doesn't quite work
+because your element is sort of
+
+4873
+00:10:46,586 --> 00:10:48,893
+transparent by default.
+
+4874
+00:10:58,193 --> 00:11:01,291
+You need to have given them a
+color before you can put a
+
+4875
+00:11:01,291 --> 00:11:03,291
+color on an element otherwise
+it's got nothing to work on.
+
+4876
+00:11:03,291 --> 00:11:05,291
+I found that by trial and
+error.
+
+4877
+00:11:07,983 --> 00:11:11,588
+There are other system colors
+and I have a role, because
+
+4878
+00:11:11,588 --> 00:11:15,579
+they're patchy and I wanted to
+tell you it's patchy and it's a
+
+4879
+00:11:15,579 --> 00:11:17,579
+bit sad.
+
+4880
+00:11:18,874 --> 00:11:20,874
+I can get rid of dev tools now,
+too, apologies.
+
+4881
+00:11:23,074 --> 00:11:26,172
+Here, you'd expect that link
+text, which is being applied to
+
+4882
+00:11:26,172 --> 00:11:28,172
+this one should look like the
+text of the actual link.
+
+4883
+00:11:31,079 --> 00:11:33,079
+And visited text should look
+like the color of the text of
+
+4884
+00:11:33,079 --> 00:11:35,079
+an actual visited thing. And
+active text should look like,
+
+4885
+00:11:35,079 --> 00:11:37,079
+let's have a dash go to this
+link.
+
+4886
+00:11:37,090 --> 00:11:40,094
+It should look like that.
+Unfortunately, it does not.
+
+4887
+00:11:44,098 --> 00:11:46,098
+This is Edge I'm using, so
+Chrome yum
+
+4888
+00:11:48,307 --> 00:11:51,698
+Chromium. Who does do it well
+is Firefox
+
+4889
+00:11:54,299 --> 00:11:56,299
+. Beautiful, link text looks
+like link text.
+
+4890
+00:11:58,290 --> 00:12:00,599
+(Audio cutting out) visited
+text.
+
+4891
+00:12:05,594 --> 00:12:07,594
+So,
+
+4892
+00:12:07,594 --> 00:12:10,296
+Firefox for that one. I believe
+they're going to trickle
+
+4893
+00:12:10,296 --> 00:12:12,296
+through, but I have not seen
+any improvement in a couple of
+
+4894
+00:12:12,296 --> 00:12:15,091
+years. Maybe we can push on
+that. Contrast too high.
+
+4895
+00:12:18,887 --> 00:12:20,887
+So you're there, you've got
+your con
+
+4896
+00:12:23,095 --> 00:12:25,095
+canvas and your canvas text and
+you're thinking like, great,
+
+4897
+00:12:25,095 --> 00:12:27,095
+but I don't just want to use
+those.
+
+4898
+00:12:27,404 --> 00:12:31,309
+Maybe contrast is a bit too
+high. And like is written
+
+4899
+00:12:31,309 --> 00:12:33,309
+there, those implementing
+
+4900
+00:12:35,315 --> 00:12:37,315
+WCAG for accessibility may find
+it unlikely that contrast could
+
+4901
+00:12:37,315 --> 00:12:39,712
+be too high. But for some, for
+example, migrainers, they do
+
+4902
+00:12:39,712 --> 00:12:41,712
+have trouble with this.
+
+4903
+00:12:43,605 --> 00:12:46,701
+It can kick off micro
+migraines, especially on
+
+4904
+00:12:46,701 --> 00:12:49,797
+websites where things are
+moving and scrolling if the
+
+4905
+00:12:49,797 --> 00:12:51,797
+contrast is too high, it can
+start to kick things off.
+
+4906
+00:12:52,197 --> 00:12:54,197
+But there's also preferred
+contrast.
+
+4907
+00:12:57,193 --> 00:12:59,193
+This is a bit tricky because
+I'm not sure where you can set
+
+4908
+00:12:59,193 --> 00:13:01,193
+preferred contrast in your
+operating systems. But it's
+
+4909
+00:13:01,193 --> 00:13:03,193
+there.
+
+4910
+00:13:03,193 --> 00:13:06,091
+And I'm fairly sure prefers
+color scheme came before all
+
+4911
+00:13:06,091 --> 00:13:08,091
+OSs allowed you to
+
+4912
+00:13:08,303 --> 00:13:10,303
+toggle dark or light.
+
+4913
+00:13:11,894 --> 00:13:15,099
+So, hoping that prefers
+contrast starts allowing OSs to
+
+4914
+00:13:15,099 --> 00:13:17,099
+allow you to toggle contrast.
+
+4915
+00:13:20,206 --> 00:13:22,206
+The simplest way to bring
+contrast down across the board
+
+4916
+00:13:22,206 --> 00:13:24,206
+is filter contrast.
+
+4917
+00:13:28,213 --> 00:13:31,309
+So, for example, that's just an
+extra thing I've added there .
+
+4918
+00:13:31,309 --> 00:13:33,309
+I've added a filter,
+
+4919
+00:13:33,309 --> 00:13:35,615
+prefers less. And filtering the
+whole thing by half, which is
+
+4920
+00:13:35,615 --> 00:13:37,615
+possibly a bit extreme.
+
+4921
+00:13:38,117 --> 00:13:40,117
+But let's bring dev tools back
+in.
+
+4922
+00:13:43,103 --> 00:13:46,310
+And under rendering, under here
+so with the -- I'm trying to
+
+4923
+00:13:46,310 --> 00:13:48,310
+remember how I opened this
+somewhere, you can
+
+4924
+00:13:49,517 --> 00:13:51,517
+find this rendering
+
+4925
+00:13:52,729 --> 00:13:56,020
+options. And there's all sorts
+of different options, including
+
+4926
+00:13:56,020 --> 00:13:58,020
+prefers color scheme.
+
+4927
+00:13:58,020 --> 00:14:00,020
+But here is prefers contrast.
+
+4928
+00:14:04,203 --> 00:14:06,203
+Nothing for custom, nothing for
+more, but you can, you can
+
+4929
+00:14:06,203 --> 00:14:08,203
+totally do something different
+for prefers contrast more.
+
+4930
+00:14:08,312 --> 00:14:11,711
+Or prefers contrast less. And
+then, my media query is kicking
+
+4931
+00:14:11,914 --> 00:14:15,213
+in. I have done a lot of CSS
+nesting because it's fun, not
+
+4932
+00:14:15,213 --> 00:14:17,213
+just because it's best
+practice, yet.
+
+4933
+00:14:19,319 --> 00:14:21,319
+I think it's great.
+
+4934
+00:14:22,617 --> 00:14:24,626
+Let's bring down the contrast
+change a tic.
+
+4935
+00:14:27,826 --> 00:14:30,920
+And even for me, with normalish
+eyesight apart from age-related
+
+4936
+00:14:30,920 --> 00:14:32,920
+trouble,
+
+4937
+00:14:34,525 --> 00:14:36,525
+it's already
+
+4938
+00:14:38,538 --> 00:14:40,837
+for me, you might prefer lower
+contrast. But might not want to
+
+4939
+00:14:40,837 --> 00:14:42,837
+filter all the time.
+
+4940
+00:14:42,942 --> 00:14:44,942
+We can start using other
+colors, of course. I really
+
+4941
+00:14:44,942 --> 00:14:46,942
+like color mix.
+
+4942
+00:14:47,937 --> 00:14:51,543
+Because we can use canvas text
+and canvas, we can use them as
+
+4943
+00:14:51,543 --> 00:14:56,440
+mixes with other colors.
+So they look good
+
+4944
+00:14:59,435 --> 00:15:01,435
+both in dark mode and light
+mode while only having to
+
+4945
+00:15:01,435 --> 00:15:04,929
+declare them once. So, for
+example, here, if you
+
+4946
+00:15:07,925 --> 00:15:09,925
+knock out the percentage, which
+you can, it just goes to 50/50.
+
+4947
+00:15:14,923 --> 00:15:16,923
+40 looks good here, so I'll
+stick 40 back in.
+
+4948
+00:15:20,430 --> 00:15:22,430
+I'll switch it into light mode.
+
+4949
+00:15:26,936 --> 00:15:30,030
+And the backgrounds also
+lighten up because they're
+
+4950
+00:15:30,030 --> 00:15:32,030
+mixed with canvas and the
+
+4951
+00:15:35,436 --> 00:15:37,436
+text has darkened, which has
+flipped along with my color
+
+4952
+00:15:37,436 --> 00:15:39,436
+scheme .
+
+4953
+00:15:44,944 --> 00:15:46,944
+Another way to do it is having
+a bit of lower opacity.
+
+4954
+00:15:47,652 --> 00:15:51,253
+So here, I've got magenta. It's
+all red, zero green, all blue
+
+4955
+00:15:54,759 --> 00:15:56,759
+plus O
+
+4956
+00:15:58,161 --> 00:16:00,161
+opacity of 4, I'm going to flip
+it, again .
+
+4957
+00:16:00,161 --> 00:16:02,161
+Flip.
+
+4958
+00:16:04,399 --> 00:16:06,399
+So that's one way.
+
+4959
+00:16:10,907 --> 00:16:12,907
+We can, as we used to, use
+prefers color scheme.
+
+4960
+00:16:13,602 --> 00:16:15,602
+We're totally used to it, we
+can do it.
+
+4961
+00:16:18,497 --> 00:16:21,584
+However, if you're flipping
+color scheme, just color scheme
+
+4962
+00:16:21,584 --> 00:16:23,584
+light/dark with your JS like I
+am here, it doesn't change.
+
+4963
+00:16:27,462 --> 00:16:31,467
+Now, here I've set it so that
+when it's prefers color scheme
+
+4964
+00:16:31,467 --> 00:16:36,244
+light, top one should have a
+background of a Teal color. And
+
+4965
+00:16:36,244 --> 00:16:38,244
+this bottom one should have a
+background of
+
+4966
+00:16:38,650 --> 00:16:41,326
+a green with 25% opacity.
+And they do not.
+
+4967
+00:16:46,117 --> 00:16:48,117
+Because prefers color scheme is
+only asking the OS, it's
+
+4968
+00:16:49,530 --> 00:16:51,723
+not flipping with color scheme.
+Again, we'll go to dev tools.
+
+4969
+00:16:53,515 --> 00:16:56,312
+Just to prove that it does
+work.
+
+4970
+00:16:58,708 --> 00:17:00,708
+So color scheme light coming
+on, again.
+
+4971
+00:17:05,411 --> 00:17:07,411
+We're in a halfway house
+because I've got dark mode
+
+4972
+00:17:07,411 --> 00:17:09,411
+here. These all interact with
+each other, and it's so
+
+4973
+00:17:09,411 --> 00:17:11,799
+interesting.
+So, light and back to dark.
+
+4974
+00:17:19,395 --> 00:17:21,395
+And light, again, the purpley
+
+4975
+00:17:22,004 --> 00:17:25,298
+colors are going to green
+colors. And make it clear that
+
+4976
+00:17:25,298 --> 00:17:27,298
+it's automatic. Light, dark.
+
+4977
+00:17:27,298 --> 00:17:30,677
+So it's
+
+4978
+00:17:33,668 --> 00:17:36,760
+prefers color scheme and the
+color scheme property are a
+
+4979
+00:17:36,760 --> 00:17:38,760
+little bit away from each other
+once you start to introduce
+
+4980
+00:17:38,760 --> 00:17:40,760
+toggling.
+
+4981
+00:17:43,270 --> 00:17:45,678
+But -- what's coming is
+light/dark and it's not quite
+
+4982
+00:17:45,678 --> 00:17:47,678
+an all browsers.
+
+4983
+00:17:47,972 --> 00:17:51,264
+It's coming in version 17. 5 of
+Safari and there might be one
+
+4984
+00:17:51,264 --> 00:17:53,264
+or
+
+4985
+00:17:53,875 --> 00:17:55,875
+two straggler browsers after
+that. But it's really nearly
+
+4986
+00:17:55,875 --> 00:17:57,875
+with us.
+
+4987
+00:17:59,862 --> 00:18:01,862
+And just to show the
+difference, here we have a
+
+4988
+00:18:01,862 --> 00:18:05,971
+whole media query. Here is
+nested within the first
+
+4989
+00:18:05,971 --> 00:18:07,971
+declaration.
+
+4990
+00:18:09,264 --> 00:18:11,264
+So it's not too big, but still
+is a whole media query
+
+4991
+00:18:13,679 --> 00:18:15,679
+where it's just saying, when
+it's
+
+4992
+00:18:16,882 --> 00:18:20,776
+light, I want this color, when
+it's dark, I want this color.
+
+4993
+00:18:20,776 --> 00:18:22,776
+And the same here, when it's
+light, I want this color, when
+
+4994
+00:18:22,776 --> 00:18:25,958
+it's dark, I want this color.
+And that will work with the OS
+
+4995
+00:18:25,958 --> 00:18:27,958
+flipping to being
+
+4996
+00:18:29,567 --> 00:18:31,567
+dark or light mode and also,
+just with it's going to go
+
+4997
+00:18:31,567 --> 00:18:36,049
+light now. With color scheme.
+And back to light.
+
+4998
+00:18:37,848 --> 00:18:40,441
+And back to dark. Soer, this is
+really satisfying for me.
+
+4999
+00:18:45,838 --> 00:18:47,838
+But this is happily working on
+Microsoft
+
+5000
+00:18:49,243 --> 00:18:51,243
+Edge and Chrome and I think
+Fire
+
+5001
+00:18:52,459 --> 00:18:55,952
+fox and just Safari left to go.
+It's so close.
+
+5002
+00:19:03,560 --> 00:19:05,560
+To summarize, once it lets me
+go to the next slide.
+
+5003
+00:19:06,853 --> 00:19:09,064
+In summary, have a go at using
+color scheme light/dark or the
+
+5004
+00:19:09,064 --> 00:19:11,064
+metatag. Either way, it really
+doesn't matter.
+
+5005
+00:19:15,056 --> 00:19:17,056
+If you use the metatag, it's
+easier to flip with JavaScript.
+
+5006
+00:19:17,056 --> 00:19:20,943
+Try using color mix when you're
+adding colors
+
+5007
+00:19:22,946 --> 00:19:24,946
+. Mixing it with canvas or
+canvas text.
+
+5008
+00:19:27,251 --> 00:19:29,251
+Have a go at supporting user
+contrast preferences.
+
+5009
+00:19:32,157 --> 00:19:35,760
+And look forward to light/dark
+like I am. And then, just
+
+5010
+00:19:35,760 --> 00:19:37,760
+encourage you to experiment.
+
+5011
+00:19:39,059 --> 00:19:41,059
+Because it's just changing
+these things
+
+5012
+00:19:42,669 --> 00:19:45,972
+are quite easy things to
+change. You need to experiment
+
+5013
+00:19:45,972 --> 00:19:47,972
+to see what works with what and
+how you can adjust things
+
+5014
+00:19:49,071 --> 00:19:51,071
+and what looks good in dark and
+light at the same time .
+
+5015
+00:19:53,571 --> 00:19:55,571
+I find it immensely fun to play
+with.
+
+5016
+00:19:57,779 --> 00:19:59,882
+So I'm glad to share it with
+you. And I hope you fine it fun
+
+5017
+00:19:59,882 --> 00:20:01,882
+to play with.
+
+5018
+00:20:06,987 --> 00:20:10,293
+The takeaway, is to offer
+choice. Just with the dark
+
+5019
+00:20:10,293 --> 00:20:12,293
+mode/light mode and the more
+contrast/
+
+5020
+00:20:13,388 --> 00:20:15,388
+less contrast you have four
+different themes already
+
+5021
+00:20:16,993 --> 00:20:20,201
+. And if you decide to do
+something for, well, that would
+
+5022
+00:20:20,201 --> 00:20:22,201
+be normal contrast, I suppose,
+and less contrast,
+
+5023
+00:20:23,302 --> 00:20:25,612
+if you decide to do something
+extra for more contrast, then
+
+5024
+00:20:25,612 --> 00:20:27,612
+you've got 6. Yeah.
+
+5025
+00:20:29,225 --> 00:20:31,427
+I mean, and you've got 6 themes
+all at once.
+
+5026
+00:20:34,633 --> 00:20:36,633
+On my home page, I added a
+border to everything
+
+5027
+00:20:37,737 --> 00:20:39,737
+in canvas or canvas text
+depending on whether it's dark
+
+5028
+00:20:39,737 --> 00:20:41,737
+or light mode.
+
+5029
+00:20:42,961 --> 00:20:45,973
+And it's brilliant. It shows
+everything extremely contrasty.
+
+5030
+00:20:45,973 --> 00:20:47,973
+That's it.
+
+5031
+00:20:48,075 --> 00:20:51,486
+I hope you have some fun
+playing with it.
+
+5032
+00:20:51,486 --> 00:20:53,793
+There's -- I'll share these
+slides. I obviously stand on
+
+5033
+00:20:53,793 --> 00:20:55,793
+the shoulders of giants.
+
+5034
+00:20:57,103 --> 00:20:59,210
+There's so many people whose
+stuff I've read and digested.
+
+5035
+00:21:02,416 --> 00:21:05,519
+And some people have digested
+my previous stuff and come,
+
+5036
+00:21:05,519 --> 00:21:07,519
+again, with better, written it
+better than I did
+
+5037
+00:21:08,617 --> 00:21:11,818
+. So please follow a few links
+and thank you, I'm
+
+5038
+00:21:14,925 --> 00:21:16,925
+really honored to have taken
+part in the 11ty Conference
+
+5039
+00:21:18,127 --> 00:21:21,231
+, huge thank to the crew, Mike,
+David, and I can see here in
+
+5040
+00:21:21,231 --> 00:21:23,231
+the studio,
+
+5041
+00:21:23,640 --> 00:21:26,351
+captioner Diane, because that's
+work, and thank you very much.
+
+5042
+00:21:26,351 --> 00:21:28,351
+And hope to see you, any of
+you, again. Thank you.
+
+5043
+00:21:28,351 --> 00:21:31,182
+≫ MIKE: Thanks, Sara. Amazing.
+
+5044
+00:21:32,590 --> 00:21:34,590
+Yeah. I learned a lot.
+
+5045
+00:21:37,199 --> 00:21:39,211
+I've just been doing the --
+I've been doing the basics of
+
+5046
+00:21:39,211 --> 00:21:41,211
+light/dark mode.
+
+5047
+00:21:43,527 --> 00:21:45,527
+It's just fascinating how far
+you can take that.
+
+5048
+00:21:50,651 --> 00:21:52,651
+I didn't know about light/dark,
+a lot of those things .
+
+5049
+00:21:54,766 --> 00:21:56,766
+≫ SARA: Oddly, I find this to
+be more basic, just these
+
+5050
+00:21:56,766 --> 00:21:58,766
+couple of properties have made
+so much of it way easier, now
+
+5051
+00:21:58,766 --> 00:22:00,766
+you've got a bigger play room
+to jump into.
+
+5052
+00:22:03,191 --> 00:22:06,597
+≫ MIKE: Yeah, and being able to
+do it without any CSS at all,
+
+5053
+00:22:07,600 --> 00:22:09,727
+I didn't realize that was
+possible. Yeah.
+
+5054
+00:22:09,727 --> 00:22:11,727
+≫ SARA: Right?
+
+5055
+00:22:13,041 --> 00:22:15,041
+It was a surprise to me, too,
+just like, oh, I didn't have to
+
+5056
+00:22:15,041 --> 00:22:17,041
+style all that dark stuff
+myself.
+
+5057
+00:22:17,041 --> 00:22:19,041
+It already had it.
+[ Laughter ]
+
+5058
+00:22:19,041 --> 00:22:21,041
+≫ MIKE: Awesome. I've got to
+play around with it.
+
+5059
+00:22:21,979 --> 00:22:24,078
+Yeah, it's going to be a lot of
+fun. Thanks, again, for
+
+5060
+00:22:24,078 --> 00:22:26,493
+joining, Sara. It was awesome.
+≫ SARA: Thank you so much.
