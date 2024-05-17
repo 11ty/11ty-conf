@@ -243,7 +243,7 @@ an internal DOM tree to an element.
 
 3157
 00:03:05,925 --> 00:03:09,025
-This internal tree can have any arbitrary DOM structure, 
+This internal tree can have any arbitrary DOM structure,
 which is hidden from the main DOM.
 
 3158
@@ -275,7 +275,7 @@ And I've written this handy blog post,
 if you want to learn more.
 
 3164
-00:03:230,667 --> 00:03:33,875
+00:03:30,667 --> 00:03:33,875
 But yeah, essentially, I explain how
 shadow DOM works here
 
@@ -980,7 +980,7 @@ all of your other styles.
 3315
 00:12:06,929 --> 00:12:08,929
 So you might want your global
-style to be 
+style to be
 
 3316
 00:12:08,929 --> 00:12:13,657
