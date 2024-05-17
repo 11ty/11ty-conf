@@ -21,7 +21,8 @@ export default [
 			avatarAlt: "Zach’s green avatar smiles at you",
 			website: "https://www.zachleat.com/",
 			bio: `<p>Zach is a builder for the web at <a href="https://cloudcannon.com/">CloudCannon</a>. He is the creator and maintainer of <a href="https://www.11ty.dev">Eleventy (11ty)</a>, an award-winning open source site generator. At one point he became entirely <a href="https://www.zachleat.com/web/fonts/"><em>too fixated</em> on web fonts</a>. He has given <a href="https://www.zachleat.com/web/speaking/">79 talks in nine different countries</a> at events like Beyond Tellerrand, Smashing Conference, Jamstack Conf, CSSConf, and <a href="https://www.zachleat.com/web/whitehouse/">The White House</a>. Formerly part of Netlify, <a href="https://www.filamentgroup.com/">Filament Group</a>, <a href="http://nejsconf.com/">NEJS CONF</a>, and <a href="http://nebraskajs.com">NebraskaJS</a>.</p>`,
-		}]
+		}],
+		videoId: "tXNsWsEE7S0",
 	},
 	{
 		title: "Hints & Suggestions (First, Do No Harm)",
@@ -54,7 +55,8 @@ export default [
 			avatarAlt: "A smiling photo of Paul from the shoulders up. He is wearing a light colored polo shirt.",
 			website: "https://jetbrains.com/guide/",
 			bio: `<p>Paul is a Python and Web Developer Advocate at JetBrains. Before that, Paul was a co-founder of Zope Corporation, taking the first open source application server through $14M of funding. Paul has bootstrapped both the Python Software Foundation and the Plone Foundation. Prior to that, Paul was an officer in the US Navy, starting www.navy.mil in 1993.</p>`,
-		}]
+		}],
+		videoId: "-Pl0ibl47Rc",
 	},
 	{
 		title: "Break",
@@ -73,6 +75,7 @@ export default [
 			end: "2024-05-09T17:11:00Z",
 			duration: "11 minutes",
 		},
+		videoId: "P-I5D6BlejM",
 		authors: [{
 			name: "Henry Desroches",
 			avatar: "assets/speakers/xdesro-sm.jpg",
@@ -89,6 +92,7 @@ export default [
 			end: "2024-05-09T17:37:00Z",
 			duration: "22 minutes",
 		},
+		videoId: "1vrPtBCLoro",
 		authors: [{
 			name: "Sia Karamalegos",
 			avatar: "assets/speakers/sia.jpg",
@@ -105,6 +109,7 @@ export default [
 			end: "2024-05-09T17:51:00Z",
 			duration: "11 minutes",
 		},
+		videoId: "VNIy2MaXFNM",
 		authors: [{
 			name: "Dan Sinker",
 			avatar: "assets/speakers/dan.jpg",
@@ -130,6 +135,7 @@ export default [
 			end: "2024-05-09T18:26:00Z",
 			duration: "11 minutes",
 		},
+		videoId: "kwHVpcwsJOE",
 		authors: [{
 			name: "Adrianna Tan",
 			avatar: "assets/speakers/adrianna.jpg",
@@ -149,6 +155,7 @@ export default [
 			end: "2024-05-09T18:52:00Z",
 			duration: "22 minutes",
 		},
+		videoId: "8Z8H2NEbLtE",
 		authors: [{
 			name: "Mayank",
 			avatar: "assets/speakers/mayank.png",
@@ -168,6 +175,7 @@ export default [
 			duration: "11 minutes",
 		},
 		hideAuthorsFromHomePage: true,
+		videoId: "kNI_LcbvtNk",
 		authors: [{
 			name: "Liam Bigelow",
 			avatar: "assets/avatars/liam.jpeg",
@@ -201,6 +209,7 @@ export default [
 			end: "2024-05-09T19:52:00Z",
 			duration: "22 minutes",
 		},
+		videoId: "uIuf5LlA6KQ",
 		authors: [{
 			name: "Chris Ferdinandi",
 			avatar: "assets/speakers/chris-ferdinandi.jpg",
@@ -221,6 +230,7 @@ export default [
 			end: "2024-05-09T20:06:00Z",
 			duration: "11 minutes",
 		},
+		videoId: "Pkg-Brizep8",
 		authors: [{
 			name: "ivan zhao",
 			avatar: "assets/speakers/ivan.jpg",
@@ -238,6 +248,7 @@ export default [
 			end: "2024-05-09T20:32:00Z",
 			duration: "22 minutes",
 		},
+		videoId: "iZ4XjLeaKH4",
 		authors: [{
 			name: "Sara Joy",
 			avatar: "assets/speakers/sara.png",
