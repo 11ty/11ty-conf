@@ -160,8 +160,8 @@ theme without writing CSS.
 
 3140
 00:01:56,179 --> 00:01:59,187
-Yeah, the user style sheet is
-literally CSS style but built
+Yeah, the user-agent style sheet is
+literally a CSS file but built
 
 3141
 00:01:59,187 --> 00:02:02,187
@@ -778,7 +778,7 @@ easier
 
 3271
 00:09:45,174 --> 00:09:50,257
-using the not pseudo-class.
+using the :not pseudo-class.
 So this one requires you to use
 
 3272
@@ -961,8 +961,9 @@ under the @ACAB namespace.
 
 3311
 00:11:55,827 --> 00:11:57,827
-With :where, you can make zero
-specificity, but
+With :where, you can make everything
+zero specificity, but
+
 3312
 00:11:57,827 --> 00:12:00,827
 maybe don't do that?
@@ -1218,7 +1219,7 @@ and then you write layer A again,
 
 3368
 00:14:58,813 --> 00:15:01,813
-the rules inside the second appearance of
+the rules inside the second occurrence of
 layer A will still lose to layer B.
 
 3369
@@ -1448,7 +1449,7 @@ And I want to talk about Sass real quick.
 
 3418
 00:17:53,729 --> 00:17:56,729
-Layers work just like you'expect in Sass.
+Layers work just like you'd expect in Sass.
 
 3419
 00:17:56,729 --> 00:17:58,729
@@ -1466,7 +1467,7 @@ You can't use the use statement.
 3422
 00:18:06,419 --> 00:18:08,419
 This was a recent update made
-to Sass to ensure that.
+to Sass to ensure that
 
 3423
 00:18:10,413 --> 00:18:13,017
