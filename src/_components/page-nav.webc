@@ -44,7 +44,7 @@
 <nav>
   <ol>
     <li><a href="/">Home</a></li>
-		<li><a href="https://www.youtube.com/watch?v=iLxJ6PtuF9M&t=1204s" data-icon="▶️">Watch on YouTube</a></li>
+		<li><a :href="$data.youtubeLink" data-icon="▶️">Watch on YouTube</a></li>
     <!-- <li><a href="/#when">What/When</a></li> -->
     <!-- <li><a href="/#register" data-icon="🎉">Register</a></li> -->
     <li><a href="/#sponsors">Sponsors</a></li>

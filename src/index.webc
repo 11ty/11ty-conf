@@ -1,5 +1,9 @@
 ---node
 const layout = "layout.webc";
+
+// Live stream: https://www.youtube.com/watch?v=iLxJ6PtuF9M&t=1204s
+// Playlist
+const youtubeLink = "https://www.youtube.com/playlist?list=PLwhCq3ZFGOGgetCSWisU2pkl9AFwQVxWJ";
 ---
 <is-land on:media="(prefers-reduced-motion: no-preference)" webc:import="npm:@11ty/is-land">
 	<floating-possum></floating-possum>
@@ -19,7 +23,8 @@ const layout = "layout.webc";
 
 <p>View the <a href="#schedule">full schedule below</a>!</p>
 
-<h2 id="watch"><a href="https://www.youtube.com/watch?v=iLxJ6PtuF9M&t=1204s">Watch on YouTube</a></h2>
+<h2 id="watch"><a :href="youtubeLink">Watch on YouTube</a></h2>
+<p><em data-icon="🗓️">May 17 Update</em>: All <a :href="youtubeLink">talk session videos are now available in a YouTube playlist</a>.</p>
 <p><em data-icon="🗓️">May 10 Update</em>: Video of the <a href="https://www.youtube.com/watch?v=iLxJ6PtuF9M&t=1204s">full stream is available on YouTube</a>. Individual talk videos will be available in the coming weeks!</p>
 
 <div id="subscription"></div>
