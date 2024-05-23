@@ -1,9 +1,5 @@
 ---node
 const layout = "layout.webc";
-
-// Live stream: https://www.youtube.com/watch?v=iLxJ6PtuF9M&t=1204s
-// Playlist
-const youtubeLink = "https://www.youtube.com/playlist?list=PLwhCq3ZFGOGgetCSWisU2pkl9AFwQVxWJ";
 ---
 <is-land on:media="(prefers-reduced-motion: no-preference)" webc:import="npm:@11ty/is-land">
 	<floating-possum></floating-possum>

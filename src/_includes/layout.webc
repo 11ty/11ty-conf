@@ -2,6 +2,10 @@
 const title = "11ty’s International Symposium on Making Web Sites Real Good"
 const description = "We’re running a conference — this is an 11ty Conference!"
 const showTitle = true;
+
+// Live stream: https://www.youtube.com/watch?v=iLxJ6PtuF9M&t=1204s
+// Playlist
+const youtubeLink = "https://www.youtube.com/playlist?list=PLwhCq3ZFGOGgetCSWisU2pkl9AFwQVxWJ";
 ---
 <!doctype html>
 <html lang="en">
